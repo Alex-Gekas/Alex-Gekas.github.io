@@ -13,13 +13,13 @@ Welcome! I'm **Alex Gekas**, a technical writer focused on developer tools, APIs
 ## 📁 Original Work
 
 ### API Reference: National Weather Service API
-- [View as Markdown]({{ "/docs/nws-api-reference.md" | relative_url }})
-- [Download as PDF]({{ "/assets/nws-api-reference.pdf" | relative_url }})
+- [View as Markdown]({{ "/docs/nws_api_reference.md" | relative_url }})
+- [Download as PDF]({{ "/assets/nws_api_reference.pdf" | relative_url }})
 - *A detailed reference for endpoints, parameters, and responses in the NWS public API.*
 
 ### Concept Document: GeoJSON for Beginners
-- [View as Markdown]({{ "/docs/geojson-concept.md" | relative_url }})
-- [Download as PDF]({{ "/assets/geojson-concept.pdf" | relative_url }})
+- [View as Markdown]({{ "/docs/geojson_concept.md" | relative_url }})
+- [Download as PDF]({{ "/assets/geojson_concept.pdf" | relative_url }})
 - *An introductory guide to understanding GeoJSON structures, use cases, and developer tooling.*
 
 ---
