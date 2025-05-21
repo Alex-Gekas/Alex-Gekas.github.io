@@ -8,7 +8,7 @@ This is a *bare-minimum* template to create a [Jekyll] site that:
 
 More specifically, the created site:
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem;
+- uses a gem-based approach, that is, it uses a `Gemfile` and loads the `just-the-docs` gem;
 - uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages.
 
 To get started with creating a site, simply:
@@ -29,7 +29,7 @@ Update the following files to your own content:
 
 ## Changing the version of the theme and/or Jekyll
 
-Simply edit the relevant line(s) in the `Gemfile`.
+Simply edit the relevant line in the `Gemfile`.
 
 ## Adding a plugin
 
@@ -93,7 +93,7 @@ Just upload all the files in the directory `_site`.
 
 You're free to customize sites that you create with this template, however you like!
 
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
+[Browse the documentation][Just the Docs] to learn more about how to use this theme.
 
 ## Hosting your docs from an existing project repo
 

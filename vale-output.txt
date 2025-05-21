@@ -1,0 +1,939 @@
+
+ [4m_site\styles\clarity\README.md[0m
+ 1:3  [34msuggestion[0m  'Custom Microsoft Style Rules'  Microsoft.Headings 
+                  should use sentence-style                          
+                  capitalization.                                    
+
+
+ [4mportfolio\index.md[0m
+ 8:3    [34msuggestion[0m  'Writing Portfolio' should use  Microsoft.Headings    
+                    sentence-style capitalization.                        
+ 10:29  [33mwarning[0m     Use first person (such as       Microsoft.FirstPerson 
+                    'my') sparingly.                                      
+
+
+ [4mindex.md[0m
+ 6:4   [34msuggestion[0m  'About This Portfolio'          Microsoft.Headings    
+                   should use sentence-style                             
+                   capitalization.                                       
+ 8:10  [33mwarning[0m     Use first person (such as       Microsoft.FirstPerson 
+                   'I'm') sparingly.                                     
+ 8:68  [34msuggestion[0m  Verify your use of              Microsoft.Vocab       
+                   'accessible' with the A-Z word                        
+                   list.                                                 
+ 10:1  [33mwarning[0m     Use first person (such as       Microsoft.FirstPerson 
+                   'I'll') sparingly.                                    
+
+
+ [4m_site\README.md[0m
+ 1:3      [34msuggestion[0m  'just-the-docs-template'        Microsoft.Headings       
+                      should use sentence-style                                
+                      capitalization.                                          
+ 6:7      [34msuggestion[0m  'be built' looks like passive   Microsoft.Passive        
+                      voice.                                                   
+ 7:7      [34msuggestion[0m  'be built' looks like passive   Microsoft.Passive        
+                      voice.                                                   
+ 11:30    [31merror[0m       Use 'that is' instead of        Microsoft.Foreign        
+                      'i.e.'.                                                  
+ 30:38    [34msuggestion[0m  Verify your use of 'and/or'     Microsoft.Vocab          
+                      with the A-Z word list.                                  
+ 32:30    [31merror[0m       Don't add '(s)' to a singular   Microsoft.Plurals        
+                      noun. Use plural instead.                                
+ 55:4     [34msuggestion[0m  'Publishing your site on        Microsoft.Headings       
+                      GitHub Pages' should use                                 
+                      sentence-style capitalization.                           
+ 78:33    [34msuggestion[0m  'are installed' looks like      Microsoft.Passive        
+                      passive voice.                                           
+ 86:20    [34msuggestion[0m  'is stored' looks like passive  Microsoft.Passive        
+                      voice.                                                   
+ 96:9     [33mwarning[0m     Try to avoid using              Microsoft.We             
+                      first-person plural like                                 
+                      'our'.                                                   
+ 100:67   [34msuggestion[0m  Try to keep sentences short (<  Microsoft.SentenceLength 
+                      30 words).                                               
+ 108:5    [34msuggestion[0m  'Modify the GitHub Actions      Microsoft.Headings       
+                      workflow' should use                                     
+                      sentence-style capitalization.                           
+ 110:79   [34msuggestion[0m  'is defined' looks like         Microsoft.Passive        
+                      passive voice.                                           
+ 154:4    [34msuggestion[0m  'Licensing and Attribution'     Microsoft.Headings       
+                      should use sentence-style                                
+                      capitalization.                                          
+ 156:17   [34msuggestion[0m  'is licensed' looks like        Microsoft.Passive        
+                      passive voice.                                           
+ 156:40   [34msuggestion[0m  'MIT' has no definition.        Microsoft.Acronyms       
+ 156:54   [34msuggestion[0m  Try to keep sentences short (<  Microsoft.SentenceLength 
+                      30 words).                                               
+ 156:62   [33mwarning[0m     Remove 'generally' if it's not  Microsoft.Adverbs        
+                      important to the meaning of                              
+                      the statement.                                           
+ 156:125  [34msuggestion[0m  Try to simplify this sentence.  Microsoft.Semicolon      
+ 156:180  [34msuggestion[0m  'is preserved' looks like       Microsoft.Passive        
+                      passive voice.                                           
+ 156:248  [33mwarning[0m     Try to avoid using              Microsoft.We             
+                      first-person plural like 'we'.                           
+ 156:312  [33mwarning[0m     Try to avoid using              Microsoft.We             
+                      first-person plural like 'we'.                           
+ 158:43   [33mwarning[0m     Remove 'heavily' if it's not    Microsoft.Adverbs        
+                      important to the meaning of                              
+                      the statement.                                           
+ 158:118  [34msuggestion[0m  'MIT' has no definition.        Microsoft.Acronyms       
+
+
+ [4mportfolio\nws-api\authentication.md[0m
+ 7:7    [34msuggestion[0m  'Authentication and Headers'    Microsoft.Headings     
+                    should use sentence-style                              
+                    capitalization.                                        
+ 9:9    [31merror[0m       Use 'doesn't' instead of 'does  Microsoft.Contractions 
+                    not'.                                                  
+ 9:105  [33mwarning[0m     Prefer 'personal digital        Microsoft.Terms        
+                    assistant' over 'Agent'.                               
+ 9:226  [33mwarning[0m     Prefer 'personal digital        Microsoft.Terms        
+                    assistant' over 'Agent'.                               
+ 9:232  [34msuggestion[0m  'is recommended' looks like     Microsoft.Passive      
+                    passive voice.                                         
+ 9:314  [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms     
+ 17:46  [33mwarning[0m     Prefer 'personal digital        Microsoft.Terms        
+                    assistant' over 'Agent'.                               
+
+
+ [4mREADME.md[0m
+ 1:3      [34msuggestion[0m  'just-the-docs-template'        Microsoft.Headings       
+                      should use sentence-style                                
+                      capitalization.                                          
+ 6:7      [34msuggestion[0m  'be built' looks like passive   Microsoft.Passive        
+                      voice.                                                   
+ 7:7      [34msuggestion[0m  'be built' looks like passive   Microsoft.Passive        
+                      voice.                                                   
+ 11:30    [31merror[0m       Use 'that is' instead of        Microsoft.Foreign        
+                      'i.e.'.                                                  
+ 30:38    [34msuggestion[0m  Verify your use of 'and/or'     Microsoft.Vocab          
+                      with the A-Z word list.                                  
+ 32:30    [31merror[0m       Don't add '(s)' to a singular   Microsoft.Plurals        
+                      noun. Use plural instead.                                
+ 55:4     [34msuggestion[0m  'Publishing your site on        Microsoft.Headings       
+                      GitHub Pages' should use                                 
+                      sentence-style capitalization.                           
+ 78:33    [34msuggestion[0m  'are installed' looks like      Microsoft.Passive        
+                      passive voice.                                           
+ 86:20    [34msuggestion[0m  'is stored' looks like passive  Microsoft.Passive        
+                      voice.                                                   
+ 96:9     [33mwarning[0m     Try to avoid using              Microsoft.We             
+                      first-person plural like                                 
+                      'our'.                                                   
+ 100:67   [34msuggestion[0m  Try to keep sentences short (<  Microsoft.SentenceLength 
+                      30 words).                                               
+ 108:5    [34msuggestion[0m  'Modify the GitHub Actions      Microsoft.Headings       
+                      workflow' should use                                     
+                      sentence-style capitalization.                           
+ 110:79   [34msuggestion[0m  'is defined' looks like         Microsoft.Passive        
+                      passive voice.                                           
+ 154:4    [34msuggestion[0m  'Licensing and Attribution'     Microsoft.Headings       
+                      should use sentence-style                                
+                      capitalization.                                          
+ 156:17   [34msuggestion[0m  'is licensed' looks like        Microsoft.Passive        
+                      passive voice.                                           
+ 156:40   [34msuggestion[0m  'MIT' has no definition.        Microsoft.Acronyms       
+ 156:54   [34msuggestion[0m  Try to keep sentences short (<  Microsoft.SentenceLength 
+                      30 words).                                               
+ 156:62   [33mwarning[0m     Remove 'generally' if it's not  Microsoft.Adverbs        
+                      important to the meaning of                              
+                      the statement.                                           
+ 156:125  [34msuggestion[0m  Try to simplify this sentence.  Microsoft.Semicolon      
+ 156:180  [34msuggestion[0m  'is preserved' looks like       Microsoft.Passive        
+                      passive voice.                                           
+ 156:248  [33mwarning[0m     Try to avoid using              Microsoft.We             
+                      first-person plural like 'we'.                           
+ 156:312  [33mwarning[0m     Try to avoid using              Microsoft.We             
+                      first-person plural like 'we'.                           
+ 158:43   [33mwarning[0m     Remove 'heavily' if it's not    Microsoft.Adverbs        
+                      important to the meaning of                              
+                      the statement.                                           
+ 158:118  [34msuggestion[0m  'MIT' has no definition.        Microsoft.Acronyms       
+
+
+ [4mportfolio\nws-api\caching.md[0m
+ 7:7    [34msuggestion[0m  'Caching Best Practices'        Microsoft.Headings           
+                    should use sentence-style                                    
+                    capitalization.                                              
+ 9:1    [34msuggestion[0m  Try to keep sentences short (<  Microsoft.SentenceLength     
+                    30 words).                                                   
+ 9:14   [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms           
+ 9:22   [31merror[0m       Use 'doesn't' instead of 'does  Microsoft.Contractions       
+                    not'.                                                        
+ 9:74   [34msuggestion[0m  'is undisclosed' looks like     Microsoft.Passive            
+                    passive voice.                                               
+ 9:155  [33mwarning[0m     Remove 'greatly' if it's not    Microsoft.Adverbs            
+                    important to the meaning of                                  
+                    the statement.                                               
+ 9:256  [34msuggestion[0m  'are updated' looks like        Microsoft.Passive            
+                    passive voice.                                               
+ 12:7   [34msuggestion[0m  'When Should You Cache NWS      Microsoft.Headings           
+                    API Responses?' should use                                   
+                    sentence-style capitalization.                               
+ 12:29  [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms           
+ 12:29  [33mwarning[0m     Avoid using acronyms in a       Microsoft.HeadingAcronyms    
+                    title or heading.                                            
+ 12:33  [33mwarning[0m     Avoid using acronyms in a       Microsoft.HeadingAcronyms    
+                    title or heading.                                            
+ 12:45  [33mwarning[0m     Don't use end punctuation in    Microsoft.HeadingPunctuation 
+                    headings.                                                    
+ 17:16  [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms           
+ 69:38  [33mwarning[0m     Remove 'rarely' if it's not     Microsoft.Adverbs            
+                    important to the meaning of                                  
+                    the statement.                                               
+ 77:25  [33mwarning[0m     Remove 'very' if it's not       Microsoft.Adverbs            
+                    important to the meaning of                                  
+                    the statement.                                               
+ 77:30  [33mwarning[0m     Remove 'rarely' if it's not     Microsoft.Adverbs            
+                    important to the meaning of                                  
+                    the statement.                                               
+ 84:7   [34msuggestion[0m  'How to Implement Caching'      Microsoft.Headings           
+                    should use sentence-style                                    
+                    capitalization.                                              
+ 87:8   [34msuggestion[0m  '1. Using HTTP Headers          Microsoft.Headings           
+                    (Browser & API Clients)'                                     
+                    should use sentence-style                                    
+                    capitalization.                                              
+ 87:17  [33mwarning[0m     Avoid using acronyms in a       Microsoft.HeadingAcronyms    
+                    title or heading.                                            
+ 87:41  [33mwarning[0m     Avoid using acronyms in a       Microsoft.HeadingAcronyms    
+                    title or heading.                                            
+ 91:7   [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms           
+ 97:8   [34msuggestion[0m  '2. Local Caching (In-Memory    Microsoft.Headings           
+                    or Database)' should use                                     
+                    sentence-style capitalization.                               
+
+
+ [4mportfolio\nws-api\concepts\index.md[0m
+ 9:3    [34msuggestion[0m  'Key Concepts' should use       Microsoft.Headings 
+                    sentence-style capitalization.                     
+ 17:4   [34msuggestion[0m  'Topics Covered' should use     Microsoft.Headings 
+                    sentence-style capitalization.                     
+ 19:5   [34msuggestion[0m  'Grid System' should use        Microsoft.Headings 
+                    sentence-style capitalization.                     
+ 20:15  [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms 
+ 22:5   [34msuggestion[0m  'Forecast Zones' should use     Microsoft.Headings 
+                    sentence-style capitalization.                     
+ 26:39  [34msuggestion[0m  'are translated' looks like     Microsoft.Passive  
+                    passive voice.                                     
+ 33:4   [34msuggestion[0m  'Why It Matters' should use     Microsoft.Headings 
+                    sentence-style capitalization.                     
+
+
+ [4mportfolio\nws-api\concepts\geolocation.md[0m
+ 8:3     [34msuggestion[0m  'Key Concepts' should use       Microsoft.Headings        
+                     sentence-style capitalization.                            
+ 10:4    [34msuggestion[0m  'Forecast Coverage Areas'       Microsoft.Headings        
+                     should use sentence-style                                 
+                     capitalization.                                           
+ 11:10   [34msuggestion[0m  'is divided' looks like         Microsoft.Passive         
+                     passive voice.                                            
+ 13:4    [34msuggestion[0m  'Grid System' should use        Microsoft.Headings        
+                     sentence-style capitalization.                            
+ 14:5    [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms        
+ 15:18   [34msuggestion[0m  'is defined' looks like         Microsoft.Passive         
+                     passive voice.                                            
+ 18:4    [34msuggestion[0m  'Forecast Zones' should use     Microsoft.Headings        
+                     sentence-style capitalization.                            
+ 19:1    [34msuggestion[0m  Consider using 'also' instead   Microsoft.Wordiness       
+                     of 'In addition'.                                         
+ 19:32   [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms        
+ 19:117  [34msuggestion[0m  Consider using 'span' instead   Microsoft.Wordiness       
+                     of 'span across'.                                         
+ 20:19   [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes          
+                     '.                                                        
+ 21:25   [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes          
+                     '.                                                        
+ 22:19   [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes          
+                     '.                                                        
+ 27:79   [34msuggestion[0m  'GIS' has no definition.        Microsoft.Acronyms        
+ 28:118  [34msuggestion[0m  'JPG' has no definition.        Microsoft.Acronyms        
+ 32:55   [31merror[0m       Use 'for example' instead of    Microsoft.Foreign         
+                     'e.g.,'.                                                  
+ 34:5    [34msuggestion[0m  'Zone Types Overview'           Microsoft.Headings        
+                     should use sentence-style                                 
+                     capitalization.                                           
+ 41:96   [34msuggestion[0m  Verify your use of 'alert'      Microsoft.Vocab           
+                     with the A-Z word list.                                   
+ 43:19   [33mwarning[0m     Avoid using acronyms in a       Microsoft.HeadingAcronyms 
+                     title or heading.                                         
+ 44:5    [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms        
+ 44:13   [34msuggestion[0m  'is designed' looks like        Microsoft.Passive         
+                     passive voice.                                            
+
+
+ [4mportfolio\nws-api\concepts\status-codes.md[0m
+ 9:3    [33mwarning[0m     Avoid using acronyms in a       Microsoft.HeadingAcronyms 
+                    title or heading.                                         
+ 9:3    [34msuggestion[0m  'HTTP Status Codes in the NWS   Microsoft.Headings        
+                    API' should use sentence-style                            
+                    capitalization.                                           
+ 9:28   [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms        
+ 9:28   [33mwarning[0m     Avoid using acronyms in a       Microsoft.HeadingAcronyms 
+                    title or heading.                                         
+ 9:32   [33mwarning[0m     Avoid using acronyms in a       Microsoft.HeadingAcronyms 
+                    title or heading.                                         
+ 11:5   [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms        
+ 18:4   [34msuggestion[0m  '2xx – Success' should use      Microsoft.Headings        
+                    sentence-style capitalization.                            
+ 18:7   [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes          
+                    '.                                                        
+ 23:97  [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms        
+ 27:4   [34msuggestion[0m  '3xx – Redirection' should use  Microsoft.Headings        
+                    sentence-style capitalization.                            
+ 27:7   [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes          
+                    '.                                                        
+ 31:45  [31merror[0m       Use 'hasn't' instead of 'has    Microsoft.Contractions    
+                    not'.                                                     
+ 35:4   [34msuggestion[0m  '4xx – Client Errors'           Microsoft.Headings        
+                    should use sentence-style                                 
+                    capitalization.                                           
+ 35:7   [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes          
+                    '.                                                        
+ 39:70  [31merror[0m       Use 'for example' instead of    Microsoft.Foreign         
+                    'e.g.,'.                                                  
+ 41:36  [31merror[0m       Use 'aren't' instead of 'are    Microsoft.Contractions    
+                    not'.                                                     
+ 42:57  [31merror[0m       Use 'couldn't' instead of       Microsoft.Contractions    
+                    'could not'.                                              
+ 42:67  [34msuggestion[0m  'be found' looks like passive   Microsoft.Passive         
+                    voice.                                                    
+ 43:43  [31merror[0m       Use 'can't' instead of          Microsoft.Contractions    
+                    'cannot'.                                                 
+ 48:4   [34msuggestion[0m  '5xx – Server Errors'           Microsoft.Headings        
+                    should use sentence-style                                 
+                    capitalization.                                           
+ 48:7   [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes          
+                    '.                                                        
+ 57:4   [34msuggestion[0m  'Error Response Format'         Microsoft.Headings        
+                    should use sentence-style                                 
+                    capitalization.                                           
+
+
+ [4mportfolio\nws-api\concepts\units.md[0m
+ 9:3     [34msuggestion[0m  'Units of Measurement'          Microsoft.Headings        
+                     should use sentence-style                                 
+                     capitalization.                                           
+ 15:4    [34msuggestion[0m  'Default Units by Data Type'    Microsoft.Headings        
+                     should use sentence-style                                 
+                     capitalization.                                           
+ 27:62   [34msuggestion[0m  Consider using 'time' instead   Microsoft.Wordiness       
+                     of 'time period'.                                         
+ 31:4    [34msuggestion[0m  'Unit Conversions' should use   Microsoft.Headings        
+                     sentence-style capitalization.                            
+ 45:4    [34msuggestion[0m  'Customizing Units in           Microsoft.Headings        
+                     API Responses' should use                                 
+                     sentence-style capitalization.                            
+ 45:25   [33mwarning[0m     Avoid using acronyms in a       Microsoft.HeadingAcronyms 
+                     title or heading.                                         
+ 47:20   [31merror[0m       Use 'doesn't' instead of 'does  Microsoft.Contractions    
+                     not'.                                                     
+ 47:29   [34msuggestion[0m  Verify your use of 'allow'      Microsoft.Vocab           
+                     with the A-Z word list.                                   
+ 47:93   [34msuggestion[0m  'are returned' looks like       Microsoft.Passive         
+                     passive voice.                                            
+ 47:205  [34msuggestion[0m  'are required' looks like       Microsoft.Passive         
+                     passive voice.                                            
+ 53:23   [34msuggestion[0m  'are returned' looks like       Microsoft.Passive         
+                     passive voice.                                            
+ 53:40   [34msuggestion[0m  'ISO' has no definition.        Microsoft.Acronyms        
+ 54:46   [34msuggestion[0m  'are expressed' looks like      Microsoft.Passive         
+                     passive voice.                                            
+
+
+ [4mportfolio\nws-api\endpoints\alerts.md[0m
+ 9:3     [34msuggestion[0m  'Get Active Alerts' should use  Microsoft.Headings 
+                     sentence-style capitalization.                     
+ 13:155  [34msuggestion[0m  'are returned' looks like       Microsoft.Passive  
+                     passive voice.                                     
+ 13:226  [34msuggestion[0m  Verify your use of 'alert'      Microsoft.Vocab    
+                     with the A-Z word list.                            
+ 26:4    [34msuggestion[0m  'Query Parameters' should use   Microsoft.Headings 
+                     sentence-style capitalization.                     
+ 31:25   [34msuggestion[0m  Verify your use of 'alert'      Microsoft.Vocab    
+                     with the A-Z word list.                            
+ 32:26   [34msuggestion[0m  Verify your use of 'alert'      Microsoft.Vocab    
+                     with the A-Z word list.                            
+ 33:35   [31merror[0m       Use 'for example' instead of    Microsoft.Foreign  
+                     'e.g.,'.                                           
+ 39:4    [34msuggestion[0m  'Example Request' should use    Microsoft.Headings 
+                     sentence-style capitalization.                     
+ 45:4    [34msuggestion[0m  'Example Response' should use   Microsoft.Headings 
+                     sentence-style capitalization.                     
+ 88:12   [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes   
+                     '.                                                 
+ 89:21   [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes   
+                     '.                                                 
+ 90:19   [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes   
+                     '.                                                 
+
+
+ [4mportfolio\nws-api\endpoints\forecast.md[0m
+ 9:3    [34msuggestion[0m  'Get Forecast for a Location'   Microsoft.Headings       
+                    should use sentence-style                                
+                    capitalization.                                          
+ 21:23  [34msuggestion[0m  'is required' looks like        Microsoft.Passive        
+                    passive voice.                                           
+ 26:4   [34msuggestion[0m  'Path Parameters' should use    Microsoft.Headings       
+                    sentence-style capitalization.                           
+ 35:4   [34msuggestion[0m  'Example Request' should use    Microsoft.Headings       
+                    sentence-style capitalization.                           
+ 41:4   [34msuggestion[0m  'Example Response' should use   Microsoft.Headings       
+                    sentence-style capitalization.                           
+ 44:4   [34msuggestion[0m  Try to keep sentences short (<  Microsoft.SentenceLength 
+                    30 words).                                               
+ 45:17  [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                    the quotes.                                              
+ 45:53  [34msuggestion[0m  'LWX' has no definition.        Microsoft.Acronyms       
+ 46:23  [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                    the quotes.                                              
+ 46:59  [34msuggestion[0m  'LWX' has no definition.        Microsoft.Acronyms       
+ 47:25  [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                    the quotes.                                              
+ 47:61  [34msuggestion[0m  'LWX' has no definition.        Microsoft.Acronyms       
+ 48:28  [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                    the quotes.                                              
+ 48:64  [34msuggestion[0m  'LWX' has no definition.        Microsoft.Acronyms       
+ 51:17  [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                    the quotes.                                              
+ 59:4   [34msuggestion[0m  'Common Status Codes'           Microsoft.Headings       
+                    should use sentence-style                                
+                    capitalization.                                          
+ 63:12  [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes         
+                    '.                                                       
+ 64:21  [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes         
+                    '.                                                       
+ 65:19  [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes         
+                    '.                                                       
+ 70:68  [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms       
+ 70:89  [34msuggestion[0m  'is used' looks like passive    Microsoft.Passive        
+                    voice.                                                   
+
+
+ [4mportfolio\nws-api\endpoints\index.md[0m
+ 9:3     [33mwarning[0m     Avoid using acronyms in a       Microsoft.HeadingAcronyms 
+                     title or heading.                                         
+ 9:3     [34msuggestion[0m  'NWS API Endpoints' should use  Microsoft.Headings        
+                     sentence-style capitalization.                            
+ 9:3     [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms        
+ 9:7     [33mwarning[0m     Avoid using acronyms in a       Microsoft.HeadingAcronyms 
+                     title or heading.                                         
+ 11:152  [31merror[0m       Remove the spaces around ' —    Microsoft.Dashes          
+                     '.                                                        
+ 11:213  [31merror[0m       Remove the spaces around ' —    Microsoft.Dashes          
+                     '.                                                        
+ 11:238  [33mwarning[0m     For a general audience, use     Microsoft.GeneralURL      
+                     'address' rather than 'URL'.                              
+ 13:4    [34msuggestion[0m  'What You'll Find' should use   Microsoft.Headings        
+                     sentence-style capitalization.                            
+ 20:23   [34msuggestion[0m  Verify your use of 'sample'     Microsoft.Vocab           
+                     with the A-Z word list.                                   
+ 27:11   [34msuggestion[0m  'are grouped' looks like        Microsoft.Passive         
+                     passive voice.                                            
+
+
+ [4mportfolio\nws-api\concepts\alerts_warnings.md[0m
+ 9:24    [34msuggestion[0m  'Alerts and Warnings'           Microsoft.Headings       
+                     should use sentence-style                                
+                     capitalization.                                          
+ 11:5    [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms       
+ 12:1    [34msuggestion[0m  Consider using 'tell' instead   Microsoft.Wordiness      
+                     of 'inform'.                                             
+ 12:57   [31merror[0m       Use 'they're' instead of 'They  Microsoft.Contractions   
+                     are'.                                                    
+ 12:62   [34msuggestion[0m  'are issued' looks like         Microsoft.Passive        
+                     passive voice.                                           
+ 25:26   [34msuggestion[0m  'Forecast Grids vs. Alert       Microsoft.Headings       
+                     Polygons' should use                                     
+                     sentence-style capitalization.                           
+ 25:45   [34msuggestion[0m  Verify your use of 'Alert'      Microsoft.Vocab          
+                     with the A-Z word list.                                  
+ 27:63   [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms       
+ 28:48   [34msuggestion[0m  Verify your use of 'alert'      Microsoft.Vocab          
+                     with the A-Z word list.                                  
+ 33:5    [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms       
+ 44:1    [34msuggestion[0m  Try to keep sentences short (<  Microsoft.SentenceLength 
+                     30 words).                                               
+ 44:26   [33mwarning[0m     Try to avoid using              Microsoft.We             
+                     first-person plural like 'we'.                           
+ 44:26   [31merror[0m       Use 'we've' instead of 'we      Microsoft.Contractions   
+                     have'.                                                   
+ 47:8    [34msuggestion[0m  Verify your use of 'allows'     Microsoft.Vocab          
+                     with the A-Z word list.                                  
+ 52:1    [34msuggestion[0m  Try to keep sentences short (<  Microsoft.SentenceLength 
+                     30 words).                                               
+ 52:39   [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms       
+ 59:43   [33mwarning[0m     Remove 'closely' if it's not    Microsoft.Adverbs        
+                     important to the meaning of                              
+                     the statement.                                           
+ 67:24   [34msuggestion[0m  'Alerts and Warnings'           Microsoft.Headings       
+                     should use sentence-style                                
+                     capitalization.                                          
+ 69:5    [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms       
+ 70:1    [34msuggestion[0m  Consider using 'tell' instead   Microsoft.Wordiness      
+                     of 'inform'.                                             
+ 70:57   [31merror[0m       Use 'they're' instead of 'They  Microsoft.Contractions   
+                     are'.                                                    
+ 70:62   [34msuggestion[0m  'are issued' looks like         Microsoft.Passive        
+                     passive voice.                                           
+ 83:26   [34msuggestion[0m  'Forecast Grids vs. Alert       Microsoft.Headings       
+                     Polygons' should use                                     
+                     sentence-style capitalization.                           
+ 83:45   [34msuggestion[0m  Verify your use of 'Alert'      Microsoft.Vocab          
+                     with the A-Z word list.                                  
+ 85:63   [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms       
+ 86:48   [34msuggestion[0m  Verify your use of 'alert'      Microsoft.Vocab          
+                     with the A-Z word list.                                  
+ 91:5    [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms       
+ 102:1   [34msuggestion[0m  Try to keep sentences short (<  Microsoft.SentenceLength 
+                     30 words).                                               
+ 102:26  [33mwarning[0m     Try to avoid using              Microsoft.We             
+                     first-person plural like 'we'.                           
+ 102:26  [31merror[0m       Use 'we've' instead of 'we      Microsoft.Contractions   
+                     have'.                                                   
+ 105:8   [34msuggestion[0m  Verify your use of 'allows'     Microsoft.Vocab          
+                     with the A-Z word list.                                  
+ 110:1   [34msuggestion[0m  Try to keep sentences short (<  Microsoft.SentenceLength 
+                     30 words).                                               
+ 110:39  [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms       
+ 117:43  [33mwarning[0m     Remove 'closely' if it's not    Microsoft.Adverbs        
+                     important to the meaning of                              
+                     the statement.                                           
+ 134:4   [31merror[0m       Use 'what's' instead of 'What   Microsoft.Contractions   
+                     is'.                                                     
+ 134:4   [34msuggestion[0m  'What is GeoJSON?' should use   Microsoft.Headings       
+                     sentence-style capitalization.                           
+ 139:13  [31merror[0m       Use 'it's' instead of 'It is'.  Microsoft.Contractions   
+ 139:66  [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms       
+ 149:68  [34msuggestion[0m  'HREF' has no definition.       Microsoft.Acronyms       
+
+
+ [4mportfolio\nws-api\endpoints\gridpoints.md[0m
+ 9:3    [34msuggestion[0m  'Get Forecast by Gridpoint'     Microsoft.Headings       
+                    should use sentence-style                                
+                    capitalization.                                          
+ 13:45  [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms       
+ 26:4   [34msuggestion[0m  'Path Parameters' should use    Microsoft.Headings       
+                    sentence-style capitalization.                           
+ 30:15  [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms       
+ 36:4   [34msuggestion[0m  'Example Request' should use    Microsoft.Headings       
+                    sentence-style capitalization.                           
+ 44:4   [34msuggestion[0m  Try to keep sentences short (<  Microsoft.SentenceLength 
+                    30 words).                                               
+ 45:16  [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                    the quotes.                                              
+ 48:17  [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                    the quotes.                                              
+ 49:22  [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                    the quotes.                                              
+ 51:28  [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                    the quotes.                                              
+ 52:22  [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                    the quotes.                                              
+ 56:17  [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                    the quotes.                                              
+ 57:22  [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                    the quotes.                                              
+ 59:28  [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                    the quotes.                                              
+ 60:22  [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                    the quotes.                                              
+ 71:12  [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes         
+                    '.                                                       
+ 72:21  [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes         
+                    '.                                                       
+ 73:19  [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes         
+                    '.                                                       
+ 78:14  [34msuggestion[0m  'are assigned' looks like       Microsoft.Passive        
+                    passive voice.                                           
+ 78:36  [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms       
+ 79:55  [34msuggestion[0m  'WFO' has no definition.        Microsoft.Acronyms       
+ 85:25  [34msuggestion[0m  'be extended' looks like        Microsoft.Passive        
+                    passive voice.                                           
+
+
+ [4mportfolio\nws-api\examples\curl.md[0m
+ 9:3    [34msuggestion[0m  'Using cURL with the NWS API'   Microsoft.Headings        
+                    should use sentence-style                                 
+                    capitalization.                                           
+ 9:23   [33mwarning[0m     Avoid using acronyms in a       Microsoft.HeadingAcronyms 
+                    title or heading.                                         
+ 9:23   [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms        
+ 9:27   [33mwarning[0m     Avoid using acronyms in a       Microsoft.HeadingAcronyms 
+                    title or heading.                                         
+ 11:58  [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms        
+ 15:4   [34msuggestion[0m  '1. Get Forecast by Latitude    Microsoft.Headings        
+                    and Longitude' should use                                 
+                    sentence-style capitalization.                            
+ 26:4   [34msuggestion[0m  '2. Translate Coordinates to    Microsoft.Headings        
+                    Grid Information' should use                              
+                    sentence-style capitalization.                            
+ 37:4   [34msuggestion[0m  '3. Get Active Alerts           Microsoft.Headings        
+                    for a Region' should use                                  
+                    sentence-style capitalization.                            
+ 48:4   [34msuggestion[0m  '4. Get Observations from       Microsoft.Headings        
+                    a Specific Weather Station'                               
+                    should use sentence-style                                 
+                    capitalization.                                           
+ 61:7   [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms        
+ 61:76  [33mwarning[0m     For a general audience, use     Microsoft.GeneralURL      
+                    'address' rather than 'URL'.                              
+ 70:41  [33mwarning[0m     Try to avoid using              Microsoft.We              
+                    first-person plural like                                  
+                    'our'.                                                    
+
+
+ [4mportfolio\nws-api\endpoints\points.md[0m
+ 9:3    [34msuggestion[0m  'Get Metadata by Geographic     Microsoft.Headings       
+                    Point' should use                                        
+                    sentence-style capitalization.                           
+ 26:4   [34msuggestion[0m  'Path Parameters' should use    Microsoft.Headings       
+                    sentence-style capitalization.                           
+ 35:4   [34msuggestion[0m  'Example Request' should use    Microsoft.Headings       
+                    sentence-style capitalization.                           
+ 42:4   [34msuggestion[0m  'Example Response' should use   Microsoft.Headings       
+                    sentence-style capitalization.                           
+ 45:4   [34msuggestion[0m  Try to keep sentences short (<  Microsoft.SentenceLength 
+                    30 words).                                               
+ 46:12  [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                    the quotes.                                              
+ 46:13  [34msuggestion[0m  'LOT' has no definition.        Microsoft.Acronyms       
+ 49:23  [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                    the quotes.                                              
+ 49:56  [34msuggestion[0m  'LOT' has no definition.        Microsoft.Acronyms       
+ 50:17  [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                    the quotes.                                              
+ 50:53  [34msuggestion[0m  'LOT' has no definition.        Microsoft.Acronyms       
+ 51:23  [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                    the quotes.                                              
+ 51:59  [34msuggestion[0m  'LOT' has no definition.        Microsoft.Acronyms       
+ 52:25  [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                    the quotes.                                              
+ 52:61  [34msuggestion[0m  'LOT' has no definition.        Microsoft.Acronyms       
+ 53:28  [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                    the quotes.                                              
+ 53:64  [34msuggestion[0m  'LOT' has no definition.        Microsoft.Acronyms       
+ 56:17  [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                    the quotes.                                              
+ 67:12  [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes         
+                    '.                                                       
+ 68:21  [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes         
+                    '.                                                       
+ 69:19  [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes         
+                    '.                                                       
+ 82:43  [33mwarning[0m     For a general audience, use     Microsoft.GeneralURL     
+                    'address' rather than 'URL'.                             
+ 82:63  [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms       
+
+
+ [4mportfolio\nws-api\endpoints\stations.md[0m
+ 9:3     [34msuggestion[0m  'Get Observation Stations'      Microsoft.Headings       
+                     should use sentence-style                                
+                     capitalization.                                          
+ 13:125  [34msuggestion[0m  'be used' looks like passive    Microsoft.Passive        
+                     voice.                                                   
+ 26:4    [34msuggestion[0m  'Query Parameters' should use   Microsoft.Headings       
+                     sentence-style capitalization.                           
+ 36:4    [34msuggestion[0m  'Nearby Stations (Gridpoint)'   Microsoft.Headings       
+                     should use sentence-style                                
+                     capitalization.                                          
+ 44:4    [34msuggestion[0m  'Example Request' should use    Microsoft.Headings       
+                     sentence-style capitalization.                           
+ 49:5    [34msuggestion[0m  'Example Response' should use   Microsoft.Headings       
+                     sentence-style capitalization.                           
+ 52:4    [34msuggestion[0m  Try to keep sentences short (<  Microsoft.SentenceLength 
+                     30 words).                                               
+ 54:13   [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                     the quotes.                                              
+ 54:47   [34msuggestion[0m  'KBUF' has no definition.       Microsoft.Acronyms       
+ 56:17   [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                     the quotes.                                              
+ 57:30   [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                     the quotes.                                              
+ 57:31   [34msuggestion[0m  'KBUF' has no definition.       Microsoft.Acronyms       
+ 59:22   [31merror[0m       Form a negative number with an  Microsoft.Negative       
+                     en dash, not a hyphen.                                   
+ 71:4    [34msuggestion[0m  'Common Status Codes'           Microsoft.Headings       
+                     should use sentence-style                                
+                     capitalization.                                          
+ 75:12   [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes         
+                     '.                                                       
+ 76:21   [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes         
+                     '.                                                       
+ 77:19   [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes         
+                     '.                                                       
+ 88:16   [31merror[0m       Use 'for example' instead of    Microsoft.Foreign        
+                     'e.g.,'.                                                 
+
+
+ [4mportfolio\nws-api\endpoints\zones.md[0m
+ 9:3     [34msuggestion[0m  'Get Zone Metadata' should use  Microsoft.Headings        
+                     sentence-style capitalization.                            
+ 13:19   [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms        
+ 13:81   [34msuggestion[0m  'be filtered' looks like        Microsoft.Passive         
+                     passive voice.                                            
+ 13:102  [31merror[0m       Use 'for example' instead of    Microsoft.Foreign         
+                     'e.g.,'.                                                  
+ 13:186  [34msuggestion[0m  'be used' looks like passive    Microsoft.Passive         
+                     voice.                                                    
+ 26:4    [34msuggestion[0m  'Query Parameters' should use   Microsoft.Headings        
+                     sentence-style capitalization.                            
+ 35:12   [33mwarning[0m     Avoid using acronyms in a       Microsoft.HeadingAcronyms 
+                     title or heading.                                         
+ 49:4    [34msuggestion[0m  'Example Request' should use    Microsoft.Headings        
+                     sentence-style capitalization.                            
+ 54:4    [34msuggestion[0m  'Example Response' should use   Microsoft.Headings        
+                     sentence-style capitalization.                            
+ 60:13   [31merror[0m       Punctuation should be inside    Microsoft.Quotes          
+                     the quotes.                                               
+ 62:15   [31merror[0m       Punctuation should be inside    Microsoft.Quotes          
+                     the quotes.                                               
+ 63:17   [31merror[0m       Punctuation should be inside    Microsoft.Quotes          
+                     the quotes.                                               
+ 64:18   [31merror[0m       Punctuation should be inside    Microsoft.Quotes          
+                     the quotes.                                               
+ 75:12   [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes          
+                     '.                                                        
+ 76:21   [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes          
+                     '.                                                        
+ 77:19   [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes          
+                     '.                                                        
+ 83:9    [34msuggestion[0m  'are used' looks like passive   Microsoft.Passive         
+                     voice.                                                    
+ 85:34   [34msuggestion[0m  'be used' looks like passive    Microsoft.Passive         
+                     voice.                                                    
+ 86:17   [31merror[0m       Use 'doesn't' instead of 'does  Microsoft.Contractions    
+                     not'.                                                     
+ 86:82   [34msuggestion[0m  Verify your use of 'alert'      Microsoft.Vocab           
+                     with the A-Z word list.                                   
+
+
+ [4mportfolio\geojson_explainer\index.md[0m
+ 9:3     [34msuggestion[0m  'GeoJSON Concepts' should use   Microsoft.Headings       
+                     sentence-style capitalization.                           
+ 18:35   [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms       
+ 20:1    [34msuggestion[0m  Try to keep sentences short (<  Microsoft.SentenceLength 
+                     30 words).                                               
+ 22:3    [34msuggestion[0m  'Understanding GeoJSON:         Microsoft.Headings       
+                     A Developer’s Guide to                                   
+                     Geospatial Data' should use                              
+                     sentence-style capitalization.                           
+ 24:3    [31merror[0m       Use 'what's' instead of 'What   Microsoft.Contractions   
+                     is'.                                                     
+ 28:42   [31merror[0m       Use 'it's' instead of 'It is'.  Microsoft.Contractions   
+ 30:65   [34msuggestion[0m  'be used' looks like passive    Microsoft.Passive        
+                     voice.                                                   
+ 35:9    [34msuggestion[0m  'is built' looks like passive   Microsoft.Passive        
+                     voice.                                                   
+ 41:23   [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                     the quotes.                                              
+ 51:26   [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes         
+                     '.                                                       
+ 54:19   [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes         
+                     '.                                                       
+ 58:21   [31merror[0m       Remove the spaces around ' –    Microsoft.Dashes         
+                     '.                                                       
+ 59:6    [31merror[0m       Use 'for example' instead of    Microsoft.Foreign        
+                     'e.g.,'.                                                 
+ 70:9    [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                     the quotes.                                              
+ 73:9    [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                     the quotes.                                              
+ 74:23   [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                     the quotes.                                              
+ 88:68   [34msuggestion[0m  'RFC' has no definition.        Microsoft.Acronyms       
+ 91:9    [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                     the quotes.                                              
+ 91:17   [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                     the quotes.                                              
+ 92:28   [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                     the quotes.                                              
+ 92:37   [31merror[0m       Punctuation should be inside    Microsoft.Quotes         
+                     the quotes.                                              
+ 92:58   [34msuggestion[0m  Verify your use of 'ensure'     Microsoft.Vocab          
+                     with the A-Z word list.                                  
+ 93:19   [34msuggestion[0m  'RFC' has no definition.        Microsoft.Acronyms       
+ 94:8    [31merror[0m       Use 'for example' instead of    Microsoft.Foreign        
+                     'e.g.,'.                                                 
+ 94:42   [31merror[0m       Use 'for example' instead of    Microsoft.Foreign        
+                     'e.g.,'.                                                 
+ 95:23   [31merror[0m       Use 'for example' instead of    Microsoft.Foreign        
+                     'e.g.,'.                                                 
+ 103:35  [34msuggestion[0m  'GIS' has no definition.        Microsoft.Acronyms       
+ 111:9   [34msuggestion[0m  'is designed' looks like        Microsoft.Passive        
+                     passive voice.                                           
+ 113:69  [34msuggestion[0m  'WGS' has no definition.        Microsoft.Acronyms       
+ 114:5   [34msuggestion[0m  'EPSG' has no definition.       Microsoft.Acronyms       
+ 114:21  [34msuggestion[0m  Verify your use of 'ensure'     Microsoft.Vocab          
+                     with the A-Z word list.                                  
+ 116:6   [34msuggestion[0m  'KML' has no definition.        Microsoft.Acronyms       
+ 127:8   [31merror[0m       Don't use 'backend'. See the    Microsoft.Avoid          
+                     A-Z word list for details.                               
+ 135:32  [34msuggestion[0m  Try to simplify this sentence.  Microsoft.Semicolon      
+ 154:44  [33mwarning[0m     Remove 'very' if it's not       Microsoft.Adverbs        
+                     important to the meaning of                              
+                     the statement.                                           
+ 154:63  [34msuggestion[0m  Try to simplify this sentence.  Microsoft.Semicolon      
+ 163:44  [34msuggestion[0m  'GIS' has no definition.        Microsoft.Acronyms       
+ 168:5   [34msuggestion[0m  'KML' has no definition.        Microsoft.Acronyms       
+ 170:19  [33mwarning[0m     Remove 'naturally' if it's not  Microsoft.Adverbs        
+                     important to the meaning of                              
+                     the statement.                                           
+ 185:63  [34msuggestion[0m  'RFC' has no definition.        Microsoft.Acronyms       
+
+
+ [4mportfolio\nws-api\examples\index.md[0m
+ 8:3     [34msuggestion[0m  'Code Examples' should use      Microsoft.Headings   
+                     sentence-style capitalization.                       
+ 10:154  [34msuggestion[0m  'are designed' looks like       Microsoft.Passive    
+                     passive voice.                                       
+ 10:186  [33mwarning[0m     Remove 'quickly' if it's not    Microsoft.Adverbs    
+                     important to the meaning of                          
+                     the statement.                                       
+ 14:4    [34msuggestion[0m  'Available Examples'            Microsoft.Headings   
+                     should use sentence-style                            
+                     capitalization.                                      
+ 16:5    [34msuggestion[0m  'cURL' should use               Microsoft.Headings   
+                     sentence-style capitalization.                       
+ 19:5    [34msuggestion[0m  'JavaScript' should use         Microsoft.Headings   
+                     sentence-style capitalization.                       
+ 23:74   [31merror[0m       Don't use 'backend'. See the    Microsoft.Avoid      
+                     A-Z word list for details.                           
+ 29:51   [34msuggestion[0m  'is required' looks like        Microsoft.Passive    
+                     passive voice.                                       
+ 29:70   [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms   
+ 29:154  [33mwarning[0m     For a general audience, use     Microsoft.GeneralURL 
+                     'address' rather than 'URL'.                         
+
+
+ [4mportfolio\nws-api\index.md[0m
+ 9:3     [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms        
+ 9:3     [33mwarning[0m     Avoid using acronyms in a       Microsoft.HeadingAcronyms 
+                     title or heading.                                         
+ 9:3     [34msuggestion[0m  'NWS API Reference' should use  Microsoft.Headings        
+                     sentence-style capitalization.                            
+ 9:7     [33mwarning[0m     Avoid using acronyms in a       Microsoft.HeadingAcronyms 
+                     title or heading.                                         
+ 11:213  [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms        
+ 15:18   [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms        
+ 17:39   [31merror[0m       Use 'for example' instead of    Microsoft.Foreign         
+                     'e.g.,'.                                                  
+
+
+ [4mstyles\clarity\README.md[0m
+ 1:3  [34msuggestion[0m  'Custom Microsoft Style Rules'  Microsoft.Headings 
+                  should use sentence-style                          
+                  capitalization.                                    
+
+
+ [4mportfolio\nws-api\examples\python.md[0m
+ 9:3     [34msuggestion[0m  'Using Python with the NWS      Microsoft.Headings        
+                     API' should use sentence-style                            
+                     capitalization.                                           
+ 9:25    [33mwarning[0m     Avoid using acronyms in a       Microsoft.HeadingAcronyms 
+                     title or heading.                                         
+ 9:25    [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms        
+ 9:29    [33mwarning[0m     Avoid using acronyms in a       Microsoft.HeadingAcronyms 
+                     title or heading.                                         
+ 11:180  [31merror[0m       Don't use 'backend'. See the    Microsoft.Avoid           
+                     A-Z word list for details.                                
+ 25:4    [34msuggestion[0m  '1. Get Forecast by Latitude    Microsoft.Headings        
+                     and Longitude' should use                                 
+                     sentence-style capitalization.                            
+ 48:4    [34msuggestion[0m  '2. Translate Coordinates       Microsoft.Headings        
+                     to Grid and Forecast Links'                               
+                     should use sentence-style                                 
+                     capitalization.                                           
+ 65:4    [34msuggestion[0m  '3. Get Active Alerts           Microsoft.Headings        
+                     by State' should use                                      
+                     sentence-style capitalization.                            
+ 84:49   [34msuggestion[0m  'is preferred' looks like       Microsoft.Passive         
+                     passive voice.                                            
+
+
+ [4mportfolio\nws-api\examples\javascript.md[0m
+ 9:3     [34msuggestion[0m  'Using JavaScript with the NWS  Microsoft.Headings        
+                     API' should use sentence-style                            
+                     capitalization.                                           
+ 9:29    [34msuggestion[0m  'NWS' has no definition.        Microsoft.Acronyms        
+ 9:29    [33mwarning[0m     Avoid using acronyms in a       Microsoft.HeadingAcronyms 
+                     title or heading.                                         
+ 9:33    [33mwarning[0m     Avoid using acronyms in a       Microsoft.HeadingAcronyms 
+                     title or heading.                                         
+ 15:4    [34msuggestion[0m  '1. Get Forecast by Latitude    Microsoft.Headings        
+                     and Longitude' should use                                 
+                     sentence-style capitalization.                            
+ 30:106  [34msuggestion[0m  Consider using 'time' instead   Microsoft.Wordiness       
+                     of 'time period'.                                         
+ 34:4    [34msuggestion[0m  '2. Translate Coordinates       Microsoft.Headings        
+                     to Grid and Forecast Links'                               
+                     should use sentence-style                                 
+                     capitalization.                                           
+ 56:4    [34msuggestion[0m  '3. Get Active Alerts           Microsoft.Headings        
+                     by State' should use                                      
+                     sentence-style capitalization.                            
+ 82:24   [34msuggestion[0m  Verify your use of 'ensure'     Microsoft.Vocab           
+                     with the A-Z word list.                                   
+ 82:81   [34msuggestion[0m  'CORS' has no definition.       Microsoft.Acronyms        
+ 82:99   [33mwarning[0m     Remove 'generally' if it's not  Microsoft.Adverbs         
+                     important to the meaning of                               
+                     the statement.                                            
+ 87:55   [33mwarning[0m     Try to avoid using              Microsoft.We              
+                     first-person plural like                                  
+                     'our'.                                                    
+
+
+ [4mportfolio\nws-api\quickstart.md[0m
+ 8:3    [34msuggestion[0m  'Quickstart Guide' should use   Microsoft.Headings   
+                    sentence-style capitalization.                       
+ 14:4   [34msuggestion[0m  '1. Choose a Location'          Microsoft.Headings   
+                    should use sentence-style                            
+                    capitalization.                                      
+ 21:8   [34msuggestion[0m  'are interested' looks like     Microsoft.Passive    
+                    passive voice.                                       
+ 25:4   [34msuggestion[0m  '2. Translate Coordinates       Microsoft.Headings   
+                    to a Grid Point' should use                          
+                    sentence-style capitalization.                       
+ 35:3   [33mwarning[0m     For a general audience, use     Microsoft.GeneralURL 
+                    'address' rather than 'URL'.                         
+ 35:3   [34msuggestion[0m  Use 'of' (not 'for') to         Microsoft.URLFormat  
+                    describe the relationship of                         
+                    the word URL to a resource.                          
+ 40:4   [34msuggestion[0m  '3. Get the Forecast'           Microsoft.Headings   
+                    should use sentence-style                            
+                    capitalization.                                      
+ 42:20  [33mwarning[0m     For a general audience, use     Microsoft.GeneralURL 
+                    'address' rather than 'URL'.                         
+ 53:4   [34msuggestion[0m  '4. Explore Additional Data'    Microsoft.Headings   
+                    should use sentence-style                            
+                    capitalization.                                      
+ 67:4   [34msuggestion[0m  '5. Follow Best Practices'      Microsoft.Headings   
+                    should use sentence-style                            
+                    capitalization.                                      
+
+
+ [4mportfolio\nws-api\overview.md[0m
+ 8:3     [33mwarning[0m     Avoid using acronyms in a       Microsoft.HeadingAcronyms 
+                     title or heading.                                         
+ 8:3     [34msuggestion[0m  'API Overview' should use       Microsoft.Headings        
+                     sentence-style capitalization.                            
+ 10:388  [34msuggestion[0m  Verify your use of 'as well     Microsoft.Vocab           
+                     as' with the A-Z word list.                               
+ 12:260  [31merror[0m       Use 'it's' instead of 'It is'.  Microsoft.Contractions    
+ 12:328  [34msuggestion[0m  Consider using 'also' instead   Microsoft.Wordiness       
+                     of 'In addition'.                                         
+ 14:1    [34msuggestion[0m  Try to keep sentences short (<  Microsoft.SentenceLength  
+                     30 words).                                                
+ 20:7    [34msuggestion[0m  'Key Features' should use       Microsoft.Headings        
+                     sentence-style capitalization.                            
+ 22:21   [34msuggestion[0m  Verify your use of 'allows'     Microsoft.Vocab           
+                     with the A-Z word list.                                   
+ 35:3    [34msuggestion[0m  'DWML' has no definition.       Microsoft.Acronyms        
+ 36:3    [34msuggestion[0m  'OXML' has no definition.       Microsoft.Acronyms        
+ 37:3    [34msuggestion[0m  'CAP' has no definition.        Microsoft.Acronyms        
+ 38:3    [34msuggestion[0m  'ATOM' has no definition.       Microsoft.Acronyms        
+ 54:8    [33mwarning[0m     For a general audience, use     Microsoft.GeneralURL      
+                     'address' rather than 'URL'.                              
+
+✖ [31m101 errors[0m, [33m59 warnings[0m and [34m266 suggestions[0m in 28 files.

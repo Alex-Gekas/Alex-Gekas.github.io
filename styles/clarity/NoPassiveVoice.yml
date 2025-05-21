@@ -1,0 +1,5 @@
+
+extends: write-good.Passive
+message: "Avoid passive voice."
+level: suggestion
+    
