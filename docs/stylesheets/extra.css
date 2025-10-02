@@ -1,0 +1,29 @@
+/* Global content width */
+.md-content { max-width: 880px; margin: 0 auto; }
+
+/* Landing hero */
+.hero {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+}
+.hero-portrait {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+.hero h1 {
+  font-size: 2.25rem;
+  margin: 0.25rem 0 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+.tagline {
+  font-size: 1.1rem;
+  max-width: 680px;
+  margin: 0.5rem auto 1.25rem;
+  color: var(--md-default-fg-color--light);
+}
+.cta .md-button { margin: 0.25rem; }
