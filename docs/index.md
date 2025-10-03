@@ -7,14 +7,22 @@ hide:
 
 <div class="hero">
   <img src="assets/images/portrait.jpg" alt="Alex Gekas" class="hero-portrait">
-  <h1>Hi, I'm Alex Gekas</h1>
+  <h1>Alex Gekas</h1>
   <p class="tagline">
-    Technical writer specializing in SaaS docs, API references, and immersive VR projects.
-    I turn complex systems into clear, navigable content.
+    Technical writer creating API references, tutorials, and style guides for SaaS teams and immersive tech projects.
   </p>
+
+  <div class="hero-highlights">
+    <span>API Docs</span>
+    <span>Tutorials</span>
+    <span>Concept Guides</span>
+    <span>Style Guides</span>
+  </div>
+
   <div class="cta">
-    <a href="writing-samples/tutorials/sample-tutorial/" class="md-button">View Tutorials</a>
-    <a href="writing-samples/concept-guides/geojson-concept-guide/" class="md-button md-button--primary">See Full Portfolio</a>
+    <a href="writing-samples/concept-guides/geojson-concept-guide/" class="md-button">See Portfolio</a>
+    <a href="writing-samples/api-reference/nws-api-reference/" class="md-button">API Sample</a>
+    <a href="mailto:alex.gekas@gmail.com" class="md-button md-button--primary">Contact</a>
   </div>
 </div>
 
@@ -22,19 +30,14 @@ hide:
 
 ## ✍ Writing Samples
 
-Browse selected work:
-- **Tutorials** — step-by-step guides for APIs, tools, and workflows  
+- **Tutorials** — step-by-step guides  
   → [Sample tutorial](writing-samples/tutorials/sample-tutorial.md)
-- **Concept Guides** — approachable explanations of complex topics  
+
+- **Concept Guides** — approachable explanations  
   → [Understanding GeoJSON](writing-samples/concept-guides/geojson-concept-guide.md)
-- **API Reference** — clean, structured developer reference docs  
+
+- **API Reference** — clean developer references  
   → [NWS API Reference (sample)](writing-samples/api-reference/nws-api-reference.md)
-- **Style Guides** — voice, tone, and terminology frameworks  
+
+- **Style Guides** — voice, tone, terminology frameworks  
   → [Chronologue Relay Style Guide (sample)](writing-samples/style-guides/chronologue-style-guide.md)
-
----
-
-## 🌐 Connect
-- [LinkedIn](https://www.linkedin.com/in/yourprofile)
-- [GitHub](https://github.com/yourhandle)
-- 📧 [Email](mailto:you@example.com)

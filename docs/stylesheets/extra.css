@@ -1,29 +1,81 @@
-/* Global content width */
+/* ---------- Brand tokens ---------- */
+:root {
+  /* Indigo palette: professional and calm */
+  --brand: #3f51b5;
+  --brand-ink: #1e2a66;
+  --brand-ink-soft: #5966c7;
+}
+
+/* Global content width (landing page centered) */
 .md-content { max-width: 880px; margin: 0 auto; }
 
-/* Landing hero */
+/* ---------- Landing hero ---------- */
 .hero {
   text-align: center;
-  padding: 3rem 1rem 2rem;
+  padding: 3.25rem 1rem 2.25rem;
+  border-radius: 14px;
+  background:
+    radial-gradient(1200px 500px at 50% -20%, rgba(63,81,181,0.15), transparent 60%),
+    linear-gradient(180deg, rgba(63,81,181,0.06), transparent 60%);
+  box-shadow: 0 6px 28px rgba(0,0,0,0.06);
 }
+
 .hero-portrait {
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   object-fit: cover;
-  margin-bottom: 1rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  margin-bottom: 0.85rem;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.10);
 }
+
 .hero h1 {
   font-size: 2.25rem;
-  margin: 0.25rem 0 0.5rem;
+  line-height: 1.15;
+  margin: 0.2rem 0 0.35rem;
   font-weight: 800;
   letter-spacing: 0.2px;
+  color: var(--brand-ink);
 }
+
 .tagline {
-  font-size: 1.1rem;
-  max-width: 680px;
-  margin: 0.5rem auto 1.25rem;
+  font-size: 1.08rem;
+  max-width: 720px;
+  margin: 0.25rem auto 1.0rem;
   color: var(--md-default-fg-color--light);
 }
+
+/* Highlight “chips” under the tagline */
+.hero-highlights {
+  display: inline-flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 0 1.1rem;
+}
+.hero-highlights span {
+  font-size: 0.85rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(63,81,181,0.25);
+  background: rgba(63,81,181,0.06);
+}
+
+/* CTA buttons (use Material’s classes but nudge styles) */
 .cta .md-button { margin: 0.25rem; }
+.md-button--primary {
+  background: var(--brand);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+.md-button--primary:hover { filter: brightness(0.95); }
+
+/* Reduce page chrome on home */
+.md-main__inner { padding-top: 0.35rem; }
+
+/* --- Optional alternatives (swap values above) ---
+  Teal:
+    --brand: #00897b; --brand-ink: #0a423d; --brand-ink-soft: #34a69a;
+  Blue-gray:
+    --brand: #546e7a; --brand-ink: #2b3a40; --brand-ink-soft: #6f8a94;
+*/
+

@@ -1,20 +1,22 @@
 site_name: Alex Gekas | Technical Writer
 site_description: Technical writing portfolio — tutorials, API docs, concept guides, and style guides.
 site_url: https://your-domain.example.com
+
 theme:
   name: material
   logo: assets/images/logo.svg
   favicon: assets/images/favicon.ico
   palette:
     - scheme: default
-      primary: blue
-      accent: deep purple
+      primary: indigo
+      accent: indigo
   features:
     - navigation.instant
     - navigation.expand
     - navigation.tracking
     - content.code.copy
     - content.tabs.link
+
 nav:
   - Home: index.md
   - Writing Samples:
@@ -22,6 +24,7 @@ nav:
     - Concept Guides: writing-samples/concept-guides/geojson-concept-guide.md
     - API Reference: writing-samples/api-reference/nws-api-reference.md
     - Style Guides: writing-samples/style-guides/chronologue-style-guide.md
+
 markdown_extensions:
   - admonition
   - attr_list
@@ -35,16 +38,21 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_generator: !!python/name:materialx.emoji.to_svg
       emoji_index: !!python/name:materialx.emoji.twemoji
+
 extra_css:
   - stylesheets/extra.css
+
 plugins:
   - search
+
 extra:
   social:
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/yourprofile
+      link: https://www.linkedin.com/in/alex-gekas-1a3b9b239/
     - icon: fontawesome/brands/github
-      link: https://github.com/yourhandle
+      link: https://github.com/alex-gekas
     - icon: fontawesome/solid/envelope
-      link: mailto:you@example.com
-repo_url: https://github.com/yourhandle/your-portfolio-repo
+      link: mailto:alex.gekas@gmail.com
+
+# Update this once your repo name is final:
+repo_url: https://github.com/alex-gekas/<your-portfolio-repo>
