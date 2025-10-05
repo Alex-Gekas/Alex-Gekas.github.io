@@ -1,8 +1,6 @@
 ---
-title: NWS API Reference (Sample)
-tags:
-  - api
-  - reference
+title: "Overview"
+description: "Introduction to the NWS API"
 ---
 
 # API Overview
@@ -55,4 +53,3 @@ The NWS Weather API allows access to its data through customizable queries. It h
 ```
 https://api.weather.gov
 ```
-
