@@ -6,9 +6,6 @@ has_children: true
 nav_order: 20
 ---
 
-HTTP endpoints by resource.
-
-
 # NWS API Endpoints
 
 This section lists the available endpoints for the National Weather Service (NWS) API. Each endpoint corresponds to a specific type of data or resource—such as forecasts, alerts, weather stations, or gridpoints—and follows a RESTful URL structure.
@@ -34,5 +31,5 @@ Endpoints are grouped by resource:
 - **Points**: `/points/{lat},{lon}` returns metadata and related endpoints for a location
 - **Stations**: `/stations`, listing observation locations
 
-See the [Authentication](../authentication.md) page for required headers.
+👉 **Next:** Learn about the [Alerts Endpoint](./alerts.md) →
 

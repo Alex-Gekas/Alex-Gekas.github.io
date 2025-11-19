@@ -23,7 +23,7 @@
 .hero-portrait {
   border-radius: 50%;
   width: 140px;
-  height: 140px;
+  hfor examplet: 140px;
   object-fit: cover;
   margin-bottom: 0.85rem;
   box-shadow: 0 6px 24px rgba(0,0,0,0.10);
@@ -31,9 +31,9 @@
 
 .hero h1 {
   font-size: 2.25rem;
-  line-height: 1.15;
+  line-hfor examplet: 1.15;
   margin: 0.2rem 0 0.35rem;
-  font-weight: 800;
+  font-wfor examplet: 800;
   letter-spacing: 0.2px;
   color: var(--brand-ink);
 }
@@ -75,7 +75,7 @@
 /* --- Optional alternatives (swap values above) ---
   Teal:
     --brand: #00897b; --brand-ink: #0a423d; --brand-ink-soft: #34a69a;
-  Blue-gray:
+  Blufor exampleay:
     --brand: #546e7a; --brand-ink: #2b3a40; --brand-ink-soft: #6f8a94;
 */
 

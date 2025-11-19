@@ -7,81 +7,208 @@ nav_order: 5
 
 # Get Observation Stations
 
-`GET /stations`
+## `GET /stations`
 
-This endpoint returns a list of all weather observation stations managed by the National Weather Service (NWS). It can also be used to retrieve metadata for a single station or filter stations by location.
+## Overview
 
-> Example: List all active stations or get nearby stations for a given gridpoint.
+Returns metadata for official NWS observation stations. Use it to discover stations near an area by state, then follow each station’s links for observations. Returns metadata for official NWS observation stations.
 
----
+## Headers & Auth
 
-## Authentication
+`User-Agent` (required): A string identifying your app and contact (for example, MyWeatherApp/1.0 (me@myweatherapp.com).
 
-This endpoint requires a `User-Agent` header.  
-See [Authentication](../authentication.md) for details.
+`Accept` (recommended): application/geo+json
 
----
+`Authorization`: Not required.
 
-## Query Parameters
+## HTTP Requests
 
-| Name       | Description                                          | Required | Example                          |
-|------------|------------------------------------------------------|----------|----------------------------------|
-| `limit`    | Max number of stations to return                     | No       | `25`                             |
-| `state`    | Two-letter state abbreviation                        | No       | `NY`                             |
-| `active`   | Return only active stations (`true` or `false`)      | No       | `true`                           |
+To return a list of stations:
+`GET https://api.weather.gov/stations`
 
----
+For a specific station:
+`GET https://api.weather.gov/stations/{stationId}`
 
-## Nearby Stations (Gridpoint)
+## Path Parameters
 
-To get observation stations near a forecast gridpoint:
+(for `GET /stations/{stationId}`)
 
-```http
-GET /gridpoints/{office}/{gridX},{gridY}/stations
+| Name        | Type   | Required | Constraints                                      | Example |
+| ----------- | ------ | -------: | ------------------------------------------------ | ------- |
+| `stationId` | string |        ✓ | 3–4 letter ICAO/FAA (for example, KPHL) or other NWS id | `KBUF`  |
+
+## Query parameters
+
+| Name        | Type          | Required | Default | Constraints                                    | Example                                               |
+| ----------- | ------------- | -------: | ------- | ---------------------------------------------- | ----------------------------------------------------- |
+| `state`     | string or CSV |          |         | One or more US state codes                     | `state=NY` or `state=OK,TX` ([zenpacks.zenoss.io][1]) |
+| `bbox`      | string        |          |         | `west,south,east,north` (WGS84)                | `bbox=-79.9,42.4,-78.2,43.4` *(example format)*       |
+| `limit`     | integer       |          | 25      | Max **500** per request                        | `limit=200` ([GitHub][2])                             |
+| `cursor`    | string        |          |         | Use value from server to paginate to next page | `cursor=…`                                            |
+| `stationId` | string or CSV |          |         | Filter to one or more known ids                | `stationId=KBUF,KIAG`                                 |
+                             |
+
+## Example requests
+
+cURL—list stations in New York (first 100)
+
+```bash
+curl -s "https://api.weather.gov/stations?state=NY&limit=100" 
+  -H "User-Agent: MyWeatherApp/1.0 (me@myweatherapp.com)" 
+  -H "Accept: application/geo+json"
+```
+JavaScript (Node)—get one station and its latest obs link
+```bash
+import fetch from "node-fetch";
+
+const ua = "MyWeatherApp/1.0 (me@myweatherapp.com)";
+const r = await fetch("https://api.weather.gov/stations/KBUF", {
+  headers: { "User-Agent": ua, "Accept": "application/geo+json" }
+});
+if (!r.ok) throw new Error(`HTTP ${r.status}`);
+const station = await r.json();
+// You can then call: GET /stations/KBUF/observations/latest
+console.log(station.properties.stationIdentifier, station.properties.name);
 ```
 
-## Example Request
-```
-curl -H "User-Agent: your-email@example.com" \
-  https://api.weather.gov/stations?state=NY&limit=5
-```
-##  Example Response
-<details> <summary>Click to expand</summary>
-{
-  "features": [
+## Example responses
+
+200 OK—GET /stations?state=NY&limit=2 (truncated)
+
+??? example "✅ 200 OK—GET /stations?state=NY&limit=2"
+
+    ```json
+    {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "id": "https://api.weather.gov/stations/KBUF",
+          "type": "Feature",
+          "geometry": { "type": "Point", "coordinates": [-78.735, 42.940] },
+          "properties": {
+            "stationIdentifier": "KBUF",
+            "name": "Buffalo Niagara Intl Airport",
+            "timeZone": "America/New_York",
+            "elevation": { "unitCode": "wmoUnit:m", "value": 221.0 }
+          }
+        },
+        {
+          "id": "https://api.weather.gov/stations/KIAG",
+          "type": "Feature",
+          "geometry": { "type": "Point", "coordinates": [-78.946, 43.107] },
+          "properties": {
+            "stationIdentifier": "KIAG",
+            "name": "Niagara Falls Intl Airport",
+            "timeZone": "America/New_York",
+            "elevation": { "unitCode": "wmoUnit:m", "value": 180.0 }
+          }
+        }
+      ]
+    }
+    ```
+200 OK - `GET /stations?state=NY&limit=2`(truncated)
+??? example "✅ 200 OK—Example Response"
+
+    ```json
+    {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "id": "https://api.weather.gov/stations/KBUF",
+          "type": "Feature",
+          "geometry": { "type": "Point", "coordinates": [-78.735, 42.940] },
+          "properties": {
+            "stationIdentifier": "KBUF",
+            "name": "Buffalo Niagara Intl Airport",
+            "timeZone": "America/New_York",
+            "elevation": { "unitCode": "wmoUnit:m", "value": 221.0 }
+          }
+        },
+        {
+          "id": "https://api.weather.gov/stations/KIAG",
+          "type": "Feature",
+          "geometry": { "type": "Point", "coordinates": [-78.946, 43.107] },
+          "properties": {
+            "stationIdentifier": "KIAG",
+            "name": "Niagara Falls Intl Airport",
+            "timeZone": "America/New_York",
+            "elevation": { "unitCode": "wmoUnit:m", "value": 180.0 }
+          }
+        }
+      ]
+    }
+    ```
+200 OK—GET /stations/KBUF (truncated)
+
+??? example "✅ 200 OK—GET /stations/KBUF"
+
+    ```json
     {
       "id": "https://api.weather.gov/stations/KBUF",
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-78.735, 42.940] },
       "properties": {
-        "name": "Buffalo Niagara International Airport",
         "stationIdentifier": "KBUF",
-        "latitude": 42.9405,
-        "longitude": -78.7369,
-        "elevation": {
-          "value": 215.2,
-          "unitCode": "unit:m"
-        },
-        "timezone": "America/New_York"
+        "name": "Buffalo Niagara Intl Airport",
+        "timeZone": "America/New_York",
+        "elevation": { "unitCode": "wmoUnit:m", "value": 221.0 }
       }
     }
-  ]
+    ```
+400 Bad Request—invalid bbox
+```bash
+{
+  "correlationId": "…",
+  "title": "Bad Request",
+  "type": "https://api.weather.gov/problems/BadRequest",
+  "detail": "bbox must be west,south,east,north (WGS84)"
 }
-</details>
+```
+403 Forbidden—missing User-Agent
+```bash
+{
+  "title": "Access denied",
+  "detail": "A valid User-Agent header is required."
+}
+```
+404 Not Found—unknown station
+```bash
+{
+  "title": "Not Found",
+  "detail": "Station KZZZ was not found."
+}
+```
+## Response fields
 
-## Common Status Codes
+??? example "📘 Response Fields—GET /stations"
 
-| Code | Meaning                             |
-|------|-------------------------------------|
-| 200  | OK–Request was successful.        |
-| 400  | Bad Request–Invalid query params. |
-| 404  | Not Found–Station or region not found. |
 
-➡️ See [HTTP Status Codes](../concepts/status-codes.md) for a full reference.
+    | Field                           | Type         | Description                                                                                                                                               |
+    | ------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | `type`                          | string       | GeoJSON type (`FeatureCollection` or `Feature`). ([National Weather Service][1])                                                                          |
+    | `features[]`                    | array        | List of station features (for collection responses).                                                                                                      |
+    | `id`                            | string (URL) | Canonical URL for this station resource.                                                                                                                  |
+    | `geometry.type`                 | string       | Always `Point` for station features.                                                                                                                      |
+    | `geometry.coordinates`          | number[2]    | `[lon, lat]` in WGS84.                                                                                                                                    |
+    | `properties.stationIdentifier`  | string       | Station ID (for example, `KBUF`).                                                                                                                                |
+    | `properties.name`               | string       | Human-readable station name. *(Added to observations “latest” per 2025 SCN; often present on station resources as well.)* ([National Weather Service][2]) |
+    | `properties.timeZone`           | string       | IANA time zone for the station.                                                                                                                           |
+    | `properties.elevation.unitCode` | string       | Unit per WMO code list (for example, `wmoUnit:m`).                                                                                                               |
+    | `properties.elevation.value`    | number       | Elevation value in meters.                                                                                                                                |
 
-## Notes
+## Status codes
 
-- Use this endpoint to browse or filter all NWS stations.
-- Each station includes metadata such as location, elevation, and station ID.
-- You can access a specific station directly with:
-  - `/stations/{stationIdentifier}`
-- For stations near a forecast point, use the `/gridpoints/{office}/{gridX},{gridY}/stations` endpoint.
-- Station IDs (for example, `KBUF`) are commonly used in observations and reports.
+| Code | Meaning      | What to do                                                    |
+| ---: | ------------ | ------------------------------------------------------------- |
+|  200 | OK           |—                                                            |
+|  400 | Bad Request  | Check parameter shapes (for example, `bbox` order/format).           |
+|  403 | Forbidden    | Add a valid `User-Agent` header. ([weather-gov.github.io][1]) |
+|  404 | Not Found    | Verify `stationId`.                                           |
+|  5xx | Server error | Retry with backoff; respect rate limits.                      |
+
+## Notes & tips
+
+**Pagination**: Use limit (max 500) and the server-provided paging mechanism (cursor / “next” link) to iterate through large result sets. 
+GitHub
+
+**Discoverability**: From /points/{lat},{lon} you can follow observationStations to the list of nearby stations for that gridpoint.

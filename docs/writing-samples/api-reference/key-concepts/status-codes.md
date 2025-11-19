@@ -33,7 +33,7 @@ See the [Endpoints section](../endpoints/index.md) for details.
 
 | Code | Meaning             | Description                                           |
 |------|---------------------|-------------------------------------------------------|
-| 400  | Bad Request         | The request was invalid or malformed (e.g., incorrect parameter format). |
+| 400  | Bad Request         | The request was invalid or malformed (for example, incorrect parameter format). |
 | 401  | Unauthorized        | Missing or invalid `User-Agent` header. |
 | 403  | Forbidden           | You aren't authorized to access this resource. |
 | 404  | Not Found           | The endpoint or resource couldn't be found. |
@@ -63,3 +63,4 @@ When an error occurs, the API returns a structured JSON response like this:
   "type": "https://api.weather.gov/problems/InvalidParameter"
 }
 ```
+👉**Next:** Learn about units used by the NWS API [Units](./units.md) → 

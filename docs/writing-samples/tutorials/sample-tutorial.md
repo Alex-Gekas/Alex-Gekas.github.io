@@ -19,7 +19,7 @@ Help a new user complete a task successfully the first time.
 ## Steps
 1. Open **Settings → Integrations**.
 2. Click **Create API Key**.
-3. Copy the generated key and store it securely.
+3. Copy thfor examplenerated key and store it securely.
 4. Test with:
    ```bash
    curl -H "Authorization: Bearer <YOUR_KEY>" https://api.example.com/v1/ping

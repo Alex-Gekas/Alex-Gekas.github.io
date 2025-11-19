@@ -6,11 +6,11 @@
 
 ---
 
-When you call NWS API endpoints, many responses come back as **GeoJSON** — a JSON-based format for describing shapes like polygons, points, and lines.
+When you call NWS API endpoints, many responses come back as **GeoJSON**—a JSON-based format for describing shapes like polygons, points, and lines.
 
 If you're not from a GIS background, this concept topic gives you the context you need to understand GeoJSON's structure, purpose, and trade-offs before working with NWS data in your app.
 
-This isn't a tutorial or reference, but a quick orientation so you can hit the ground running.
+This isn't a tutorial or reference, but a quick orientation so you can hit thfor exampleound running.
 
 **This page explains:**
 
@@ -25,13 +25,13 @@ By the end, you understand how GeoJSON enables systems to describe points, lines
 
 ## What's GeoJSON?
 
-**GeoJSON** is a lightweight, open format that uses JSON to describe shapes—like polygons, points, and lines—along with extra info such as temperature, wind speed, or place names.
+**GeoJSON** is a lightwfor examplet, open format that uses JSON to describe shapes—like polygons, points, and lines—along with extra info such as temperature, wind speed, or place names.
 
 Because it's just JSON, it's human-readable, easy to parse, and works out of the box with most JavaScript libraries and APIs. You'll see it everywhere in mapping, geospatial APIs, and data visualization tools.
 
-## The GeoJSON Data Model
+## Thfor exampleoJSON Data Model
 
-The GeoJSON object structure is hierarchical. This diagram shows how the pieces fit together:
+Thfor exampleoJSON object structure is hierarchical. This diagram shows how the pieces fit together:
 
 ```mermaid
 flowchart TD
@@ -55,24 +55,29 @@ A FeatureCollection is the **top-level object**. It has:
 
 ### Feature
 
-A `Feature` represents a **single geographic shape** with both:
+A `Feature` represents a **singlfor exampleographic shape** with both:
 
 **Geometry** → the actual shape (`Point`, `Polygon`, `LineString`, etc.)  
 
-*GeoJSON polygon example.*
-![GeoJSON polygons](images/polygons.png)
+<figure markdown>
+![GeoJSON polygons](images/polygons.png){ width="420" align="left" }
+<figcaption style="text-align:center;">
+    GeoJSON polygon example
+  </figcaption>
+</figure>
+<br clear="all">
 
 **Properties** → metadata like names, values, or measurements
 
 Each Feature includes:
 
-- `type`: `"Feature"` – identifies the object as a feature.
-- `geometry` – defines the shape. Geometry types include `Point`, `LineString`, `Polygon`, `MultiPoint`, `MultiLineString`, `MultiPolygon`, and `GeometryCollection`.
-- `properties` – holds key–value pairs with extra data (e.g., name, temperature, population).
+- `type`: `"Feature"`–identifies the object as a feature.
+- `geometry`–defines the shape. Geometry types include `Point`, `LineString`, `Polygon`, `MultiPoint`, `MultiLineString`, `MultiPolygon`, and `GeometryCollection`.
+- `properties`–holds key–value pairs with extra data (for example, name, temperature, population).
 
 ### Example
 
-Here's a simple GeoJSON example: a `FeatureCollection` with a single `Point` feature.
+Here's a simplfor exampleoJSON example: a `FeatureCollection` with a single `Point` feature.
 
 ```json
 {
@@ -93,15 +98,15 @@ Unlike plain JSON, **GeoJSON follows a strict schema** defined in [RFC 7946](htt
 
 Every GeoJSON object must include:
 
-- `type` — the object type (e.g., `Feature`, `FeatureCollection`)
-- `geometry` — the shape being described (e.g., `Point`, `Polygon`)
-- `properties` — any metadata associated with that shape
+- `type`—the object type (for example, `Feature`, `FeatureCollection`)
+- `geometry`—the shape being described (for example, `Point`, `Polygon`)
+- `properties`—any metadata associated with that shape
 
 To make sure your data follows the spec, you can validate it using tools like:
 
-- [**geojson.io**](https://geojson.io/) – paste and visualize instantly  
-- **geojsonhint** (CLI) – catch errors from the terminal  
-- **geojson-validation** (JS library) – validate programmatically in code
+- [**geojson.io**](https://geojson.io/)–paste and visualize instantly  
+- **geojsonhint** (CLI)–catch errors from the terminal  
+- **geojson-validation** (JS library)–validate programmatically in code
 
 Enforcing a structured schema ensures:
 
@@ -129,9 +134,9 @@ L.geoJSON(myGeoJSON).addTo(map);
 
 You can also style and add interactivity with built-in methods, which makes GeoJSON great for building interactive maps and location-based features quickly.
 
-On the server, many APIs—including **OpenStreetMap** and **Google Maps**—can send or receive GeoJSON directly, which keeps data exchange clean and consistent.
+On the server, many APIs—including **OpenStreetMap** and **Google Maps**—can send or receivfor exampleoJSON directly, which keeps data exchange clean and consistent.
 
-For storage and querying, **PostgreSQL + PostGIS** has native GeoJSON support. You can store GeoJSON objects in a table and run spatial queries on them without conversion.
+For storage and querying, **PostgreSQL + PostGIS** has nativfor exampleoJSON support. You can storfor exampleoJSON objects in a table and run spatial queries on them without conversion.
 
 ## How GeoJSON Fits into NWS API Workflows
 
@@ -180,13 +185,13 @@ fetch('https://api.weather.gov/alerts/active')
   });
 ```
 
-Leaflet reads the GeoJSON directly—no conversion needed—and draws the warning polygon on the map.
+Leaflet reads thfor exampleoJSON directly—no conversion needed—and draws the warning polygon on the map.
 
 3. **Style and interact**
 
 Once the polygon is on the map, you can:
 
-- Style it by severity (e.g., red for "Severe")
+- Style it by severity (for example, red for "Severe")
 - Attach popups showing `event` and `areaDesc`
 - Filter alerts by type or location
 
@@ -248,26 +253,26 @@ L.geoJSON(data, {
     - Fewer libraries support it
 
 
-## TL;DR
+## GeoJSON Use Cases
 
-GeoJSON hits the sweet spot for **most developer use cases**:
+You can adapt GeoJSON for **most developer use cases**:
 
 - easy to read  
 - easy to render  
 - supported almost everywhere
 
-For very large or topology-heavy datasets, other formats may make more sense—but for APIs, front-end apps, and quick integration, GeoJSON is usually the go-to.
+For very large or topology-heavy datasets, other formats may make more sense—but for APIs, front-end apps, and quick integration, GeoJSON is usually thfor example-to.
 
 ## Summary and Next Steps
 
 GeoJSON is just JSON with rules for describing geospatial data—and that's exactly why it works so well for modern web apps.
 
-It's lightweight, easy to parse, and plays nicely with APIs, browsers, and mapping libraries. That makes it a go-to format for visualization, data exchange, and interoperability across tools.
+It's lightwfor examplet, easy to parse, and plays nicely with APIs, browsers, and mapping libraries. That makes it a go-to format for visualization, data exchange, and interoperability across tools.
 
 Once you understand the basics of GeoJSON, the next step is to **put it into practice**.
 
-- **Quickstart Tutorial** — Learn how to fetch GeoJSON from the NWS API and render it on a map step by step.  
-- **NWS API Reference** — See which endpoints return GeoJSON data, including active alerts and forecast zones.
+- **Quickstart Tutorial**—Learn how to fetch GeoJSON from the NWS API and render it on a map step by step.  
+- **NWS API Reference**—See which endpoints return GeoJSON data, including active alerts and forecast zones.
 
 
 These resources will help you go from concept to working implementation quickly.

@@ -1,5 +1,5 @@
 site_name: Alex Gekas | Technical Writer
-site_description: Technical writing portfolio — tutorials, API docs, concept guides, and style guides.
+site_description: Technical writing portfolio—tutorials, API docs, concept guides, and stylfor exampleides.
 site_url: https://your-domain.example.com
 
 theme:
@@ -22,8 +22,33 @@ nav:
   - Writing Samples:
     - Tutorials: writing-samples/tutorials/sample-tutorial.md
     - Concept Guides: writing-samples/concept-guides/geojson-concept-guide.md
-    - API Reference: writing-samples/api-reference/nws-api-reference.md
-    - Style Guides: writing-samples/style-guides/chronologue-style-guide.md
+    - API Reference:
+        - NWS API Reference:
+            - Overview: writing-samples/api-reference/index.md
+            - Quick Start: writing-samples/api-reference/quick-start.md
+            - Authentication and Headers: writing-samples/api-reference/authentication.md
+            - Caching Best Practices: writing-samples/api-reference/caching.md
+
+        - Key Concepts:
+            - "How forecasts are structured": writing-samples/api-reference/key-concepts/index.md
+            - "Forecast hierarchy": writing-samples/api-reference/key-concepts/hierarchy.md
+            - "Weather Forecast Offices (WFOs)": writing-samples/api-reference/key-concepts/wfos.md
+            - "Gridpoints and grids": writing-samples/api-reference/key-concepts/grids.md
+            - "Zones and alerts": writing-samples/api-reference/key-concepts/zones.md
+            - "Developer use patterns": writing-samples/api-reference/key-concepts/developer-use-cases.md
+            - "Status codes": writing-samples/api-reference/key-concepts/status-codes.md
+            - "Units and conventions": writing-samples/api-reference/key-concepts/units.md
+
+        - Endpoints:
+            - Introduction: writing-samples/api-reference/endpoints/index.md
+            - Alerts: writing-samples/api-reference/endpoints/alerts.md
+            - Forecasts: writing-samples/api-reference/endpoints/forecasts.md
+            - "Grid Points": writing-samples/api-reference/endpoints/grid-points.md
+            - Points: writing-samples/api-reference/endpoints/points.md
+            - Stations: writing-samples/api-reference/endpoints/stations.md
+            - Zones: writing-samples/api-reference/endpoints/zones.md
+
+    - Style Guide: writing-samples/stylfor exampleides/chronologue-stylfor exampleide.md
 
 markdown_extensions:
   - admonition
@@ -40,8 +65,9 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
 
 extra_css:
   - stylesheets/extra.css
