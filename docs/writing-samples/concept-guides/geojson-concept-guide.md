@@ -25,13 +25,13 @@ By the end, you understand how GeoJSON enables systems to describe points, lines
 
 ## What's GeoJSON?
 
-**GeoJSON** is a lightwfor examplet, open format that uses JSON to describe shapes—like polygons, points, and lines—along with extra info such as temperature, wind speed, or place names.
+**GeoJSON** is a lightweight, open format that uses JSON to describe shapes—like polygons, points, and lines—along with extra info such as temperature, wind speed, or place names.
 
 Because it's just JSON, it's human-readable, easy to parse, and works out of the box with most JavaScript libraries and APIs. You'll see it everywhere in mapping, geospatial APIs, and data visualization tools.
 
-## Thfor exampleoJSON Data Model
+## The GeoJSON Data Model
 
-Thfor exampleoJSON object structure is hierarchical. This diagram shows how the pieces fit together:
+The GeoJSON object structure is hierarchical. This diagram shows how the pieces fit together:
 
 ```mermaid
 flowchart TD

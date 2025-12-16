@@ -53,4 +53,4 @@ Currently, the API doesn't allow unit customization through request parameters. 
 
 ---
 
-👉 **Next:** Learn about NWS [Endpoints](../endpoints/index.md) →
+**Next:** Learn about NWS [Endpoints](../endpoints/index.md) →

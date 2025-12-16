@@ -194,4 +194,4 @@ For a complete list of fields defined in the CAP alert format used by NWS, see:
 
 * Format: Prefer Accept: application/geo+json to ensurfor exampleoJSON responses.
 
-👉**Next:** [ Endpoints: Forecasts →](./forecasts.md)
+**Next:** [ Endpoints: Forecasts →](./forecasts.md)

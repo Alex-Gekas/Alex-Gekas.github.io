@@ -1,26 +1,37 @@
 ---
-title: "GridsGridpoints and Grids"
+title: "Gridpoints and Grids"
 description: "Explains the 2.5 km forecast grid system and how grid IDs and coordinates work."
 ---
+
 # Gridpoints and Grids
-NWS forecasts are built on a nationwide set of **2.5 km × 2.5 km** grid cells. Each cell represents a small geographic area and contains the detailed, point-level forecast data your application retrieves through the NWS API.
 
-Each grid belongs to a **Weather Forecast Office (WFO)**. When a user provides a latitude/longitude, the `/points` endpoint determines which WFO owns that location and which grid cell the point falls into. The API then returns the grid identifiers you’ll use to request the actual forecast:
+NWS forecasts use a nationwide **2.5 km × 2.5 km** grid system. Each cell represents a small geographic area containing detailed forecast data accessible through the NWS API.
 
-- `gridId`—the WFO identifier (for example, `BUF`, `OKX`, `LWX`)
-- `gridX` / `gridY`—the cell’s horizontal and vertical index within that WFO’s grid
+## How Grid Assignment Works
 
-Together, these values define the path to the forecast resources under `/gridpoints/{gridId}/{gridX},{gridY}`.
+Each grid belongs to a **Weather Forecast Office (WFO)**. When you provide a latitude/longitude to the `/points` endpoint, the API:
 
-Because forecasts are generated at thfor exampleid-cell level, this structurfor exampleves you:
+1. Determines which WFO owns that location
+2. Identifies which grid cell contains the point
+3. Returns the grid identifiers needed to request forecasts:
+    - `gridId` — WFO identifier (e.g., `BUF`, `OKX`, `LWX`)
+    - `gridX` / `gridY` — cell's horizontal and vertical index  within that WFO's grid
 
-- High spatial resolution (finfor exampleained local forecasts)
-- Consistent structure across all WFOs
+Use these values to construct forecast requests: `/gridpoints/{gridId}/{gridX},{gridY}`
 
-Below is an illustration of how the grid subdivides the area covered by a WFO:
+## Benefits
+
+Grid-cell level forecasts provide:
+
+- **High spatial resolution** — Fine-grained local forecasts
+- **Consistent structure** — Uniform format across all WFOs
+
+## Visual Example
 
 ![Forecast grids for the NWS Buffalo Forecast Office](./images/Buf_grid_60x60.png)
 
-**Figure:** Buffalo NWS office (BUF) with 2.5 km forecast grid cells (`gridX`, `gridY`)
+**Figure:** Buffalo NWS office (BUF) showing 2.5 km forecast grid cells with `gridX` and `gridY` coordinates
+
+---
 
 👉**Next:** Learn how to translate coordinates into [Zones](./zones.md) →

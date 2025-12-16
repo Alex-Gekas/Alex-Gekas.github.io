@@ -138,7 +138,7 @@ print(zone_forecast)
 </details>
 
 
-> ⏱️ **Tip:**  
+> ⏱**Tip:**  
 > - Cache short-lived data (like alerts) for **5–10 minutes**  
 > - Cache static data (like zone definitions) for **hours or days**
 

@@ -4,7 +4,7 @@ description: "Covers forecast, county, marine, and fire zones and how they relat
 ---
 # Zones
 
-Zones are larger geographic areas used for public forecasts and alerts. Unlikfor grids, which provide detailed 2.5 km forecast data—zones group many grid cells together so the NWS can issue region-wide weather information.
+Zones are larger geographic areas used for public forecasts and alerts. Unlike grids, which provide detailed 2.5 km forecast data, zones group many grid cells together so the NWS can issue region-wide weather information.
 
 Common zone types include:
 
@@ -27,5 +27,5 @@ Below is a diagram that shows the zones within a WFO:
 
 **Figure:** Buffalo NWS office (BUF) with zones highlighted.
 
-👉**Next:** Lean about [NWS API Developer Use Cases](./developer-use-cases.md) → 
+**Next:** Lean about [NWS API Developer Use Cases](./developer-use-cases.md) → 
 

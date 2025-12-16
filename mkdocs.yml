@@ -20,10 +20,11 @@ theme:
 nav:
   - Home: index.md
   - Writing Samples:
-    - Tutorials: writing-samples/tutorials/sample-tutorial.md
-    - Concept Guides: writing-samples/concept-guides/geojson-concept-guide.md
+    - Tutorial: writing-samples/tutorial/sample-tutorial.md
+    - Concept Guide: writing-samples/concept-guides/geojson-concept-guide.md
     - API Reference:
         - NWS API Reference:
+            - About: writing-samples/api-reference/about.md
             - Overview: writing-samples/api-reference/index.md
             - Quick Start: writing-samples/api-reference/quick-start.md
             - Authentication and Headers: writing-samples/api-reference/authentication.md
@@ -34,8 +35,8 @@ nav:
             - "Forecast hierarchy": writing-samples/api-reference/key-concepts/hierarchy.md
             - "Weather Forecast Offices (WFOs)": writing-samples/api-reference/key-concepts/wfos.md
             - "Gridpoints and grids": writing-samples/api-reference/key-concepts/grids.md
-            - "Zones and alerts": writing-samples/api-reference/key-concepts/zones.md
-            - "Developer use patterns": writing-samples/api-reference/key-concepts/developer-use-cases.md
+            - "Zones": writing-samples/api-reference/key-concepts/zones.md
+            - "Developer use cases": writing-samples/api-reference/key-concepts/developer-use-cases.md
             - "Status codes": writing-samples/api-reference/key-concepts/status-codes.md
             - "Units and conventions": writing-samples/api-reference/key-concepts/units.md
 
@@ -48,7 +49,7 @@ nav:
             - Stations: writing-samples/api-reference/endpoints/stations.md
             - Zones: writing-samples/api-reference/endpoints/zones.md
 
-    - Style Guide: writing-samples/stylfor exampleides/chronologue-stylfor exampleide.md
+    - Chronologue Relay VR Style Guide: writing-samples/style-guide/chronologue-style-guide.md
 
 markdown_extensions:
   - admonition

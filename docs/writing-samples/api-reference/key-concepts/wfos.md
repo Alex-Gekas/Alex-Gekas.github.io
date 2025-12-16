@@ -5,43 +5,29 @@ description: "Explains NWS Weather Forecasting Offices"
 
 # Weather Forecast Offices (WFOs)
 
-## What is a WFO?
-A Weather Forecast Office (WFO) is the local NWS office responsible for generating the forecast and alert data for a specific region. When you call `/points/{lat,lon}`, the API resolves your point to exactly one WFO before determining grid and zone information.
+A Weather Forecast Office (WFO) is your regional NWS office that generates forecasts and alerts. When you call `/points/{lat,lon}`, the API assigns your coordinates to exactly one WFO, which determines all subsequent grid and zone data.
 
-**Example:**  
-A user at **38.90, –77.04** (Washington, DC) requests `/points/38.90,-77.04`.
+## Example: Washington, DC
+Requesting `/points/38.90,-77.04` returns:
 
-The API returns:
+- `gridId: "LWX"` → Baltimore/Washington WFO
+- `gridX: 96, gridY: 70` → Your forecast grid cell
+- `forecastZone: "DCZ001"` → Public forecast zone
 
-- `"gridId": "LWX"` → Weather Forecast Office: Baltimore/Washington  
-- `"gridX": 96`, `"gridY": 70` → Forecast grid cell  
-- `"forecastZone": "DCZ001"` → Public forecast zone  
-- `"county": "District of Columbia"` → County/zone metadata
+All forecast data for this location must use WFO `LWX`.
 
-This tells your application that all forecast and gridpoint data should be requested from **WFO LWX**.
+## Where you'll see WFO identifiers
+- `/points/{lat,lon}` responses (`gridId` field)
+- `/gridpoints/{wfo}/{gridX},{gridY}` URLs
+- Forecast and alert metadata
 
+## Why this matters
+**Each WFO manages its own forecast grids.** Two nearby coordinates may belong to different WFOs, so always use the WFO returned by `/points` when requesting gridpoint data.
+  
+  ![Map showing WFO coverage areas in the Northeastern United States](./images/WFOs.png)
 
-!!! info "What a WFO represents"
-    - A regional operational office responsible for forecasts and local weather products  
-    - Defines the spatial domain wherfor exampleidpoint and zone data originate  
-    - Appears in API URLs as a short identifier (for example, `LWX`, `OKX`, `SEW`)
+**Figure:** WFO boundaries in the Northeastern US. Notice how coverage areas meet at defined borders—coordinates near these boundaries may resolve to different WFOs.
 
-![Northeast US WFOs](./images/WFOs.png)
-    
-**Figure:** Weather Forecast Offices for the Northeastern US.
-
-## Where WFOs appear in the API
-!!! tip "Common places you'll encounter WFO identifiers"
-    - In `/points/{lat,lon}` responses under `gridId`  
-    - In `/gridpoints/{office}/{gridX},{gridY}` URLs  
-    - In metadata fields for forecast or alert products  
-
-## Why WFOs matter
-Each WFO manages its own forecast grids and zones. This means:
-
-- Thfor exampleid and zone definitions for a point depend on the WFO it falls into  
-- Two nearby coordinates may belong to different WFOs  
-- All `/gridpoints/...` forecast data must be fetched using the correct WFO code  
 
 ## Quick visualization
 ```mermaid
@@ -51,9 +37,8 @@ flowchart LR
   W --> Z["Zones owned by the WFO"]
 ```
 
-Example WFO identifiers
+**Example WFO identifiers:**
 
-!!! note ""
 - LWX—Baltimore/Washington
 - OKX—New York City
 - SEW—Seattle
@@ -62,6 +47,6 @@ Example WFO identifiers
 
 ## Developer takeaway
 
-Always use the WFO returned by /points/{lat,lon} when requesting forecasts, gridpoint data, or zone-based alerts.
+Always use the WFO returned by `/points/{lat,lon}` when requesting forecasts, gridpoint data, or zone-based alerts.
 
-👉**Next:** Learn about [Gridpoints and Grids](./grids.md) → 
+**Next:** Learn about [Gridpoints and Grids](./grids.md) → 

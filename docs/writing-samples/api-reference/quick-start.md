@@ -1,27 +1,30 @@
 ---
 title: "Quick Start"
-description: "Quick Start to Get Up and Running"
+description: "Get up and running with the NWS API"
 ---
 
 # Quick Start
 
-In this short guide, you’ll send your first request to the **National Weather Service (NWS) API**—from picking a location to retrieving a working forecast.
+In this short guide, you'll send your first request to the **National Weather Service (NWS) API**—from picking a location to retrieving a working forecast.
 
-You don’t need an API key or account setup—just your terminal and a few simple `curl` commands.
+You don't need an API key or account setup—just your terminal and a few simple `curl` commands.
 
 ---
 
-## Step 1–Choose a Location
+## Step 1: Choose a Location
 
-The NWS API is **location-based**. Every forecast request starts with a latitude and longitude—but note that **you can’t get a forecast directly from coordinates**. Instead, you’ll first use those coordinates to find the NWS **grid location**, which is what the forecast system actually uses.
+The NWS API is **location-based**. Every forecast request starts with a latitude and longitude—but note that **you can't get a forecast directly from coordinates**. Instead, you'll first use those coordinates to find the NWS **grid location**, which is what the forecast system actually uses.
 
-You can get coordinates from any mapping tool or geocoding service such as:  
-🔹 [OpenCage Encoding API](https://opencagedata.com/api)  
-🔹 [Google Maps](https://maps.google.com)
+You can get coordinates from any mapping tool or geocoding service such as:
 
-Example–LaGuardia Airport (New York City): `40.7766,-73.8742 {lat, lon}`
+- [OpenCage Geocoding API](https://opencagedata.com/api)
+- [Google Maps](https://maps.google.com)
 
-## Step 2–Get Grid Metadata
+**Example:** LaGuardia Airport (New York City): `40.7766, -73.8742`
+
+---
+
+## Step 2: Get Grid Metadata
 
 Next, use the `/points/{lat,lon}` endpoint to translate your coordinates into the **grid ID and coordinates** used by NWS forecasts.
 
@@ -29,16 +32,17 @@ This step is required—forecasts are organized by **grid points**, not by latit
 
 This request returns metadata including:
 
-* Grid ID and X/Y coordinates  
-* URL for your local 7-day forecast  
-* Zone identifiers such as `forecastZone` and `county`
+- Grid ID and X/Y coordinates
+- URL for your local 7-day forecast
+- Zone identifiers such as `forecastZone` and `county`
 
-**Command**
+**Command:**
 ```bash
-curl "https://api.weather.gov/points/40.7766,-73.8742" 
+curl "https://api.weather.gov/points/40.7766,-73.8742" \
   -H "User-Agent: your-email@example.com"
 ```
-💡 Tip: Always include a User-Agent header with your email or project name so NWS can contact you if needed.
+!!! tip 
+      Always include a User-Agent header with your email or project name so NWS can contact you if needed.
 
 ## Step 3 - Retrieve the Forecast
 
@@ -93,4 +97,4 @@ See the [Examples](./code-examples/index.md) section for language-specific code 
 - Cache responses when appropriate to reduce load on the API.
 - Respect rate limits and avoid scraping large datasets.
 
-**Next:** [Authentication →](./authentication.md)
+**Next:** [Authentication  and Headers→](./authentication.md)

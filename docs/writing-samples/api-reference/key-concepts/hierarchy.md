@@ -2,6 +2,7 @@
 title: "Hierarchy: Point → Grid → Zone → WFO"
 description: "Shows how a lat/lon resolves into forecast structures in the NWS API."
 ---
+
 # How These Concepts Fit Together (Hierarchy)
 
 Every forecast starts with a latitude/longitude. The NWS API resolves that point into:
@@ -24,4 +25,16 @@ flowchart TD
 
 **Figure:** Forecast data is organized hierarchically—a point belongs to a grid, which belongs to a zone, all managed by a forecast office (WFO).
 
-👉**Next:** Learn about Weather Forecast Offices [WFOs](./wfos.md) → 
+---
+
+# Why links instead of data?
+
+The /points endpoint returns URLs because:
+
+- Grid forecasts come from /gridpoints/{office}/{x},{y}
+- Zone forecasts come from /zones/{type}/{zoneId}
+- Each requires a separate, optimized query
+
+Note: A single point can belong to multiple zones (county, fire weather, marine), but only one forecast grid. The API returns all applicable zones.
+
+Next: Learn about Weather Forecast Offices [WFOs](./wfos.md) →
