@@ -7,7 +7,7 @@ description: Technical writing portfolio of Alex Gekas—API documentation, guid
 
 # API documentation, technical guides, and documentation systems
 
-Hi — I’m **Alex Gekas**, a technical writer focused on clear, maintainable documentation for developer-facing and mixed-audience products.
+Hi — I’m **Alex Gekas**, a technical writer focused on clear, accurate developer documentation, with hands-on experience in APIs, WooCommerce, and docs-as-code workflows.
 
 I specialize in:
 
@@ -26,7 +26,7 @@ Below are some samples that demonstrate structure, clarity, and audience awarene
 
 **NWS Weather API — Reference & Concepts**  
 Modernized API documentation with clear conceptual separation and developer-first structure.  
-[:material-arrow-right-circle: Read the docs](writing-samples/api-reference/about.md)
+[:material-arrow-right-circle: Read the docs](writing-samples/api-reference/index.md)
 
 **Chronologue Relay VR — Style Guide**  
 Documentation style guide for a mixed-audience, fictional VR product, including voice, tone, and terminology rules.  
