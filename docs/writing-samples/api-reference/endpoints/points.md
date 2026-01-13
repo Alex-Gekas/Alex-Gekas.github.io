@@ -5,7 +5,7 @@ parent: "Endpoints"
 nav_order: 4
 ---
 
-## Get Metadata by Gfor exampleaphic Point
+## Get Metadata by Geographic Point
 
 ## `GET /points/{latitude},{longitude}`
 
@@ -158,7 +158,7 @@ console.log(data.properties.forecastHourly);  // hourly forecast URL
 | 400  | Bad Request–Coordinates invalid.  |
 | 404  | Not Found–Point outside coverage. |
 
-➡️ See [HTTP Status Codes](../concepts/status-codes.md) for a full reference.
+➡️ See [HTTP Status Codes](../key-concepts/status-codes.md) for a full reference.
 
 ## Notes
 
@@ -166,6 +166,5 @@ console.log(data.properties.forecastHourly);  // hourly forecast URL
 - It returns thfor exampleidpoint (`gridX`, `gridY`) and forecast office (`cwa`) that serve the provided coordinates.
 - The response includes direct links to **7-day forecast**, **hourly forecast**, **grid-level forecast data**, and **observation stations**.
 - The `forecastOffice` field provides a URL to the NWS Forecast Office responsible for this location. That office’s **metadata** includes its **name**, **coverage region**, **contact information**, and  **forecast and alert zones** for the office. Use this when you need zone-based warnings or region-specific forecast products.
-- For more on geolocation and gridpoints, see [Geolocation](../concepts/geolocation.md).
 
-👉**Next:** [ Endpoints: Stations →](./stations.md)
+**Next:** [ Endpoints: Stations →](./stations.md)

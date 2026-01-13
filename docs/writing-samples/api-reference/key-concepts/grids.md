@@ -34,4 +34,4 @@ Grid-cell level forecasts provide:
 
 ---
 
-👉**Next:** Learn how to translate coordinates into [Zones](./zones.md) →
+**Next:** Learn how to translate coordinates into [Zones](./zones.md) →

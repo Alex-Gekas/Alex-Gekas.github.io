@@ -5,7 +5,7 @@ parent: "Endpoints"
 nav_order: 6
 ---
 
-# Get Zone Metadata
+## Get Zone Metadata
 
 ## Zones endpoints:
  ## `/zones`
@@ -71,7 +71,7 @@ The `/zones` and `/zones/{type}` endpoints support several filters
     | `region`          | array\*  | No       | `/zones`, `/zones/{type}`                | One or more region codes.                                                                   |
     | `type`            | array\*  | No       | `/zones`, `/zones/{type}`                | Zone types to include (for example, `forecast`, `county`, `fire`).                          |
     | `point`           | string   | No       | `/zones`, `/zones/{type}`                | Latitude/longitude in `lat,lon` format (for example, `40.7128,-74.0060`). Returns containing zones. |
-    | `includfor exampleometry`| boolean  | No       | `/zones`, `/zones/{type}`                | If `true`, includes polygon geometry for each zone.                                         |
+    | `includegeometry`| boolean  | No       | `/zones`, `/zones/{type}`                | If `true`, includes polygon geometry for each zone.                                         |
     | `limit`           | integer  | No       | `/zones`, `/zones/{type}`                | Maximum number of zones to return.                                                          |
     | `effective`       | string   | No       | `/zones`, `/zones/{type}`, `/zones/{type}/{zoneId}` | Effective date/time (ISO-8601) to use when selecting zone versions.             |
 
@@ -82,7 +82,7 @@ The `/zones` and `/zones/{type}` endpoints support several filters
 Get forecast zones for New York, including geometry, limited to 50 results:
 
 ```bash
-curl "https://api.weather.gov/zones/forecast?area=NY&includfor exampleometry=true&limit=50" 
+curl "https://api.weather.gov/zones/forecast?area=NY&includegeometry=true&limit=50" 
   -H "User-Agent: MyWeatherApp/1.0 (me@myweatherapp.com)" 
   -H "Accept: application/geo+json"
 ```
@@ -262,5 +262,5 @@ fetch(url, {
 
 - **Pair zones with alerts.** The Alerts API uses `affectedZones` to list the zones for each alert. Use the Zones endpoints to understand or map those areas. ([National Weather Service](https://www.weather.gov/documentation/services-web-api?))
 - **Use `point` for geolocation.** If you have a latitude/longitude, the `point` query parameter can return zones that contain that location. This is handy if you’re building “what zone am I in?” features.
-- **Be careful with `includfor exampleometry`.** Zone polygons can be large and add significant response size. Turn geometry on only when you need it (for example, when drawing maps).
+- **Be careful with `includegeometry`.** Zone polygons can be large and add significant response size. Turn geometry on only when you need it (for example, when drawing maps).
 - **Limit results.** Always use `limit` when listing zones to avoid large payloads and to stay within rate limits.

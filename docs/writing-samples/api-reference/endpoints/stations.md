@@ -212,3 +212,5 @@ console.log(station.properties.stationIdentifier, station.properties.name);
 GitHub
 
 **Discoverability**: From /points/{lat},{lon} you can follow observationStations to the list of nearby stations for that gridpoint.
+
+**Next:** [ Endpoints: Zones →](./zones.md)

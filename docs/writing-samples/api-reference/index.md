@@ -5,6 +5,17 @@ description: "Introduction to the NWS API"
 
 # NWS API Reference
 
+!!! note "What I Did"
+    - Reorganized the National Weather Service API documentation around user needs, separating tutorials, how-to guides, reference material, and conceptual explanations
+    - Clarified the NWS spatial model (forecast offices, gridpoints, zones, stations) using progressive disclosure and visual diagrams
+    - Documented the `/points/{lat,lon}` workflow to explain how location data resolves across multiple systems
+    - Wrote developer-focused endpoint reference content with clear parameters, examples, and common error cases
+    - Added cross-cutting documentation for shared concepts such as status codes, units, caching, and station metadata
+    - Improved navigation and learning flow with clear entry points and “next step” paths throughout the documentation
+
+
+# Overview
+
 The **National Weather Service (NWS) API** is the official U.S. government source for weather forecasts, observations, and alerts. It provides free, public access to the same real-time data used by meteorologists, emergency managers, and news organizations—covering every location in the United States with highly localized 2.5 km forecast grids.
 
 This is a developer-friendly rewrite of the official API documentation. It focuses on the endpoints developers use most, clarifies the underlying spatial concepts (like forecast offices, gridpoints, and zones), and removes the complexity found in the original government documentation.

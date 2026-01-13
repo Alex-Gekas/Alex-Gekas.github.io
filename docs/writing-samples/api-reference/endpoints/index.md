@@ -31,5 +31,5 @@ Endpoints are grouped by resource:
 - **Points**: `/points/{lat},{lon}` returns metadata and related endpoints for a location
 - **Stations**: `/stations`, listing observation locations
 
-👉 **Next:** Learn about the [Alerts Endpoint](./alerts.md) →
+**Next:** Learn about the [Alerts Endpoint](./alerts.md) →
 

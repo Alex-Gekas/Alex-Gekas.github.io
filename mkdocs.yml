@@ -1,6 +1,6 @@
-site_name: Alex Gekas | Technical Writer
-site_description: Technical writing portfolio—tutorials, API docs, concept guides, and stylfor exampleides.
-site_url: https://your-domain.example.com
+site_name: "Alex Gekas | Technical Writer"
+site_description: "Technical writing portfolio—tutorials, API docs, concept guides, and style guides."
+site_url: "https://alex-gekas.github.io/"
 
 theme:
   name: material
@@ -20,36 +20,36 @@ theme:
 nav:
   - Home: index.md
   - Writing Samples:
-    - Tutorial: writing-samples/tutorial/sample-tutorial.md
-    - Concept Guide: writing-samples/concept-guides/geojson-concept-guide.md
-    - API Reference:
-        - NWS API Reference:
-            - About: writing-samples/api-reference/about.md
-            - Overview: writing-samples/api-reference/index.md
-            - Quick Start: writing-samples/api-reference/quick-start.md
-            - Authentication and Headers: writing-samples/api-reference/authentication.md
-            - Caching Best Practices: writing-samples/api-reference/caching.md
+      - Tutorial: writing-samples/tutorial/woo_comm_tutorial.md
+      - Concept Guide: writing-samples/concept-guides/geojson-concept-guide.md
 
-        - Key Concepts:
-            - "How forecasts are structured": writing-samples/api-reference/key-concepts/index.md
-            - "Forecast hierarchy": writing-samples/api-reference/key-concepts/hierarchy.md
-            - "Weather Forecast Offices (WFOs)": writing-samples/api-reference/key-concepts/wfos.md
-            - "Gridpoints and grids": writing-samples/api-reference/key-concepts/grids.md
-            - "Zones": writing-samples/api-reference/key-concepts/zones.md
-            - "Developer use cases": writing-samples/api-reference/key-concepts/developer-use-cases.md
-            - "Status codes": writing-samples/api-reference/key-concepts/status-codes.md
-            - "Units and conventions": writing-samples/api-reference/key-concepts/units.md
+      - API Reference:
+          - Overview: writing-samples/api-reference/index.md
+          - Quick Start: writing-samples/api-reference/quick-start.md
+          - Authentication and Headers: writing-samples/api-reference/authentication.md
+          - Caching Best Practices: writing-samples/api-reference/caching.md
 
-        - Endpoints:
-            - Introduction: writing-samples/api-reference/endpoints/index.md
-            - Alerts: writing-samples/api-reference/endpoints/alerts.md
-            - Forecasts: writing-samples/api-reference/endpoints/forecasts.md
-            - "Grid Points": writing-samples/api-reference/endpoints/grid-points.md
-            - Points: writing-samples/api-reference/endpoints/points.md
-            - Stations: writing-samples/api-reference/endpoints/stations.md
-            - Zones: writing-samples/api-reference/endpoints/zones.md
+          - Key Concepts:
+              - "How forecasts are structured": writing-samples/api-reference/key-concepts/index.md
+              - "Forecast hierarchy": writing-samples/api-reference/key-concepts/hierarchy.md
+              - "Weather Forecast Offices (WFOs)": writing-samples/api-reference/key-concepts/wfos.md
+              - "Gridpoints and grids": writing-samples/api-reference/key-concepts/grids.md
+              - "Zones": writing-samples/api-reference/key-concepts/zones.md
+              - "Developer use cases": writing-samples/api-reference/key-concepts/developer-use-cases.md
+              - "Status codes": writing-samples/api-reference/key-concepts/status-codes.md
+              - "Units and conventions": writing-samples/api-reference/key-concepts/units.md
 
-    - Chronologue Relay VR Style Guide: writing-samples/style-guide/chronologue-style-guide.md
+          - Endpoints:
+              - Introduction: writing-samples/api-reference/endpoints/index.md
+              - Alerts: writing-samples/api-reference/endpoints/alerts.md
+              - Forecasts: writing-samples/api-reference/endpoints/forecasts.md
+              - "Grid Points": writing-samples/api-reference/endpoints/grid-points.md
+              - Points: writing-samples/api-reference/endpoints/points.md
+              - Stations: writing-samples/api-reference/endpoints/stations.md
+              - Zones: writing-samples/api-reference/endpoints/zones.md
+
+      - Style Guide: writing-samples/style-guide/chronologue-style-guide.md
+  - Blog: blog/index.md
 
 markdown_extensions:
   - admonition
@@ -69,21 +69,22 @@ markdown_extensions:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
-
 extra_css:
   - stylesheets/extra.css
 
 plugins:
   - search
+  - blog
 
 extra:
   social:
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/alex-gekas-1a3b9b239/
+      link: "https://www.linkedin.com/in/alex-gekas-1a3b9b239/"
     - icon: fontawesome/brands/github
-      link: https://github.com/alex-gekas
+      link: "https://github.com/alex-gekas"
     - icon: fontawesome/solid/envelope
-      link: mailto:alex.gekas@gmail.com
+      link: "mailto:alex.gekas@gmail.com"
 
-# Update this once your repo name is final:
-repo_url: https://github.com/alex-gekas/<your-portfolio-repo>
+repo_url: "https://github.com/alex-gekas/<your-portfolio-repo>"
+
+

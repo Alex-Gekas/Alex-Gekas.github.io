@@ -13,7 +13,7 @@
 
 The Chronologue Relay VR Style Guide is a reference for writing clear, consistent documentation for Zaius Inc.’s Chronologue Relay VR product. Use it when creating tutorials, support content, conceptual explanations, and developer documentation.
 
-Chronologue Relay VR connects consumer headsets to the Chronologue API, allowing users to explore simulated astronomical events across historical and future timelines. Our documentation serves a broad audience: hobbyists, educators, museum professionals, and developers building advanced experiences with the Chronologue API.
+Chronologue Relay VR connects consumer headsets to the Chronologue API, allowing users to explore simulated astronomical events across historical and future timelines. Our documentation serves a broad audience: hobbyists, educators, museum professionals, and developers building interactive experiences with the Chronologue API.
 
 Because Chronologue Relay spans VR, astronomy, and software, the docs must be clear and consistent. This is where we define the terminology, tone, formatting, and audience standards we follow.
 
@@ -47,14 +47,14 @@ Google recommends using *you* and the imperative mood to keep instructions clear
 **Chronologue Relay VR’s rule:**  
 We start from Google’s approach but adjust tone and phrasing to match our audiences.
 
-- For **general audiences**, guide readers as if you’re exploring with them. Use verbs that encourage participation and discovery–*explore, observe, simulate*–instead of strict procedural commands like *click, execute,* or *run*.
+- For **general audiences**, guide readers as if you’re exploring with them. Use verbs that encourage participation and discovery–*explore, observe, simulate*, instead of strict procedural commands like *click, execute,* or *run*.
 
 - For **technical audiences**, maintain the neutral, command-based style.
 
-| **Context** | **Don’t Use** | **Use** |
-|----|----|----|
-| **Developers** | *Let’s explore how this API brings the simulation to life*. | *Run the request below to retrieve simulation data from the API.* |
-| **General Audiences** | *Click the Run Simulation button to start the process.* | *Explore the simulation by selecting **Run Simulation** and observing how the scene evolves.* |
+| **Audience** | **Avoid** | **Use Instead** |
+|--------------|-----------|-----------------|
+| Technical | *Let's explore how this API brings the simulation to life.* | *Run the request below to retrieve simulation data from the API.* |
+| General | *Click the Run Simulation button to start the process.* | *Explore the simulation by selecting **Run Simulation** and observing how the scene evolves.* |
 
 **Rule 2: Entity Names**
 
@@ -70,12 +70,13 @@ Google recommends using official product and feature names as published. Writers
 
 Google also allows adjusting capitalization in headings or in sentences when it improves readability.
 
-**Chronologue’s rule:**
+**Chronologue Relay VR's rule:**
 
-Chronologue follows Google’s rule but adds one requirement for entities that are part of the Chronologue Canon, such as **KronoPy**, **Chronologue Relay**, and **OCTAVIA**.
+Chronologue Relay VR follows Google’s rule but adds one requirement for entities that are part of the Chronologue Canon, such as **KronoPy**, **Chronologue Relay**, and **OCTAVIA**.
 
-**Keep the exact capitalization of each Chronlogue Canon entity in all contexts**  
-**Do not adjust capitalization in headings, tables, diagrams, or example–even if the surrounding sentence structure would normally justify a change.**
+**Keep the exact capitalization of each Chronologue Canon entity in all contexts**  
+Do not adjust capitalization in headings, tables, diagrams, or examples–even if the surrounding sentence structure would normally justify a change.
+
 
 **Examples**
 
@@ -104,15 +105,48 @@ The following table lists the main entities in the Chronologue Canon and how to 
 **Chronologue Relay VR’s rule**:  
 Chronologue expands on this with its own vocabulary of VR and astronomical concepts. Use approved terms exactly as they appear in the preferred terms list and glossary. When introducing specialized vocabulary, reference or link the glossary definition on first use. Avoid using synonyms that could alter the meaning or cause confusion.
 
-### **Rule 4: Formatting Astronomical Data**
+**Examples:**
 
-**Google’s rule:** 
- Google’s style guide covers code formatting but doesn’t specify how to present scientific data.
+| **Incorrect** | **Correct** | **Why** |
+|---------------|-------------|---------|
+| "the relay system" | "Chronologue Relay" | Avoid articles and generic descriptors |
+| "authenticate your device" | "connect your device" | Use general-audience terminology |
+| "field of vision" | "field of view (FoV)" | Use the approved abbreviation |
 
-**Chronologue Relay VR’s rule:**  
-Write dates, times, and coordinates in a clear, consistent format. Use internationally recognized standards when precision matters, and include a simple, plain-language version for general readers.
 
-**(Example: 2024-07-18 T23:45 Z (11:45 p.m. UTC on July 18, 2024))**
+### **Rule 4: Formatting Standards**
+
+**Google's rule:**  
+Google's style guide covers code formatting but doesn't specify how to present scientific data or VR-specific elements.
+
+**Chronologue Relay VR's rule:**  
+Use consistent, internationally recognized formats for dates, times, coordinates, and technical data. Always include a plain-language version for general audiences.
+
+#### **Dates and Times**
+
+Use ISO 8601 format for precision, followed by a human-readable version in parentheses.
+
+**Format:** `YYYY-MM-DDTHH:MM:SSZ` (plain language explanation)
+
+**Examples:**
+- `2024-07-18T23:45:00Z` (11:45 PM UTC on July 18, 2024)
+- `1986-02-09T13:14:00Z` (1:14 PM UTC on February 9, 1986)
+
+**Key points:**
+- No spaces before or after the `T` separator
+- Use 24-hour time format
+- Include timezone (`Z` for UTC or offset like `+05:00`)
+- Spell out the plain-language version completely
+
+#### **Coordinates**
+
+Use decimal degrees with clear labels.
+
+**Format:** `latitude, longitude` or labeled format for clarity
+
+**Examples:**
+- `43.6532° N, 79.3832° W` (Toronto, Canada)
+- For technical docs: `43.6532, -79.3832`
 
 ### **Rule 5: System Feedback and Error Messages**
 
@@ -131,66 +165,79 @@ Phrase system feedback to explain what’s happening under the hood or what’s 
 
 ### **Rule 6: Audience Specification**
 
-**Google’s rule:**
-
+**Google's rule:**  
 Google emphasizes writing with the reader in mind and adjusting tone and content to match audience needs.
 
-**Chronologue Relay VR’s Rule:**  
-We go a step further by clearly defining the audience for every piece of documentation. Before you start writing, decide whether you’re speaking to a **technical audience** or a **general audience**. Your tone, examples, and level of detail should reflect that choice.
+**Chronologue Relay VR's Rule:**  
+Before you start writing, identify your primary audience:
 
-**Example:** 
-A tutorial written for museum educators should use plain language, visual descriptions, and a sense of discovery. An API guide written for developers should stay concise, precise, and procedural.
+- **General audience** - Hobbyists, educators, museum professionals
+- **Technical audience** - Developers and engineers
+- **Universal audience** - Concept documentation that serves both groups
+
+Adjust your tone, examples, and level of detail to match. For universal content, lead with plain language and provide technical details in expandable sections or separate pages.
+
+#### **How to Choose**
+
+- **Tutorials for first-time users** → General audience
+- **API reference documentation** → Technical audience  
+- **Concept guides explaining how Chronologue works** → Universal audience
+- **How-to guides for specific tasks** → Match the task complexity (general or technical)
+
+#### **Examples**
+
+**General audience (tutorial):**  
+"Explore the simulation by selecting **Run Simulation** and observing how the scene evolves."
+
+**Technical audience (API guide):**  
+"Run the request below to retrieve simulation data from the API."
+
+**Universal audience (concept doc):**  
+"Chronologue Relay VR synchronizes events across timelines by querying the Chronologue API's temporal index. This allows users to explore astronomical phenomena from any point in recorded history."
 
 ## **Glossary of Preferred Terms**
 
 Use these terms consistently in Chronologue Relay VR documentation. The definitions clarify how we use these terms across all types of documentation. Use the following list of terms to keep language clear and consistent.
 
-**Chronologue Relay VR** The full product name. Use on first mention per page. Afterward, shorten to **Chronologue Relay**
+**Chronologue Relay VR**  
+The full product name. Use on first mention per page or section. Afterward, shorten to **Chronologue Relay**.  
+*Avoid:* Relay (standalone), the Relay, the system
 
-**Relay**.  
-**Avoid:** the Relay, the system
+**Example:**  
+*Use:* "*Chronologue Relay VR* connects consumer headsets to the Chronologue API. Chronologue Relay supports multiple VR platforms."  
+*Don't use:* "*The Relay* supports multiple VR platforms."
 
-**connect** Start a session or pair a device in general-audience docs.  
+**connect** - Start a session or pair a device in general-audience docs.  
 *Avoid:* authenticate (unless referring to credential checks)
 
-**device  
-** Any supported hardware (e.g., VR headset, input controllers).  
+**device** - Any supported hardware (e.g., VR headset, input controllers).  
 *Avoid:* hardware, unit, machine
 
-**event  
-** A specific occurrence in the simulation (e.g., a solar eclipse at a given time).  
+**event** - A specific occurrence in the simulation (e.g., a solar eclipse at a given time).  
 *Avoid:* phenomenon, trigger, action
 
-**field of view (FoV)  
-** The visible area in the headset.  
+**field of view (FoV)** - The visible area in the headset.  
 *Avoid:* field of vision
 
-**headset  
-** Standard VR hardware term.  
+**headset** - Standard VR hardware term.  
 *Avoid:* goggles, viewer, helmet
 
-**inspect  
-** Examine or view details of an object to learn more.  
+**inspect** - Examine or view details of an object to learn more.  
 *Avoid:* witness (too passive), look at (too informal)
 
-**interface  
-** Any screen layout, menu, or control surface.  
+**interface** - Any screen layout, menu, or control surface.  
 *Avoid:* dashboard, console (UI-specific terms unless technically correct)
 
-**launch  
-** Start an application or experience.  
+**launch** - Start an application or experience.  
 *Avoid:* boot up, fire up
 
-**navigate  
-** Move through the VR environment or menus.  
+**navigate** - Move through the VR environment or menus.  
 *Avoid:* walk, move through, teleport (unless referring to a specific mechanic)
 
-**select  
-** Choose an item or activate an interface element.  
+**select** - Choose an item or activate an interface element.  
 *Avoid:* click, tap, press (device-specific language)
 
-**timeline  
-** A visual representation of events over time.  
+**timeline** - A visual representation of events over time.  
 *Avoid:* time axis, chronostream (sci-fi jargon)
 
 **Notes:**
@@ -227,19 +274,19 @@ When planning a document, pick the type based on the user’s goal–*learn*, *d
 
 ###  **General Writing Guidelines**
 
-Follow the Google Style Guide for clarity, sentence structure, and inclusive wording. The notes below add advice specific to Chronologue Relay or reinforce writing habits that make complex topics easier to understand.
+Follow the Google Style Guide for clarity, sentence structure, and inclusive wording. The notes below add advice specific to Chronologue Relay or reinforce writing that make complex topics easier to understand.
 
-- **Keep sentences short and simple  
-  ** Use short, direct sentences. Favor verbs over nouns. Avoid wordy qualifiers and stacked prepositional phrases. If a sentence has more than one idea, split it.
+- **Keep sentences short and simple**  
+    Use short, direct sentences. Favor verbs over nouns. Avoid wordy qualifiers and stacked prepositional phrases. If a sentence has more than one idea, split it.
 
-- **Use concrete language  
-  ** Prefer specific actions and objects to abstract concepts. Show readers what something does before naming how it works.
+- **Use concrete language**
+    Prefer specific actions and objects to abstract concepts. Show readers what something does before naming how it works.
 
-- **Name new ideas once  
-  ** Introduce terms where they first come up. Use the same term consistently afterward. If a definition is longer than a sentence and there no existing definition in the Glossary of Terms, suggest including it with the editorial team.
+- **Name new ideas once**
+    Introduce terms where they first come up. Use the same term consistently afterward. If a definition is longer than a sentence and there no existing definition in the Glossary of Terms, suggest including it with the editorial team.
 
-- **Use simple flow  
-  ** Avoid marketing tone, metaphors that obscure meaning, and clever phrasing that distracts the reader. Focus on helping the reader achieve their goals quickly.
+- **Use simple flow**
+    Avoid marketing tone, metaphors that may be confusing, and clever phrasing that distracts the reader. Focus on helping the reader achieve their goals quickly.
 
 These guidelines help writers stay focused on what the reader needs. When in doubt: simplify the sentence, clarify the reader’s goals, and guide the user to the next step.
 
@@ -249,53 +296,58 @@ Chronologue Relay documentation should work for everyone–including people usin
 
 The practices below come from [<u>WCAG accessibility standards</u>](https://www.w3.org/TR/2008/REC-WCAG20-20081211/#contents), with examples tailored for Chronologue Relay documentation.
 
-**Write in plain language  
-** Keep sentences short, direct, and avoid of jargon or idioms. This lowers cognitive load and improves parsing for assistive technologies.
+**Write in plain language**
+
+  Keep sentences short, direct, and avoid of jargon or idioms. This lowers cognitive load and improves parsing for assistive technologies.
 
 *Instead of:* “Initialize the environment for session execution.”  
 *Write:* “Set up your viewing session.”
 
-**Use descriptive link text  
-** Readers should know where a link leads without guessing.  
-*Good:* “View simulation options.”  
+**Use descriptive link text**
+
+Readers should know where a link leads without guessing.  
+*Use:* “View simulation options.”  
 *Avoid:* “Click here.”
 
-**Organize with correct heading levels  
-**Headings communicate structure to screen readers. Move in order: H2 → H3 → H4. Don’t skip levels.
+**Organize with correct heading levels**
 
-*Example:  
-* H2: Setting up your headset  
+Headings communicate structure to screen readers. Move in order: H2 → H3 → H4. Don’t skip levels.
+
+*Example:*
+
+H2: Setting up your headset  
 H3: Pairing with Chronologue Relay
 
-**Avoid directional language  
-**Interfaces shift between devices and layouts. Describe the action, not the location.
+**Avoid directional language**
+
+Interfaces shift between devices and layouts. Describe the what needs to be done, not the location.
 
 *Instead of:* “See the section on the right.”  
 *Write:* “Open the **Controls** panel in the main menu.”
 
-**Provide descriptive alt text  
-** Every essential image needs alt text that communicates its purpose. Mark decorative images as decorative.
+**Provide descriptive alt text**
+Every essential image needs alt text that communicates its purpose. Mark decorative images as decorative.
 
-*Example:* “Screenshot of the Event Timeline showing Halley’s Comet in 12 BCE
+*Example of alt-text:* “Screenshot of the Event Timeline showing Halley’s Comet in 12 BCE
 
 ## **Inclusive and bias-free writing**
 
 Chronologue Relay reaches a global audience. Our documentation should feel welcoming to everyone who reads it. Follow the Google Style Guide’s principles for inclusive language: write to inform, not to assume.
 
-**Use gender-neutral language  
-** When referring to a person whose gender you don’t know, use neutral terms like *they*, *users*, or *people*.
+**Use gender-neutral language**  
+When referring to a person whose gender you don’t know, use neutral terms like *they*, *users*, or *people*.
 
 *Example:* “They operated the controls in the observation station.”  
 (Not: “He manned the controls.”)
 
-**Avoid cultural assumptions  
-**Readers come from different countries, traditions, and backgrounds. Use references that make sense to all of them.
+**Avoid cultural assumptions**  
+Readers come from different countries, traditions, and backgrounds. Use references that make sense to all of them.
 
 *Example:* “A comet that appeared on December 24, 2000.”  
 (Not: “A comet on Christmas Eve.”)
 
-**Use precise geographic language  
-**Place names change over time and can have political or cultural implications. When writing about time and space scenarios for Chronologue Relay VR. Use the term that matches the context:
+**Use precise geographic language** 
+Place names change over time and can have political or cultural implications. When writing about time and space scenarios for Chronologue Relay VR. Use the term that matches the context:
 
 - **Modern context** - current country or region name  
   *Example:* “Northern Mexico, near Monterrey.”
@@ -311,8 +363,8 @@ Avoid using terms interchangeably, and be cautious about implying ownership or p
 
 When in doubt, choose the term that makes the most sense for the reader with the **least assumed background knowledge**.
 
-**Describe people the way they describe themselves  
-** Use current terminology. Don’t generalize or rely on stereotypes.
+**Describe people the way they describe themselves**  
+Use current terminology. Don’t generalize or rely on stereotypes.
 
 **Using linters**
 
@@ -324,7 +376,7 @@ Vale enforces:
 
 - Our **Custom Rules** for audience and tone
 
-- Chronologue Relay terminology
+- Chronologue Relay VR terminology
 
 This gives writers quick feedback and keeps our content consistent across different document types.
 
@@ -361,6 +413,23 @@ Run Vale while writing or before you submit a merge request. The tool highlights
 Resolve flagged issues or add new terminology for review when appropriate.
 
 You can run Vale from the command line or install it in your text editor (like [<u>VS Code</u>](https://marketplace.visualstudio.com/items?itemName=errata-ai.vale-server)) to get real-time feedback.
+
+### **Interpreting Vale feedback**
+
+Vale flags issues at three severity levels:
+
+- **Error** - Violates a required rule (e.g., missing `audience:` field). Must fix before merging.
+- **Warning** - Suggests improvement (e.g., passive voice). Review and fix if appropriate.
+- **Suggestion** - Optional enhancement (e.g., readability score). Consider but not required.
+
+**Example output:**
+```
+docs/tutorial.md 12:15 error Use 'Chronologue Relay' Chronologue.Terms instead of 'the Relay' 18:22 warning Consider using active Google.Passive voice
+```
+**How to respond:**
+1. Fix all errors
+2. Review warnings - fix if they improve clarity
+3. Consider suggestions based on context
 
 ## **How the style guide is updated**
 

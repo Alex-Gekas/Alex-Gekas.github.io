@@ -105,7 +105,7 @@ console.log(data.properties.forecastHourly); // hourly forecast URL
       }
     }
     ```
-??? example "404 Not Found (invalid office or out-of-rangfor exampleid coordinates)"
+??? example "404 Not Found (invalid office or out-of-range for grid coordinates)"
     ```json
     {
       "correlationId": "b8b1c9af-2b7e-4e3b-9f8a-1e8a8f2f5abc",
@@ -123,14 +123,14 @@ console.log(data.properties.forecastHourly); // hourly forecast URL
 | 400  | Bad Request–Invalid grid values.  |
 | 404  | Not Found–Office or grid not found. |
 
-➡️ See [HTTP Status Codes](../concepts/status-codes.md) for a full reference.
+➡️ See [HTTP Status Codes](../key-concepts/status-codes.md) for a full reference.
 ## Notes
 
 - Gridpoints are assigned to local NWS Forecast Offices (WFOs). For a list of WFOs, please see the **Additional Resources** section. [add link and page]
 - The `gridX` and `gridY` values define a cell in the WFO's forecast grid.
-- You can get these values by calling the [`/points/{lat},{lon}`](./forecast.md) endpoint first.
+- You can get these values by calling the [`/points/{lat},{lon}`](./forecasts.md) endpoint first.
 - The forecast response includes time-segmented periods (day, night, etc.), each with **temperature**, **wind speed**,and **forecast description**.
 - The endpoint path may be extended to include `/forecast/hourly` for hourly forecasts.
 - For more details on thfor exampleid system, see [Gridpoints Explained](./key-concepts/geolocation/#forecast-coverage-areas).
 
-👉**Next:** [ Endpoints: Points (lat & lon) →](./points.md)
+**Next:** [ Endpoints: Points (lat & lon) →](./points.md)

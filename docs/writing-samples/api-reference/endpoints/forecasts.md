@@ -5,11 +5,11 @@ parent: "Endpoints"
 nav_order: 2
 ---
 
-# Get Forecast for a Location
+## Get Forecast for a Location
 
 ## `GET /points/{lat},{lon}/forecast`
 
-Returns the seven-day forecast (day & night periods) for thfor exampleid cell covering a latitude/longitude in the U.S. Use this endpoint when you have a point and want the official NWS text-based forecast without converting the point to grid coordinates. The `points` endpoint resolves your lat/lon to the correct 2.5 km NWS forecast grid and local forecast office behind the scenes.
+Returns the seven-day forecast (day & night periods) for the grid cell covering a latitude/longitude in the U.S. Use this endpoint when you have a point and want the official NWS text-based forecast without converting the point to grid coordinates. The `points` endpoint resolves your lat/lon to the correct 2.5 km NWS forecast grid and local forecast office behind the scenes.
 
 ## HTTP request
 
@@ -174,15 +174,13 @@ getForecast(43.1610, -77.6109).then(data => {
 |  500 | Server Error      | Retry with exponential backoff.                                            |
 
 
-➡️ See [HTTP Status Codes](../concepts/status-codes.md) for a full reference.
+➡️ See [HTTP Status Codes](../key-concepts/status-codes.md) for a full reference.
 ## Notes
 
 * Start with /points: It’s the supported way to map a lat/lon to the right grid and forecast office. The same route also advertises related URLs (for example, hourly forecast). 
 
-* Grid resolution: Forecasts are issued on a 2.5 km grid by local offices; nfor exampleboring points can have wildly different forecasts. 
+* Grid resolution: Forecasts are issued on a 2.5 km grid by local offices; neighboring points can have wildly different forecasts. 
 
 * Hourly forecasts: Use /points/{lat},{lon}/forecast/hourly for 48-hour hourly periods
 
-Need an in-depth explanation on how the NWS API uses gridpoints? [Gridpoints Explained](../key-concepts/alerts-and-warnings.md).
-
-👉**Next:** [ Endpoints: Grid Points →](./grid-points.md)
+**Next:** [ Endpoints: Grid Points →](./grid-points.md)

@@ -180,18 +180,18 @@ For a complete list of fields defined in the CAP alert format used by NWS, see:
 | 200  | OK–Successful request. |
 | 400  | Bad Request–Invalid query or filter. |
 | 404  | Not Found–No alerts matched your query. |
-➡️ See [HTTP Status Codes](../concepts/status-codes.md) for a full reference.
+➡️ See [HTTP Status Codes](../key-concepts/status-codes.md) for a full reference.
 
 ## Notes & tips
 
-* User-Agent required: Requests without a clear User-Agent may be rejected.
+* `User-Agent` required: Requests without a clear User-Agent may be rejected.
 
 * Pagination: Use the HTTP Link header with rel="next" to paginate large result sets.
 
 * Filtering quirks: event usually expects an exact string match (for example, Tornado Warning).
 
-* Geometry: Some alerts omit geometry; rely on areaDesc as a fallback.
+* Geometry: Some alerts omit geometry; rely on `areaDesc` as a fallback.
 
-* Format: Prefer Accept: application/geo+json to ensurfor exampleoJSON responses.
+* Format: Prefer Accept: `application/geo+json` to ensure GeoJSON responses.
 
 **Next:** [ Endpoints: Forecasts →](./forecasts.md)

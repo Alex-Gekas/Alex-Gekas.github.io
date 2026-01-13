@@ -87,7 +87,6 @@ Here are more useful endpoints:
 | Station observations  | `/stations/KJFK/observations/latest` |
 | Forecast by grid point | `/gridpoints/{office}/{gridX},{gridY}/forecast` |
 
-See the [Examples](./code-examples/index.md) section for language-specific code snippets.
 
 ---
 
