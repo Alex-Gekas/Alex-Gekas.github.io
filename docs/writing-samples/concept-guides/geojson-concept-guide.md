@@ -1,3 +1,8 @@
+---
+title: "GeoJSON Explained — Understanding Geospatial Data Structures"
+description: "Conceptual guide to GeoJSON geometry types, features, and collections."
+---
+
 !!! note "What I Did"
 
     I wrote a concept guide to explain GeoJSON in clear, approachable terms, illustrated structure and syntax with examples, and highlighted real-world use cases in mapping and spatial applications.

@@ -1,5 +1,5 @@
 ---
-title: "Overview"
+title: "National Weather Service API — Reorganized Reference"
 description: "Introduction to the NWS API"
 ---
 
@@ -22,7 +22,6 @@ This is a developer-friendly rewrite of the official API documentation. It focus
 
 **Official source:** [NWS Services Web API Documentation](https://www.weather.gov/documentation/services-web-api)
 
-**About this rewrite:** [Portfolio project details →](./about.md)
 
 ---
 

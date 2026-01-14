@@ -21,10 +21,10 @@ nav:
   - Home: index.md
   - Writing Samples:
       - Tutorial: writing-samples/tutorial/woo_comm_tutorial.md
-      - Concept Guide: writing-samples/concept-guides/geojson-concept-guide.md
+      - GeoJSON Concepts: writing-samples/concept-guides/geojson-concept-guide.md
 
       - API Reference:
-          - Overview: writing-samples/api-reference/index.md
+          - NWS API Documentation: writing-samples/api-reference/index.md
           - Quick Start: writing-samples/api-reference/quick-start.md
           - Authentication and Headers: writing-samples/api-reference/authentication.md
           - Caching Best Practices: writing-samples/api-reference/caching.md
