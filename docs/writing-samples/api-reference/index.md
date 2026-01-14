@@ -1,5 +1,5 @@
 ---
-title: "National Weather Service API — Reorganized Reference"
+title: "NWS API — Reorganized Reference"
 description: "Introduction to the NWS API"
 ---
 
