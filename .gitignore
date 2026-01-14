@@ -3,3 +3,6 @@ site/
 *.pyc
 __pycache__/
 .venv/
+# One-off tooling and generated review artifacts
+export_nws_docs_xml_bundle.py
+nws-docs-bundle.xml
