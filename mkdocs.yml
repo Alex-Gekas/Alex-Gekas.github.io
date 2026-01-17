@@ -52,6 +52,7 @@ nav:
   - Blog: blog/index.md
 
 markdown_extensions:
+  - meta
   - admonition
   - attr_list
   - def_list

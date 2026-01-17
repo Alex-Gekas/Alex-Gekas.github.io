@@ -1,12 +1,12 @@
 ---
-title: WooCommerce — build a custom WooCommerce order status
+title: Technical Tutorial-WooCommerce Order Status & Emails
 tags:
   - tutorial
   - WooCommerce
 ---
 !!! note "What I Did"
 
-    I authored a technical tutorial that produces a WooCommerce plugin implementing a custom order status with admin workflows and customer email notifications. The guide is intended for intermediate WooCommerce users and plugin developers.
+    I wrote a technical tutorial that produces a WooCommerce plugin implementing a custom order status with admin workflows and customer email notifications. The guide is intended for intermediate WooCommerce users and plugin developers.
 ---
 
 # Build a custom WooCommerce order status with customer email notifications
@@ -1132,4 +1132,5 @@ In this tutorial, you:
 - Triggered emails manually and on status change
 
 - Validated the feature using a QA-style approach
+
 
