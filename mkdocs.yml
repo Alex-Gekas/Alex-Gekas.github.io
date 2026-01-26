@@ -48,7 +48,6 @@ nav:
               - Stations: writing-samples/api-reference/endpoints/stations.md
               - Zones: writing-samples/api-reference/endpoints/zones.md
 
-      - Style Guide: writing-samples/style-guide/chronologue-style-guide.md
   - Blog: blog/index.md
 
 markdown_extensions:
