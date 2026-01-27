@@ -13,8 +13,7 @@ I specialize in:
 
 - API and developer documentation  
 - Concept and reference guides  
-- Tutorials and onboarding documentation 
-- Style guides and documentation systems  
+- Tutorials and onboarding documentation   
 
 [:material-file-document-outline: View portfolio](#featured-work) • [:material-account: About](#about-me) • [:material-rss: Blog](blog/index.md)
 
@@ -28,9 +27,10 @@ Below are some samples that demonstrate structure, clarity, and audience awarene
 Modernized API documentation with clear conceptual separation and developer-first structure.  
 [:material-arrow-right-circle: Read the docs](writing-samples/api-reference/index.md)
 
-**Chronologue Relay VR — Style Guide**  
+<!--**Chronologue Relay VR — Style Guide**  
 Documentation style guide for a mixed-audience, fictional VR product, including voice, tone, and terminology rules.  
 [:material-arrow-right-circle: View style guide](writing-samples/style-guide/chronologue-style-guide.md)
+-->
 
 **GeoJSON — Concepts & Usage**  
 Conceptual guide explaining GeoJSON structures, geometry types, and real-world mapping use cases.  
