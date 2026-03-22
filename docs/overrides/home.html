@@ -1,0 +1,697 @@
+{% extends "main.html" %}
+
+{% block tabs %}
+{{ super() }}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+<style>
+
+  /* ─── Reset MkDocs chrome on homepage ─────────────────── */
+  .md-main__inner { margin: 0; max-width: 100%; }
+  .md-content { max-width: 100%; padding: 0; }
+  .md-content__inner { margin: 0; padding: 0; }
+  .md-content__inner > h1:first-child { display: none; }
+  .md-typeset h1, .md-typeset h2 { margin: 0; }
+  article.md-content__inner { padding: 0 !important; }
+
+  /* ─── Design tokens ────────────────────────────────────── */
+  :root {
+    --cream:    #f7f4ef;
+    --ink:      #1a1814;
+    --ink-mid:  #4a4540;
+    --ink-light:#8c857a;
+    --rule:     #d8d0c4;
+    --accent:   #c0392b;       /* editorial red */
+    --accent-dk:#96291f;
+    --mono-bg:  #eee9e1;
+    --card-bg:  #f2ede6;
+    --soon:     #b0a898;
+  }
+
+  /* ─── Page shell ───────────────────────────────────────── */
+  .ag-home {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--cream);
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  /* ─── MASTHEAD ─────────────────────────────────────────── */
+  .ag-masthead {
+    border-bottom: 2px solid var(--ink);
+    padding: 48px 64px 32px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 24px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .ag-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: var(--ink);
+  }
+
+  .ag-name span {
+    color: var(--accent);
+  }
+
+  .ag-title-line {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-top: 8px;
+  }
+
+  .ag-masthead-right {
+    text-align: right;
+  }
+
+  .ag-masthead-right a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .ag-masthead-right a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .ag-masthead-links {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    margin-top: 4px;
+  }
+
+  /* ─── EDITION LINE ─────────────────────────────────────── */
+  .ag-edition {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 7px 64px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+
+  /* ─── HERO ─────────────────────────────────────────────── */
+  .ag-hero {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 0;
+    border-bottom: 1.5px solid var(--rule);
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .ag-hero-left {
+    padding: 56px 64px 56px 64px;
+    border-right: none;
+  }
+
+  .ag-divider-v {
+    background: var(--rule);
+    width: 1px;
+    margin: 40px 0;
+  }
+
+  .ag-hero-right {
+    padding: 56px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .ag-kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ag-kicker::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1.5px;
+    background: var(--accent);
+  }
+
+  .ag-hero-headline {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  .ag-hero-headline em {
+    font-style: italic;
+    color: var(--ink-mid);
+  }
+
+  .ag-hero-body {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--ink-mid);
+    font-weight: 300;
+    max-width: 480px;
+  }
+
+  .ag-hero-body strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .ag-pull-quote {
+    border-left: 3px solid var(--accent);
+    padding-left: 20px;
+    margin: 0;
+  }
+
+  .ag-pull-quote p {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--ink-mid);
+    margin: 0 0 8px 0;
+  }
+
+  .ag-pull-quote cite {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    font-style: normal;
+  }
+
+  .ag-stat-row {
+    display: flex;
+    gap: 32px;
+    margin-top: 8px;
+  }
+
+  .ag-stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ag-stat-num {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .ag-stat-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-top: 4px;
+  }
+
+  /* ─── SECTION RULE ─────────────────────────────────────── */
+  .ag-section-rule {
+    padding: 0 64px;
+    margin: 0;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+
+  .ag-section-rule-inner {
+    border-top: 2px solid var(--ink);
+    padding-top: 10px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .ag-section-label {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .ag-section-sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+
+  /* ─── SAMPLES TABLE ────────────────────────────────────── */
+  .ag-samples {
+    padding: 24px 64px 56px;
+    animation: fadeUp 0.6s 0.35s ease both;
+  }
+
+  .ag-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .ag-table thead tr {
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .ag-table thead th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    padding: 0 16px 10px 0;
+    font-weight: 500;
+    text-align: left;
+  }
+
+  .ag-table thead th:first-child { padding-left: 0; }
+
+  .ag-table tbody tr {
+    border-bottom: 1px solid var(--rule);
+    transition: background 0.15s;
+    cursor: default;
+  }
+
+  .ag-table tbody tr.ag-row-active:hover {
+    background: var(--card-bg);
+  }
+
+  .ag-table tbody tr.ag-row-soon {
+    opacity: 0.55;
+  }
+
+  .ag-table tbody td {
+    padding: 18px 16px 18px 0;
+    vertical-align: top;
+  }
+
+  .ag-table tbody td:first-child { padding-left: 0; }
+
+  .ag-sample-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--ink-light);
+    padding-top: 3px;
+    width: 32px;
+  }
+
+  .ag-sample-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .ag-sample-sub {
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.82rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink-light);
+    margin-top: 2px;
+  }
+
+  .ag-sample-audience {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+    color: var(--ink-mid);
+    min-width: 140px;
+    padding-top: 4px;
+  }
+
+  .ag-sample-type {
+    min-width: 100px;
+    padding-top: 3px;
+  }
+
+  .ag-tag {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+    border: 1px solid;
+  }
+
+  .ag-tag-api    { color: #1a5276; background: #d6eaf8; border-color: #a9cce3; }
+  .ag-tag-tut    { color: #145a32; background: #d5f5e3; border-color: #a9dfbf; }
+  .ag-tag-expl   { color: #6e2f02; background: #fdebd0; border-color: #f0b27a; }
+  .ag-tag-guide  { color: #4a235a; background: #e8daef; border-color: #c39bd3; }
+  .ag-tag-art    { color: #5d4037; background: #efebe9; border-color: #bcaaa4; }
+  .ag-tag-soon   { color: var(--soon); background: #f5f0e8; border-color: #d8d0c4; }
+
+  .ag-sample-links {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 120px;
+  }
+
+  .ag-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.15s;
+  }
+
+  .ag-link:hover { color: var(--accent-dk); }
+
+  .ag-link::before {
+    content: '→';
+    font-size: 0.7rem;
+  }
+
+  .ag-soon-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    color: var(--soon);
+    font-style: italic;
+  }
+
+  /* ─── FOOTER STRIP ─────────────────────────────────────── */
+  .ag-footer {
+    border-top: 2px solid var(--ink);
+    padding: 24px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+
+  .ag-footer-left {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-light);
+  }
+
+  .ag-footer-right {
+    display: flex;
+    gap: 20px;
+  }
+
+  .ag-footer-right a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .ag-footer-right a:hover { color: var(--accent); }
+
+  /* ─── Animation ────────────────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── Responsive ───────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .ag-masthead, .ag-edition,
+    .ag-section-rule, .ag-samples, .ag-footer {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .ag-hero {
+      grid-template-columns: 1fr;
+    }
+
+    .ag-divider-v { display: none; }
+
+    .ag-hero-left, .ag-hero-right {
+      padding: 32px 24px;
+    }
+
+    .ag-hero-right { border-top: 1px solid var(--rule); }
+
+    .ag-masthead { grid-template-columns: 1fr; }
+    .ag-masthead-right { text-align: left; }
+    .ag-masthead-links { justify-content: flex-start; }
+
+    .ag-table thead th:nth-child(3),
+    .ag-table tbody td:nth-child(3) { display: none; }
+
+    .ag-footer { flex-direction: column; gap: 12px; align-items: flex-start; }
+  }
+/* Hide Material header on homepage only */
+.md-header {
+  display: none;
+}
+
+.md-tabs {
+  display: none;
+}
+
+.md-main {
+  margin-top: 0 !important;
+}
+</style>
+
+<div class="ag-home">
+
+  <!-- MASTHEAD -->
+  <header class="ag-masthead">
+    <div>
+      <div class="ag-name">Alex <span>Gekas</span></div>
+      <div class="ag-title-line">Technical Writer &nbsp;·&nbsp; API &amp; Developer Documentation</div>
+    </div>
+    <div class="ag-masthead-right">
+      <div class="ag-masthead-links">
+        <a href="https://alexgekas.com" target="_blank">alexgekas.com</a>
+        <a href="https://github.com/alexgekas" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/alexgekas" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- EDITION LINE -->
+  <div class="ag-edition">
+    <span>Writing Portfolio &nbsp;·&nbsp; Technical Documentation Samples</span>
+    <span>github.io/alexgekas</span>
+  </div>
+
+  <!-- HERO -->
+  <section class="ag-hero">
+    <div class="ag-hero-left">
+      <div class="ag-kicker">About this portfolio</div>
+      <h1 class="ag-hero-headline">
+        Developer docs that <em>make the<br>complex navigable.</em>
+      </h1>
+      <p class="ag-hero-body">
+        I write <strong>API references, tutorials, and concept guides</strong> for developer-facing products — the kind of documentation that reduces support tickets, accelerates onboarding, and earns trust with technical audiences.
+      </p>
+      <br>
+      <p class="ag-hero-body">
+        This site collects six writing samples across different formats and audiences. Each section opens with a short case study explaining the context, the challenge, and the writing decisions behind the piece. Use the navigation on the left to explore any sample directly.
+      </p>
+    </div>
+
+    <div class="ag-divider-v"></div>
+
+    <div class="ag-hero-right">
+      <blockquote class="ag-pull-quote">
+        <p>"Good documentation is a product decision, not an afterthought — and it deserves a writer who understands the product."</p>
+        <cite>— Alex Gekas</cite>
+      </blockquote>
+
+      <div class="ag-stat-row">
+        <div class="ag-stat">
+          <span class="ag-stat-num">6</span>
+          <span class="ag-stat-label">Writing samples</span>
+        </div>
+        <div class="ag-stat">
+          <span class="ag-stat-num">4</span>
+          <span class="ag-stat-label">Doc formats</span>
+        </div>
+        <div class="ag-stat">
+          <span class="ag-stat-num">3+</span>
+          <span class="ag-stat-label">Audience types</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAMPLES TABLE -->
+  <div class="ag-section-rule">
+    <div class="ag-section-rule-inner">
+      <span class="ag-section-label">Writing Samples</span>
+      <span class="ag-section-sub">Six pieces across API docs, tutorials, explainers, and style guides</span>
+    </div>
+  </div>
+
+  <div class="ag-samples">
+    <table class="ag-table">
+      <thead>
+        <tr>
+          <th style="width:32px;">#</th>
+          <th>Sample</th>
+          <th>Audience</th>
+          <th>Format</th>
+          <th>Read</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr class="ag-row-active">
+          <td class="ag-sample-num">01</td>
+          <td>
+            <div class="ag-sample-title">Task API Documentation</div>
+            <div class="ag-sample-sub">Full reference suite — setup through troubleshooting</div>
+          </td>
+          <td class="ag-sample-audience">Backend developers,<br>API integrators</td>
+          <td class="ag-sample-type"><span class="ag-tag ag-tag-api">API Docs</span></td>
+          <td>
+            <div class="ag-sample-links">
+              <a class="ag-link" href="task-api-docs/">Case study</a>
+              <a class="ag-link" href="task-api-docs/setup/">Read docs</a>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="ag-row-active">
+          <td class="ag-sample-num">02</td>
+          <td>
+            <div class="ag-sample-title">Slack Webhook Integration</div>
+            <div class="ag-sample-sub">Event-driven messaging for developer teams</div>
+          </td>
+          <td class="ag-sample-audience">Developers,<br>DevOps engineers</td>
+          <td class="ag-sample-type"><span class="ag-tag ag-tag-tut">Tutorial</span></td>
+          <td>
+            <div class="ag-sample-links">
+              <a class="ag-link" href="slack-webhook/">Case study</a>
+              <a class="ag-link" href="slack-webhook/article/">Read article</a>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="ag-row-active">
+          <td class="ag-sample-num">03</td>
+          <td>
+            <div class="ag-sample-title">WooCommerce Setup Tutorial</div>
+            <div class="ag-sample-sub">End-to-end guide for non-developer store owners</div>
+          </td>
+          <td class="ag-sample-audience">SMB owners,<br>non-technical users</td>
+          <td class="ag-sample-type"><span class="ag-tag ag-tag-tut">Tutorial</span></td>
+          <td>
+            <div class="ag-sample-links">
+              <a class="ag-link" href="woocommerce-tutorial/">Case study</a>
+              <a class="ag-link" href="woocommerce-tutorial/guide/">Read guide</a>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="ag-row-active">
+          <td class="ag-sample-num">04</td>
+          <td>
+            <div class="ag-sample-title">GeoJSON Explainer</div>
+            <div class="ag-sample-sub">Spatial data formats for product and data teams</div>
+          </td>
+          <td class="ag-sample-audience">Product managers,<br>data analysts</td>
+          <td class="ag-sample-type"><span class="ag-tag ag-tag-expl">Explainer</span></td>
+          <td>
+            <div class="ag-sample-links">
+              <a class="ag-link" href="geojson-explainer/">Case study</a>
+              <a class="ag-link" href="geojson-explainer/explainer/">Read explainer</a>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="ag-row-active">
+          <td class="ag-sample-num">05</td>
+          <td>
+            <div class="ag-sample-title">VR Style Guide</div>
+            <div class="ag-sample-sub">Writing standards for immersive interface copy</div>
+          </td>
+          <td class="ag-sample-audience">UX writers,<br>XR designers</td>
+          <td class="ag-sample-type"><span class="ag-tag ag-tag-guide">Style Guide</span></td>
+          <td>
+            <div class="ag-sample-links">
+              <a class="ag-link" href="vr-style-guide/">Case study</a>
+              <a class="ag-link" href="vr-style-guide/guide/">Read guide</a>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="ag-row-soon">
+          <td class="ag-sample-num">06</td>
+          <td>
+            <div class="ag-sample-title">Linear Integrations Brief</div>
+            <div class="ag-sample-sub">Product brief for a developer-facing integrations launch</div>
+          </td>
+          <td class="ag-sample-audience">Product managers,<br>developer advocates</td>
+          <td class="ag-sample-type"><span class="ag-tag ag-tag-soon">Coming soon</span></td>
+          <td>
+            <div class="ag-sample-links">
+              <span class="ag-soon-label">In progress</span>
+            </div>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="ag-footer">
+    <div class="ag-footer-left">© Alex Gekas &nbsp;·&nbsp; Built with Material for MkDocs</div>
+    <div class="ag-footer-right">
+      <a href="https://alexgekas.com" target="_blank">Portfolio site</a>
+      <a href="https://github.com/alexgekas" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/alexgekas" target="_blank">LinkedIn</a>
+      <a href="mailto:alex@alexgekas.com">Contact</a>
+    </div>
+  </footer>
+
+</div><!-- /ag-home -->
+
+{% endblock %}
+
+{% block content %}{% endblock %}
+{% block footer %}{% endblock %}

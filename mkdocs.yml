@@ -1,0 +1,39 @@
+site_name: Alex Gekas — Technical Writing Portfolio
+site_url: https://alex-gekas.github.io/
+site_author: Alex Gekas
+site_description: Technical writing portfolio — API docs, tutorials, explainers, and style guides.
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  features:
+    - navigation.tabs
+    - navigation.top
+  palette:
+    scheme: default
+    primary: custom
+    accent: custom
+  font:
+    text: Source Serif 4
+    code: IBM Plex Mono
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Task API Docs:
+    - Case Study: task-api-docs/index.md
+    - Setup: task-api-docs/setup.md
+  - Slack Webhook:
+    - Case Study: slack-webhook/index.md
+    - Article: slack-webhook/article.md
+  - WooCommerce Tutorial:
+    - Case Study: woocommerce-tutorial/index.md
+    - Guide: woocommerce-tutorial/guide.md
+  - GeoJSON Explainer:
+    - Case Study: geojson-explainer/index.md
+    - Explainer: geojson-explainer/explainer.md
+  - VR Style Guide:
+    - Case Study: vr-style-guide/index.md
+    - Guide: vr-style-guide/guide.md
