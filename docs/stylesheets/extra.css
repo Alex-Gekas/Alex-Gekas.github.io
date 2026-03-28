@@ -112,3 +112,44 @@
 .md-footer-meta {
   background-color: var(--ink);
 }
+/* ─── Import IBM Plex Sans ──────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap');
+
+/* ─── Doc page typography ──────────────────────────────── */
+.md-typeset p,
+.md-typeset li,
+.md-typeset td,
+.md-typeset th {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--ink-mid);
+}
+
+.md-typeset h1 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.md-typeset h2 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.md-typeset h3 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+.md-nav__link {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8rem;
+}
