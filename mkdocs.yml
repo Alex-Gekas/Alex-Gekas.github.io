@@ -47,7 +47,7 @@ nav:
     - Article: slack-webhook/article.md
   - NWS API Reference:
     - Case Study: nws-api-reference/index.md
-    - Overview ofthe NWS API: nws-api-reference/introduction.md
+    - Overview of the NWS API: nws-api-reference/introduction.md
     - Quick Start: nws-api-reference/quick-start.md
     - Authentication and Headers: nws-api-reference/authentication.md
     - Caching Best Practices: nws-api-reference/caching.md
@@ -60,6 +60,30 @@ nav:
         - "Developer use cases": nws-api-reference/key-concepts/developer-use-cases.md
         - "Status codes": nws-api-reference/key-concepts/status-codes.md
         - "Units and conventions": nws-api-reference/key-concepts/units.md
+    - Endpoints:
+        - "Endpoints overview": nws-api-reference/endpoints/index.md
+        - "Points": nws-api-reference/endpoints/points.md
+        - "Forecasts": nws-api-reference/endpoints/forecasts.md
+        - "Grid points": nws-api-reference/endpoints/grid-points.md
+        - "Stations": nws-api-reference/endpoints/stations.md
+        - "Alerts": nws-api-reference/endpoints/alerts.md
+        - "Zones": nws-api-reference/endpoints/zones.md
+    - Forecasts:
+        - How Forecasts Are Structured:
+            - "Overview": nws-api-reference/forecasts/how-forecasts-are-structured/overview.md
+            - "City to coordinates": nws-api-reference/forecasts/how-forecasts-are-structured/city-to-coordinates.md
+            - "Grids": nws-api-reference/forecasts/how-forecasts-are-structured/grids.md
+            - "Grids vs zones": nws-api-reference/forecasts/how-forecasts-are-structured/grids-vs-zones.md
+            - "Zones": nws-api-reference/forecasts/how-forecasts-are-structured/zones.md
+            - "WFOs": nws-api-reference/forecasts/how-forecasts-are-structured/wfo.md
+            - "Units": nws-api-reference/forecasts/how-forecasts-are-structured/units.md
+        - Alerts and Warnings:
+            - "Overview": nws-api-reference/forecasts/alerts-and-warnings/overview.md
+            - "Forecast vs alert": nws-api-reference/forecasts/alerts-and-warnings/forecast-vs-alert.md
+            - "Retrieving alerts": nws-api-reference/forecasts/alerts-and-warnings/retrieving-alerts.md
+            - "Zone-based alerts": nws-api-reference/forecasts/alerts-and-warnings/zone-based-alerts.md
+            - "Status codes": nws-api-reference/forecasts/alerts-and-warnings/status-codes.md
+            - "Examples": nws-api-reference/forecasts/alerts-and-warnings/examples.md
   - GeoJSON Explainer:
     - Case Study: geojson-explainer/index.md
     - Explainer: geojson-explainer/explainer.md
