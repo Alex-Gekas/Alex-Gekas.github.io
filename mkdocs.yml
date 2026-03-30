@@ -14,23 +14,52 @@ theme:
     primary: custom
     accent: custom
   font:
-    text: Source Serif 4
+    text: Open Sans
     code: IBM Plex Mono
 
 extra_css:
   - stylesheets/extra.css
 
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+
 nav:
   - Home: index.md
   - Task API Docs:
     - Case Study: task-api-docs/index.md
+    - About: task-api-docs/about.md
+    - System Architecture: task-api-docs/system-architecture.md
     - Setup: task-api-docs/setup.md
+    - Getting Started: task-api-docs/getting-started.md
+    - Authentication Guide: task-api-docs/authentication-guide.md
+    - API Reference: task-api-docs/api-reference.md
+    - Troubleshooting: task-api-docs/troubleshooting.md
   - Slack Webhook:
     - Case Study: slack-webhook/index.md
     - Article: slack-webhook/article.md
-  - WooCommerce Tutorial:
-    - Case Study: woocommerce-tutorial/index.md
-    - Guide: woocommerce-tutorial/guide.md
+  - NWS API Reference:
+    - Case Study: nws-api-reference/index.md
+    - Overview ofthe NWS API: nws-api-reference/introduction.md
+    - Quick Start: nws-api-reference/quick-start.md
+    - Authentication and Headers: nws-api-reference/authentication.md
+    - Caching Best Practices: nws-api-reference/caching.md
+    - Key Concepts:
+        - "How forecasts are structured": nws-api-reference/key-concepts/index.md
+        - "Forecast hierarchy": nws-api-reference/key-concepts/hierarchy.md
+        - "Weather Forecast Offices (WFOs)": nws-api-reference/key-concepts/wfos.md
+        - "Gridpoints and grids": nws-api-reference/key-concepts/grids.md
+        - "Zones": nws-api-reference/key-concepts/zones.md
+        - "Developer use cases": nws-api-reference/key-concepts/developer-use-cases.md
+        - "Status codes": nws-api-reference/key-concepts/status-codes.md
+        - "Units and conventions": nws-api-reference/key-concepts/units.md
   - GeoJSON Explainer:
     - Case Study: geojson-explainer/index.md
     - Explainer: geojson-explainer/explainer.md
