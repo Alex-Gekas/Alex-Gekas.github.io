@@ -1,0 +1,2821 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Writing standards and terminology guidelines for Zaius documentation contributors.">
+      
+      
+        <meta name="author" content="Alex Gekas">
+      
+      
+        <link rel="canonical" href="https://alex-gekas.github.io/vr-style-guide/guide/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Zaius Style Guide - Alex Gekas — Technical Writing Portfolio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"IBM Plex Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#zaius-style-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Alex Gekas — Technical Writing Portfolio" class="md-header__button md-logo" aria-label="Alex Gekas — Technical Writing Portfolio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Alex Gekas — Technical Writing Portfolio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Zaius Style Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../task-api-docs/" class="md-tabs__link">
+          
+  
+  
+  Task API Docs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../slack-webhook/" class="md-tabs__link">
+          
+  
+  
+  Slack Webhook
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../nws-api-reference/" class="md-tabs__link">
+          
+  
+  
+  NWS API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../geojson-explainer/" class="md-tabs__link">
+          
+  
+  
+  GeoJSON Explainer
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  VR Style Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Alex Gekas — Technical Writing Portfolio" class="md-nav__button md-logo" aria-label="Alex Gekas — Technical Writing Portfolio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Alex Gekas — Technical Writing Portfolio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task API Docs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Task API Docs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../task-api-docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Study
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../task-api-docs/about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../task-api-docs/system-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../task-api-docs/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../task-api-docs/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../task-api-docs/authentication-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../task-api-docs/api-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../task-api-docs/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slack Webhook
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Slack Webhook
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slack-webhook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Study
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slack-webhook/article/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Article
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NWS API Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NWS API Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Study
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview ofthe NWS API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/authentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication and Headers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/caching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caching Best Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Key Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/key-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How forecasts are structured
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/key-concepts/hierarchy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Forecast hierarchy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/key-concepts/wfos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weather Forecast Offices (WFOs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/key-concepts/grids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gridpoints and grids
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/key-concepts/zones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/key-concepts/developer-use-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer use cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/key-concepts/status-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Status codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/key-concepts/units/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Units and conventions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GeoJSON Explainer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GeoJSON Explainer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geojson-explainer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Study
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geojson-explainer/explainer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explainer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VR Style Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    VR Style Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Study
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#our-preferred-style-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Our Preferred Style Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Our Preferred Style Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-from-the-google-style-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Highlights from the Google Style Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Highlights from the Google Style Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defining-abstract-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining Abstract Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-analogies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Analogies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#providing-context-when-listing-product-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Providing Context When Listing Product Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-zaius-adapts-the-google-style-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Zaius Adapts the Google Style Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Zaius Adapts the Google Style Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formatting-astronomical-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formatting Astronomical Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talking-about-past-and-future-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Talking About Past and Future Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#describing-the-users-perspective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describing the User's Perspective
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-the-style-guide-doesnt-cover-your-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If the Style Guide Doesn't Cover Your Question
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voice-and-tone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voice and Tone
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Voice and Tone">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#voice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glossary-of-preferred-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Glossary of Preferred Terms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Glossary of Preferred Terms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#essential-vr-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Essential VR Terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topic-types-and-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topic Types and Templates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessible-writing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessible Writing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Accessible Writing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#write-in-plain-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Write in Plain Language
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avoid-directional-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Avoid Directional Language
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provide-descriptive-alt-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provide Descriptive Alt Text
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inclusive-and-bias-free-writing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inclusive and Bias-Free Writing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inclusive and Bias-Free Writing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-gender-neutral-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Gender-Neutral Language
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avoid-cultural-assumptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Avoid Cultural Assumptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-precise-geographic-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Precise Geographic Language
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-linters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Linters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Linters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before-you-run-vale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before You Run Vale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminology-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminology Lists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-run-vale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Run Vale
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-style-guide-is-updated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the Style Guide Is Updated
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Log
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#our-preferred-style-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Our Preferred Style Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Our Preferred Style Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-from-the-google-style-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Highlights from the Google Style Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Highlights from the Google Style Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defining-abstract-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining Abstract Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-analogies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Analogies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#providing-context-when-listing-product-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Providing Context When Listing Product Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-zaius-adapts-the-google-style-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Zaius Adapts the Google Style Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Zaius Adapts the Google Style Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formatting-astronomical-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formatting Astronomical Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talking-about-past-and-future-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Talking About Past and Future Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#describing-the-users-perspective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describing the User's Perspective
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-the-style-guide-doesnt-cover-your-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If the Style Guide Doesn't Cover Your Question
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voice-and-tone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voice and Tone
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Voice and Tone">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#voice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glossary-of-preferred-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Glossary of Preferred Terms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Glossary of Preferred Terms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#essential-vr-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Essential VR Terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topic-types-and-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topic Types and Templates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessible-writing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessible Writing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Accessible Writing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#write-in-plain-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Write in Plain Language
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avoid-directional-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Avoid Directional Language
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provide-descriptive-alt-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provide Descriptive Alt Text
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inclusive-and-bias-free-writing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inclusive and Bias-Free Writing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inclusive and Bias-Free Writing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-gender-neutral-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Gender-Neutral Language
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avoid-cultural-assumptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Avoid Cultural Assumptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-precise-geographic-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Precise Geographic Language
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-linters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Linters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Linters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before-you-run-vale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before You Run Vale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminology-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminology Lists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-run-vale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Run Vale
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-style-guide-is-updated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the Style Guide Is Updated
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Log
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="zaius-style-guide">Zaius Style Guide</h1>
+<p><strong>Version:</strong> 1.0
+<strong>Updated:</strong> 03/13/2026</p>
+<h2 id="introduction">Introduction</h2>
+<p>Welcome to the project. This style guide is for contributors, not end users, and provides guidance for creating clear, consistent documentation across Zaius products. We write for two main audiences: astronomy enthusiasts using Chronologue Relay VR for simulations and developers who build and integrate these products.</p>
+<p>Please review the style rules below to ensure our documents are accessible to both groups. Before you start writing, check these guidelines carefully. If you have questions, reach out to the editorial team at <a href="mailto:styleguide@zaiusinc.com">styleguide@zaiusinc.com</a>.</p>
+<h2 id="our-preferred-style-guide">Our Preferred Style Guide</h2>
+<p>Zaius documentation is based on the <a href="https://developers.google.com/style">Google Developer Documentation Style Guide</a>. This guide sets the standard for technical content. It serves as our main style guide for Zaius. In this section, we highlight key rules from the Google Style Guide and show how we adapt them to our project.</p>
+<h3 id="highlights-from-the-google-style-guide">Highlights from the Google Style Guide</h3>
+<p>The following highlights show rules from the Google Style Guide that are important to follow when writing Zaius documentation.</p>
+<h4 id="defining-abstract-concepts">Defining Abstract Concepts</h4>
+<p><strong>Google's rule:</strong> Define new or abstract concepts before using them.</p>
+<p><strong>Why it matters for Zaius:</strong> Abstract terms can be interpreted in different ways. Don't rely on readers to guess their meaning. Define them the first time they appear in a document, even if they're already listed in the glossary.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>❌ Don't use</td>
+<td>"Chronologue Relay VR lets you experience temporal reconstructions."</td>
+</tr>
+<tr>
+<td>✅ Use</td>
+<td>"Chronologue Relay VR lets you experience temporal reconstructions — simulations of astronomical events from the past or future."</td>
+</tr>
+</tbody>
+</table>
+<p>See Google's guidance: <a href="https://developers.google.com/style/jargon">Jargon</a></p>
+<h4 id="using-analogies">Using Analogies</h4>
+<p><strong>Google's rule:</strong> Use examples and comparisons to make complex systems easier to understand.</p>
+<p><strong>Why it matters for Zaius:</strong> Explaining how Chronologue Relay VR works and the events it simulates can be technical and complex. Use analogies to familiar concepts to help readers understand without oversimplifying.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>❌ Don't use</td>
+<td>"Chronologue Relay VR simulates orbital mechanics."</td>
+</tr>
+<tr>
+<td>✅ Use</td>
+<td>"Chronologue Relay VR simulates a celestial clockwork — planets and moons move in precise paths around each other."</td>
+</tr>
+</tbody>
+</table>
+<p>See Google's guidance: <a href="https://developers.google.com/style/examples">Examples</a></p>
+<h4 id="providing-context-when-listing-product-features">Providing Context When Listing Product Features</h4>
+<p><strong>Google's rule:</strong> Focus on what users want to achieve. Provide clear steps to achieve a goal.</p>
+<p><strong>Why it matters for Zaius:</strong> Listing features alone doesn't explain why they are important. Provide context for each feature to help readers understand big-picture concepts or achieve a goal.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>❌ Don't use</td>
+<td>"Chronologue Relay VR lets you view eclipses from any century."</td>
+</tr>
+<tr>
+<td>✅ Use</td>
+<td>"By letting you view eclipses from any century, Chronologue Relay VR shows how orbital mechanics repeat over time."</td>
+</tr>
+</tbody>
+</table>
+<p>See Google's guidance: <a href="https://developers.google.com/style/prescriptive-documentation">Prescriptive documentation</a></p>
+<h3 id="how-zaius-adapts-the-google-style-guide">How Zaius Adapts the Google Style Guide</h3>
+<p>The following rules adapt Google's guidance for writing about time-based astronomical events.</p>
+<h4 id="formatting-astronomical-data">Formatting Astronomical Data</h4>
+<p><strong>Google's rule:</strong> Covers code formatting but doesn't specify how to present scientific data.</p>
+<p><strong>Zaius' rule:</strong> Format dates, times, and coordinates consistently. Use internationally recognized standards when you need to be precise. Provide a plain-language version for general readers.</p>
+<p><strong>Example:</strong> <code>2024-07-18T23:45Z</code> (11:45 p.m. UTC on July 18, 2024)</p>
+<h4 id="talking-about-past-and-future-events">Talking About Past and Future Events</h4>
+<p><strong>Google's rule:</strong> Use the present tense for statements that describe general behavior not tied to a specific time.</p>
+<p><strong>Zaius's rule:</strong> When writing about events shown in Chronologue Relay VR, always include the time period or historical context. Don't use the present tense without a clear time context. Readers may not know whether you mean the user's current action or the simulated event.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Google-style</td>
+<td>"You watch the supernova explode in 1054."</td>
+</tr>
+<tr>
+<td>Zaius-style</td>
+<td>"Through Chronologue Relay VR, you observe a reconstruction of the supernova as it appeared in 1054."</td>
+</tr>
+</tbody>
+</table>
+<h4 id="describing-the-users-perspective">Describing the User's Perspective</h4>
+<p><strong>Google's rule:</strong> Write from the user's perspective.</p>
+<p><strong>Zaius' rule:</strong> Write from the user's viewpoint when describing astronomical events, since VR allows multiple perspectives. State whether users are viewing from Earth, space, or another vantage point.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>❌ Don't use</td>
+<td>"The galaxy rotates slowly."</td>
+</tr>
+<tr>
+<td>✅ Use</td>
+<td>"From your position 100,000 light-years above the galactic plane, you observe the Milky Way's rotation over millions of years."</td>
+</tr>
+</tbody>
+</table>
+<h3 id="if-the-style-guide-doesnt-cover-your-question">If the Style Guide Doesn't Cover Your Question</h3>
+<p>Start with the style rules from the sections above. If your question isn't answered, check the Google Style Guide. When the Zaius guide doesn't cover a topic, search the Google guide thoroughly. If you don't find it in the expected section, look in related sections.</p>
+<p>If a Google rule doesn't seem right for Zaius documentation, contact the editorial team before making an exception.</p>
+<p>If you can't find the answer to your question and you make a judgment call on an uncovered topic, document it in your work or merge request so the question can be reviewed for possible inclusion in the guide.</p>
+<h2 id="voice-and-tone">Voice and Tone</h2>
+<p>Zaius documentation supports two main audience types.</p>
+<p><strong>General audience:</strong> Readers who use Chronologue Relay VR to explore simulations, such as educators, students, and hobbyists. These readers may not work directly with system configuration or APIs.</p>
+<p><strong>Technical audience:</strong> Readers who configure systems, work with APIs, or manage simulation data. These readers are comfortable following technical instructions and using system terminology.</p>
+<h3 id="voice">Voice</h3>
+<p>Zaius documentation uses a scientific voice that is accurate and accessible. Explain concepts clearly without oversimplifying them.</p>
+<h3 id="tone">Tone</h3>
+<p>Adjust tone based on the audience.</p>
+<ul>
+<li><strong>General audience:</strong> Guide readers as they explore the system. Use verbs that encourage discovery, such as <em>explore</em>, <em>observe</em>, and <em>simulate</em>.</li>
+<li><strong>Technical audience:</strong> Use a neutral, direct, command-based style with clear action verbs.</li>
+</ul>
+<h3 id="examples">Examples</h3>
+<p><strong>Technical audience</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>❌ Don't use</td>
+<td>"Let's explore how this API brings the simulation to life."</td>
+</tr>
+<tr>
+<td>✅ Use</td>
+<td>"Run the request below to retrieve simulation data from the API."</td>
+</tr>
+</tbody>
+</table>
+<p><strong>General audience</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>❌ Don't use</td>
+<td>"Click the Run Simulation button to start the process."</td>
+</tr>
+<tr>
+<td>✅ Use</td>
+<td>"Explore the simulation by selecting Run Simulation and observing how the scene evolves."</td>
+</tr>
+</tbody>
+</table>
+<h2 id="glossary-of-preferred-terms">Glossary of Preferred Terms</h2>
+<p>Use these terms consistently in Zaius documentation to keep language clear and consistent. The table lists preferred terms and terms to avoid, in alphabetical order.</p>
+<table>
+<thead>
+<tr>
+<th>Preferred Term</th>
+<th>Avoid These Terms</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chronologue Relay VR</td>
+<td>the Relay, the system</td>
+<td>The full product name. Use on the first mention. Afterward, shorten to Chronologue.</td>
+</tr>
+<tr>
+<td>connect</td>
+<td>authenticate</td>
+<td>Use to mean start a session or pair a device in general-audience documentation. Use <em>authenticate</em> only when referring specifically to credential checks.</td>
+</tr>
+<tr>
+<td>device</td>
+<td>hardware, unit, machine</td>
+<td>Any supported hardware used with Chronologue (for example, VR headsets).</td>
+</tr>
+<tr>
+<td>event</td>
+<td>phenomenon, trigger, action</td>
+<td>A specific occurrence in space and time (for example, a solar eclipse at a given time).</td>
+</tr>
+<tr>
+<td>field of view (FoV)</td>
+<td>field of vision</td>
+<td>Standard term for the visible area in the headset.</td>
+</tr>
+<tr>
+<td>headset</td>
+<td>goggles, viewer, helmet</td>
+<td>Standard VR hardware term.</td>
+</tr>
+<tr>
+<td>launch</td>
+<td>boot up, fire up</td>
+<td>Standard term for starting an application.</td>
+</tr>
+<tr>
+<td>navigate</td>
+<td>walk, move through</td>
+<td>Use to mean move through the VR environment or menus for consistency.</td>
+</tr>
+<tr>
+<td>select</td>
+<td>click, tap, press</td>
+<td>Use to mean choose an item or activate an interface element. Other alternatives might be device-specific and misunderstood.</td>
+</tr>
+<tr>
+<td>timeline</td>
+<td>time axis, chronostream</td>
+<td>Use to mean a visual representation of events over time.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As terminology grows, new entries will be added here. Vale flags terms to avoid and suggests preferred replacements.</p>
+</div>
+<h3 id="essential-vr-terms">Essential VR Terms</h3>
+<p>In addition to Zaius-specific preferred terms, writers can use the <a href="https://developer.oculus.com/documentation/native/android/mobile-glossary/">Meta Quest (Oculus) VR Glossary</a> for common VR terms. Use these terms when explaining features, describing environments, or defining user actions so the language matches how VR is commonly described.</p>
+<h2 id="topic-types-and-templates">Topic Types and Templates</h2>
+<p>Before you draft your document, clarify your reader's goal and the audience type — general or technical. This choice determines the tone, terminology, and Vale rules for your document. After that, select the topic type that best aligns with the reader's needs.</p>
+<p>Here are some helpful templates for Zaius documentation:</p>
+<ul>
+<li>Tutorials</li>
+<li>How-to guides</li>
+<li>Reference</li>
+<li>Concepts</li>
+</ul>
+<p>Focus each document on a single purpose. Avoid mixing step-by-step instructions, explanations, and reference material, unless necessary. This helps reduce confusion. Templates for each type are available to assist with drafting and maintaining focus. Using them is optional.</p>
+<h2 id="accessible-writing">Accessible Writing</h2>
+<p>Documentation should be accessible to people with disabilities and those using various input methods and devices. Improving accessibility also makes documentation clearer and more helpful for everyone. Zaius adheres to <a href="https://developers.google.com/style/accessibility">Google's accessibility guidance</a> and the <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">WCAG principles</a> to ensure content is more accessible.</p>
+<h3 id="write-in-plain-language">Write in Plain Language</h3>
+<p>Use simple words, short sentences, and the active voice to make your writing easy to understand. Avoid jargon, metaphors, and complex phrasing that might confuse people using screen readers and non-native English speakers.</p>
+<h3 id="avoid-directional-language">Avoid Directional Language</h3>
+<p>Describe the action, not the location.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>❌ Don't use</td>
+<td>"To your left, you can see the outlines of an eclipse beginning to form."</td>
+</tr>
+<tr>
+<td>✅ Use</td>
+<td>"An eclipse appears on the screen."</td>
+</tr>
+</tbody>
+</table>
+<h3 id="provide-descriptive-alt-text">Provide Descriptive Alt Text</h3>
+<p>Every essential image needs alt text that communicates its purpose. Mark decorative images as decorative.</p>
+<p><strong>Example:</strong> <code>"Screenshot of the Event Timeline showing Halley's Comet in 12 BCE"</code></p>
+<p>For additional resources on making your writing more accessible, see:</p>
+<ul>
+<li><a href="https://www.plainlanguage.gov">plainlanguage.gov</a> — Guidelines for clear communication.</li>
+<li><a href="https://hemingwayapp.com">Hemingway Editor</a> — A tool to test the readability of your writing.</li>
+</ul>
+<h2 id="inclusive-and-bias-free-writing">Inclusive and Bias-Free Writing</h2>
+<p>Zaius products reach a global audience. Our documentation should feel welcoming to everyone who reads it. Follow the <a href="https://developers.google.com/style/inclusive-documentation">Google Style Guide's principles for inclusive language</a>.</p>
+<h3 id="use-gender-neutral-language">Use Gender-Neutral Language</h3>
+<p>When referring to a person whose gender you don't know, use neutral terms like <em>they</em>, <em>users</em>, or <em>people</em>.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ Use</td>
+<td>"They operated the controls in the observation station."</td>
+</tr>
+<tr>
+<td>❌ Don't use</td>
+<td>"He manned the controls."</td>
+</tr>
+</tbody>
+</table>
+<h3 id="avoid-cultural-assumptions">Avoid Cultural Assumptions</h3>
+<p>Readers come from different countries, traditions, and backgrounds. Use references that make sense to all of them.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ Use</td>
+<td>"A comet that appeared on December 24, 2000."</td>
+</tr>
+<tr>
+<td>❌ Don't use</td>
+<td>"A comet on Christmas Eve."</td>
+</tr>
+</tbody>
+</table>
+<h3 id="use-precise-geographic-language">Use Precise Geographic Language</h3>
+<p>Place names change over time and can have political or cultural implications. When writing about time and space scenarios for Chronologue Relay VR, use the term that matches the context.</p>
+<p><strong>Modern context</strong> — use the current country or region name.</p>
+<blockquote>
+<p>"Northern Mexico, near Monterrey."</p>
+</blockquote>
+<p><strong>Historical context</strong> — use the name used during that period.</p>
+<blockquote>
+<p>"The Aztec capital of Tenochtitlan (now Mexico City)."</p>
+</blockquote>
+<p>Avoid using terms interchangeably, and be cautious about implying ownership or political claims through wording.</p>
+<ul>
+<li>✅ Use "North America" when referring to the continent as a whole.</li>
+<li>✅ Use "United States" when the topic is country-specific.</li>
+<li>❌ Avoid "America" when only the U.S. is intended — it may exclude Canada and other regions.</li>
+</ul>
+<h2 id="using-linters">Using Linters</h2>
+<p>Vale is a command-line linting tool that checks your writing for clarity, terminology, and formatting issues as you write. Running Vale before submitting a merge request is required. Documents that fail the Vale check will not be merged.</p>
+<h3 id="before-you-run-vale">Before You Run Vale</h3>
+<p>After identifying your audience in the topic types section, add the appropriate front matter tag to the top of your document:
+<div class="highlight"><pre><span></span><code><span class="nt">audience</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">general</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">audience</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">technical</span>
+</code></pre></div></p>
+<p>Vale uses this tag to determine which terminology list to apply to your document.</p>
+<h3 id="terminology-lists">Terminology Lists</h3>
+<p>Vale checks terms against three controlled lists:</p>
+<table>
+<thead>
+<tr>
+<th>List</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BaseTerms</code></td>
+<td>Core product language used in all content</td>
+</tr>
+<tr>
+<td><code>GeneralAudience</code></td>
+<td>Plain-language preferences for learner-focused docs (tutorials, how-to guides)</td>
+</tr>
+<tr>
+<td><code>TechnicalAudience</code></td>
+<td>Terms for developer and API documentation</td>
+</tr>
+</tbody>
+</table>
+<p>You can view the terminology lists by audience in the Vale directory at:
+<div class="highlight"><pre><span></span><code>/tools/vale/terms/
+├── BaseTerms.yml
+├── GeneralAudience.yml
+└── TechnicalAudience.yml
+</code></pre></div></p>
+<h3 id="how-to-run-vale">How to Run Vale</h3>
+<p>Run Vale from the command line in your document directory before submitting a merge request:
+<div class="highlight"><pre><span></span><code>vale<span class="w"> </span>your-document.md
+</code></pre></div></p>
+<p>You can also install it in your text editor (like VS Code) to get real-time feedback. Vale flags terminology, readability, and formatting issues directly in your terminal or editor. Resolve flagged issues before submitting your merge request. If you believe a flagged term is correct, note it in your merge request for editorial review.</p>
+<h2 id="how-the-style-guide-is-updated">How the Style Guide Is Updated</h2>
+<p>The editorial team will review the Chronologue Style Guide in full every six months to ensure it stays current with product updates and the needs of our users. In between major reviews, we make minor adjustments as needed, especially when new features are released or when contributors flag unclear or outdated guidelines.</p>
+<p>All updates are tracked in the style guide changelog, and we communicate changes directly to documentation contributors. If you spot something that needs clarification, or you have a suggestion for improving the guide, contact the editorial team at <a href="mailto:styleguide@zaiusinc.com">styleguide@zaiusinc.com</a>.</p>
+<h2 id="decision-log">Decision Log</h2>
+<p>As the project evolves, so will the Chronologue Style Guide. The editorial team keeps a running Decision Log to document choices before implementing them. This helps us stay transparent and makes it easy to track why we made certain calls, like preferring one term over another, or deciding to make an exception to the Google Style Guide.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

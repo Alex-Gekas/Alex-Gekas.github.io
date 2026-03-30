@@ -1,0 +1,620 @@
+/* ═══════════════════════════════════════════════════════════════
+   Alex Gekas — Technical Writing Portfolio
+   extra.css  ·  Stripe-inspired doc pages + magazine homepage
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Fonts ─────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+/* ─── Design tokens ─────────────────────────────────────────── */
+:root {
+  /* Homepage palette (preserved) */
+  --cream:     #f7f4ef;
+  --ink:       #1a1814;
+  --ink-mid:   #4a4540;
+  --ink-light: #8c857a;
+  --rule:      #d8d0c4;
+  --accent:    #c0392b;
+  --accent-dk: #96291f;
+
+  /* Stripe-flavored doc tokens */
+  --doc-bg:         #ffffff;
+  --doc-sidebar-bg: #f6f8fa;
+  --doc-border:     #e6eaef;
+  --doc-text:       #0f1923;
+  --doc-muted:      #5c6b7a;
+  --doc-subtle:     #8a99a8;
+  --doc-stripe:     #625afa;   /* Stripe's signature violet */
+  --doc-stripe-lt:  #ebe9ff;
+  --doc-code-bg:    #0d1117;   /* Stripe dark code panel */
+  --doc-code-text:  #e6edf3;
+  --doc-code-border:#30363d;
+
+  /* HTTP method badge colors */
+  --method-get:     #10803e;
+  --method-get-bg:  #d1fae5;
+  --method-post:    #1d4ed8;
+  --method-post-bg: #dbeafe;
+  --method-put:     #92400e;
+  --method-put-bg:  #fef3c7;
+  --method-patch:   #6b21a8;
+  --method-patch-bg:#f3e8ff;
+  --method-delete:  #991b1b;
+  --method-delete-bg:#fee2e2;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   GLOBAL CHROME  ·  Header, tabs, footer (shared by all pages)
+   ════════════════════════════════════════════════════════════════ */
+
+.md-header {
+  background-color: var(--ink);
+  color: var(--cream);
+  box-shadow: none;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.md-header__title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.md-tabs {
+  background-color: var(--ink);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.md-tabs__link {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cream);
+  opacity: 0.6;
+  transition: opacity 0.15s;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  color: var(--cream);
+  opacity: 1;
+}
+
+.md-tabs__indicator {
+  background-color: var(--accent);
+}
+
+.md-footer {
+  background-color: var(--ink);
+  color: var(--cream);
+}
+
+.md-footer-meta {
+  background-color: var(--ink);
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   DOC PAGE SHELL  ·  background, max-width, layout
+   ════════════════════════════════════════════════════════════════ */
+
+/* Only apply doc styles when NOT on the homepage */
+body:not(.home) .md-content,
+.md-content {
+  background-color: var(--doc-bg);
+}
+
+.md-main__inner {
+  background-color: var(--doc-bg);
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   SIDEBAR  ·  Stripe-style left nav
+   ════════════════════════════════════════════════════════════════ */
+
+.md-sidebar--primary {
+  background-color: var(--doc-sidebar-bg);
+  border-right: 1px solid var(--doc-border);
+}
+
+.md-sidebar--secondary {
+  border-left: 1px solid var(--doc-border);
+}
+
+/* Section titles in sidebar */
+.md-nav__title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--doc-subtle);
+  padding: 0.6rem 0.8rem 0.3rem;
+}
+
+/* Nav links */
+.md-nav__link {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--doc-muted);
+  padding: 0.28rem 0.8rem;
+  border-radius: 6px;
+  transition: background 0.12s, color 0.12s;
+  position: relative;
+}
+
+.md-nav__link:hover {
+  background-color: rgba(98, 90, 250, 0.06);
+  color: var(--doc-stripe);
+}
+
+/* Active nav item — Stripe's vivid left-border accent */
+.md-nav__link--active {
+  font-weight: 600;
+  color: var(--doc-stripe) !important;
+  background-color: var(--doc-stripe-lt) !important;
+}
+
+.md-nav__link--active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--doc-stripe);
+  border-radius: 0 2px 2px 0;
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   TYPOGRAPHY  ·  IBM Plex Sans headings + clean body
+   ════════════════════════════════════════════════════════════════ */
+
+.md-typeset {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--doc-text);
+}
+
+.md-typeset p,
+.md-typeset li,
+.md-typeset td,
+.md-typeset th {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--doc-muted);
+}
+
+.md-typeset h1 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.55rem;
+  letter-spacing: -0.025em;
+  color: var(--doc-text);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--doc-border);
+}
+
+.md-typeset h2 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+  color: var(--doc-text);
+  margin-top: 2.5rem;
+  margin-bottom: 0.6rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--doc-border);
+}
+
+.md-typeset h3 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0;
+  color: var(--doc-text);
+  margin-top: 1.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.md-typeset h4 {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--doc-subtle);
+  margin-top: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Links */
+.md-typeset a {
+  color: var(--doc-stripe);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.md-typeset a:hover {
+  color: var(--doc-stripe);
+  border-bottom-color: var(--doc-stripe);
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   INLINE CODE  ·  Stripe pill style
+   ════════════════════════════════════════════════════════════════ */
+
+.md-typeset code:not(pre code) {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 400;
+  background-color: #f0f3f7;
+  color: #c0392b;          /* keep the portfolio's red accent for inline code */
+  border: 1px solid #dce3eb;
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   CODE BLOCKS  ·  Dark Stripe terminal style
+   ════════════════════════════════════════════════════════════════ */
+
+.md-typeset pre {
+  background: var(--doc-code-bg) !important;
+  border: 1px solid var(--doc-code-border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18), 0 1px 3px rgba(0,0,0,0.12);
+  margin: 1.25rem 0;
+}
+
+.md-typeset pre > code {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.8rem;
+  line-height: 1.65;
+  color: var(--doc-code-text);
+  background: transparent !important;
+  border: none;
+  padding: 1.1rem 1.25rem;
+  display: block;
+}
+
+/* Language label bar above code block */
+.md-typeset .highlight::before {
+  display: block;
+  background: #161b22;
+  border-bottom: 1px solid var(--doc-code-border);
+  padding: 0.45rem 1rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: #7d8590;
+  text-transform: uppercase;
+}
+
+/* Syntax token colors (Stripe-ish dark theme) */
+.md-typeset .highlight .k,
+.md-typeset .highlight .kd,
+.md-typeset .highlight .kn { color: #ff7b72; }  /* keywords — coral */
+.md-typeset .highlight .s,
+.md-typeset .highlight .s1,
+.md-typeset .highlight .s2 { color: #a5d6ff; }  /* strings — light blue */
+.md-typeset .highlight .c,
+.md-typeset .highlight .c1,
+.md-typeset .highlight .cm { color: #8b949e; font-style: italic; } /* comments */
+.md-typeset .highlight .mi,
+.md-typeset .highlight .mf { color: #79c0ff; }  /* numbers */
+.md-typeset .highlight .nf,
+.md-typeset .highlight .nb { color: #d2a8ff; }  /* functions — violet */
+.md-typeset .highlight .na,
+.md-typeset .highlight .nt { color: #7ee787; }  /* attributes/tags — green */
+.md-typeset .highlight .p  { color: #c9d1d9; }  /* punctuation */
+
+
+/* ════════════════════════════════════════════════════════════════
+   HTTP METHOD BADGES
+   Usage in Markdown: wrap endpoint in backticks with a prefix:
+   `GET` /api/tasks  →  use a <span class="method get">GET</span>
+   OR — these auto-style any inline code that exactly matches a verb
+   ════════════════════════════════════════════════════════════════ */
+
+/* Utility classes you can add in raw HTML blocks in Markdown */
+.method {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2em 0.55em;
+  border-radius: 4px;
+  margin-right: 0.5em;
+  vertical-align: middle;
+  line-height: 1.4;
+}
+
+.method.get    { background: var(--method-get-bg);    color: var(--method-get);    }
+.method.post   { background: var(--method-post-bg);   color: var(--method-post);   }
+.method.put    { background: var(--method-put-bg);    color: var(--method-put);    }
+.method.patch  { background: var(--method-patch-bg);  color: var(--method-patch);  }
+.method.delete { background: var(--method-delete-bg); color: var(--method-delete); }
+
+/* Endpoint block — full-width row with method + path */
+.endpoint {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #f6f8fa;
+  border: 1px solid var(--doc-border);
+  border-left: 3px solid var(--doc-stripe);
+  border-radius: 6px;
+  padding: 0.65rem 1rem;
+  margin: 1rem 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.82rem;
+  color: var(--doc-text);
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   TABLES  ·  Stripe API reference style
+   ════════════════════════════════════════════════════════════════ */
+
+.md-typeset table:not([class]) {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.83rem;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid var(--doc-border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: none;
+  margin: 1.25rem 0;
+}
+
+.md-typeset table:not([class]) thead {
+  background-color: #f6f8fa;
+}
+
+.md-typeset table:not([class]) th {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--doc-subtle);
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--doc-border);
+  text-align: left;
+}
+
+.md-typeset table:not([class]) td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--doc-border);
+  color: var(--doc-muted);
+  vertical-align: top;
+}
+
+.md-typeset table:not([class]) tr:last-child td {
+  border-bottom: none;
+}
+
+.md-typeset table:not([class]) tr:hover td {
+  background-color: rgba(98, 90, 250, 0.025);
+}
+
+/* Required / optional parameter badges */
+.md-typeset td strong {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--doc-text);
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   ADMONITIONS  ·  Stripe-style callout boxes
+   ════════════════════════════════════════════════════════════════ */
+
+.md-typeset .admonition {
+  border: 1px solid var(--doc-border);
+  border-left-width: 3px;
+  border-radius: 6px;
+  box-shadow: none;
+  padding: 0.85rem 1rem 0.85rem 1.1rem;
+  margin: 1.25rem 0;
+  font-size: 0.85rem;
+}
+
+.md-typeset .admonition-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.md-typeset .admonition-title::before {
+  display: none;
+}
+
+/* Note */
+.md-typeset .admonition.note {
+  border-left-color: var(--doc-stripe);
+  background: rgba(98, 90, 250, 0.04);
+}
+.md-typeset .admonition.note > .admonition-title { color: var(--doc-stripe); }
+
+/* Warning */
+.md-typeset .admonition.warning {
+  border-left-color: #d97706;
+  background: rgba(217, 119, 6, 0.05);
+}
+.md-typeset .admonition.warning > .admonition-title { color: #b45309; }
+
+/* Tip */
+.md-typeset .admonition.tip {
+  border-left-color: #059669;
+  background: rgba(5, 150, 105, 0.05);
+}
+.md-typeset .admonition.tip > .admonition-title { color: #047857; }
+
+/* Danger */
+.md-typeset .admonition.danger {
+  border-left-color: #dc2626;
+  background: rgba(220, 38, 38, 0.05);
+}
+.md-typeset .admonition.danger > .admonition-title { color: #b91c1c; }
+
+
+/* ════════════════════════════════════════════════════════════════
+   TABLE OF CONTENTS  ·  Right sidebar
+   ════════════════════════════════════════════════════════════════ */
+
+.md-nav--secondary .md-nav__title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--doc-subtle);
+  padding: 0;
+  margin-bottom: 0.5rem;
+}
+
+.md-nav--secondary .md-nav__link {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.78rem;
+  color: var(--doc-subtle);
+  padding: 0.2rem 0;
+  border-radius: 0;
+  background: transparent !important;
+}
+
+.md-nav--secondary .md-nav__link::before {
+  display: none;
+}
+
+.md-nav--secondary .md-nav__link:hover {
+  color: var(--doc-stripe);
+  background: transparent !important;
+}
+
+.md-nav--secondary .md-nav__link--active {
+  color: var(--doc-stripe) !important;
+  font-weight: 500;
+  background: transparent !important;
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   BREADCRUMB  ·  Clean path above page title
+   ════════════════════════════════════════════════════════════════ */
+
+.md-nav--primary .md-nav__link[data-md-state="blur"] {
+  color: var(--doc-subtle);
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   SEARCH  ·  Match Stripe's clean search results
+   ════════════════════════════════════════════════════════════════ */
+
+.md-search__input {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.875rem;
+  background-color: rgba(255,255,255,0.1);
+  color: var(--cream);
+}
+
+.md-search__input::placeholder {
+  color: rgba(247,244,239,0.45);
+}
+
+.md-search-result__article {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.md-search-result__title {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--doc-text);
+}
+
+.md-search-result__teaser {
+  font-size: 0.78rem;
+  color: var(--doc-muted);
+  line-height: 1.5;
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   HORIZONTAL RULES  ·  Very subtle
+   ════════════════════════════════════════════════════════════════ */
+
+.md-typeset hr {
+  border: none;
+  border-top: 1px solid var(--doc-border);
+  margin: 2rem 0;
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   BLOCKQUOTE  ·  Stripe left-rule style
+   ════════════════════════════════════════════════════════════════ */
+
+.md-typeset blockquote {
+  border-left: 3px solid var(--doc-stripe);
+  background: rgba(98, 90, 250, 0.04);
+  border-radius: 0 6px 6px 0;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  color: var(--doc-muted);
+  font-style: normal;
+}
+
+.md-typeset blockquote p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--doc-muted);
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   CONTENT WIDTH  ·  Stripe keeps it readable
+   ════════════════════════════════════════════════════════════════ */
+
+.md-content__inner {
+  max-width: 800px;
+  padding: 1.5rem 1.5rem 3rem;
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 76.1875em) {
+  .md-sidebar--primary {
+    background-color: var(--doc-sidebar-bg);
+  }
+}
+
+@media (max-width: 600px) {
+  .md-typeset h1 { font-size: 1.25rem; }
+  .md-typeset h2 { font-size: 1rem; }
+  .md-content__inner { padding: 1rem 1rem 2.5rem; }
+}
