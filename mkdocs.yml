@@ -34,8 +34,7 @@ extra_javascript:
 nav:
   - Home: index.md
   - Task API Docs:
-    - Case Study: task-api-docs/index.md
-    - About: task-api-docs/about.md
+    - Introduction: task-api-docs/about.md
     - System Architecture: task-api-docs/system-architecture.md
     - Setup: task-api-docs/setup.md
     - Getting Started: task-api-docs/getting-started.md
@@ -43,10 +42,8 @@ nav:
     - API Reference: task-api-docs/api-reference.md
     - Troubleshooting: task-api-docs/troubleshooting.md
   - Slack Webhook:
-    - Case Study: slack-webhook/index.md
     - Article: slack-webhook/article.md
   - NWS API Reference:
-    - Case Study: nws-api-reference/index.md
     - Overview of the NWS API: nws-api-reference/introduction.md
     - Quick Start: nws-api-reference/quick-start.md
     - Authentication and Headers: nws-api-reference/authentication.md
@@ -60,6 +57,22 @@ nav:
         - "Developer use cases": nws-api-reference/key-concepts/developer-use-cases.md
         - "Status codes": nws-api-reference/key-concepts/status-codes.md
         - "Units and conventions": nws-api-reference/key-concepts/units.md
+    - Forecasts:
+        - How Forecasts Are Structured:
+            - "Overview": nws-api-reference/forecasts/how-forecasts-are-structured/overview.md
+            - "From City to Coordinates": nws-api-reference/forecasts/how-forecasts-are-structured/city-to-coordinates.md
+            - "Grid Forecasts": nws-api-reference/forecasts/how-forecasts-are-structured/grids.md
+            - "Grids vs. Zones": nws-api-reference/forecasts/how-forecasts-are-structured/grids-vs-zones.md
+            - "Forecast Zones": nws-api-reference/forecasts/how-forecasts-are-structured/zones.md
+            - "Weather Forecast Offices (WFOs)": nws-api-reference/forecasts/how-forecasts-are-structured/wfo.md
+            - "Units": nws-api-reference/forecasts/how-forecasts-are-structured/units.md
+        - Alerts and Warnings:
+            - "Overview": nws-api-reference/forecasts/alerts-and-warnings/overview.md
+            - "Forecasts vs. Alerts": nws-api-reference/forecasts/alerts-and-warnings/forecast-vs-alert.md
+            - "Zone-Based Alerts": nws-api-reference/forecasts/alerts-and-warnings/zone-based-alerts.md
+            - "Retrieving Active Alerts": nws-api-reference/forecasts/alerts-and-warnings/retrieving-alerts.md
+            - "Status Codes": nws-api-reference/forecasts/alerts-and-warnings/status-codes.md
+            - "Examples": nws-api-reference/forecasts/alerts-and-warnings/examples.md
     - Endpoints:
         - "Endpoints overview": nws-api-reference/endpoints/index.md
         - "Points": nws-api-reference/endpoints/points.md
@@ -69,8 +82,6 @@ nav:
         - "Alerts": nws-api-reference/endpoints/alerts.md
         - "Zones": nws-api-reference/endpoints/zones.md
   - GeoJSON Explainer:
-    - Case Study: geojson-explainer/index.md
     - Explainer: geojson-explainer/explainer.md
   - VR Style Guide:
-    - Case Study: vr-style-guide/index.md
     - Guide: vr-style-guide/guide.md

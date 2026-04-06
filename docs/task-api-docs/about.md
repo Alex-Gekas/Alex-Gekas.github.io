@@ -3,6 +3,14 @@ title: Task API Documentation
 description: A production-style REST API documentation suite covering setup, authentication, endpoints, and troubleshooting.
 ---
 
+!!! abstract "About this sample"
+    - **What this is:** Full API reference suite for a task management REST API built on Node.js, Express, and SQLite—covers setup, JWT authentication, all endpoints, and error-first troubleshooting.
+    - **Audience:** Backend developers and API integrators.
+    - **Tools used:** MkDocs, Material for MkDocs, Markdown, JWT authentication, PM2, Postman.
+    - **What it demonstrates:** How to structure a reference so a developer can go from zero to their first authenticated call without reading the whole thing.
+    - **Project repo:** [github.com/Alex-Gekas/developer-task-api](https://github.com/Alex-Gekas/developer-task-api)  
+    - **Behind the docs:** [Read the case study →](index.md)
+
 ## Introduction
 
 The Task API is a REST API for managing task lists. It uses JWT authentication to protect user data and is built with Node.js, Express, and SQLite. Its lightweight design makes it suitable for personal projects or small deployments.

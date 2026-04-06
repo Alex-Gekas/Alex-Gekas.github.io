@@ -10,7 +10,7 @@ Their main product is the Chronologue Relay VR, which connects the Chronologue A
 headsets, letting users view and navigate reconstructions of astronomical events. Zaius' customers
 include hobbyists, STEM programs, museums, and educational institutions.
 
-The product serves two different audiences — general consumers and developers. The style guide
+The product serves two different audiences—general consumers and developers. The style guide
 outlines how to adapt voice, terminology, and tone to serve both. This case study examines the
 decisions behind it.
 
@@ -48,5 +48,7 @@ also outlines a process for flagging inconsistencies and suggesting updates.
 
 ## Conclusion
 
-The Zaius style guide's two-tiered approach — Google as a foundation, Zaius adaptations on top,
-Vale for enforcement — creates a system that scales as the product and contributor base grow.
+The Zaius style guide's two-tiered approach—Google as a foundation, Zaius adaptations on top,
+Vale for enforcement—creates a system that scales as the product and contributor base grow.  
+
+[→ Read the style guide](guide.md)

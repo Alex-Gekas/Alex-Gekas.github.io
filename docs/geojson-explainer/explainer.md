@@ -1,3 +1,10 @@
+!!! abstract "About this sample"
+    - **What this is:** A concept guide explaining GeoJSON spatial data formats for non-engineering audiences—focused on giving a basic understanding of the format to understand responses from the NWS API.
+    - **Audience:** Developers new to GeoJSON, product managers, and data analysts.
+    - **Tools used:** MkDocs, Markdown.
+    - **What it demonstrates:** Writing the same technical subject for a different reader—someone who needs to understand the format well enough to make decisions, not implement it. Structured on the Diataxis explanation pattern, which separates conceptual understanding from how-to instruction.  
+    - **Behind the docs:** [Read the case study →](index.md)
+
 # Understanding GeoJSON: A Developer's Guide to Geospatial Data
 
 When you call NWS API endpoints, many responses come back as GeoJSON—a format that pairs geographic shapes with the data that describes them. After reading this guide, you'll understand why NWS API responses look the way they do and how a single GeoJSON object can hold both a storm polygon and the severity data attached to it.
@@ -188,5 +195,5 @@ GeoJSON is JSON with a shared set of rules for location data. That's what makes 
 
 Ready to put it into practice:
 
-- **Quickstart Tutorial:** Fetch GeoJSON from the NWS API and render it on a map, step by step.
-- **NWS API Reference:** Explore which endpoints return GeoJSON, including active alerts and forecast zones.
+- **Quickstart Tutorial:** [Fetch GeoJSON from the NWS API and render it on a map, step by step.](../nws-api-reference/quick-start.md)
+- **NWS API Reference:** [Explore which endpoints return GeoJSON, including active alerts and forecast zones.](../nws-api-reference/introduction.md)

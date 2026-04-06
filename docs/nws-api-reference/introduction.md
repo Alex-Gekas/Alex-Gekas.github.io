@@ -2,6 +2,13 @@
 title: "NWS API — Reorganized Reference"
 description: "Introduction to the NWS API"
 ---
+!!! abstract "About this sample"
+    - **What this is:** A full developer-friendly rewrite of the National Weather Service public REST API—reorganized around user needs, with endpoint reference, key concepts, caching guidance, and a clear entry path for new developers.
+    - **Audience:** Backend developers and API integrators.
+    - **Tools used:** MkDocs, Material for MkDocs, Markdown, REST API conventions, Mermaid diagrams.
+    - **What it demonstrates:** Making sense of a large public API with inconsistent official documentation—organizing six endpoint categories plus the conceptual groundwork (gridpoints, forecast zones, weather offices) into something a developer can actually navigate.  
+    - **Behind the docs:** [Read the case study →](index.md)
+
 # Overview
 
 The **National Weather Service (NWS) API** is the official U.S. government source for weather forecasts, observations, and alerts. It provides free, public access to the same real-time data used by meteorologists, emergency managers, and news organizations—covering every location in the United States with highly localized 2.5 km forecast grids.

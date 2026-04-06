@@ -50,4 +50,6 @@ Errors are organized by symptom, not error code. Every entry includes a cause an
 
 ## Conclusion
 
-The documentation suite outlines a real developer workflow. Each document has a clear job, and the sequence moves naturally from one to the next. The [Diátaxis framework](https://diataxis.fr) was a useful reference throughout. It encourages clear thinking about what each document is trying to do and for whom.
+The documentation suite outlines a real developer workflow. Each document has a clear job, and the sequence moves naturally from one to the next. The [Diátaxis framework](https://diataxis.fr) was a useful reference throughout. It encourages clear thinking about what each document is trying to do and for whom.  
+  
+[→ Read the Task API documentation](about.md)

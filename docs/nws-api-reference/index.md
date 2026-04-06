@@ -73,4 +73,6 @@ These topics are grouped in a shared reference section instead of repeated on in
 
 The restructured documentation provides a clear path through a complex API. Each document has a defined purpose, and the content aligns with what developers need at each stage.
 
-The Diátaxis framework guides the structure. It is not used as a strict formula, but as a way to keep each document focused on a single goal.
+The Diátaxis framework guides the structure. It is not used as a strict formula, but as a way to keep each document focused on a single goal.  
+
+[→ Read the NWS API reference](introduction.md)

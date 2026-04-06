@@ -24,4 +24,6 @@ Three things shaped the final structure. The longitude-first coordinate order ma
 
 ## Outcome
 
-The goal was to enable developers to recognize a GeoJSON response and know what to do with it. The explainer starts with concrete examples before leading to the tutorial, which earns trust from the reader. The reference and quickstart links follow naturally at the end.
+The goal was to enable developers to recognize a GeoJSON response and know what to do with it. The explainer starts with concrete examples before leading to the tutorial, which earns trust from the reader. The reference and quickstart links follow naturally at the end.  
+
+[→ Read the GeoJSON explainer](explainer.md)
