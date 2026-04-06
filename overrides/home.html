@@ -189,58 +189,6 @@
     font-weight: 600;
   }
 
-  .ag-pull-quote {
-    border-left: 3px solid var(--accent);
-    padding-left: 20px;
-    margin: 0;
-  }
-
-  .ag-pull-quote p {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.15rem;
-    font-style: italic;
-    line-height: 1.6;
-    color: var(--ink-mid);
-    margin: 0 0 8px 0;
-  }
-
-  .ag-pull-quote cite {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.62rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-light);
-    font-style: normal;
-  }
-
-  .ag-stat-row {
-    display: flex;
-    gap: 32px;
-    margin-top: 8px;
-  }
-
-  .ag-stat {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .ag-stat-num {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--ink);
-    line-height: 1;
-  }
-
-  .ag-stat-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-light);
-    margin-top: 4px;
-  }
-
   /* ─── SECTION RULE ─────────────────────────────────────── */
   .ag-section-rule {
     padding: 0 64px;
@@ -307,10 +255,6 @@
 
   .ag-table tbody tr.ag-row-active:hover {
     background: var(--card-bg);
-  }
-
-  .ag-table tbody tr.ag-row-soon {
-    opacity: 0.55;
   }
 
   .ag-table tbody td {
@@ -411,6 +355,35 @@
     font-style: italic;
   }
 
+  .ag-sample-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+    color: var(--ink-light);
+    margin-top: 6px;
+  }
+
+  .ag-meta-label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-mid);
+    font-size: 0.58rem;
+    margin-right: 4px;
+  }
+
+  .ag-sample-demonstrates {
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.82rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink-mid);
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--rule);
+    line-height: 1.6;
+    max-width: 480px;
+  }
+
   /* ─── FOOTER STRIP ─────────────────────────────────────── */
   .ag-footer {
     border-top: 2px solid var(--ink);
@@ -505,7 +478,7 @@
     <div class="ag-masthead-right">
       <div class="ag-masthead-links">
         <a href="https://github.com/alex-gekas" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/alex-gekas" target="_blank">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/alexgekas" target="_blank">LinkedIn</a>
       </div>
     </div>
   </header>
@@ -521,39 +494,25 @@
     <div class="ag-hero-left">
       <div class="ag-kicker">About this portfolio</div>
       <h1 class="ag-hero-headline">
-        Technical Writer for APIs <br>and Developer Tools.
+        I help developer teams ship documentation that works.
       </h1>
       <p class="ag-hero-body">
-        I write <strong>API references, tutorials, and concept guides</strong> for developer-facing products — the kind of documentation that reduces support tickets, accelerates onboarding, and earns trust with technical audiences.
-      </p>
-      <br>
-      <p class="ag-hero-body">
-        This site collects five writing samples across different formats and audiences. Each section opens with a short case study explaining the context, the challenge, and the writing decisions behind the piece.
+        I write API references, tutorials, and concept guides for developer tools — documentation that gets developers up and running faster and keeps support queues shorter. I also write interface copy and product language for teams that want their product to feel as well-built as it actually is.
       </p>
     </div>
 
     <div class="ag-divider-v"></div>
 
     <div class="ag-hero-right">
-      <blockquote class="ag-pull-quote">
-        <p>"I write documentation that makes complexity feel approachable."</p>
-        <cite>— Alex Gekas</cite>
-      </blockquote>
-
-      <div class="ag-stat-row">
-        <div class="ag-stat">
-          <span class="ag-stat-num">5</span>
-          <span class="ag-stat-label">Writing samples</span>
-        </div>
-        <div class="ag-stat">
-          <span class="ag-stat-num">4</span>
-          <span class="ag-stat-label">Doc formats</span>
-        </div>
-        <div class="ag-stat">
-          <span class="ag-stat-num">3+</span>
-          <span class="ag-stat-label">Audience types</span>
-        </div>
-      </div>
+      <div class="ag-kicker">Available for contract work</div>
+      <p class="ag-hero-body">
+        Technical writing &amp; UX writing &nbsp;·&nbsp; <a href="mailto:alex.gekas@gmail.com" style="color: var(--accent); text-decoration: none;">alex.gekas@gmail.com</a>
+      </p>
+      <br>
+      <p class="ag-hero-body" style="font-size: 0.8rem; color: var(--ink-light); line-height: 1.8;">
+        <strong style="color: var(--ink-mid); font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;">I work with</strong><br>
+        MkDocs · Material for MkDocs · Diataxis · Markdown · REST APIs · OpenAPI/Swagger · JWT authentication · Node.js · Git · GitHub Pages · Vale
+      </p>
     </div>
   </section>
 
@@ -569,6 +528,7 @@
     <table class="ag-table">
       <thead>
         <tr>
+          <th style="width:32px;">#</th>
           <th>Sample</th>
           <th>Audience</th>
           <th>Format</th>
@@ -578,76 +538,121 @@
       <tbody>
 
         <tr class="ag-row-active">
+          <td class="ag-sample-num">01</td>
           <td>
             <div class="ag-sample-title">Task API Documentation</div>
-            <div class="ag-sample-sub">Full reference suite — setup through troubleshooting</div>
+            <div class="ag-sample-sub">Full API reference suite — covers setup, JWT authentication, all endpoints, and error-first troubleshooting</div>
+            <div class="ag-sample-meta">
+              <span class="ag-meta-label">Tools</span> MkDocs, Material for MkDocs, Markdown, JWT auth, PM2
+            </div>
+            <div class="ag-sample-demonstrates">
+              How to structure a reference so a developer can go from zero to their first authenticated call without reading the whole thing.
+            </div>
+            <div class="ag-sample-demonstrates">
+              <a href="task-api-docs/" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; letter-spacing: 0.08em; color: var(--accent); text-decoration: none;">Read the case study →</a>
+            </div>
           </td>
           <td class="ag-sample-audience">Backend developers,<br>API integrators</td>
           <td class="ag-sample-type"><span class="ag-tag ag-tag-api">API Docs</span></td>
           <td>
             <div class="ag-sample-links">
-              <a class="ag-link" href="task-api-docs/">Case study</a>
-              <a class="ag-link" href="task-api-docs/setup/">Read docs</a>
+              <a class="ag-link" href="task-api-docs/about/">Read docs</a>
             </div>
           </td>
         </tr>
 
         <tr class="ag-row-active">
+          <td class="ag-sample-num">02</td>
           <td>
             <div class="ag-sample-title">Slack Webhook Integration</div>
-            <div class="ag-sample-sub">Event-driven messaging for developer teams</div>
+            <div class="ag-sample-sub">Step-by-step integration tutorial for event-driven Slack notifications via webhook — written as a published developer article</div>
+            <div class="ag-sample-meta">
+              <span class="ag-meta-label">Tools</span> MkDocs, Markdown, Slack Webhooks API, Node.js
+            </div>
+            <div class="ag-sample-demonstrates">
+              How to write a tutorial that gives developers enough context to understand what they're doing, while staying out of the way of actually doing it.
+            </div>
+            <div class="ag-sample-demonstrates">
+              <a href="slack-webhook/" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; letter-spacing: 0.08em; color: var(--accent); text-decoration: none;">Read the case study →</a>
+            </div>
           </td>
           <td class="ag-sample-audience">Developers,<br>DevOps engineers</td>
           <td class="ag-sample-type"><span class="ag-tag ag-tag-tut">Tutorial</span></td>
           <td>
             <div class="ag-sample-links">
-              <a class="ag-link" href="slack-webhook/">Case study</a>
               <a class="ag-link" href="slack-webhook/article/">Read article</a>
             </div>
           </td>
         </tr>
 
         <tr class="ag-row-active">
+          <td class="ag-sample-num">03</td>
           <td>
             <div class="ag-sample-title">GeoJSON Explainer</div>
-            <div class="ag-sample-sub">Spatial data formats for product and data teams</div>
+            <div class="ag-sample-sub">Concept guide explaining GeoJSON spatial data formats for non-engineering audiences</div>
+            <div class="ag-sample-meta">
+              <span class="ag-meta-label">Tools</span> MkDocs, Markdown
+            </div>
+            <div class="ag-sample-demonstrates">
+              Writing the same technical subject for a different reader — someone who needs to understand the format well enough  — focused on giving a basic understanding of the format to understand responses from the NWS API.
+            </div>
+            <div class="ag-sample-demonstrates">
+              <a href="geojson-explainer/" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; letter-spacing: 0.08em; color: var(--accent); text-decoration: none;">Read the case study →</a>
+            </div>
           </td>
           <td class="ag-sample-audience">Product managers,<br>data analysts</td>
           <td class="ag-sample-type"><span class="ag-tag ag-tag-expl">Explainer</span></td>
           <td>
             <div class="ag-sample-links">
-              <a class="ag-link" href="geojson-explainer/">Case study</a>
               <a class="ag-link" href="geojson-explainer/explainer/">Read explainer</a>
             </div>
           </td>
         </tr>
 
         <tr class="ag-row-active">
+          <td class="ag-sample-num">04</td>
           <td>
             <div class="ag-sample-title">VR Style Guide</div>
-            <div class="ag-sample-sub">Writing standards for immersive interface copy</div>
+            <div class="ag-sample-sub">Writing standards and terminology guidelines for documentation contributed to a VR product — covers voice, tone, and language decisions</div>
+            <div class="ag-sample-meta">
+              <span class="ag-meta-label">Tools</span> MkDocs, Material for MkDocs, Markdown
+            </div>
+            <div class="ag-sample-demonstrates">
+              Defining how a product's documentation should sound when the domain is unfamiliar enough that generic style guide conventions don't hold. The guide had to establish terminology and voice from first principles rather than adapt an existing standard.
+            </div>
+            <div class="ag-sample-demonstrates">
+              <a href="vr-style-guide/" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; letter-spacing: 0.08em; color: var(--accent); text-decoration: none;">Read the case study →</a>
+            </div>
           </td>
-          <td class="ag-sample-audience">Technical Writers<br>Contributors</td>
+          <td class="ag-sample-audience">Technical writers<br>contributing to a VR product</td>
           <td class="ag-sample-type"><span class="ag-tag ag-tag-guide">Style Guide</span></td>
           <td>
             <div class="ag-sample-links">
-              <a class="ag-link" href="vr-style-guide/">Case study</a>
               <a class="ag-link" href="vr-style-guide/guide/">Read guide</a>
             </div>
           </td>
         </tr>
 
         <tr class="ag-row-active">
+          <td class="ag-sample-num">05</td>
           <td>
             <div class="ag-sample-title">NWS API Reference</div>
-            <div class="ag-sample-sub">Full reference for the National Weather Service public API</div>
+            <div class="ag-sample-sub">Full reference for the National Weather Service public REST API — endpoints, authentication, caching patterns, key concepts, and developer use cases</div>
+            <div class="ag-sample-meta">
+              <span class="ag-meta-label">Tools</span> MkDocs, Material for MkDocs, Markdown, REST API conventions
+            </div>
+            <div class="ag-sample-demonstrates">
+              Making sense of a large public API with inconsistent official documentation — organizing six endpoint categories plus the conceptual groundwork (gridpoints, forecast zones, weather offices) into something a developer can actually navigate.
+            </div>
+            <div class="ag-sample-demonstrates">
+              <a href="nws-api-reference/" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; letter-spacing: 0.08em; color: var(--accent); text-decoration: none;">Read the case study →</a>
+            </div>
           </td>
           <td class="ag-sample-audience">Backend developers,<br>API integrators</td>
           <td class="ag-sample-type"><span class="ag-tag ag-tag-api">API Docs</span></td>
           <td>
             <div class="ag-sample-links">
-              <a class="ag-link" href="nws-api-reference/">Case study</a>
-              <a class="ag-link" href="nws-api-reference/quick-start/">Read docs</a>
+              <a class="ag-link" href="nws-api-reference/introduction/">Read docs</a>
             </div>
           </td>
         </tr>
@@ -661,8 +666,8 @@
     <div class="ag-footer-left">© Alex Gekas &nbsp;·&nbsp; Built with Material for MkDocs</div>
     <div class="ag-footer-right">
       <a href="https://github.com/alex-gekas" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/alex-gekas/" target="_blank">LinkedIn</a>
-      <a href="mailto:alex@alexgekas.com">Contact</a>
+      <a href="https://www.linkedin.com/in/alex-gekas" target="_blank">LinkedIn</a>
+      <a href="mailto:alex.gekas@gmail.com">Contact</a>
     </div>
   </footer>
 
