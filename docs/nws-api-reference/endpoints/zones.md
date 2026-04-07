@@ -5,12 +5,11 @@ parent: "Endpoints"
 nav_order: 6
 ---
 
-## Get Zone Metadata
+## Get zone endpoints
 
-## Zones endpoints:
- ## `/zones`
- ## `/zones/{type}`
- ## `/zones/{type}/{zoneId}`
+### `/zones`  
+### `/zones/{type}`
+### `/zones/{type}/{zoneId}`
 
 The Zones endpoints let you look up NWS forecast, county, and fire weather zones and their metadata.
 
@@ -33,7 +32,6 @@ You can:
 
 ```
 GET https://api.weather.gov/zones
-
 ```
 
 **List zones by type:**
@@ -63,17 +61,13 @@ These path parameters apply to `GET /zones/{type}` and `GET /zones/{type}/{zoneI
 
 The `/zones` and `/zones/{type}` endpoints support several filters
 
-??? info "Query Parameters"
-    | Name              | Type     | Required | Applies to                              | Description                                                                                 |
-    |-------------------|----------|----------|-------------------------------------------|---------------------------------------------------------------------------------------------|
-    | `id`              | array\*  | No       | `/zones`, `/zones/{type}`                | One or more zone IDs (forecast or county). Useful when you already know the IDs.            |
-    | `area`            | array\*  | No       | `/zones`, `/zones/{type}`                | One or more state or marine area codes (for example, `NY` or a marine area code).          |
-    | `region`          | array\*  | No       | `/zones`, `/zones/{type}`                | One or more region codes.                                                                   |
-    | `type`            | array\*  | No       | `/zones`, `/zones/{type}`                | Zone types to include (for example, `forecast`, `county`, `fire`).                          |
-    | `point`           | string   | No       | `/zones`, `/zones/{type}`                | Latitude/longitude in `lat,lon` format (for example, `40.7128,-74.0060`). Returns containing zones. |
-    | `includegeometry`| boolean  | No       | `/zones`, `/zones/{type}`                | If `true`, includes polygon geometry for each zone.                                         |
-    | `limit`           | integer  | No       | `/zones`, `/zones/{type}`                | Maximum number of zones to return.                                                          |
-    | `effective`       | string   | No       | `/zones`, `/zones/{type}`, `/zones/{type}/{zoneId}` | Effective date/time (ISO-8601) to use when selecting zone versions.             |
+## Query Parameters 
+
+| Name              | Type     | Required | Applies to                                        | Description                                                                      |
+|-------------------|----------|----------|---------------------------------------------------|----------------------------------------------------------------------------------|
+| `id`              | array\*  | No       | `/zones`, `/zones/{type}`                         | One or more zone IDs (forecast or county).                                       |
+| `area`            | array\*  | No       | `/zones`, `/zones/{type}`                         | One or more state or marine area codes (for example, `NY`).                      |
+
 
 ## Example Requests
 
@@ -248,15 +242,14 @@ fetch(url, {
 
 ## Status Codes
 
-??? info "Status Codes"
-    | Status | Meaning | When you’ll see it |
-    |--------|---------|--------------------|
-    | `200 OK` | Successful request | Zones or zone metadata returned. |
-    | `400 Bad Request` | Invalid parameter or format | For example, malformed `point` or invalid `effective` date/time. |
-    | `404 Not Found` | Resource not found | Unknown `type` or `zoneId`. |
-    | `406 Not Acceptable` | Unsupported `Accept` header | Requesting a format the endpoint doesn’t support. |
-    | `429 Too Many Requests` | Rate limit exceeded | Too many requests in a short time window. |
-    | `500 Internal Server Error` / `503 Service Unavailable` | Server-side issues | Temporary API or upstream data problems. |
+| Status | Meaning | When you’ll see it |
+|--------|---------|--------------------|
+| `200 OK` | Successful request | Zones or zone metadata returned. |
+| `400 Bad Request` | Invalid parameter or format | For example, malformed `point` or invalid `effective` date/time. |
+| `404 Not Found` | Resource not found | Unknown `type` or `zoneId`. |
+| `406 Not Acceptable` | Unsupported `Accept` header | Requesting a format the endpoint doesn’t support. |
+| `429 Too Many Requests` | Rate limit exceeded | Too many requests in a short time window. |
+| `500 Internal Server Error` / `503 Service Unavailable` | Server-side issues | Temporary API or upstream data problems. |
 
 ## Notes & Tips
 
