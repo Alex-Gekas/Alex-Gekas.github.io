@@ -232,7 +232,7 @@
           
   
   
-  Slack Webhook
+  Slack webhook
 
         </a>
       </li>
@@ -254,7 +254,7 @@
           
   
   
-  NWS API Reference
+  NWS API reference
 
         </a>
       </li>
@@ -274,7 +274,7 @@
           
   
   
-  GeoJSON Explainer
+  GeoJSON explainer
 
         </a>
       </li>
@@ -294,7 +294,7 @@
           
   
   
-  VR Style Guide
+  VR style guide
 
         </a>
       </li>
@@ -454,7 +454,7 @@
   <span class="md-ellipsis">
     
   
-    System Architecture
+    System architecture
   
 
     
@@ -510,7 +510,7 @@
   <span class="md-ellipsis">
     
   
-    Getting Started
+    Getting started
   
 
     
@@ -538,7 +538,7 @@
   <span class="md-ellipsis">
     
   
-    Authentication Guide
+    Authentication guide
   
 
     
@@ -566,7 +566,7 @@
   <span class="md-ellipsis">
     
   
-    API Reference
+    API reference
   
 
     
@@ -643,7 +643,7 @@
   <span class="md-ellipsis">
     
   
-    Slack Webhook
+    Slack webhook
   
 
     
@@ -659,7 +659,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Slack Webhook
+    Slack webhook
   
 
           </label>
@@ -733,7 +733,7 @@
   <span class="md-ellipsis">
     
   
-    NWS API Reference
+    NWS API reference
   
 
     
@@ -749,7 +749,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    NWS API Reference
+    NWS API reference
   
 
           </label>
@@ -797,7 +797,7 @@
   <span class="md-ellipsis">
     
   
-    Quick Start
+    Quick start
   
 
     
@@ -825,7 +825,7 @@
   <span class="md-ellipsis">
     
   
-    Authentication and Headers
+    Authentication and headers
   
 
     
@@ -853,7 +853,7 @@
   <span class="md-ellipsis">
     
   
-    Caching Best Practices
+    Caching best practices
   
 
     
@@ -897,7 +897,7 @@
   <span class="md-ellipsis">
     
   
-    Key Concepts
+    Key concepts
   
 
     
@@ -913,7 +913,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Key Concepts
+    Key concepts
   
 
           </label>
@@ -989,7 +989,7 @@
   <a href="#the-big-picture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Big Picture
+        The big picture
       
     </span>
   </a>
@@ -1000,7 +1000,7 @@
   <a href="#conceptual-flow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Conceptual Flow
+        Conceptual flow
       
     </span>
   </a>
@@ -1058,7 +1058,7 @@
   <span class="md-ellipsis">
     
   
-    Weather Forecast Offices (WFOs)
+    Weather forecast Offices (WFOs)
   
 
     
@@ -1509,7 +1509,7 @@
   <span class="md-ellipsis">
     
   
-    GeoJSON Explainer
+    GeoJSON explainer
   
 
     
@@ -1525,7 +1525,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    GeoJSON Explainer
+    GeoJSON explainer
   
 
           </label>
@@ -1594,7 +1594,7 @@
   <span class="md-ellipsis">
     
   
-    VR Style Guide
+    VR style guide
   
 
     
@@ -1610,7 +1610,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    VR Style Guide
+    VR style guide
   
 
           </label>
@@ -1681,7 +1681,7 @@
   <a href="#the-big-picture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Big Picture
+        The big picture
       
     </span>
   </a>
@@ -1692,7 +1692,7 @@
   <a href="#conceptual-flow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Conceptual Flow
+        Conceptual flow
       
     </span>
   </a>
@@ -1716,8 +1716,8 @@
 
 
 
-<h1 id="how-forecasts-are-structured">How Forecasts Are Structured</h1>
-<p>The NWS API is built on a spatial data model. Forecasts, alerts, and observations aren't tied directly to latitude and longitude—they're organized into <strong>grids</strong>, <strong>zones</strong>, and <strong>forecast offices</strong>. Understanding this structure makes the rest of the API more predictable and helps you design applications that return the types of data you are looking for. </p>
+<h1 id="how-forecasts-are-structured">How forecasts are structured</h1>
+<p>The NWS API is built on a spatial data model. Forecasts, alerts, and observations aren't tied directly to latitude and longitude. Instead, they're organized into <strong>grids</strong>, <strong>zones</strong>, and <strong>forecast offices</strong>. Understanding this structure makes the rest of the API more predictable and helps you design applications that return the types of data you are looking for. </p>
 <div class="admonition info">
 <p class="admonition-title">What this section explains</p>
 <ul>
@@ -1727,10 +1727,10 @@
 </ul>
 </div>
 <p><strong>By the end of this page, you'll understand how a user's <code>lat,lon</code> becomes the grid and zone resources you use throughout the NWS API.</strong></p>
-<h2 id="the-big-picture">The Big Picture</h2>
+<h2 id="the-big-picture">The big picture</h2>
 <div class="admonition info">
 <p class="admonition-title">What a geographic point resolves into</p>
-<p>Every NWS forecast starts with a geographic point—a latitude/longitude pair supplied by your application or your user. The API resolves that point into three components:</p>
+<p>Every NWS forecast starts with a geographic point, a latitude/longitude pair supplied by your application or your user. The API resolves tha point into three components:</p>
 <ol>
 <li><strong>A Weather Forecast Office (WFO)</strong>—the local NWS office responsible for producing forecasts for that area.</li>
 <li><strong>A forecast grid cell</strong>—a 2.5 km × 2.5 km cell that contains the detailed, location-specific forecast data.</li>
@@ -1739,7 +1739,7 @@
 </div>
 <p>This spatial model shapes the design of the NWS API. <strong>You never request a forecast directly from a coordinate.</strong> Instead, you call <code>/points/{lat},{lon}</code>, and the API tells you which grid, which zone, and which office own that location—along with links to the forecast and alert endpoints associated with them.</p>
 <p>Once you understand how this mapping works, the API becomes easier to integrate into your application.</p>
-<h2 id="conceptual-flow">Conceptual Flow</h2>
+<h2 id="conceptual-flow">Conceptual flow</h2>
 <div class="admonition info">
 <p class="admonition-title">How a geographic point maps through the NWS system</p>
 <ul>

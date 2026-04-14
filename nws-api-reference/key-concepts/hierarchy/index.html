@@ -232,7 +232,7 @@
           
   
   
-  Slack Webhook
+  Slack webhook
 
         </a>
       </li>
@@ -254,7 +254,7 @@
           
   
   
-  NWS API Reference
+  NWS API reference
 
         </a>
       </li>
@@ -274,7 +274,7 @@
           
   
   
-  GeoJSON Explainer
+  GeoJSON explainer
 
         </a>
       </li>
@@ -294,7 +294,7 @@
           
   
   
-  VR Style Guide
+  VR style guide
 
         </a>
       </li>
@@ -454,7 +454,7 @@
   <span class="md-ellipsis">
     
   
-    System Architecture
+    System architecture
   
 
     
@@ -510,7 +510,7 @@
   <span class="md-ellipsis">
     
   
-    Getting Started
+    Getting started
   
 
     
@@ -538,7 +538,7 @@
   <span class="md-ellipsis">
     
   
-    Authentication Guide
+    Authentication guide
   
 
     
@@ -566,7 +566,7 @@
   <span class="md-ellipsis">
     
   
-    API Reference
+    API reference
   
 
     
@@ -643,7 +643,7 @@
   <span class="md-ellipsis">
     
   
-    Slack Webhook
+    Slack webhook
   
 
     
@@ -659,7 +659,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Slack Webhook
+    Slack webhook
   
 
           </label>
@@ -733,7 +733,7 @@
   <span class="md-ellipsis">
     
   
-    NWS API Reference
+    NWS API reference
   
 
     
@@ -749,7 +749,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    NWS API Reference
+    NWS API reference
   
 
           </label>
@@ -797,7 +797,7 @@
   <span class="md-ellipsis">
     
   
-    Quick Start
+    Quick start
   
 
     
@@ -825,7 +825,7 @@
   <span class="md-ellipsis">
     
   
-    Authentication and Headers
+    Authentication and headers
   
 
     
@@ -853,7 +853,7 @@
   <span class="md-ellipsis">
     
   
-    Caching Best Practices
+    Caching best practices
   
 
     
@@ -897,7 +897,7 @@
   <span class="md-ellipsis">
     
   
-    Key Concepts
+    Key concepts
   
 
     
@@ -913,7 +913,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Key Concepts
+    Key concepts
   
 
           </label>
@@ -999,7 +999,7 @@
   <span class="md-ellipsis">
     
   
-    Weather Forecast Offices (WFOs)
+    Weather forecast Offices (WFOs)
   
 
     
@@ -1450,7 +1450,7 @@
   <span class="md-ellipsis">
     
   
-    GeoJSON Explainer
+    GeoJSON explainer
   
 
     
@@ -1466,7 +1466,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    GeoJSON Explainer
+    GeoJSON explainer
   
 
           </label>
@@ -1535,7 +1535,7 @@
   <span class="md-ellipsis">
     
   
-    VR Style Guide
+    VR style guide
   
 
     
@@ -1551,7 +1551,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    VR Style Guide
+    VR style guide
   
 
           </label>
@@ -1627,14 +1627,14 @@
 
 
 
-<h1 id="how-these-concepts-fit-together-hierarchy">How These Concepts Fit Together (Hierarchy)</h1>
-<p>Every forecast starts with a latitude/longitude. The NWS API resolves that point into:</p>
+<h1 id="how-these-concepts-fit-together-hierarchy">How these concepts fit together (hierarchy)</h1>
+<p>Every forecast starts with a latitude and longitude. The NWS API translates that point into:</p>
 <ul>
 <li>a grid cell (for detailed forecasts)</li>
 <li>one or more zones (for public forecasts and alerts)</li>
 <li>a forecast office (WFO) responsible for the region</li>
 </ul>
-<p>This structure explains why the API returns links instead of direct data when you call <code>/points/{lat},{lon}</code>—it’s mapping your location to the correct grid, zones, and office.</p>
+<p>This structure explains why the API returns links instead of direct data when you call <code>/points/{lat},{lon}</code>, it’s mapping your location to the correct grid, zones, and office.</p>
 <pre class="mermaid"><code>flowchart TD
   A[" Geographic Point (lat, lon)"] --&gt; B["Forecast Grid (local detail)"]
   A --&gt; C["Forecast Zone (regional grouping)"]
@@ -1642,13 +1642,13 @@
 
   classDef concept fill:#f1f8ff,stroke:#007acc,stroke-width:1px,color:#000,rx:6,ry:6;
   class A,B,C,D concept;</code></pre>
-<p><strong>Figure:</strong> Forecast data is organized hierarchically—a point belongs to a grid, which belongs to a zone, all managed by a forecast office (WFO).</p>
+<p><strong>Figure:</strong> Forecast data is organized hierarchically; a point belongs to a grid, which belongs to a zone, all managed by a forecast office (WFO).</p>
 <hr />
 <h1 id="why-links-instead-of-data">Why links instead of data?</h1>
-<p>The /points endpoint returns URLs because:</p>
+<p>The <code>/points</code> endpoint returns URLs because:</p>
 <ul>
-<li>Grid forecasts come from /gridpoints/{office}/{x},{y}</li>
-<li>Zone forecasts come from /zones/{type}/{zoneId}</li>
+<li>Grid forecasts come from <code>/gridpoints/{office}/{x},{y}</code></li>
+<li>Zone forecasts come from <code>/zones/{type}/{zoneId}</code></li>
 <li>Each requires a separate, optimized query</li>
 </ul>
 <p>Note: A single point can belong to multiple zones (county, fire weather, marine), but only one forecast grid. The API returns all applicable zones.</p>

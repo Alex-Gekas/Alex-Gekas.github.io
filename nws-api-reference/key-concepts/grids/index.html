@@ -232,7 +232,7 @@
           
   
   
-  Slack Webhook
+  Slack webhook
 
         </a>
       </li>
@@ -254,7 +254,7 @@
           
   
   
-  NWS API Reference
+  NWS API reference
 
         </a>
       </li>
@@ -274,7 +274,7 @@
           
   
   
-  GeoJSON Explainer
+  GeoJSON explainer
 
         </a>
       </li>
@@ -294,7 +294,7 @@
           
   
   
-  VR Style Guide
+  VR style guide
 
         </a>
       </li>
@@ -454,7 +454,7 @@
   <span class="md-ellipsis">
     
   
-    System Architecture
+    System architecture
   
 
     
@@ -510,7 +510,7 @@
   <span class="md-ellipsis">
     
   
-    Getting Started
+    Getting started
   
 
     
@@ -538,7 +538,7 @@
   <span class="md-ellipsis">
     
   
-    Authentication Guide
+    Authentication guide
   
 
     
@@ -566,7 +566,7 @@
   <span class="md-ellipsis">
     
   
-    API Reference
+    API reference
   
 
     
@@ -643,7 +643,7 @@
   <span class="md-ellipsis">
     
   
-    Slack Webhook
+    Slack webhook
   
 
     
@@ -659,7 +659,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Slack Webhook
+    Slack webhook
   
 
           </label>
@@ -733,7 +733,7 @@
   <span class="md-ellipsis">
     
   
-    NWS API Reference
+    NWS API reference
   
 
     
@@ -749,7 +749,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    NWS API Reference
+    NWS API reference
   
 
           </label>
@@ -797,7 +797,7 @@
   <span class="md-ellipsis">
     
   
-    Quick Start
+    Quick start
   
 
     
@@ -825,7 +825,7 @@
   <span class="md-ellipsis">
     
   
-    Authentication and Headers
+    Authentication and headers
   
 
     
@@ -853,7 +853,7 @@
   <span class="md-ellipsis">
     
   
-    Caching Best Practices
+    Caching best practices
   
 
     
@@ -897,7 +897,7 @@
   <span class="md-ellipsis">
     
   
-    Key Concepts
+    Key concepts
   
 
     
@@ -913,7 +913,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Key Concepts
+    Key concepts
   
 
           </label>
@@ -989,7 +989,7 @@
   <span class="md-ellipsis">
     
   
-    Weather Forecast Offices (WFOs)
+    Weather forecast Offices (WFOs)
   
 
     
@@ -1073,7 +1073,7 @@
   <a href="#how-grid-assignment-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How Grid Assignment Works
+        How grid assignment works
       
     </span>
   </a>
@@ -1095,7 +1095,7 @@
   <a href="#visual-example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Visual Example
+        Visual example
       
     </span>
   </a>
@@ -1520,7 +1520,7 @@
   <span class="md-ellipsis">
     
   
-    GeoJSON Explainer
+    GeoJSON explainer
   
 
     
@@ -1536,7 +1536,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    GeoJSON Explainer
+    GeoJSON explainer
   
 
           </label>
@@ -1605,7 +1605,7 @@
   <span class="md-ellipsis">
     
   
-    VR Style Guide
+    VR style guide
   
 
     
@@ -1621,7 +1621,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    VR Style Guide
+    VR style guide
   
 
           </label>
@@ -1692,7 +1692,7 @@
   <a href="#how-grid-assignment-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How Grid Assignment Works
+        How grid assignment works
       
     </span>
   </a>
@@ -1714,7 +1714,7 @@
   <a href="#visual-example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Visual Example
+        Visual example
       
     </span>
   </a>
@@ -1738,16 +1738,16 @@
 
 
 
-<h1 id="gridpoints-and-grids">Gridpoints and Grids</h1>
+<h1 id="gridpoints-and-grids">Gridpoints and grids</h1>
 <p>NWS forecasts use a nationwide <strong>2.5 km × 2.5 km</strong> grid system. Each cell represents a small geographic area containing detailed forecast data accessible through the NWS API.</p>
-<h2 id="how-grid-assignment-works">How Grid Assignment Works</h2>
+<h2 id="how-grid-assignment-works">How grid assignment works</h2>
 <p>Each grid belongs to a <strong>Weather Forecast Office (WFO)</strong>. When you provide a latitude/longitude to the <code>/points</code> endpoint, the API:</p>
 <ol>
 <li>Determines which WFO owns that location</li>
 <li>Identifies which grid cell contains the point</li>
 <li>Returns the grid identifiers needed to request forecasts:<ul>
-<li><code>gridId</code> — WFO identifier (e.g., <code>BUF</code>, <code>OKX</code>, <code>LWX</code>)</li>
-<li><code>gridX</code> / <code>gridY</code> — cell's horizontal and vertical index  within that WFO's grid</li>
+<li><code>gridId</code>-WFO identifier (e.g., <code>BUF</code>, <code>OKX</code>, <code>LWX</code>)</li>
+<li><code>gridX</code> / <code>gridY</code>-cell's horizontal and vertical index  within that WFO's grid</li>
 </ul>
 </li>
 </ol>
@@ -1755,10 +1755,10 @@
 <h2 id="benefits">Benefits</h2>
 <p>Grid-cell level forecasts provide:</p>
 <ul>
-<li><strong>High spatial resolution</strong> — Fine-grained local forecasts</li>
-<li><strong>Consistent structure</strong> — Uniform format across all WFOs</li>
+<li><strong>High spatial resolution</strong>-Fine-grained local forecasts</li>
+<li><strong>Consistent structure</strong>-Uniform format across all WFOs</li>
 </ul>
-<h2 id="visual-example">Visual Example</h2>
+<h2 id="visual-example">Visual example</h2>
 <p><img alt="Forecast grids for the NWS Buffalo Forecast Office" src="../images/Buf_grid_60x60.png" /></p>
 <p><strong>Figure:</strong> Buffalo NWS office (BUF) showing 2.5 km forecast grid cells with <code>gridX</code> and <code>gridY</code> coordinates</p>
 <hr />

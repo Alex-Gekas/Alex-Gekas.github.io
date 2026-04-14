@@ -232,7 +232,7 @@
           
   
   
-  Slack Webhook
+  Slack webhook
 
         </a>
       </li>
@@ -254,7 +254,7 @@
           
   
   
-  NWS API Reference
+  NWS API reference
 
         </a>
       </li>
@@ -274,7 +274,7 @@
           
   
   
-  GeoJSON Explainer
+  GeoJSON explainer
 
         </a>
       </li>
@@ -294,7 +294,7 @@
           
   
   
-  VR Style Guide
+  VR style guide
 
         </a>
       </li>
@@ -454,7 +454,7 @@
   <span class="md-ellipsis">
     
   
-    System Architecture
+    System architecture
   
 
     
@@ -510,7 +510,7 @@
   <span class="md-ellipsis">
     
   
-    Getting Started
+    Getting started
   
 
     
@@ -538,7 +538,7 @@
   <span class="md-ellipsis">
     
   
-    Authentication Guide
+    Authentication guide
   
 
     
@@ -566,7 +566,7 @@
   <span class="md-ellipsis">
     
   
-    API Reference
+    API reference
   
 
     
@@ -643,7 +643,7 @@
   <span class="md-ellipsis">
     
   
-    Slack Webhook
+    Slack webhook
   
 
     
@@ -659,7 +659,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Slack Webhook
+    Slack webhook
   
 
           </label>
@@ -733,7 +733,7 @@
   <span class="md-ellipsis">
     
   
-    NWS API Reference
+    NWS API reference
   
 
     
@@ -749,7 +749,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    NWS API Reference
+    NWS API reference
   
 
           </label>
@@ -797,7 +797,7 @@
   <span class="md-ellipsis">
     
   
-    Quick Start
+    Quick start
   
 
     
@@ -825,7 +825,7 @@
   <span class="md-ellipsis">
     
   
-    Authentication and Headers
+    Authentication and headers
   
 
     
@@ -853,7 +853,7 @@
   <span class="md-ellipsis">
     
   
-    Caching Best Practices
+    Caching best practices
   
 
     
@@ -897,7 +897,7 @@
   <span class="md-ellipsis">
     
   
-    Key Concepts
+    Key concepts
   
 
     
@@ -913,7 +913,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Key Concepts
+    Key concepts
   
 
           </label>
@@ -998,7 +998,7 @@
   <span class="md-ellipsis">
     
   
-    Weather Forecast Offices (WFOs)
+    Weather forecast Offices (WFOs)
   
 
     
@@ -1016,7 +1016,7 @@
   <span class="md-ellipsis">
     
   
-    Weather Forecast Offices (WFOs)
+    Weather forecast Offices (WFOs)
   
 
     
@@ -1542,7 +1542,7 @@
   <span class="md-ellipsis">
     
   
-    GeoJSON Explainer
+    GeoJSON explainer
   
 
     
@@ -1558,7 +1558,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    GeoJSON Explainer
+    GeoJSON explainer
   
 
           </label>
@@ -1627,7 +1627,7 @@
   <span class="md-ellipsis">
     
   
-    VR Style Guide
+    VR style guide
   
 
     
@@ -1643,7 +1643,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    VR Style Guide
+    VR style guide
   
 
           </label>
@@ -1782,7 +1782,7 @@
 
 
 
-<h1 id="weather-forecast-offices-wfos">Weather Forecast Offices (WFOs)</h1>
+<h1 id="weather-forecast-offices-wfos">Weather forecast offices (WFOs)</h1>
 <p>A Weather Forecast Office (WFO) is your regional NWS office that generates forecasts and alerts. When you call <code>/points/{lat,lon}</code>, the API assigns your coordinates to exactly one WFO, which determines all subsequent grid and zone data.</p>
 <h2 id="example-washington-dc">Example: Washington, DC</h2>
 <p>Requesting <code>/points/38.90,-77.04</code> returns:</p>
@@ -1801,7 +1801,7 @@
 <h2 id="why-this-matters">Why this matters</h2>
 <p><strong>Each WFO manages its own forecast grids.</strong> Two nearby coordinates may belong to different WFOs, so always use the WFO returned by <code>/points</code> when requesting gridpoint data.</p>
 <p><img alt="Map showing WFO coverage areas in the Northeastern United States" src="../images/WFOs.png" /></p>
-<p><strong>Figure:</strong> WFO boundaries in the Northeastern US. Notice how coverage areas meet at defined borders—coordinates near these boundaries may resolve to different WFOs.</p>
+<p><strong>Figure:</strong> WFO boundaries in the Northeastern US. Notice how coverage areas meet at defined borders. Coordinates near these boundaries may be included under different WFOs.</p>
 <h2 id="quick-visualization">Quick visualization</h2>
 <pre class="mermaid"><code>flowchart LR
   P["/points/{lat,lon}"] --&gt; W["WFO (gridId)"]
@@ -1817,7 +1817,7 @@
 </ul>
 <h2 id="developer-takeaway">Developer takeaway</h2>
 <p>Always use the WFO returned by <code>/points/{lat,lon}</code> when requesting forecasts, gridpoint data, or zone-based alerts.</p>
-<p><strong>Next:</strong> Learn about <a href="../grids/">Gridpoints and Grids</a> → </p>
+<p><strong>Next:</strong> Learn about <a href="../grids/">Gridpoints and grids</a> → </p>
 
 
 

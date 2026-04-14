@@ -232,7 +232,7 @@
           
   
   
-  Slack Webhook
+  Slack webhook
 
         </a>
       </li>
@@ -254,7 +254,7 @@
           
   
   
-  NWS API Reference
+  NWS API reference
 
         </a>
       </li>
@@ -274,7 +274,7 @@
           
   
   
-  GeoJSON Explainer
+  GeoJSON explainer
 
         </a>
       </li>
@@ -294,7 +294,7 @@
           
   
   
-  VR Style Guide
+  VR style guide
 
         </a>
       </li>
@@ -454,7 +454,7 @@
   <span class="md-ellipsis">
     
   
-    System Architecture
+    System architecture
   
 
     
@@ -510,7 +510,7 @@
   <span class="md-ellipsis">
     
   
-    Getting Started
+    Getting started
   
 
     
@@ -538,7 +538,7 @@
   <span class="md-ellipsis">
     
   
-    Authentication Guide
+    Authentication guide
   
 
     
@@ -566,7 +566,7 @@
   <span class="md-ellipsis">
     
   
-    API Reference
+    API reference
   
 
     
@@ -643,7 +643,7 @@
   <span class="md-ellipsis">
     
   
-    Slack Webhook
+    Slack webhook
   
 
     
@@ -659,7 +659,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Slack Webhook
+    Slack webhook
   
 
           </label>
@@ -733,7 +733,7 @@
   <span class="md-ellipsis">
     
   
-    NWS API Reference
+    NWS API reference
   
 
     
@@ -749,7 +749,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    NWS API Reference
+    NWS API reference
   
 
           </label>
@@ -797,7 +797,7 @@
   <span class="md-ellipsis">
     
   
-    Quick Start
+    Quick start
   
 
     
@@ -834,7 +834,7 @@
   <span class="md-ellipsis">
     
   
-    Authentication and Headers
+    Authentication and headers
   
 
     
@@ -852,7 +852,7 @@
   <span class="md-ellipsis">
     
   
-    Authentication and Headers
+    Authentication and headers
   
 
     
@@ -989,7 +989,7 @@
   <span class="md-ellipsis">
     
   
-    Caching Best Practices
+    Caching best practices
   
 
     
@@ -1031,7 +1031,7 @@
   <span class="md-ellipsis">
     
   
-    Key Concepts
+    Key concepts
   
 
     
@@ -1047,7 +1047,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Key Concepts
+    Key concepts
   
 
           </label>
@@ -1123,7 +1123,7 @@
   <span class="md-ellipsis">
     
   
-    Weather Forecast Offices (WFOs)
+    Weather forecast Offices (WFOs)
   
 
     
@@ -1574,7 +1574,7 @@
   <span class="md-ellipsis">
     
   
-    GeoJSON Explainer
+    GeoJSON explainer
   
 
     
@@ -1590,7 +1590,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    GeoJSON Explainer
+    GeoJSON explainer
   
 
           </label>
@@ -1659,7 +1659,7 @@
   <span class="md-ellipsis">
     
   
-    VR Style Guide
+    VR style guide
   
 
     
@@ -1675,7 +1675,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    VR Style Guide
+    VR style guide
   
 
           </label>
@@ -1848,7 +1848,7 @@
 
 
 
-<h1 id="authentication-and-headers">Authentication and Headers</h1>
+<h1 id="authentication-and-headers">Authentication and headers</h1>
 <p>The NWS API does not require an API key or authentication token. However, <strong>you must include a <code>User-Agent</code> header</strong> with every request to identify your application.</p>
 <h2 id="user-agent-requirement">User-Agent Requirement</h2>
 <p>The <code>User-Agent</code> header should include:</p>
@@ -1879,19 +1879,19 @@
 <span class="err">Reference #18.c968dc17.1737489616.6bd4c22</span>
 </code></pre></div>
 <h3 id="complete-request-example">Complete Request Example</h3>
-<p>Here's a complete curl request with proper headers:
-<code>bash
-curl "https://api.weather.gov/points/40.7766,-73.8742" \
-  -H "User-Agent: MyWeatherApp/1.0 (contact@example.com)" \
+<p>Here's a complete curl request with proper headers:</p>
+<p><code>bash
+curl "https://api.weather.gov/points/40.7766,-73.8742"
+  -H "User-Agent: MyWeatherApp/1.0 (contact@example.com)"
   -H "Accept: application/geo+json"</code></p>
 <h2 id="best-practices">Best Practices</h2>
 <ul>
-<li>✅ <strong>Always include a User-Agent</strong> with your application name and contact info</li>
-<li>✅ <strong>Use a valid email address</strong> so NWS can reach you if needed</li>
-<li>✅ <strong>Update the version number</strong> when you make significant changes to your app</li>
-<li>✅ <strong>Include your project URL</strong> if you don't want to share an email address</li>
-<li>❌ <strong>Don't use generic User-Agents</strong> like "curl" or "python-requests"</li>
-<li>❌ <strong>Don't share User-Agents</strong> across multiple unrelated applications</li>
+<li><strong>Always include a user-agent</strong> with your application name and contact info</li>
+<li><strong>Use a valid email address</strong> so NWS can reach you if needed</li>
+<li><strong>Update the version number</strong> when you make significant changes to your app</li>
+<li><strong>Include your project URL</strong> if you don't want to share an email address</li>
+<li><strong>Don't use generic user-agents</strong> like "curl" or "python-requests"</li>
+<li><strong>Don't share user-agents</strong> across multiple unrelated applications</li>
 </ul>
 <p><strong>Next:</strong> <a href="../caching/"> Caching →</a></p>
 
