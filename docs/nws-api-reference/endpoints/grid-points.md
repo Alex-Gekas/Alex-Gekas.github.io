@@ -5,12 +5,12 @@ parent: "Endpoints"
 nav_order: 3
 ---
 
-## Get Forecast by Gridpoint
+## Get a forecast by gridpoint
 
 ## `GET /gridpoints/{office}/{gridX},{gridY}`
 
 Returns gridpoint metadata for a specific National Weather Service (NWS) forecast grid cell, including links to the 7-day forecast, hourly forecast, grid forecast data, local time zone, nearest observation stations, and a relative location.
-Use this to look up the correct forecast endpoints for a latitude/longitude you’ve mapped to an NWS office and grid coordinates.
+Use this to look up the correct forecast endpoints for a latitude and longitude you’ve mapped to an NWS office and grid coordinates.
 
 Use after converting `lat/lon` to office and grid (via `/points/{lat},{lon}`), call this to retrieve the forecast URLs and context for that grid.
 
@@ -20,7 +20,7 @@ Use after converting `lat/lon` to office and grid (via `/points/{lat},{lon}`), c
 `GET https://api.weather.gov/gridpoints/{office}/{gridX},{gridY}`
 
 
-## Headers & Auth
+## Headers and authorization
 
 `User-Agent` (required): A string identifying your app and contact (for example, MyWeatherApp/1.0 (me@myweatherapp.com).
 
@@ -28,7 +28,7 @@ Use after converting `lat/lon` to office and grid (via `/points/{lat},{lon}`), c
 
 `Authorization`: Not required.
 
-## Path Parameters
+## Path parameters
 
 | Name      | Description                           | Required | Example |
 |-----------|---------------------------------------|----------|---------|
@@ -38,7 +38,7 @@ Use after converting `lat/lon` to office and grid (via `/points/{lat},{lon}`), c
 
 ---
 
-## Example Request (cURL)
+## Example request (cURL)
 
 ```bash
 curl -s 
@@ -47,7 +47,7 @@ curl -s
   "https://api.weather.gov/gridpoints/PHI/40,74"
 ```
 
-## Example Request (JavaScript)
+## Example request (JavaScript)
 
 ```JavaScript
 const url = "https://api.weather.gov/gridpoints/PHI/40,74";
@@ -63,7 +63,7 @@ console.log(data.properties.forecast);       // 7-day forecast URL
 console.log(data.properties.forecastHourly); // hourly forecast URL
 ```
 
-## Example Responses (truncated)
+## Example responses (truncated)
 
 ??? example "Success 200 OK—Forecast for a Gridpoint for an NWS Office"
     ```json
@@ -115,7 +115,7 @@ console.log(data.properties.forecastHourly); // hourly forecast URL
       "detail": "Gridpoint not found for office 'PHI' at gridX=4000, gridY=7400."
     }
     ```
-## Common Status Codes
+## Common status codes
 
 | Code | Meaning                             |
 |------|-------------------------------------|
@@ -131,6 +131,6 @@ console.log(data.properties.forecastHourly); // hourly forecast URL
 - You can get these values by calling the [`/points/{lat},{lon}`](./forecasts.md) endpoint first.
 - The forecast response includes time-segmented periods (day, night, etc.), each with **temperature**, **wind speed**,and **forecast description**.
 - The endpoint path may be extended to include `/forecast/hourly` for hourly forecasts.
-- For more details on thfor exampleid system, see [Gridpoints Explained](./key-concepts/geolocation/#forecast-coverage-areas).
+- For more details on the system, see [Gridpoints explained](./key-concepts/geolocation/#forecast-coverage-areas).
 
-**Next:** [ Endpoints: Points (lat & lon) →](./points.md)
+**Next:** [ Endpoints: Points (lat and lon) →](./points.md)

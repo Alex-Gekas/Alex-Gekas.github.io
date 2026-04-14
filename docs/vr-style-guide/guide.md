@@ -3,7 +3,7 @@ title: Zaius Style Guide
 description: Writing standards and terminology guidelines for Zaius documentation contributors.
 ---
 !!! abstract "About this sample"
-    - **What this is:** Writing standards and terminology guidelines for documentation contributed to a VR product—covers voice, tone, and language decisions for a dual audience of general consumers and developers.
+    - **What this is:** Writing standards and terminology guidelines for documentation contributed to a VR product. It covers voice, tone, and language decisions for a dual audience of general consumers and developers.
     - **Audience:** Technical writers contributing to a VR product.
     - **Tools used:** MkDocs, Material for MkDocs, Markdown, Vale.
     - **What it demonstrates:** Defining how a product's documentation should sound when the domain is unfamiliar enough that generic style guide conventions don't hold. The guide had to establish terminology and voice from first principles rather than adapt an existing standard.  

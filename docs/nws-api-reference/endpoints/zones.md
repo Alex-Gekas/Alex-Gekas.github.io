@@ -20,7 +20,7 @@ You can:
 - Include polygon geometry for mapping
 - Use zone metadata with the Alerts API and other NWS endpoints
 
-## Headers & Auth
+## Headers and authorization
 
 `User-Agent` (required): A string identifying your app and contact (for example, MyWeatherApp/1.0 (me@myweatherapp.com).
 
@@ -28,7 +28,7 @@ You can:
 
 `Authorization`: Not required.
 
-## HTTP Request
+## HTTP request
 
 ```
 GET https://api.weather.gov/zones
@@ -48,7 +48,7 @@ GET https://api.weather.gov/zones/{type}/{zoneId}
 
 ```
 
-## Path Parameters
+## Path parameters
 
 These path parameters apply to `GET /zones/{type}` and `GET /zones/{type}/{zoneId}`.
 
@@ -57,11 +57,11 @@ These path parameters apply to `GET /zones/{type}` and `GET /zones/{type}/{zoneI
 | type    | string | Yes                                       | Zone type. Common values include `forecast`, `county`, and `fire`.       |
 | zoneId  | string | Yes (for `/zones/{type}/{zoneId}`)        | Zone ID (for example, `ALZ023` for a forecast zone or `ALC125` for a county zone). |
 
-## Query Parameters
+## Query parameters
 
 The `/zones` and `/zones/{type}` endpoints support several filters
 
-## Query Parameters 
+## Query parameters 
 
 | Name              | Type     | Required | Applies to                                        | Description                                                                      |
 |-------------------|----------|----------|---------------------------------------------------|----------------------------------------------------------------------------------|
@@ -69,7 +69,7 @@ The `/zones` and `/zones/{type}` endpoints support several filters
 | `area`            | array\*  | No       | `/zones`, `/zones/{type}`                         | One or more state or marine area codes (for example, `NY`).                      |
 
 
-## Example Requests
+## Example requests
 
 ### cURL–List forecast zones for a state
 
@@ -240,7 +240,7 @@ fetch(url, {
     }
     ```
 
-## Status Codes
+## Status oodes
 
 | Status | Meaning | When you’ll see it |
 |--------|---------|--------------------|
@@ -251,7 +251,7 @@ fetch(url, {
 | `429 Too Many Requests` | Rate limit exceeded | Too many requests in a short time window. |
 | `500 Internal Server Error` / `503 Service Unavailable` | Server-side issues | Temporary API or upstream data problems. |
 
-## Notes & Tips
+## Notes and tips
 
 - **Pair zones with alerts.** The Alerts API uses `affectedZones` to list the zones for each alert. Use the Zones endpoints to understand or map those areas. ([National Weather Service](https://www.weather.gov/documentation/services-web-api?))
 - **Use `point` for geolocation.** If you have a latitude/longitude, the `point` query parameter can return zones that contain that location. This is handy if you’re building “what zone am I in?” features.

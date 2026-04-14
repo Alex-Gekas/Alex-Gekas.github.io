@@ -3,10 +3,10 @@ title: "Caching"
 description: "Explains Caching Best Practices in the NWS API"
 ---
 
-Although the NWS API doesn't enforce strict rate limits—the exact limit is undisclosed but described as "generous"—applications that rely on the API can significantly improve performance and efficiency by implementing caching best practices. Certain endpoints are updated more frequently than others, and having a caching strategy can reduce the load on the API, decrease response time, and optimize bandwidth usage. 
+Although the NWS API doesn't enforce strict rate limits (the exact limit is undisclosed but described as "generous"), applications that rely on it can significantly improve performance and efficiency by implementing caching best practices. Certain endpoints are updated more frequently than others, and a caching strategy can reduce load on the API, decrease response time, and optimize bandwidth usage. 
 
 
-### **When Should You Cache NWS API Responses?**
+### **When should you cache NWS API responses?**
 
 
 <table>
@@ -78,10 +78,10 @@ Although the NWS API doesn't enforce strict rate limits—the exact limit is und
 
 
 
-### **How to Implement Caching**
+### **How to implement caching**
 
 
-#### **1. Using HTTP Headers (Browser & API Clients)**
+#### **1. Using HTTP headers (browser and API clients)**
 
 
 
@@ -91,7 +91,7 @@ Although the NWS API doesn't enforce strict rate limits—the exact limit is und
 * Clients can **respect these headers** instead of re-requesting unchanged data.
 
 
-#### **2. Local Caching (In-Memory or Database)**
+#### **2. Local caching (in-memory or database)**
 
 
 
@@ -138,9 +138,9 @@ print(zone_forecast)
 </details>
 
 
-> ⏱**Tip:**  
+> **Tip:**  
 > - Cache short-lived data (like alerts) for **5–10 minutes**  
 > - Cache static data (like zone definitions) for **hours or days**
 
-**Next:** [ Concepts: How Forecasts Are Structured →](./key-concepts/index.md)
+**Next:** [ Concepts: How forecasts are structured →](./key-concepts/index.md)
 

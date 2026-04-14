@@ -3,17 +3,18 @@ title: "Quick Start"
 description: "Get up and running with the NWS API"
 ---
 
-# Quick Start
+# Quick start
 
-In this short guide, you'll send your first request to the **National Weather Service (NWS) API**—from picking a location to retrieving a working forecast.
+In this short guide, you'll send your first request to the **National Weather Service (NWS) API**, from picking a location to retrieving a working forecast.
 
-You don't need an API key or account setup—just your terminal and a few simple `curl` commands.
+You don't need an API key or account,
+just your terminal and a few simple `curl` commands.
 
 ---
 
-## Step 1: Choose a Location
+## Step 1: Choose a location
 
-The NWS API is **location-based**. Every forecast request starts with a latitude and longitude—but note that **you can't get a forecast directly from coordinates**. Instead, you'll first use those coordinates to find the NWS **grid location**, which is what the forecast system actually uses.
+The NWS API is **location-based**. Every forecast request starts with a latitude and longitude, but note that **you can't get a forecast directly from coordinates**. Instead, you'll first use those coordinates to find the NWS **grid location**, which is what the forecast system actually uses.
 
 You can get coordinates from any mapping tool or geocoding service such as:
 
@@ -24,7 +25,7 @@ You can get coordinates from any mapping tool or geocoding service such as:
 
 ---
 
-## Step 2: Get Grid Metadata
+## Step 2: Get grid metadata
 
 Next, use the `/points/{lat,lon}` endpoint to translate your coordinates into the **grid ID and coordinates** used by NWS forecasts.
 
@@ -44,9 +45,9 @@ curl "https://api.weather.gov/points/40.7766,-73.8742" \
 !!! tip 
       Always include a User-Agent header with your email or project name so NWS can contact you if needed.
 
-## Step 3 - Retrieve the Forecast
+## Step 3 - Retrieve the forecast
 
-From the JSON you just received, copy the value of the "forecast" URL—this is your direct link to the 7-day forecast for that grid location.
+From the JSON you just received, copy the value of the "forecast" URL, this is your direct link to the 7-day forecast for that grid location.
 
 Example:
 
@@ -77,7 +78,7 @@ The response is a JSON forecast that includes:
     ```
 ---
 
-## Step 4 - Explore Additional Data
+## Step 4 - Explore additional data
 
 Here are more useful endpoints:
 
@@ -90,10 +91,10 @@ Here are more useful endpoints:
 
 ---
 
-## Step 5 - Follow Best Practices
+## Step 5 - Follow best practices
 
 - Always include a `User-Agent` header with your email or project name.
 - Cache responses when appropriate to reduce load on the API.
 - Respect rate limits and avoid scraping large datasets.
 
-**Next:** [Authentication  and Headers→](./authentication.md)
+**Next:** [Authentication and headers→](./authentication.md)

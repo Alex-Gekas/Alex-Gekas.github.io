@@ -3,22 +3,29 @@ title: "NWS API — Reorganized Reference"
 description: "Introduction to the NWS API"
 ---
 !!! abstract "About this sample"
-    - **What this is:** A full developer-friendly rewrite of the National Weather Service public REST API—reorganized around user needs, with endpoint reference, key concepts, caching guidance, and a clear entry path for new developers.
+    - **What this is:** This reference covers a curated subset of the NWS API. It focuses on the endpoints most useful for developers building weather apps, without requiring deep familiarity with meteorological data. It also includes explanations of key concepts, caching guidance, and code examples.
     - **Audience:** Backend developers and API integrators.
-    - **Tools used:** MkDocs, Material for MkDocs, Markdown, REST API conventions, Mermaid diagrams.
-    - **What it demonstrates:** Making sense of a large public API with inconsistent official documentation—organizing six endpoint categories plus the conceptual groundwork (gridpoints, forecast zones, weather offices) into something a developer can actually navigate.  
+    - **Tools used:** MkDocs, Markdown, Postman
+    - **What it demonstrates:**
+
+        - Restructuring a large public API with inconsistent official documentation into a developer-focused reference
+        - Organizing endpoints by their use case for faster integration
+        - Resolving the `lat/lon` lookup problem that blocks most first integrations [ →Quick start](quick-start.md)
+        - Explaining weather concepts that make the API responses easier to interpret for developers without a weather background
+        - Applying Google developer documentation style consistently across a multi-page reference
+
     - **Behind the docs:** [Read the case study →](index.md)
 
 # Overview
 
-The **National Weather Service (NWS) API** is the official U.S. government source for weather forecasts, observations, and alerts. It provides free, public access to the same real-time data used by meteorologists, emergency managers, and news organizations—covering every location in the United States with highly localized 2.5 km forecast grids.
+The **National Weather Service (NWS) API** is the official U.S. government source for weather forecasts, observations, and alerts. It provides free, public access to the same real-time data used by meteorologists, emergency managers, and news organizations, covering every location in the United States with highly localized 2.5 km forecast grids.
 
-This is a developer-friendly rewrite of the official API documentation. It focuses on the endpoints developers use most, clarifies the underlying spatial concepts (like forecast offices, gridpoints, and zones), and removes the complexity found in the original government documentation.
+This is an unofficial rewrite of the official API documentation. It focuses on the endpoints developers use most, clarifies the underlying spatial concepts (forecast offices, gridpoints, and zones), and streamlines the original where possible.
 
 **Official source:** [NWS Services Web API Documentation](https://www.weather.gov/documentation/services-web-api)
 ---
 
-## Quick Start
+## Quick start
 
 **Base URL:** `https://api.weather.gov`
 
@@ -34,17 +41,17 @@ Returns forecast URLs, grid coordinates, and station identifiers for that locati
 
 ---
 
-## What This API Provides
+## What this API provides
 
-You can retrieve forecasts, observations, alerts, radar imagery, and specialized data for aviation, marine, and river conditions—all updated continuously to reflect the latest information.
+You can retrieve forecasts, observations, alerts, radar imagery, and specialized data for aviation, marine, and river conditions. All data is updated continuously.
 
-With nationwide coverage and highly localized 2.5 km grids, the NWS API supports both broad regional outlooks and point-level forecasts. Because it connects directly to the same systems used by government agencies and news outlets, you get authoritative, reliable weather data—without subscription fees or commercial restrictions.
+With nationwide coverage and highly localized 2.5 km grids, the NWS API supports both broad regional outlooks and point-level forecasts. It connects directly to the same systems used by government agencies and news outlets, so the data is authoritative and reliable. There are no subscription fees or commercial restrictions.
 
 ---
 
-## What You Can Build
+## What you can build
 
-If you're building a weather dashboard, analyzing climate data, or integrating alerts into a public safety application, the NWS API gives you direct access to the same authoritative data used by professionals.
+If you're building a weather dashboard, analyzing climate data, or integrating alerts into a public safety application, the NWS API gives you direct access to the same data used by professionals.
 
 You can:
 
@@ -55,29 +62,29 @@ You can:
 
 ---
 
-## Core Capabilities
+## Core capabilities
 
-- **Current Conditions:** Real-time observations from thousands of U.S. weather stations
+- **Current conditions:** Real-time observations from thousands of U.S. weather stations
 - **Forecasts:** Hourly and daily point forecasts for any location
 - **Alerts:** Active severe weather warnings, watches, and advisories
-- **Historical Data:** Past observations available for analysis
-- **Customizable Queries:** Filter by location, time, and weather parameters
+- **Historical data:** Past observations available for analysis
+- **Customizable queries:** Filter by location, time, and weather parameters
 
 ---
 
-## How It Works
+## How it works
 
-The NWS API follows REST principles and uses standard HTTP methods such as `GET` to retrieve data. You access data by making requests to specific **endpoints**, each designed for a type of weather information—forecasts, alerts, observations, or zones.
+The NWS API follows REST principles and uses standard HTTP methods such as `GET` to retrieve data. You access data by making requests to specific **endpoints**, each designed for a type of weather information, such as forecasts, alerts, observations, or zones.
 
-Most responses are returned in **JSON** or **GeoJSON** format. GeoJSON includes geographic coordinates that define points, lines, or polygons, making it ideal for mapping or visualizing weather events.
+Most responses are returned in **JSON** or [**GeoJSON**](../geojson-explainer/explainer.md) format. GeoJSON includes geographic coordinates that define points, lines, or polygons, making it ideal for mapping or visualizing weather events.
 
-You don't need an API key or token to start—simply include the base URL in your requests and specify the endpoint and parameters you need.
+You don't need an API key or token to start, simply include the base URL in your requests and specify the endpoint and parameters you need.
 
 ---
 
-## Typical Request Flow
+## Typical request flow
 
-The NWS API supports multiple weather data types, each retrieved differently. This diagram shows the typical flow from a latitude/longitude input to the correct API endpoints for forecasts, alerts, observations, and zones.
+The NWS API supports multiple weather data types, each retrieved differently. This diagram shows the typical flow from a `latitude/longitude` input to the correct API endpoints for forecasts, alerts, observations, and zones.
 
 In most cases, you will start with a coordinate and then either request the forecast directly or use `/points` to discover region-specific endpoints such as stations, grid cells, and zones.
 
@@ -95,7 +102,7 @@ flowchart LR
   B --> PR["Products<br>/products/..."]
 ```
 
-### Response Format
+### Response format
 
 All endpoints return JSON with consistent structure:
 
@@ -103,7 +110,7 @@ All endpoints return JSON with consistent structure:
 * `geometry`: GeoJSON coordinates (when applicable)
 * `properties`: Weather data payload
 
-### Additional Content Types
+### Additional content types
 
 Most developers use JSON. Advanced integrations support:
 
@@ -116,7 +123,7 @@ Most developers use JSON. Advanced integrations support:
 | ATOM | `application/atom+xml` |
 
 ---
-## Usage Guidelines
+## Usage guidelines
 
 * No authentication required — Start making requests immediately
 * Include a User-Agent header — Identify your application (e.g., MyWeatherApp/1.0 (contact@example.com))
@@ -124,4 +131,4 @@ Most developers use JSON. Advanced integrations support:
 * Rate limits — No official limits, but follow best practices to avoid throttling
 
 
-**Get started in 2 minutes** → [Quick Start Guide](./quick-start.md)
+**Get started in 2 minutes** → [Quick start guide](./quick-start.md)

@@ -3,7 +3,7 @@ title: "Status Codes"
 description: "Explains the NWS Status Codes."
 ---
 
-# HTTP Status Codes in the NWS API
+# HTTP status codes in the NWS API
 
 The NWS API uses standard HTTP status codes to indicate the success or failure of a request. This page provides an overview of possible responses and how to interpret them.
 
@@ -51,7 +51,7 @@ See the [Endpoints section](../endpoints/index.md) for details.
 
 ---
 
-## Error Response Format
+## Error response format
 
 When an error occurs, the API returns a structured JSON response like this:
 

@@ -3,15 +3,15 @@ title: "Hierarchy: Point → Grid → Zone → WFO"
 description: "Shows how a lat/lon resolves into forecast structures in the NWS API."
 ---
 
-# How These Concepts Fit Together (Hierarchy)
+# How these concepts fit together (hierarchy)
 
-Every forecast starts with a latitude/longitude. The NWS API resolves that point into:
+Every forecast starts with a latitude and longitude. The NWS API translates that point into:
 
 - a grid cell (for detailed forecasts)
 - one or more zones (for public forecasts and alerts)
 - a forecast office (WFO) responsible for the region
 
-This structure explains why the API returns links instead of direct data when you call `/points/{lat},{lon}`—it’s mapping your location to the correct grid, zones, and office.
+This structure explains why the API returns links instead of direct data when you call `/points/{lat},{lon}`, it’s mapping your location to the correct grid, zones, and office.
 
 ```mermaid
 flowchart TD
@@ -23,16 +23,16 @@ flowchart TD
   class A,B,C,D concept;
 ```
 
-**Figure:** Forecast data is organized hierarchically—a point belongs to a grid, which belongs to a zone, all managed by a forecast office (WFO).
+**Figure:** Forecast data is organized hierarchically; a point belongs to a grid, which belongs to a zone, all managed by a forecast office (WFO).
 
 ---
 
 # Why links instead of data?
 
-The /points endpoint returns URLs because:
+The `/points` endpoint returns URLs because:
 
-- Grid forecasts come from /gridpoints/{office}/{x},{y}
-- Zone forecasts come from /zones/{type}/{zoneId}
+- Grid forecasts come from `/gridpoints/{office}/{x},{y}`
+- Zone forecasts come from `/zones/{type}/{zoneId}`
 - Each requires a separate, optimized query
 
 Note: A single point can belong to multiple zones (county, fire weather, marine), but only one forecast grid. The API returns all applicable zones.

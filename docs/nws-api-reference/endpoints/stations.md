@@ -5,7 +5,7 @@ parent: "Endpoints"
 nav_order: 5
 ---
 
-# Get Observation Stations
+# Get observation stations
 
 ## `GET /stations`
 
@@ -13,7 +13,7 @@ nav_order: 5
 
 Returns metadata for official NWS observation stations. Use it to discover stations near an area by state, then follow each station’s links for observations. Returns metadata for official NWS observation stations.
 
-## Headers & Auth
+## Headers and authorization
 
 `User-Agent` (required): A string identifying your app and contact (for example, MyWeatherApp/1.0 (me@myweatherapp.com).
 
@@ -21,7 +21,7 @@ Returns metadata for official NWS observation stations. Use it to discover stati
 
 `Authorization`: Not required.
 
-## HTTP Requests
+## HTTP requests
 
 To return a list of stations:
 `GET https://api.weather.gov/stations`
@@ -29,7 +29,7 @@ To return a list of stations:
 For a specific station:
 `GET https://api.weather.gov/stations/{stationId}`
 
-## Path Parameters
+## Path parameters
 
 (for `GET /stations/{stationId}`)
 
@@ -206,11 +206,11 @@ console.log(station.properties.stationIdentifier, station.properties.name);
 |  404 | Not Found    | Verify `stationId`.                                           |
 |  5xx | Server error | Retry with backoff; respect rate limits.                      |
 
-## Notes & tips
+## Notes and tips
 
 **Pagination**: Use limit (max 500) and the server-provided paging mechanism (cursor / “next” link) to iterate through large result sets. 
 GitHub
 
-**Discoverability**: From /points/{lat},{lon} you can follow observationStations to the list of nearby stations for that gridpoint.
+**Discoverability**: From `/points/{lat},{lon}` you can follow observationStations to the list of nearby stations for that gridpoint.
 
 **Next:** [ Endpoints: Zones →](./zones.md)

@@ -5,18 +5,18 @@ parent: "Endpoints"
 nav_order: 2
 ---
 
-## Get Forecast for a Location
+## Get the forecast for a location
 
 ## `GET /points/{lat},{lon}/forecast`
 
-Returns the seven-day forecast (day & night periods) for the grid cell covering a latitude/longitude in the U.S. Use this endpoint when you have a point and want the official NWS text-based forecast without converting the point to grid coordinates. The `points` endpoint resolves your lat/lon to the correct 2.5 km NWS forecast grid and local forecast office behind the scenes.
+Returns the seven-day forecast (day & night periods) for the grid cell covering a latitude and longitude in the U.S. Use this endpoint when you have a point and want the official NWS text-based forecast without converting the point to grid coordinates. The `points` endpoint resolves your `lat/lon` to the correct 2.5 km NWS forecast grid and local forecast office behind the scenes.
 
 ## HTTP request
 
 `GET https://api.weather.gov/points/{latitude},{longitude}/forecast`
 
 
-## Headers & Auth
+## Headers and authorization
 
 `User-Agent` (required): A string identifying your app and contact (for example, MyWeatherApp/1.0 (me@myweatherapp.com).
 
@@ -24,7 +24,7 @@ Returns the seven-day forecast (day & night periods) for the grid cell covering 
 
 `Authorization`: Not required.
 
-## Path Parameters
+## Path parameters
 
 | Name        | Type   | Required | Constraints                       | Example    |
 | ----------- | ------ | :------: | --------------------------------- | ---------- |
@@ -32,15 +32,15 @@ Returns the seven-day forecast (day & night periods) for the grid cell covering 
 | `longitude` | number |    Yes   | Decimal degrees (WGS84), −180…180 | `-77.6109` |
 
 
-## Example Request (cURL)
+## Example request (cURL)
 
 ```bash
 curl -H "User-Agent: your-email@example.com" 
   https://api.weather.gov/points/38.8894,-77.0352
 ```
-## Example Response
+## Example response
 
-??? example "Sample Response"
+??? example "Sample response"
     ```json
     {
       "properties": {
@@ -58,7 +58,7 @@ curl -H "User-Agent: your-email@example.com"
     }
     ```
 
-## Example Request (JavaScript)
+## Example request (JavaScript)
 
 ```JavaScript
 async function getForecast(lat, lon) {
@@ -79,7 +79,7 @@ getForecast(43.1610, -77.6109).then(data => {
 });
 ```
 
-## Example Responses
+## Example responses
 ??? example "Sample Response - Forecast"
     ```json
     {
@@ -163,7 +163,7 @@ getForecast(43.1610, -77.6109).then(data => {
     | `periods[].shortForecast`         | string                     | Brief phrase (for example, `Partly Sunny`).                |
     | `periods[].detailedForecast`      | string                     | Full text for the period.                           |
 
-## Common Status Codes
+## Common status codes
 
 | Code | Meaning           | Corrective action                                                          |
 | ---: | ----------------- | -------------------------------------------------------------------------- |
@@ -174,13 +174,13 @@ getForecast(43.1610, -77.6109).then(data => {
 |  500 | Server Error      | Retry with exponential backoff.                                            |
 
 
-➡️ See [HTTP Status Codes](../key-concepts/status-codes.md) for a full reference.
+➡️ See [HTTP Status codes](../key-concepts/status-codes.md) for a full reference.
 ## Notes
 
-* Start with /points: It’s the supported way to map a lat/lon to the right grid and forecast office. The same route also advertises related URLs (for example, hourly forecast). 
+* Start with `/points`: It’s the supported way to map a `lat/lon` to the right grid and forecast office. The same route also advertises related URLs (for example, hourly forecast). 
 
 * Grid resolution: Forecasts are issued on a 2.5 km grid by local offices; neighboring points can have wildly different forecasts. 
 
-* Hourly forecasts: Use /points/{lat},{lon}/forecast/hourly for 48-hour hourly periods
+* Hourly forecasts: Use `/points/{lat},{lon}/forecast/hourly` for 48-hour hourly periods
 
-**Next:** [ Endpoints: Grid Points →](./grid-points.md)
+**Next:** [ Endpoints: Grid points →](./grid-points.md)

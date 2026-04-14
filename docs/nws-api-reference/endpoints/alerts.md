@@ -7,13 +7,13 @@ nav_order: 1
 ## `GET /alerts`
 
 ## Overview
-Returns active National Weather Service (NWS) alerts as GeoJSON features. Use this to list current warnings/watches/statements for a location or alert type. No authentication required.
+Returns active National Weather Service (NWS) alerts as GeoJSON features. Use this to list current warnings, watches, and statements for a location or alert type. No authentication required.
 
 ## HTTP request
 
 `GET https://api.weather.gov/alerts`
 
-## Headers & Auth
+## Headers and authorization
 
 `User-Agent` (required): A string identifying your app and contact (for example, MyWeatherApp/1.0 (me@myweatherapp.com).
 
@@ -36,7 +36,7 @@ None for this endpoint
 | `severity` | Filter by severity level                         | No       | `Severe`            |
 | `message_type` | Original, update, cancel, etc.               | No       | `Alert`             |     |
 
-## Decision Guide
+## Decision guide
 
 !!! tip "Choosing the right filter"
     | If you want alerts for… | Use… |
@@ -46,7 +46,7 @@ None for this endpoint
     | A specific county or forecast region | `zone=NYZ###` |
     | Specific alert types | `event=Flood Warning` |
 
-## Example Request (cURL)
+## Example request (cURL)
 
  Retrieve flood all flood warnings in effect for New York State.
 
@@ -95,7 +95,7 @@ curl -s -H "User-Agent: your-email@example.com" -H "Accept: application/geo+json
 ```
 </details>
 
-## Example Request (Javascript)
+## Example request (Javascript)
 
 The following JavaScript example returns active Flood Warnings for a gfor exampleaphic point in Monroe County, NY. The `point` parameter (`latitude`, `longitude`) is the most precise way to request alerts because it resolves to the specific forecast zones covering that location. If no active Flood Warnings affect that point, the response may be empty even if alerts are active in nearby areas.
 
@@ -124,10 +124,10 @@ async function getFloodAlerts() {
 getFloodAlerts();
 ```
 
-## Example Response (JavaScript)
+## Example response (JavaScript)
 
-??? example "200 OK—minimal response (matching Flood Warning at thfor exampleven point)"
-    ```json
+??? details "200 OK — minimal response (matching a flood warning at a given point)"
+```json
     {
       "type": "FeatureCollection",
       "features": [
@@ -153,7 +153,7 @@ getFloodAlerts();
         }
       ]
     }
-    ```
+```
 
 ## Response fields for all queries (abbreviated list)
 
@@ -182,7 +182,7 @@ For a complete list of fields defined in the CAP alert format used by NWS, see:
 | 404  | Not Found–No alerts matched your query. |
 ➡️ See [HTTP Status Codes](../key-concepts/status-codes.md) for a full reference.
 
-## Notes & tips
+## Notes and tips
 
 * `User-Agent` required: Requests without a clear User-Agent may be rejected.
 

@@ -3,7 +3,7 @@ title: "WFOs"
 description: "Explains NWS Weather Forecasting Offices"
 ---
 
-# Weather Forecast Offices (WFOs)
+# Weather forecast offices (WFOs)
 
 A Weather Forecast Office (WFO) is your regional NWS office that generates forecasts and alerts. When you call `/points/{lat,lon}`, the API assigns your coordinates to exactly one WFO, which determines all subsequent grid and zone data.
 
@@ -26,7 +26,7 @@ All forecast data for this location must use WFO `LWX`.
   
   ![Map showing WFO coverage areas in the Northeastern United States](./images/WFOs.png)
 
-**Figure:** WFO boundaries in the Northeastern US. Notice how coverage areas meet at defined borders—coordinates near these boundaries may resolve to different WFOs.
+**Figure:** WFO boundaries in the Northeastern US. Notice how coverage areas meet at defined borders. Coordinates near these boundaries may be included under different WFOs.
 
 
 ## Quick visualization
@@ -49,4 +49,4 @@ flowchart LR
 
 Always use the WFO returned by `/points/{lat,lon}` when requesting forecasts, gridpoint data, or zone-based alerts.
 
-**Next:** Learn about [Gridpoints and Grids](./grids.md) → 
+**Next:** Learn about [Gridpoints and grids](./grids.md) → 

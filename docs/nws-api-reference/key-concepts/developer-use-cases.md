@@ -3,7 +3,7 @@ title: "Developer Use Cases"
 description: "Practical examples of how grids, zones, and WFOs shape real API workflows."
 ---
 
-# Why This Matters (Developer Use Cases)
+# Why this matters (developer use cases)
 
 Understanding grids, zones, and WFOs helps you:
 
@@ -45,7 +45,7 @@ If you know how a point maps to a grid and zone, you will know which endpoint to
 
 ---
 
-# Putting It All Together
+# Putting it all together
 
 The NWS API always follows the same pattern:
 
@@ -60,4 +60,4 @@ The NWS API always follows the same pattern:
 > When in doubt, start with `/points/{lat},{lon}`.  
 > It will always give you the correct links to follow next.
 
-👉**Next:** Learn [Status Codes](./status-codes.md) → 
+👉**Next:** Learn [Status codes](./status-codes.md) → 

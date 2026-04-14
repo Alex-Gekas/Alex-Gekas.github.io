@@ -5,17 +5,17 @@ parent: "Endpoints"
 nav_order: 4
 ---
 
-## Get Metadata by Geographic Point
+## Get metadata by geographic point
 
 ## `GET /points/{latitude},{longitude}`
 
 
 ## Overview
-Returns metadata for a specific latitude/longitude, including the responsible NWS forecast office (gridId), thfor exampleid coordinates (gridX/gridY), local time zone, nearest location, and ready-to-use forecast URLs (7-day, hourly, grid data) plus links to zones (forecast, county, fire weather).
+Returns metadata for a specific latitude/longitude, including the responsible NWS forecast office (gridId), the coordinates (gridX/gridY), local time zone, nearest location, and ready-to-use forecast URLs (7-day, hourly, grid data) plus links to zones (forecast, county, fire weather).
 
 Use this first when you have a lat/lon and need to determine which gridpoint/office to query next.
 
-## Headers & Auth
+## Headers and authorization
 
 `User-Agent` (required): A string identifying your app and contact (for example, MyWeatherApp/1.0 (me@myweatherapp.com).
 
@@ -23,32 +23,32 @@ Use this first when you have a lat/lon and need to determine which gridpoint/off
 
 `Authorization`: Not required.
 
-## HTTP Request
+## HTTP request
 `GET https://api.weather.gov/points/{latitude},{longitude}`
 
-Example: /points/40.073,-74.86 (Burlington Twp, NJ area)
+Example: `/points/40.073,-74.86` (Burlington Twp, NJ area)
 
-## Path Parameters
+## Path parameters
 
 | Name        | Type   | Required | Constraints/Format                   | Example  |
 | ----------- | ------ | :------: | ------------------------------------ | -------- |
 | `latitude`  | number |     ✅    | −90 to 90; decimal degrees (WGS84)   | `40.073` |
 | `longitude` | number |     ✅    | −180 to 180; decimal degrees (WGS84) | `-74.86` |
 
-## Query Parameters
+## Query parameters
 
 This endpoint does not accept query parameters.
 
-## Example Request (cURL)
+## Example request (cURL)
 
 ```bash
 curl -s 
-  -H "User-Agent: AlexPortfolioDocs/1.0 (alex@example.com)" 
+  -H "User-Agent: XYZ-WeatherApp/1.0 (alex@example.com)" 
   -H "Accept: application/geo+json" 
   "https://api.weather.gov/points/40.073,-74.86"
 
 ```
-## Example Request (JavaScript)
+## Example request (JavaScript)
 ```JavaScript
 const url = "https://api.weather.gov/points/40.073,-74.86";
 const res = await fetch(url, {
@@ -63,7 +63,7 @@ console.log(data.properties.gridId, data.properties.gridX, data.properties.gridY
 console.log(data.properties.forecast);        // 7-day forecast URL
 console.log(data.properties.forecastHourly);  // hourly forecast URL
 ```
-## Example Responses
+## Example responses
 ??? example "Success 200 OK—Point metadata"
     ```json
     {
@@ -119,7 +119,7 @@ console.log(data.properties.forecastHourly);  // hourly forecast URL
       the requested latitude/longitude."
      }
     ```
-## Response Fields (Comonly Used)
+## Response fields (Comonly Used)
 | Field                 | Type    | Description             |
 | --------------------- | ------- | ----------------------- |
 | `properties.gridId`   | string  | Officfor exampleid code        |
@@ -150,7 +150,7 @@ console.log(data.properties.forecastHourly);  // hourly forecast URL
     | `properties.county`              | string (URL)  | County zone the point belongs to.                                     |
     | `properties.fireWeatherZone`     | string (URL)  | Fire weather zone for the point.                                      |
 
-## Common Status Codes
+## Common status codes
 
 | Code | Meaning                             |
 |------|-------------------------------------|

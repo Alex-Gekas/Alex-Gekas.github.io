@@ -4,7 +4,7 @@ description: A production-style REST API documentation suite covering setup, aut
 ---
 
 !!! abstract "About this sample"
-    - **What this is:** Full API reference suite for a task management REST API built on Node.js, Express, and SQLite—covers setup, JWT authentication, all endpoints, and error-first troubleshooting.
+    - **What this is:** Full API reference suite for a task management REST API built on Node.js, Express, and SQLite. It covers setup, JWT authentication, all endpoints, and error-first troubleshooting.
     - **Audience:** Backend developers and API integrators.
     - **Tools used:** MkDocs, Material for MkDocs, Markdown, JWT authentication, PM2, Postman.
     - **What it demonstrates:** How to structure a reference so a developer can go from zero to their first authenticated call without reading the whole thing.

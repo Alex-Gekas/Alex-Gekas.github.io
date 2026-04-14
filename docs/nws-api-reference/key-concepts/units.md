@@ -3,13 +3,13 @@ title: "Units"
 description: "Explains Units Used by the NWS API."
 ---
 
-# Units of Measurement
+# Units of measurement
 
 The National Weather Service API returns data using a combination of **imperial** and **SI (metric)** units, depending on the endpoint and user preferences. Understanding the default units and how to convert them ensures accurate interpretation of forecast and observation data.
 
 ---
 
-## Default Units by Data Type
+## Default units by data type
 
 | Data Type             | Unit         | Description                          |
 |-----------------------|--------------|--------------------------------------|
@@ -25,7 +25,7 @@ The National Weather Service API returns data using a combination of **imperial*
 
 ---
 
-## Unit Conversions
+## Unit conversions
 
 For users needing metric units, you can convert the values manually or configure your client application to convert them automatically. Here's a quick reference:
 
@@ -39,7 +39,7 @@ For users needing metric units, you can convert the values manually or configure
 
 ---
 
-## Customizing Units in API Responses
+## Customizing units in API responses
 
 Currently, the API doesn't allow unit customization through request parameters. All values are returned in default formats. Developers should implement unit conversion on the client side if metric units are required for international audiences.
 

@@ -22,6 +22,7 @@ extra_css:
 
 markdown_extensions:
   - admonition
+  - pymdownx.details
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -35,23 +36,23 @@ nav:
   - Home: index.md
   - Task API Docs:
     - Introduction: task-api-docs/about.md
-    - System Architecture: task-api-docs/system-architecture.md
+    - System architecture: task-api-docs/system-architecture.md
     - Setup: task-api-docs/setup.md
-    - Getting Started: task-api-docs/getting-started.md
-    - Authentication Guide: task-api-docs/authentication-guide.md
-    - API Reference: task-api-docs/api-reference.md
+    - Getting started: task-api-docs/getting-started.md
+    - Authentication guide: task-api-docs/authentication-guide.md
+    - API reference: task-api-docs/api-reference.md
     - Troubleshooting: task-api-docs/troubleshooting.md
-  - Slack Webhook:
+  - Slack webhook:
     - Article: slack-webhook/article.md
-  - NWS API Reference:
+  - NWS API reference:
     - Overview of the NWS API: nws-api-reference/introduction.md
-    - Quick Start: nws-api-reference/quick-start.md
-    - Authentication and Headers: nws-api-reference/authentication.md
-    - Caching Best Practices: nws-api-reference/caching.md
-    - Key Concepts:
+    - Quick start: nws-api-reference/quick-start.md
+    - Authentication and headers: nws-api-reference/authentication.md
+    - Caching best practices: nws-api-reference/caching.md
+    - Key concepts:
         - "How forecasts are structured": nws-api-reference/key-concepts/index.md
         - "Forecast hierarchy": nws-api-reference/key-concepts/hierarchy.md
-        - "Weather Forecast Offices (WFOs)": nws-api-reference/key-concepts/wfos.md
+        - "Weather forecast Offices (WFOs)": nws-api-reference/key-concepts/wfos.md
         - "Gridpoints and grids": nws-api-reference/key-concepts/grids.md
         - "Zones": nws-api-reference/key-concepts/zones.md
         - "Developer use cases": nws-api-reference/key-concepts/developer-use-cases.md
@@ -65,7 +66,7 @@ nav:
         - "Stations": nws-api-reference/endpoints/stations.md
         - "Alerts": nws-api-reference/endpoints/alerts.md
         - "Zones": nws-api-reference/endpoints/zones.md
-  - GeoJSON Explainer:
+  - GeoJSON explainer:
     - Explainer: geojson-explainer/explainer.md
-  - VR Style Guide:
+  - VR style guide:
     - Guide: vr-style-guide/guide.md

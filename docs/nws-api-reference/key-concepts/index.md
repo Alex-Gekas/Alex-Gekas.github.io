@@ -3,9 +3,9 @@ title: "Concepts: How Forecasts Are Structured"
 description: "Introduces how the NWS API organizes forecasts using grids, zones, and linked data."
 ---
 
-# How Forecasts Are Structured
+# How forecasts are structured
 
-The NWS API is built on a spatial data model. Forecasts, alerts, and observations aren't tied directly to latitude and longitude—they're organized into **grids**, **zones**, and **forecast offices**. Understanding this structure makes the rest of the API more predictable and helps you design applications that return the types of data you are looking for. 
+The NWS API is built on a spatial data model. Forecasts, alerts, and observations aren't tied directly to latitude and longitude. Instead, they're organized into **grids**, **zones**, and **forecast offices**. Understanding this structure makes the rest of the API more predictable and helps you design applications that return the types of data you are looking for. 
 
 !!! info "What this section explains"
     - What spatial building blocks the NWS uses  
@@ -14,10 +14,10 @@ The NWS API is built on a spatial data model. Forecasts, alerts, and observation
 
 **By the end of this page, you'll understand how a user's `lat,lon` becomes the grid and zone resources you use throughout the NWS API.**
 
-## The Big Picture
+## The big picture
 
 !!! info "What a geographic point resolves into"
-    Every NWS forecast starts with a geographic point—a latitude/longitude pair supplied by your application or your user. The API resolves that point into three components:
+    Every NWS forecast starts with a geographic point, a latitude/longitude pair supplied by your application or your user. The API resolves tha point into three components:
 
     1. **A Weather Forecast Office (WFO)**—the local NWS office responsible for producing forecasts for that area.
     2. **A forecast grid cell**—a 2.5 km × 2.5 km cell that contains the detailed, location-specific forecast data.
@@ -27,7 +27,7 @@ This spatial model shapes the design of the NWS API. **You never request a forec
 
 Once you understand how this mapping works, the API becomes easier to integrate into your application.
 
-## Conceptual Flow
+## Conceptual flow
 
 !!! info "How a geographic point maps through the NWS system"
     - **Point (lat/lon)** → The location your app provides  

@@ -3,7 +3,7 @@ title: "Authentication and Headers"
 description: "Authentication requirements and best practices for the NWS API"
 ---
 
-# Authentication and Headers
+# Authentication and headers
 
 The NWS API does not require an API key or authentication token. However, **you must include a `User-Agent` header** with every request to identify your application.
 
@@ -55,18 +55,20 @@ Reference #18.c968dc17.1737489616.6bd4c22
 ### Complete Request Example
 
 Here's a complete curl request with proper headers:
+
 ```bash
-curl "https://api.weather.gov/points/40.7766,-73.8742" \
-  -H "User-Agent: MyWeatherApp/1.0 (contact@example.com)" \
+curl "https://api.weather.gov/points/40.7766,-73.8742"
+  -H "User-Agent: MyWeatherApp/1.0 (contact@example.com)"
   -H "Accept: application/geo+json"
   ```
+
 ## Best Practices
 
-- ✅ **Always include a User-Agent** with your application name and contact info
-- ✅ **Use a valid email address** so NWS can reach you if needed
-- ✅ **Update the version number** when you make significant changes to your app
-- ✅ **Include your project URL** if you don't want to share an email address
-- ❌ **Don't use generic User-Agents** like "curl" or "python-requests"
-- ❌ **Don't share User-Agents** across multiple unrelated applications
+- **Always include a user-agent** with your application name and contact info
+- **Use a valid email address** so NWS can reach you if needed
+- **Update the version number** when you make significant changes to your app
+- **Include your project URL** if you don't want to share an email address
+- **Don't use generic user-agents** like "curl" or "python-requests"
+- **Don't share user-agents** across multiple unrelated applications
 
 **Next:** [ Caching →](./caching.md)
