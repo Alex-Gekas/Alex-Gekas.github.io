@@ -284,11 +284,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../vr-style-guide/guide/" class="md-tabs__link">
+        <a href="../tutorial/woo_comm_tutorial/" class="md-tabs__link">
           
   
   
-  VR style guide
+  Add WooCommerce Order Statuses
 
         </a>
       </li>
@@ -1512,7 +1512,7 @@
   <span class="md-ellipsis">
     
   
-    VR style guide
+    Add WooCommerce Order Statuses
   
 
     
@@ -1528,7 +1528,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    VR style guide
+    Add WooCommerce Order Statuses
   
 
           </label>
@@ -1541,14 +1541,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../vr-style-guide/guide/" class="md-nav__link">
+      <a href="../tutorial/woo_comm_tutorial/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Guide
+    Tutorial
   
 
     
@@ -1680,18 +1680,18 @@
 
 <h1 id="case-study-writing-a-geojson-explainer-for-developers">Case study: Writing a GeoJSON explainer for developers</h1>
 <h2 id="the-audience-problem">The audience problem</h2>
-<p>The <a href="https://www.weather.gov/documentation/services-web-api">US National Weather Service API</a> is a free and authoritative resource for weather data throughout the continental US. You can query a wide range of weather data used by NWS forecasters, including warnings, alerts, and maritime weather conditions. Developers using the NWS API quickly run into a friction point: the responses come back in GeoJSON—a format many haven’t worked with before.</p>
-<p>You can retrieve the data, but interpreting it—especially coordinates, geometry types, and nested structures—slows you down before you even start building.</p>
+<p>The <a href="https://www.weather.gov/documentation/services-web-api">US National Weather Service API</a> is a free and authoritative resource for weather data throughout the continental US. You can query a wide range of weather data used by NWS forecasters, including warnings, alerts, and maritime weather conditions. Developers using the NWS API quickly run into a friction point: the responses come back in GeoJSON — a format many haven't worked with before.</p>
+<p>You can retrieve the data, but interpreting it — especially coordinates, geometry types, and nested structures — slows you down before you even start building.</p>
 <h2 id="the-goal">The goal</h2>
-<p>This explainer gives developers just enough GeoJSON knowledge to use the NWS API. They will understand how to read GeoJSON responses before reading the API Developer Quickstart.</p>
+<p>This explainer gives developers just enough GeoJSON knowledge to use the NWS API. They'll understand how to read GeoJSON responses before reading the API developer quickstart.</p>
 <h2 id="content-decisions">Content decisions</h2>
-<p>The explainer opens with a JSON vs. GeoJSON comparison. This gives developers a familiar concept before introducing anything new. The coordinates for Central Park is a practical example that clearly illustrates the concept. Code snippets use NWS use cases to tie it into using the NWS API quickstart.</p>
+<p>The explainer opens with a JSON vs. GeoJSON comparison. This gives developers a familiar concept before introducing anything new. The Central Park coordinates are a practical example that clearly illustrates the concept. Code snippets use NWS use cases to tie the explainer to the NWS API quickstart.</p>
 <h2 id="what-was-cut">What was cut</h2>
-<p>The geometry type reference, SQL examples, and format comparisons were all cut or trimmed from the official <a href="https://geojson.org/">spec</a>. A full breakdown of all seven geometry types is more reference material than explainer. PostGIS SQL goes deeper into backend detail than the target audience needs. And the format comparison was narrowed to what a developer would see in the streamlined NWS Developer API reference.</p>
+<p>The geometry type reference, SQL examples, and format comparisons were all cut or trimmed from the official <a href="https://geojson.org/">spec</a>. A full breakdown of all seven geometry types is more reference material than explainer. PostGIS SQL goes deeper into backend detail than the target audience needs. The format comparison was narrowed to what a developer would encounter in the NWS API reference.</p>
 <h2 id="what-was-kept-and-why">What was kept and why</h2>
-<p>Three things shaped the final structure. The longitude-first coordinate order made the cut because it's a common bug that catches almost every developer at least once. The format comparison table stayed because it gives readers quick orientation without requiring deep commitment. And the NWS workflow runs end to end because it directly leads to the quickstart that follows.</p>
+<p>Three things shaped the final structure. The longitude-first coordinate order made the cut because it's a common bug that catches almost every developer at least once. The format comparison table stayed because it gives readers quick orientation without requiring deep commitment. The NWS workflow runs end to end because it directly leads to the quickstart that follows.</p>
 <h2 id="outcome">Outcome</h2>
-<p>The goal was to enable developers to recognize a GeoJSON response and know what to do with it. The explainer starts with concrete examples before leading to the tutorial, which earns trust from the reader. The reference and quickstart links follow naturally at the end.  </p>
+<p>The goal was to enable developers to recognize a GeoJSON response and know what to do with it. The explainer starts with concrete examples before leading to the tutorial, which earns trust from the reader. The reference and quickstart links follow naturally at the end.</p>
 <p><a href="explainer/">→ Read the GeoJSON explainer</a></p>
 
 

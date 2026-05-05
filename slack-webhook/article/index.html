@@ -29,7 +29,7 @@
     
     
       
-        <title>Send Task Updates from an API to Slack Using Webhooks - Alex Gekas — Technical Writing Portfolio</title>
+        <title>Send task updates from an API to Slack using webhooks - Alex Gekas — Technical Writing Portfolio</title>
       
     
     
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Send Task Updates from an API to Slack Using Webhooks
+              Send task updates from an API to Slack using webhooks
             
           </span>
         </div>
@@ -290,11 +290,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../vr-style-guide/guide/" class="md-tabs__link">
+        <a href="../../tutorial/woo_comm_tutorial/" class="md-tabs__link">
           
   
   
-  VR style guide
+  Add WooCommerce Order Statuses
 
         </a>
       </li>
@@ -748,10 +748,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
+  <a href="#get-started" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Getting Started
+        Get started
       
     </span>
   </a>
@@ -762,7 +762,7 @@
   <a href="#create-a-slack-webhook" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Create a Slack Webhook
+        Create a Slack webhook
       
     </span>
   </a>
@@ -796,7 +796,7 @@
   <a href="#incomplete-tasks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Incomplete Tasks
+        Incomplete tasks
       
     </span>
   </a>
@@ -807,7 +807,7 @@
   <a href="#overdue-tasks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overdue Tasks
+        Overdue tasks
       
     </span>
   </a>
@@ -818,7 +818,7 @@
   <a href="#completed-tasks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Completed Tasks
+        Completed tasks
       
     </span>
   </a>
@@ -834,7 +834,7 @@
   <a href="#schedule-automatic-notifications" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Schedule Automatic Notifications
+        Schedule automatic notifications
       
     </span>
   </a>
@@ -1686,7 +1686,7 @@
   <span class="md-ellipsis">
     
   
-    VR style guide
+    Add WooCommerce Order Statuses
   
 
     
@@ -1702,7 +1702,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    VR style guide
+    Add WooCommerce Order Statuses
   
 
           </label>
@@ -1715,14 +1715,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vr-style-guide/guide/" class="md-nav__link">
+      <a href="../../tutorial/woo_comm_tutorial/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Guide
+    Tutorial
   
 
     
@@ -1781,10 +1781,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
+  <a href="#get-started" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Getting Started
+        Get started
       
     </span>
   </a>
@@ -1795,7 +1795,7 @@
   <a href="#create-a-slack-webhook" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Create a Slack Webhook
+        Create a Slack webhook
       
     </span>
   </a>
@@ -1829,7 +1829,7 @@
   <a href="#incomplete-tasks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Incomplete Tasks
+        Incomplete tasks
       
     </span>
   </a>
@@ -1840,7 +1840,7 @@
   <a href="#overdue-tasks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overdue Tasks
+        Overdue tasks
       
     </span>
   </a>
@@ -1851,7 +1851,7 @@
   <a href="#completed-tasks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Completed Tasks
+        Completed tasks
       
     </span>
   </a>
@@ -1867,7 +1867,7 @@
   <a href="#schedule-automatic-notifications" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Schedule Automatic Notifications
+        Schedule automatic notifications
       
     </span>
   </a>
@@ -1905,31 +1905,31 @@
 <div class="admonition abstract">
 <p class="admonition-title">About this sample</p>
 <ul>
-<li><strong>What this is:</strong> A step-by-step tutorial for connecting the Task API to Slack using an incoming webhook—covers three Python notification scripts and cron scheduling, written as a published developer article.</li>
+<li><strong>What this is:</strong> A step-by-step tutorial for connecting the Task API to Slack using an incoming webhook — covers three Python notification scripts and cron scheduling, written as a published developer article.</li>
 <li><strong>Audience:</strong> Developers and DevOps engineers.</li>
 <li><strong>Tools used:</strong> MkDocs, Markdown, Slack Webhooks API, Python, cron.</li>
-<li><strong>What it demonstrates:</strong> How to write a tutorial that gives developers enough context to understand what they're doing, while staying out of the way of actually doing it.  </li>
+<li><strong>What it demonstrates:</strong> How to write a tutorial that gives developers enough context to understand what they're doing, while staying out of the way of actually doing it.</li>
 <li><strong>Behind the docs:</strong> <a href="../">Read the case study →</a></li>
 </ul>
 </div>
-<h1 id="send-task-updates-from-an-api-to-slack-using-webhooks">Send Task Updates from an API to Slack Using Webhooks</h1>
+<h1 id="send-task-updates-from-an-api-to-slack-using-webhooks">Send task updates from an API to Slack using webhooks</h1>
 <h2 id="introduction">Introduction</h2>
 <p>Many SaaS applications send notifications to Slack when important events occur. Instead of checking dashboards throughout the day, updates can appear directly in a Slack message. While documenting a small Task API that I recently built, I started wondering whether it could be integrated with Slack to send task updates. I decided to connect the Task API to Slack using a webhook.</p>
-<p>In this guide, I will show you how I set up this integration and give step-by-step instructions to create the webhook in Slack, integrate it into your Python scripts, and set the scripts to run automatically to generate daily DM updates from the Task API. This guide will give you a solid foundation for integrating Slack with a third-party API. You can apply the concepts you learned to more complex integrations.</p>
-<h2 id="getting-started">Getting Started</h2>
+<p>In this guide, I'll show you how I set up this integration and give step-by-step instructions to create the webhook in Slack, integrate it into your Python scripts, and set the scripts to run automatically to generate daily DM updates from the Task API. This guide gives you a solid foundation for integrating Slack with a third-party API. You can apply the concepts to more complex integrations.</p>
+<h2 id="get-started">Get started</h2>
 <p>Once I connected the two apps, I built three Python scripts to scan the Task API for different task statuses: incomplete tasks (pending or in progress), incomplete tasks past their deadline, and completed tasks. Each script posts a message to the Slack webhook, triggering a notification in the Slack DM channel. After testing the scripts, I installed them on my server and set them to query the Task API on a set schedule, giving me a daily DM in Slack to stay updated on my tasks.</p>
-<p>To follow along, you will need:</p>
+<p>To follow along, you'll need:</p>
 <ul>
 <li>Python installed</li>
 <li>A Slack workspace</li>
 <li>An API token for the Task API</li>
 </ul>
-<p><strong>What you will build:</strong></p>
+<p><strong>What you'll build:</strong></p>
 <ul>
 <li>A Slack app with a webhook to integrate into your code to receive and post messages to the Slack DM channel.</li>
 <li>Three Python scripts that send reminders about your tasks from the Task API to your Slack DM.</li>
 </ul>
-<h2 id="create-a-slack-webhook">Create a Slack Webhook</h2>
+<h2 id="create-a-slack-webhook">Create a Slack webhook</h2>
 <p>To connect the Task API to Slack, you need to create an app with a webhook in Slack to receive notifications. A Slack webhook is a URL that allows external applications to post messages to Slack. For more detail on how Slack webhooks work, see the <a href="https://api.slack.com/messaging/webhooks">official Slack documentation</a>.</p>
 <ol>
 <li>Go to <a href="https://api.slack.com/apps">api.slack.com/apps</a> and click <strong>Create New App</strong>.</li>
@@ -1946,11 +1946,11 @@
 </div>
 <h2 id="query-the-task-api">Query the Task API</h2>
 <p>The Task API stores all of your personal tasks with their statuses and due dates. To complete the steps below, you need to set up a user account in the Task API and generate a token. You also need to have one task in <code>pending</code> or <code>in_progress</code> status, one in <code>completed</code> status, and one overdue task. For a full reference on creating an account and setting up tasks in the Task API, see the <a href="../../task-api-docs/setup/">documentation here</a>.</p>
-<p>Make a <code>GET</code> request to retrieve all fields associated with your tasks:
+<p>Make a <code>GET</code> request to retrieve all fields associated with your tasks:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://your-server-address:3000/api/tasks&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer your-api-key-here&quot;</span>
-</code></pre></div></p>
-<p>Your API key is your JWT — the unique token associated with your account. The API returns all tasks associated with your token:
+</code></pre></div>
+<p>Your API key is your JWT — the unique token associated with your account. The API returns all tasks associated with your token:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;tasks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
@@ -1976,7 +1976,7 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
-</code></pre></div></p>
+</code></pre></div>
 <p>The scripts scan three fields from the API response to determine what to post in the Slack DM:</p>
 <table>
 <thead>
@@ -2006,7 +2006,7 @@
 </table>
 <h2 id="connect-the-task-api-and-slack">Connect the Task API and Slack</h2>
 <p>You now have a webhook that connects Slack and the Task API. They can communicate, but you need scripts to query the Task API and post the results to Slack.</p>
-<p>First, run a test script to make sure your Slack webhook works. Replace the placeholder webhook URL with your own and run it from your command line or server:
+<p>First, run a test script to make sure your Slack webhook works. Replace the placeholder webhook URL with your own and run it from your command line or server:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
 <span class="n">SLACK_WEBHOOK</span> <span class="o">=</span> <span class="s2">&quot;https://hooks.slack.com/services/xxx/xxx/xxx&quot;</span>
@@ -2018,10 +2018,10 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Message sent successfully&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to send message. Status code: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</code></pre></div></p>
+</code></pre></div>
 <p>If you get <code>Message sent successfully</code> and a DM appears in Slack, your webhook URL is configured correctly. If nothing happens, check that you replaced the placeholder URL with your actual webhook URL.</p>
 <p>Next, query the <code>/tasks</code> endpoint and evaluate the response fields. Each script sends a different DM with one of the following notifications: <strong>Incomplete Tasks</strong>, <strong>Overdue Tasks</strong>, and <strong>Completed Tasks</strong>.</p>
-<h3 id="incomplete-tasks">Incomplete Tasks</h3>
+<h3 id="incomplete-tasks">Incomplete tasks</h3>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
 <span class="n">TOKEN</span> <span class="o">=</span> <span class="s2">&quot;your-api-key-here&quot;</span>
@@ -2044,7 +2044,7 @@
     <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">SLACK_WEBHOOK</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">message</span><span class="p">})</span>
 </code></pre></div>
 <p>This script queries the <code>/tasks</code> endpoint and scans the response for tasks with a status of <code>pending</code> or <code>in_progress</code>. It then posts an <strong>Incomplete Tasks</strong> notification with a list of task titles to the Slack webhook.</p>
-<h3 id="overdue-tasks">Overdue Tasks</h3>
+<h3 id="overdue-tasks">Overdue tasks</h3>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
 
@@ -2070,7 +2070,7 @@
     <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">SLACK_WEBHOOK</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">message</span><span class="p">})</span>
 </code></pre></div>
 <p>This script looks for tasks that have a <code>pending</code> status and a <code>due_date</code> in the past. It then posts an <strong>Overdue Tasks</strong> notification containing a list of task titles and their due dates.</p>
-<h3 id="completed-tasks">Completed Tasks</h3>
+<h3 id="completed-tasks">Completed tasks</h3>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
 <span class="n">TOKEN</span> <span class="o">=</span> <span class="s2">&quot;your-api-key-here&quot;</span>
@@ -2093,15 +2093,15 @@
     <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">SLACK_WEBHOOK</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">message</span><span class="p">})</span>
 </code></pre></div>
 <p>This script scans for any task with a status of <code>completed</code> and sends a <strong>Completed Tasks</strong> message to the webhook.</p>
-<h2 id="schedule-automatic-notifications">Schedule Automatic Notifications</h2>
-<p>You can configure these scripts to run automatically so you never miss a task update or deadline. To schedule a script on a Linux server, open your crontab file:
+<h2 id="schedule-automatic-notifications">Schedule automatic notifications</h2>
+<p>You can configure these scripts to run automatically so you never miss a task update or deadline. To schedule a script on a Linux server, open your crontab file:</p>
 <div class="highlight"><pre><span></span><code>crontab<span class="w"> </span>-e
-</code></pre></div></p>
-<p>Add a line specifying when and how often to run the script. For example, to run the overdue tasks script every day at 8am:
+</code></pre></div>
+<p>Add a line specifying when and how often to run the script. For example, to run the overdue tasks script every day at 8 AM:</p>
 <div class="highlight"><pre><span></span><code><span class="m">0</span><span class="w"> </span><span class="m">8</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>python3<span class="w"> </span>/path/to/overdue_tasks.py
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="conclusion">Conclusion</h2>
-<p>You have now built three scripts that query the Task API and send Slack DMs using a webhook. Scheduling these scripts to run on a cron job will ensure that you receive reminder messages and stay up to date with your tasks. You now understand how to use webhooks to integrate third-party apps into Slack. You can build on what you've learned in this guide to:</p>
+<p>You've now built three scripts that query the Task API and send Slack DMs using a webhook. Scheduling these scripts to run on a cron job ensures that you receive reminder messages and stay up to date with your tasks. You now understand how to use webhooks to integrate third-party apps into Slack. You can build on what you've learned to:</p>
 <ul>
 <li>Extend the existing scripts to filter tasks by priority and route notifications to different Slack channels.</li>
 <li>Configure the Task API to send a DM the moment a task is updated, removing the need for a scheduled cron job.</li>

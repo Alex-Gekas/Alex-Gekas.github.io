@@ -1,0 +1,3879 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Technical writing portfolio — API docs, tutorials, explainers, and style guides.">
+      
+      
+        <meta name="author" content="Alex Gekas">
+      
+      
+        <link rel="canonical" href="https://alex-gekas.github.io/tutorial/woo_comm_tutorial/">
+      
+      
+        <link rel="prev" href="../../geojson-explainer/explainer/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Technical Tutorial-WooCommerce Order Status & Emails - Alex Gekas — Technical Writing Portfolio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"IBM Plex Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#build-a-custom-woocommerce-order-status-with-customer-email-notifications" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Alex Gekas — Technical Writing Portfolio" class="md-header__button md-logo" aria-label="Alex Gekas — Technical Writing Portfolio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Alex Gekas — Technical Writing Portfolio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Technical Tutorial-WooCommerce Order Status & Emails
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../task-api-docs/about/" class="md-tabs__link">
+          
+  
+  
+  Task API Docs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../slack-webhook/article/" class="md-tabs__link">
+          
+  
+  
+  Slack webhook
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../nws-api-reference/introduction/" class="md-tabs__link">
+          
+  
+  
+  NWS API reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../geojson-explainer/explainer/" class="md-tabs__link">
+          
+  
+  
+  GeoJSON explainer
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Add WooCommerce Order Statuses
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Alex Gekas — Technical Writing Portfolio" class="md-nav__button md-logo" aria-label="Alex Gekas — Technical Writing Portfolio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Alex Gekas — Technical Writing Portfolio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task API Docs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Task API Docs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../task-api-docs/about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../task-api-docs/system-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../task-api-docs/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../task-api-docs/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../task-api-docs/authentication-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../task-api-docs/api-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../task-api-docs/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slack webhook
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Slack webhook
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slack-webhook/article/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Article
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NWS API reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NWS API reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview of the NWS API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/authentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication and headers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/caching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caching best practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Key concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/key-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How forecasts are structured
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/key-concepts/hierarchy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Forecast hierarchy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/key-concepts/wfos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weather forecast Offices (WFOs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/key-concepts/grids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gridpoints and grids
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/key-concepts/zones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/key-concepts/developer-use-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer use cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/key-concepts/status-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Status codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/key-concepts/units/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Units and conventions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Endpoints
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Endpoints
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Endpoints overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/endpoints/points/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/endpoints/forecasts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Forecasts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/endpoints/grid-points/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grid points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/endpoints/stations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/endpoints/alerts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alerts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nws-api-reference/endpoints/zones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GeoJSON explainer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GeoJSON explainer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geojson-explainer/explainer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explainer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add WooCommerce Order Statuses
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Add WooCommerce Order Statuses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning objectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intended-audience-and-background-knowledge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intended audience and background knowledge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisite-background-knowledge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisite background knowledge
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-begin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before you begin
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Before you begin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-structure-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project structure (recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-create-the-plugin-scaffold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Create the plugin scaffold
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Create the plugin scaffold">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-create-the-plugin-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Create the plugin directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-create-the-main-plugin-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Create the main plugin file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-create-supporting-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Create supporting folders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-register-the-awaiting-review-order-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Register the Awaiting Review order status
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Register the Awaiting Review order status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-register-the-custom-order-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Register the custom order status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-add-the-status-to-woocommerces-status-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Add the status to WooCommerce's status list
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-verify-the-status-appears-in-the-admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Verify the status appears in the admin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-add-bulk-actions-in-the-orders-list-hpos-wc-orders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Add bulk actions in the Orders list (HPOS / wc-orders)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Add bulk actions in the Orders list (HPOS / wc-orders)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-create-includesadmin-bulk-actionsphp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Create includes/admin-bulk-actions.php
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-load-the-bulk-actions-file-from-your-main-plugin-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Load the bulk-actions file from your main plugin file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-test-it-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Test it now
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-add-a-single-order-admin-action-order-actions-dropdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Add a single-order admin action (Order actions dropdown)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: Add a single-order admin action (Order actions dropdown)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-add-an-order-action-to-the-dropdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Add an order action to the dropdown
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-handle-the-action-when-an-admin-runs-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Handle the action when an admin runs it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-load-the-module-from-your-main-plugin-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Load the module from your main plugin file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-test-it-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Test it now
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-create-and-register-the-custom-woocommerce-email-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Create and register the custom WooCommerce email class
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Create and register the custom WooCommerce email class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-create-the-email-class-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Create the email class file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-create-the-email-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Create the email templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-register-your-email-with-woocommerce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Register your email with WooCommerce
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-test-it-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Test it now
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-add-minimal-email-templates-html-plain-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Add minimal email templates (HTML + plain text)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 6: Add minimal email templates (HTML + plain text)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-create-the-html-email-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Create the HTML email template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-create-the-plain-text-email-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Create the plain-text email template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-point-your-email-class-at-these-template-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Point your email class at these template files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-test-it-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Test it now
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-trigger-the-email-automatically-when-the-status-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Trigger the email automatically when the status changes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 7: Trigger the email automatically when the status changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-create-includesstatus-email-triggersphp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Create includes/status-email-triggers.php
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-load-the-trigger-file-from-your-main-plugin-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Load the trigger file from your main plugin file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-test-it-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Test it now
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning objectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intended-audience-and-background-knowledge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intended audience and background knowledge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisite-background-knowledge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisite background knowledge
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-begin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before you begin
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Before you begin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-structure-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project structure (recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-create-the-plugin-scaffold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Create the plugin scaffold
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Create the plugin scaffold">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-create-the-plugin-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Create the plugin directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-create-the-main-plugin-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Create the main plugin file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-create-supporting-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Create supporting folders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-register-the-awaiting-review-order-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Register the Awaiting Review order status
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Register the Awaiting Review order status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-register-the-custom-order-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Register the custom order status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-add-the-status-to-woocommerces-status-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Add the status to WooCommerce's status list
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-verify-the-status-appears-in-the-admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Verify the status appears in the admin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-add-bulk-actions-in-the-orders-list-hpos-wc-orders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Add bulk actions in the Orders list (HPOS / wc-orders)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Add bulk actions in the Orders list (HPOS / wc-orders)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-create-includesadmin-bulk-actionsphp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Create includes/admin-bulk-actions.php
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-load-the-bulk-actions-file-from-your-main-plugin-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Load the bulk-actions file from your main plugin file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-test-it-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Test it now
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-add-a-single-order-admin-action-order-actions-dropdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Add a single-order admin action (Order actions dropdown)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: Add a single-order admin action (Order actions dropdown)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-add-an-order-action-to-the-dropdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Add an order action to the dropdown
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-handle-the-action-when-an-admin-runs-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Handle the action when an admin runs it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-load-the-module-from-your-main-plugin-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Load the module from your main plugin file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-test-it-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Test it now
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-create-and-register-the-custom-woocommerce-email-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Create and register the custom WooCommerce email class
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Create and register the custom WooCommerce email class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-create-the-email-class-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Create the email class file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-create-the-email-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Create the email templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-register-your-email-with-woocommerce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Register your email with WooCommerce
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-test-it-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Test it now
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-add-minimal-email-templates-html-plain-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Add minimal email templates (HTML + plain text)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 6: Add minimal email templates (HTML + plain text)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-create-the-html-email-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Create the HTML email template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-create-the-plain-text-email-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Create the plain-text email template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-point-your-email-class-at-these-template-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Point your email class at these template files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-test-it-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Test it now
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-trigger-the-email-automatically-when-the-status-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Trigger the email automatically when the status changes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 7: Trigger the email automatically when the status changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-create-includesstatus-email-triggersphp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Create includes/status-email-triggers.php
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-load-the-trigger-file-from-your-main-plugin-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Load the trigger file from your main plugin file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-test-it-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Test it now
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div class="admonition abstract">
+<p class="admonition-title">About this sample</p>
+<ul>
+<li><strong>What this is:</strong> A step-by-step tutorial for building a production-ready WooCommerce plugin that adds a custom order status with automated customer email notifications.</li>
+<li><strong>Audience:</strong> Intermediate WordPress and WooCommerce developers comfortable with PHP and WordPress hooks.</li>
+<li><strong>Tools used:</strong> WordPress, WooCommerce, PHP, HPOS (High-Performance Order Storage), WC_Email.</li>
+<li><strong>What it demonstrates:</strong> How to extend WooCommerce at multiple integration points — status registry, admin UI, and mailer — within a single plugin, and how to document each step so it produces a result you can test.</li>
+<li><strong>Behind the docs:</strong> <a href="../">Read the case study →</a></li>
+</ul>
+</div>
+<h1 id="build-a-custom-woocommerce-order-status-with-customer-email-notifications">Build a custom WooCommerce order status with customer email notifications</h1>
+<h2 id="background">Background</h2>
+<p>The default installation of WooCommerce does not include the option to
+add a custom order status. Some stores need to place certain orders into
+a <strong>manual review</strong> state before fulfillment (for example, fraud checks
+or stock confirmation). In this tutorial, you'll implement an
+<strong>"Awaiting Review"</strong> status and a customer email that communicates what
+it means and what happens next.</p>
+<p>This tutorial follows a live-site ready approach:</p>
+<ul>
+<li>Status registration</li>
+<li>Admin workflows</li>
+<li>Customer email notifications</li>
+<li>Testing</li>
+</ul>
+<p>Some common reasons to add a custom "Awaiting Review" order status
+include:</p>
+<ul>
+<li><strong>Fraud or payment verification:</strong> hold flagged or high-value orders
+  for manual review before fulfillment.</li>
+<li><strong>Inventory confirmation:</strong> pause fulfillment until stock or supplier
+  availability is confirmed.</li>
+<li><strong>Support investigation:</strong> give staff a safe holding state while
+  resolving issues, with a clear customer message.</li>
+</ul>
+<p>This tutorial walks you through the core steps required to add a new order status and integrate it into the WooCommerce order lifecycle. You can adapt these steps to fit your specific use case.</p>
+<h2 id="overview">Overview</h2>
+<p>The diagram below shows the high-level lifecycle of a custom WooCommerce order status, from registration to customer notification.</p>
+<pre class="mermaid"><code>flowchart LR
+    A[Order Created] --&gt; B[Custom Status Registered]
+    B --&gt; C[Order Status Transition]
+    C --&gt; D{Trigger Email?}
+    D --&gt;|Yes| E[Send Customer Email]
+    D --&gt;|No| F[No Notification]
+    C --&gt; G[Admin UI Updated]</code></pre>
+<h3 id="learning-objectives">Learning objectives</h3>
+<p>By the end of this tutorial, you'll be able to:</p>
+<ul>
+<li>Add a <strong>custom order status</strong> to WooCommerce.</li>
+<li>Add <strong>admin workflows</strong> to apply the status (bulk + single-order
+  action).</li>
+<li>Create and register a <strong>custom WC_Email</strong> notification.</li>
+<li>Trigger the email <strong>manually</strong> (admin action) and <strong>automatically</strong>
+  (on status change).</li>
+<li>Verify the feature with a <strong>QA checklist</strong>.</li>
+</ul>
+<h3 id="intended-audience-and-background-knowledge">Intended audience and background knowledge</h3>
+<p>This tutorial is for developers who can:</p>
+<ul>
+<li>Create a basic WordPress plugin</li>
+<li>Read PHP and WordPress hooks/filters</li>
+<li>Navigate WooCommerce admin screens</li>
+</ul>
+<h3 id="prerequisite-background-knowledge">Prerequisite background knowledge</h3>
+<p>You should be familiar with:</p>
+<ul>
+<li>WordPress plugin structure (wp-content/plugins)</li>
+<li>WooCommerce orders and order statuses</li>
+<li>Basic debugging (logs/order notes)</li>
+</ul>
+<h2 id="before-you-begin">Before you begin</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>A local WordPress site with WooCommerce installed</li>
+<li>Your site is using the <strong>new WooCommerce Orders experience (HPOS /
+  wc-orders)</strong> (as in your build)</li>
+<li>A code editor</li>
+<li>Optional (recommended): an email logging plugin to view outbound
+  emails locally</li>
+</ul>
+<h3 id="project-structure-recommended">Project structure (recommended)</h3>
+<p>You'll create a plugin with this structure:</p>
+<div class="highlight"><pre><span></span><code>wc-custom-order-status/
+├── wc-custom-order-status.php        # Main plugin file
+├── includes/
+│   ├── admin-bulk-actions.php
+│   ├── admin-order-actions.php
+│   ├── status-email-triggers.php
+│   └── emails/
+│       └── class-wc-email-awaiting-review.php
+└── templates/
+    └── emails/
+        ├── custom-status-email.php
+        └── plain/
+            └── custom-status-email.php
+</code></pre></div>
+<h2 id="steps">Steps</h2>
+<h2 id="step-1-create-the-plugin-scaffold">Step 1: Create the plugin scaffold</h2>
+<p>In this step, you'll create the minimum file and folder structure
+required for WordPress to recognize and activate your plugin.</p>
+<h3 id="1-create-the-plugin-directory">1. Create the plugin directory</h3>
+<p>Create a new folder:</p>
+<p><code>wp-content/plugins/wc-custom-order-status/</code></p>
+<h3 id="2-create-the-main-plugin-file">2. Create the main plugin file</h3>
+<p>Inside that folder, create:</p>
+<p><code>wc-custom-order-status.php</code></p>
+<p>You'll add the plugin header and an ABSPATH guard in the next step.</p>
+<h3 id="3-create-supporting-folders">3. Create supporting folders</h3>
+<p>Create these folders (we'll use them later for implementation and email
+templates):</p>
+<p><code>includes/</code></p>
+<p><code>templates/</code></p>
+<p>Optional (WooCommerce-friendly expansion):</p>
+<p>If you prefer to organize email code and templates from the start, you
+can also add:</p>
+<p><code>includes/emails/</code></p>
+<p><code>templates/emails/</code></p>
+<h3 id="result">Result</h3>
+<p>WordPress can detect and activate the plugin, and you have a clean
+structure to build on.</p>
+<p><strong>Next:</strong> Register the <strong>Awaiting Review</strong> order status so it appears in
+the WooCommerce admin order workflow.</p>
+<h2 id="step-2-register-the-awaiting-review-order-status">Step 2: Register the Awaiting Review order status</h2>
+<p>In this step, you'll register a new WooCommerce order status and make it
+selectable in the admin order screen.</p>
+<h3 id="21-register-the-custom-order-status">2.1 Register the custom order status</h3>
+<p>Use <code>register_post_status()</code> to register a new status called
+<code>wc-awaiting-review</code>.
+WooCommerce order statuses are registered as WordPress post statuses and
+must be prefixed with <code>wc-</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="x">add_action( &#39;init&#39;, &#39;wc_register_awaiting_review_status&#39; );</span>
+
+<span class="x">function wc_register_awaiting_review_status() {</span>
+<span class="x">    register_post_status(</span>
+<span class="x">        &#39;wc-awaiting-review&#39;,</span>
+<span class="x">        array(</span>
+<span class="x">            &#39;label&#39;                     =&gt; &#39;Awaiting Review&#39;,</span>
+<span class="x">            &#39;public&#39;                    =&gt; true,</span>
+<span class="x">            &#39;exclude_from_search&#39;       =&gt; false,</span>
+<span class="x">            &#39;show_in_admin_all_list&#39;    =&gt; true,</span>
+<span class="x">            &#39;show_in_admin_status_list&#39; =&gt; true,</span>
+<span class="x">        )</span>
+<span class="x">    );</span>
+<span class="x">}</span>
+</code></pre></div>
+<p>This makes the status known to WordPress and visible in the admin
+interface.</p>
+<h3 id="22-add-the-status-to-woocommerces-status-list">2.2 Add the status to WooCommerce's status list</h3>
+<p>Registering the post status alone is not enough. You must also add it to
+WooCommerce's internal list of order statuses so it appears in dropdowns
+and filters.</p>
+<div class="highlight"><pre><span></span><code><span class="x">add_filter(</span>
+<span class="x">    &#39;wc_order_statuses&#39;,</span>
+<span class="x">    &#39;wc_add_awaiting_review_to_order_statuses&#39;</span>
+<span class="x">);</span>
+
+<span class="x">function wc_add_awaiting_review_to_order_statuses( $order_statuses ) {</span>
+<span class="x">    $new_statuses = array();</span>
+
+<span class="x">    foreach ( $order_statuses as $key =&gt; $label ) {</span>
+<span class="x">        $new_statuses[ $key ] = $label;</span>
+
+<span class="x">        if ( &#39;wc-processing&#39; === $key ) {</span>
+<span class="x">            $new_statuses[&#39;wc-awaiting-review&#39;] = &#39;Awaiting Review&#39;;</span>
+<span class="x">        }</span>
+<span class="x">    }</span>
+
+<span class="x">    return $new_statuses;</span>
+<span class="x">}</span>
+</code></pre></div>
+<p>This example inserts <strong>Awaiting Review</strong> immediately after
+<strong>Processing</strong>, which keeps the workflow intuitive for store staff.</p>
+<p>You can adjust the insertion point to match your store's fulfillment
+process.</p>
+<h3 id="23-verify-the-status-appears-in-the-admin">2.3 Verify the status appears in the admin</h3>
+<p>At this point, the status should be selectable in WooCommerce.</p>
+<p><strong>Test it now:</strong></p>
+<ol>
+<li>
+<p>Go to <strong>WooCommerce → Orders</strong></p>
+</li>
+<li>
+<p>Open any order</p>
+</li>
+<li>
+<p>Open the <strong>Status</strong> dropdown</p>
+</li>
+<li>
+<p>Confirm <strong>Awaiting Review</strong> appears in the list</p>
+</li>
+</ol>
+<p><img alt="Order status dropdown showing the custom &quot;Awaiting Review&quot; status" src="../images/order_status.png" /></p>
+<p><strong>Figure 2.3</strong> - <em>Order status dropdown showing the custom</em> <strong>Awaiting Review</strong> <em>status</em></p>
+<h3 id="result_1">Result</h3>
+<p>The <strong>Awaiting Review</strong> status is now registered and available in the
+WooCommerce admin panel.</p>
+<p>In the next step, you'll connect this status to a <strong>customer email
+notification</strong> so customers understand what happens next.</p>
+<h2 id="step-3-add-bulk-actions-in-the-orders-list-hpos-wc-orders">Step 3: Add bulk actions in the Orders list (HPOS / wc-orders)</h2>
+<p>In this step, you'll add a bulk action that lets staff move multiple
+orders to <strong>Awaiting Review</strong> at once. This implementation targets the
+<strong>HPOS (High-Performance Order Storage)</strong> Orders screen (WooCommerce →
+Orders, URL: <code>admin.php?page=wc-orders</code>).</p>
+<h3 id="31-create-includesadmin-bulk-actionsphp">3.1 Create includes/admin-bulk-actions.php</h3>
+<p>Create the file:</p>
+<p><code>wp-content/plugins/wc-custom-order-status/includes/admin-bulk-actions.php</code></p>
+<p>Add the following code:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd"> * Admin: Bulk actions for WooCommerce Orders screen (HPOS / wc-orders).</span>
+<span class="sd"> *</span>
+<span class="sd"> * @package wc-custom-order-status</span>
+<span class="sd"> */</span>
+
+<span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span> <span class="s1">&#39;ABSPATH&#39;</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="k">exit</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Add &quot;Change status to Awaiting Review&quot; to bulk actions on the new Orders screen.</span>
+<span class="sd"> * Screen URL: /wp-admin/admin.php?page=wc-orders</span>
+<span class="sd"> */</span>
+<span class="nx">add_filter</span><span class="p">(</span> <span class="s1">&#39;bulk_actions-woocommerce_page_wc-orders&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span> <span class="nv">$bulk_actions</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$bulk_actions</span><span class="p">[</span><span class="s1">&#39;mark_awaiting-review&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Change status to Awaiting Review&#39;</span><span class="p">,</span> <span class="s1">&#39;wc-custom-order-status&#39;</span> <span class="p">);</span>
+    <span class="k">return</span> <span class="nv">$bulk_actions</span><span class="p">;</span>
+<span class="p">}</span> <span class="p">);</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Handle the bulk action: set selected orders to awaiting-review.</span>
+<span class="sd"> *</span>
+<span class="sd"> * Note: update_status() expects the status slug WITHOUT the &#39;wc-&#39; prefix.</span>
+<span class="sd"> */</span>
+<span class="nx">add_filter</span><span class="p">(</span> <span class="s1">&#39;handle_bulk_actions-woocommerce_page_wc-orders&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span> <span class="nv">$redirect_url</span><span class="p">,</span> <span class="nv">$action</span><span class="p">,</span> <span class="nv">$order_ids</span> <span class="p">)</span> <span class="p">{</span>
+
+    <span class="k">if</span> <span class="p">(</span> <span class="s1">&#39;mark_awaiting-review&#39;</span> <span class="o">!==</span> <span class="nv">$action</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$redirect_url</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nv">$changed</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">foreach</span> <span class="p">(</span> <span class="p">(</span><span class="k">array</span><span class="p">)</span> <span class="nv">$order_ids</span> <span class="k">as</span> <span class="nv">$order_id</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$order</span> <span class="o">=</span> <span class="nx">wc_get_order</span><span class="p">(</span> <span class="nv">$order_id</span> <span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nv">$order</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">update_status</span><span class="p">(</span>
+            <span class="s1">&#39;awaiting-review&#39;</span><span class="p">,</span>
+            <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Bulk action: Awaiting Review&#39;</span><span class="p">,</span> <span class="s1">&#39;wc-custom-order-status&#39;</span> <span class="p">)</span>
+        <span class="p">);</span>
+
+        <span class="nv">$changed</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">add_query_arg</span><span class="p">(</span>
+        <span class="k">array</span><span class="p">(</span> <span class="s1">&#39;bulk_awaiting_review&#39;</span> <span class="o">=&gt;</span> <span class="nv">$changed</span> <span class="p">),</span>
+        <span class="nv">$redirect_url</span>
+    <span class="p">);</span>
+
+<span class="p">},</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span> <span class="p">);</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Admin notice after applying bulk action.</span>
+<span class="sd"> */</span>
+<span class="nx">add_action</span><span class="p">(</span> <span class="s1">&#39;admin_notices&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="k">if</span> <span class="p">(</span> <span class="k">empty</span><span class="p">(</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;bulk_awaiting_review&#39;</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nv">$count</span> <span class="o">=</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;bulk_awaiting_review&#39;</span><span class="p">];</span>
+
+    <span class="nb">printf</span><span class="p">(</span>
+        <span class="s1">&#39;&lt;div class=&quot;notice notice-success is-dismissible&quot;&gt;&lt;p&gt;%s&lt;/p&gt;&lt;/div&gt;&#39;</span><span class="p">,</span>
+        <span class="nx">esc_html</span><span class="p">(</span>
+            <span class="nb">sprintf</span><span class="p">(</span>
+                <span class="nx">_n</span><span class="p">(</span>
+                    <span class="s1">&#39;%d order set to Awaiting Review.&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;%d orders set to Awaiting Review.&#39;</span><span class="p">,</span>
+                    <span class="nv">$count</span><span class="p">,</span>
+                    <span class="s1">&#39;wc-custom-order-status&#39;</span>
+                <span class="p">),</span>
+                <span class="nv">$count</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">);</span>
+<span class="p">}</span> <span class="p">);</span>
+</code></pre></div>
+<p>What this file does:</p>
+<ul>
+<li><strong>Adds a bulk action</strong> named <strong>Change status to Awaiting Review</strong> to
+  the Orders list UI.</li>
+<li><strong>Handles the action</strong> by looping through selected orders and calling
+  <code>update_status( 'awaiting-review' )</code>.</li>
+<li><strong>Adds an admin notice</strong> showing how many orders were updated.</li>
+</ul>
+<h3 id="32-load-the-bulk-actions-file-from-your-main-plugin-file">3.2 Load the bulk-actions file from your main plugin file</h3>
+<p>In your main plugin file (<code>wc-custom-order-status.php</code>), include the file
+so it runs in wp-admin:</p>
+<p><code>require_once __DIR__ . '/includes/admin-bulk-actions.php';</code></p>
+<h3 id="33-test-it-now">3.3 Test it now</h3>
+<ol>
+<li>
+<p>Go to <strong>WooCommerce → Orders</strong></p>
+</li>
+<li>
+<p>Select multiple orders using the checkboxes</p>
+</li>
+<li>
+<p>Open <strong>Bulk actions</strong></p>
+</li>
+<li>
+<p>Choose <strong>Change status to Awaiting Review</strong></p>
+</li>
+<li>
+<p>Click <strong>Apply</strong></p>
+</li>
+<li>
+<p>Confirm:</p>
+<ul>
+<li>
+<p>the selected orders update to <strong>Awaiting Review</strong></p>
+</li>
+<li>
+<p>you see a success notice (for example: "3 orders set to Awaiting
+  Review.")</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="result_2">Result</h3>
+<p>Store staff can now set <strong>Awaiting Review</strong> on multiple orders in a
+single action — useful for fraud review queues, inventory holds, or
+support investigations.</p>
+<p><img alt="Drop-down in Bulk Actions showing Change status to Awaiting Review" src="../images/change_status.png" /></p>
+<p><strong>Figure 3.3</strong> - <em>Drop-down in Bulk Actions showing Change status to Awaiting Review in the WooCommerce Orders Panel.</em></p>
+<h2 id="step-4-add-a-single-order-admin-action-order-actions-dropdown">Step 4: Add a single-order admin action (Order actions dropdown)</h2>
+<p>In this step, you'll add an admin-only action to the <strong>Order actions</strong>
+dropdown on the order edit screen. Staff can use it to manually send the
+<strong>Awaiting Review</strong> email for a single order (useful for edge cases and
+support workflows).</p>
+<h3 id="41-add-an-order-action-to-the-dropdown">4.1 Add an order action to the dropdown</h3>
+<p>Create a new file:</p>
+<p><code>includes/admin-order-actions.php</code></p>
+<p>Add an action to the <strong>Order actions</strong> dropdown using the
+<code>woocommerce_order_actions</code> filter.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd"> * Admin: Single-order action for the WooCommerce Order actions dropdown.</span>
+<span class="sd"> *</span>
+<span class="sd"> * @package wc-custom-order-status</span>
+<span class="sd"> */</span>
+
+<span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span> <span class="s1">&#39;ABSPATH&#39;</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="k">exit</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">add_filter</span><span class="p">(</span> <span class="s1">&#39;woocommerce_order_actions&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span> <span class="nv">$actions</span> <span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// Action keys should be unique and slug-like.</span>
+    <span class="nv">$actions</span><span class="p">[</span><span class="s1">&#39;wc_cos_send_awaiting_review_email&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span>
+        <span class="s1">&#39;Send Awaiting Review Email&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;wc-custom-order-status&#39;</span>
+    <span class="p">);</span>
+
+    <span class="k">return</span> <span class="nv">$actions</span><span class="p">;</span>
+<span class="p">}</span> <span class="p">);</span>
+</code></pre></div>
+<h3 id="42-handle-the-action-when-an-admin-runs-it">4.2 Handle the action when an admin runs it</h3>
+<p>WooCommerce fires a dynamic hook when the action is executed:</p>
+<p><code>woocommerce_order_action_{your_action_key}</code></p>
+<p>Add the handler hook using the same action key you registered above:</p>
+<div class="highlight"><pre><span></span><code><span class="x">add_action(</span>
+<span class="x">    &#39;woocommerce_order_action_wc_cos_send_awaiting_review_email&#39;,</span>
+<span class="x">    function ( $order ) {</span>
+
+<span class="x">        if ( ! $order || ! is_a( $order, &#39;WC_Order&#39; ) ) {</span>
+<span class="x">            return;</span>
+<span class="x">        }</span>
+
+<span class="x">        // Add an order note for auditability (admins can see when/why it was sent).</span>
+<span class="x">        $order-&gt;add_order_note(</span>
+<span class="x">            __( &#39;Admin action: Sent Awaiting Review email.&#39;, &#39;wc-custom-order-status&#39; )</span>
+<span class="x">        );</span>
+
+<span class="x">        /**</span>
+<span class="x">         * Trigger your custom email.</span>
+<span class="x">         *</span>
+<span class="x">         * Replace this placeholder with the actual trigger you implement in the email step.</span>
+<span class="x">         * Common patterns:</span>
+<span class="x">         * - Call your custom email class directly (recommended)</span>
+<span class="x">         * - Use WC()-&gt;mailer() to access registered email instances</span>
+<span class="x">         */</span>
+<span class="x">        do_action( &#39;wc_cos_trigger_awaiting_review_email&#39;, $order-&gt;get_id(), $order );</span>
+<span class="x">    }</span>
+<span class="x">);</span>
+</code></pre></div>
+<p>Why the <code>do_action()</code> placeholder?</p>
+<ul>
+<li>It lets you ship Step 4 without coupling it tightly to your email
+  class structure.</li>
+<li>In the next step, you'll hook your email implementation to
+  <code>wc_cos_trigger_awaiting_review_email</code>.</li>
+</ul>
+<p>If you already have your email class, you can replace the placeholder
+with your direct call later — no need to change Step 4's UI wiring.</p>
+<h3 id="43-load-the-module-from-your-main-plugin-file">4.3 Load the module from your main plugin file</h3>
+<p>In <code>wc-custom-order-status.php</code>, include the file:</p>
+<div class="highlight"><pre><span></span><code><span class="x">require_once __DIR__ . &#39;/includes/admin-order-actions.php&#39;;</span>
+</code></pre></div>
+<h3 id="44-test-it-now">4.4 Test it now</h3>
+<ol>
+<li>
+<p>Go to <strong>WooCommerce → Orders</strong></p>
+</li>
+<li>
+<p>Open an order</p>
+</li>
+<li>
+<p>Find the <strong>Order actions</strong> dropdown (usually in the <strong>Order
+    actions</strong> box on the right)</p>
+</li>
+<li>
+<p>Select <strong>Send Awaiting Review Email</strong></p>
+</li>
+<li>
+<p>Click the <strong>arrow button</strong> next to the dropdown (not the main
+    <strong>Update</strong> button)</p>
+</li>
+<li>
+<p>Confirm an <strong>order note</strong> appears (for example: "Admin action: Sent
+    Awaiting Review email.")</p>
+</li>
+</ol>
+<h3 id="result_3">Result</h3>
+<p><img alt="Add an action to the Order actions dropdown" src="../images/add_action.png" /></p>
+<p><strong>Figure 4.4</strong> - <em>Add an action to the</em> <strong>Order Actions</strong> <em>dropdown</em></p>
+<p>Admins can manually trigger the Awaiting Review email for a single
+order, with a logged order note for traceability.</p>
+<p><strong>Next:</strong> Implement the custom email itself and hook it to
+<code>wc_cos_trigger_awaiting_review_email</code> so this action actually sends the
+message.</p>
+<h2 id="step-5-create-and-register-the-custom-woocommerce-email-class">Step 5: Create and register the custom WooCommerce email class</h2>
+<p>In this step, you'll create a custom WooCommerce email (<code>WC_Email</code>) for
+<strong>Awaiting Review</strong>, register it so it appears under <strong>WooCommerce →
+Settings → Emails</strong>, and wire it to the trigger hook you added in Step 4.</p>
+<h3 id="51-create-the-email-class-file">5.1 Create the email class file</h3>
+<p>Create this file:</p>
+<p><code>includes/emails/class-wc-email-awaiting-review.php</code></p>
+<p>Add the following code:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd"> * Email: Awaiting Review</span>
+<span class="sd"> *</span>
+<span class="sd"> * @package wc-custom-order-status</span>
+<span class="sd"> */</span>
+
+<span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span> <span class="s1">&#39;ABSPATH&#39;</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="k">exit</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">class_exists</span><span class="p">(</span> <span class="s1">&#39;WC_Email&#39;</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">WC_Email_Awaiting_Review</span> <span class="k">extends</span> <span class="nx">WC_Email</span> <span class="p">{</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Constructor.</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">id</span>             <span class="o">=</span> <span class="s1">&#39;awaiting_review&#39;</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customer_email</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">title</span>       <span class="o">=</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Awaiting Review&#39;</span><span class="p">,</span> <span class="s1">&#39;wc-custom-order-status&#39;</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">description</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Sent to customers when an order is placed into Awaiting Review.&#39;</span><span class="p">,</span> <span class="s1">&#39;wc-custom-order-status&#39;</span> <span class="p">);</span>
+
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">heading</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Your order is awaiting review&#39;</span><span class="p">,</span> <span class="s1">&#39;wc-custom-order-status&#39;</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">subject</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;[{site_title}] Your order is awaiting review&#39;</span><span class="p">,</span> <span class="s1">&#39;wc-custom-order-status&#39;</span> <span class="p">);</span>
+
+        <span class="c1">// Templates (overrideable by themes if you place them under /woocommerce/emails/).</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">template_html</span>  <span class="o">=</span> <span class="s1">&#39;emails/customer-awaiting-review.php&#39;</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">template_plain</span> <span class="o">=</span> <span class="s1">&#39;emails/plain/customer-awaiting-review.php&#39;</span><span class="p">;</span>
+
+        <span class="c1">// Point WooCommerce at this plugin&#39;s templates directory.</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">template_base</span> <span class="o">=</span> <span class="nx">trailingslashit</span><span class="p">(</span> <span class="nx">plugin_dir_path</span><span class="p">(</span> <span class="no">__FILE__</span> <span class="p">)</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;../../templates/&#39;</span><span class="p">;</span>
+
+        <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">();</span>
+
+        <span class="sd">/**</span>
+<span class="sd">         * Trigger hook from Step 4.</span>
+<span class="sd">         * Passes ($order_id, $order) to make it easy to send to the right recipient.</span>
+<span class="sd">         */</span>
+        <span class="nx">add_action</span><span class="p">(</span> <span class="s1">&#39;wc_cos_trigger_awaiting_review_email&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span> <span class="nv">$this</span><span class="p">,</span> <span class="s1">&#39;trigger&#39;</span> <span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span> <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Trigger the email.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param int           $order_id</span>
+<span class="sd">     * @param WC_Order|null $order</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">trigger</span><span class="p">(</span> <span class="nv">$order_id</span><span class="p">,</span> <span class="nv">$order</span> <span class="o">=</span> <span class="k">null</span> <span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">if</span> <span class="p">(</span> <span class="nv">$order_id</span> <span class="o">&amp;&amp;</span> <span class="o">!</span> <span class="nv">$order</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$order</span> <span class="o">=</span> <span class="nx">wc_get_order</span><span class="p">(</span> <span class="nv">$order_id</span> <span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nv">$order</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">object</span>    <span class="o">=</span> <span class="nv">$order</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">recipient</span> <span class="o">=</span> <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">get_billing_email</span><span class="p">();</span>
+
+        <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">is_enabled</span><span class="p">()</span> <span class="o">||</span> <span class="o">!</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get_recipient</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Used by Woo templates (order details, etc.)</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">placeholders</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;{order_date}&#39;</span>   <span class="o">=&gt;</span> <span class="nx">wc_format_datetime</span><span class="p">(</span> <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">get_date_created</span><span class="p">()</span> <span class="p">),</span>
+            <span class="s1">&#39;{order_number}&#39;</span> <span class="o">=&gt;</span> <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">get_order_number</span><span class="p">(),</span>
+        <span class="p">);</span>
+
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">(</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get_recipient</span><span class="p">(),</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get_subject</span><span class="p">(),</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get_content</span><span class="p">(),</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get_headers</span><span class="p">(),</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get_attachments</span><span class="p">()</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Get content in HTML format.</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">get_content_html</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">wc_get_template_html</span><span class="p">(</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">template_html</span><span class="p">,</span>
+            <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;order&#39;</span>         <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">object</span><span class="p">,</span>
+                <span class="s1">&#39;email_heading&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get_heading</span><span class="p">(),</span>
+                <span class="s1">&#39;sent_to_admin&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+                <span class="s1">&#39;plain_text&#39;</span>    <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+                <span class="s1">&#39;email&#39;</span>         <span class="o">=&gt;</span> <span class="nv">$this</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="c1">// default template path inside theme</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">template_base</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Get content in plain text format.</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">get_content_plain</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">wc_get_template_html</span><span class="p">(</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">template_plain</span><span class="p">,</span>
+            <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;order&#39;</span>         <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">object</span><span class="p">,</span>
+                <span class="s1">&#39;email_heading&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get_heading</span><span class="p">(),</span>
+                <span class="s1">&#39;sent_to_admin&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+                <span class="s1">&#39;plain_text&#39;</span>    <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+                <span class="s1">&#39;email&#39;</span>         <span class="o">=&gt;</span> <span class="nv">$this</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="s1">&#39;&#39;</span><span class="p">,</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">template_base</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="52-create-the-email-templates">5.2 Create the email templates</h3>
+<p>Create these template files:</p>
+<p><strong>HTML template</strong></p>
+<p>Create this file:</p>
+<p><code>templates/emails/customer-awaiting-review.php</code></p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd"> * Customer Awaiting Review email (HTML)</span>
+<span class="sd"> *</span>
+<span class="sd"> * @package wc-custom-order-status</span>
+<span class="sd"> */</span>
+
+<span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span> <span class="s1">&#39;ABSPATH&#39;</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="k">exit</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">do_action</span><span class="p">(</span> <span class="s1">&#39;woocommerce_email_header&#39;</span><span class="p">,</span> <span class="nv">$email_heading</span><span class="p">,</span> <span class="nv">$email</span> <span class="p">);</span>
+<span class="cp">?&gt;</span>
+
+<span class="x">&lt;p&gt;</span>
+<span class="x">    </span><span class="cp">&lt;?php</span>
+    <span class="cm">/* translators: %s: order number */</span>
+    <span class="k">echo</span> <span class="nx">esc_html</span><span class="p">(</span>
+        <span class="nb">sprintf</span><span class="p">(</span>
+            <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Order #%s is awaiting review.&#39;</span><span class="p">,</span> <span class="s1">&#39;wc-custom-order-status&#39;</span> <span class="p">),</span>
+            <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">get_order_number</span><span class="p">()</span>
+        <span class="p">)</span>
+    <span class="p">);</span>
+    <span class="cp">?&gt;</span>
+<span class="x">&lt;/p&gt;</span>
+
+<span class="x">&lt;p&gt;</span>
+<span class="x">    </span><span class="cp">&lt;?php</span>
+    <span class="nx">esc_html_e</span><span class="p">(</span>
+        <span class="s2">&quot;We&#39;re performing a quick manual review before your order moves into processing.&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;wc-custom-order-status&#39;</span>
+    <span class="p">);</span>
+    <span class="cp">?&gt;</span>
+<span class="x">&lt;/p&gt;</span>
+
+<span class="x">&lt;p&gt;</span>
+<span class="x">    </span><span class="cp">&lt;?php</span>
+    <span class="nx">esc_html_e</span><span class="p">(</span>
+        <span class="s2">&quot;Next step: no action is required from you. We&#39;ll send a follow-up email as soon as your order is approved and processing begins.&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;wc-custom-order-status&#39;</span>
+    <span class="p">);</span>
+    <span class="cp">?&gt;</span>
+<span class="x">&lt;/p&gt;</span>
+
+<span class="cp">&lt;?php</span>
+<span class="nx">do_action</span><span class="p">(</span> <span class="s1">&#39;woocommerce_email_order_details&#39;</span><span class="p">,</span> <span class="nv">$order</span><span class="p">,</span> <span class="nv">$sent_to_admin</span><span class="p">,</span> <span class="nv">$plain_text</span><span class="p">,</span> <span class="nv">$email</span> <span class="p">);</span>
+<span class="nx">do_action</span><span class="p">(</span> <span class="s1">&#39;woocommerce_email_footer&#39;</span><span class="p">,</span> <span class="nv">$email</span> <span class="p">);</span>
+</code></pre></div>
+<p><strong>Plain-text template</strong></p>
+<p><code>templates/emails/plain/customer-awaiting-review.php</code></p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd"> * Customer Awaiting Review email (plain text)</span>
+<span class="sd"> *</span>
+<span class="sd"> * @package wc-custom-order-status</span>
+<span class="sd"> */</span>
+
+<span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span> <span class="s1">&#39;ABSPATH&#39;</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="k">exit</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="nv">$email_heading</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">;</span>
+
+<span class="nx">esc_html_e</span><span class="p">(</span>
+    <span class="s1">&#39;Thanks for your order. Your order is currently awaiting review. No action is required on your part.&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;wc-custom-order-status&#39;</span>
+<span class="p">);</span>
+
+<span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">;</span>
+
+<span class="nx">esc_html_e</span><span class="p">(</span>
+    <span class="s2">&quot;We&#39;ll send a follow-up email as soon as your order is approved and processing begins.&quot;</span><span class="p">,</span>
+    <span class="s1">&#39;wc-custom-order-status&#39;</span>
+<span class="p">);</span>
+
+<span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">;</span>
+
+<span class="nx">do_action</span><span class="p">(</span> <span class="s1">&#39;woocommerce_email_order_details&#39;</span><span class="p">,</span> <span class="nv">$order</span><span class="p">,</span> <span class="nv">$sent_to_admin</span><span class="p">,</span> <span class="nv">$plain_text</span><span class="p">,</span> <span class="nv">$email</span> <span class="p">);</span>
+</code></pre></div>
+<h3 id="53-register-your-email-with-woocommerce">5.3 Register your email with WooCommerce</h3>
+<p>Add an initializer file so your main plugin file stays tidy:</p>
+<p><code>includes/emails/register-emails.php</code></p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd"> * Register custom WooCommerce emails.</span>
+<span class="sd"> *</span>
+<span class="sd"> * @package wc-custom-order-status</span>
+<span class="sd"> */</span>
+
+<span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span> <span class="s1">&#39;ABSPATH&#39;</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="k">exit</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Make sure WC_Email exists before loading our email class.</span>
+<span class="sd"> * woocommerce_email_classes runs after WooCommerce has loaded its mailer.</span>
+<span class="sd"> */</span>
+<span class="nx">add_filter</span><span class="p">(</span> <span class="s1">&#39;woocommerce_email_classes&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span> <span class="nv">$email_classes</span> <span class="p">)</span> <span class="p">{</span>
+
+    <span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/class-wc-email-awaiting-review.php&#39;</span><span class="p">;</span>
+
+    <span class="nv">$email_classes</span><span class="p">[</span><span class="s1">&#39;WC_Email_Awaiting_Review&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WC_Email_Awaiting_Review</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="nv">$email_classes</span><span class="p">;</span>
+
+<span class="p">}</span> <span class="p">);</span>
+</code></pre></div>
+<p>Then include the registration file from your main plugin file:</p>
+<div class="highlight"><pre><span></span><code><span class="x">require_once __DIR__ . &#39;/includes/emails/register-emails.php&#39;;</span>
+</code></pre></div>
+<p>Why register via <code>woocommerce_email_classes</code>? It ensures your email is
+loaded at the right time — after WooCommerce has loaded its mailer and
+<code>WC_Email</code> is available.</p>
+<h3 id="54-test-it-now">5.4 Test it now</h3>
+<ol>
+<li>
+<p>Go to <strong>WooCommerce → Settings → Emails</strong></p>
+</li>
+<li>
+<p>Confirm <strong>Awaiting Review</strong> appears in the list of emails</p>
+</li>
+<li>
+<p>Click it and confirm you can:</p>
+<ul>
+<li>
+<p>enable/disable the email</p>
+</li>
+<li>
+<p>edit the subject/heading (if desired)</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="result_4">Result</h3>
+<p><img alt="Customer Email Template" src="../images/email_template.png" /></p>
+<p><strong>Figure 5.4</strong> - <em>Customer email template</em></p>
+<p>Your custom <strong>Awaiting Review</strong> email is now registered in WooCommerce
+and can be managed in the admin. In the next step, you'll validate the
+end-to-end flow by triggering it from the <strong>Order actions</strong> dropdown
+and confirming delivery.</p>
+<h2 id="step-6-add-minimal-email-templates-html-plain-text">Step 6: Add minimal email templates (HTML + plain text)</h2>
+<p>In this step, you'll create the actual email templates for your
+<strong>Awaiting Review</strong> email — one HTML template and one plain-text
+template. Each template should clearly communicate:</p>
+<ul>
+<li>the <strong>order number</strong></li>
+<li>what <strong>Awaiting Review</strong> means</li>
+<li>what happens <strong>next</strong> (and what the customer needs to do: usually
+  <em>nothing</em>)</li>
+</ul>
+<p>The email class you created in Step 5 loads these templates.</p>
+<h3 id="61-create-the-html-email-template">6.1 Create the HTML email template</h3>
+<p>Create this file:</p>
+<p><code>templates/emails/custom-status-email.php</code></p>
+<p>Add the following template code:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd"> * Custom status email (HTML): Awaiting Review</span>
+<span class="sd"> *</span>
+<span class="sd"> * Expected variables:</span>
+<span class="sd"> * @var WC_Order $order</span>
+<span class="sd"> * @var string   $email_heading</span>
+<span class="sd"> * @var bool     $sent_to_admin</span>
+<span class="sd"> * @var bool     $plain_text</span>
+<span class="sd"> * @var WC_Email $email</span>
+<span class="sd"> *</span>
+<span class="sd"> * @package wc-custom-order-status</span>
+<span class="sd"> */</span>
+
+<span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span> <span class="s1">&#39;ABSPATH&#39;</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="k">exit</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">do_action</span><span class="p">(</span> <span class="s1">&#39;woocommerce_email_header&#39;</span><span class="p">,</span> <span class="nv">$email_heading</span><span class="p">,</span> <span class="nv">$email</span> <span class="p">);</span>
+<span class="cp">?&gt;</span>
+
+<span class="x">&lt;p&gt;</span>
+<span class="x">    </span><span class="cp">&lt;?php</span>
+    <span class="cm">/* translators: %s: order number */</span>
+    <span class="k">echo</span> <span class="nx">esc_html</span><span class="p">(</span>
+        <span class="nb">sprintf</span><span class="p">(</span>
+            <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Order #%s is awaiting review.&#39;</span><span class="p">,</span> <span class="s1">&#39;wc-custom-order-status&#39;</span> <span class="p">),</span>
+            <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">get_order_number</span><span class="p">()</span>
+        <span class="p">)</span>
+    <span class="p">);</span>
+    <span class="cp">?&gt;</span>
+<span class="x">&lt;/p&gt;</span>
+
+<span class="x">&lt;p&gt;</span>
+<span class="x">    </span><span class="cp">&lt;?php</span>
+    <span class="nx">esc_html_e</span><span class="p">(</span>
+        <span class="s2">&quot;We&#39;re performing a quick manual review before your order moves into processing.&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;wc-custom-order-status&#39;</span>
+    <span class="p">);</span>
+    <span class="cp">?&gt;</span>
+<span class="x">&lt;/p&gt;</span>
+
+<span class="x">&lt;p&gt;</span>
+<span class="x">    </span><span class="cp">&lt;?php</span>
+    <span class="nx">esc_html_e</span><span class="p">(</span>
+        <span class="s2">&quot;Next step: no action is required from you. We&#39;ll send a follow-up email as soon as your order is approved and processing begins.&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;wc-custom-order-status&#39;</span>
+    <span class="p">);</span>
+    <span class="cp">?&gt;</span>
+<span class="x">&lt;/p&gt;</span>
+
+<span class="cp">&lt;?php</span>
+<span class="nx">do_action</span><span class="p">(</span> <span class="s1">&#39;woocommerce_email_order_details&#39;</span><span class="p">,</span> <span class="nv">$order</span><span class="p">,</span> <span class="nv">$sent_to_admin</span><span class="p">,</span> <span class="nv">$plain_text</span><span class="p">,</span> <span class="nv">$email</span> <span class="p">);</span>
+<span class="nx">do_action</span><span class="p">(</span> <span class="s1">&#39;woocommerce_email_footer&#39;</span><span class="p">,</span> <span class="nv">$email</span> <span class="p">);</span>
+</code></pre></div>
+<p>Notes:</p>
+<ul>
+<li><code>woocommerce_email_header</code> / <code>woocommerce_email_footer</code> gives you the
+  consistent WooCommerce email wrapper (logo, styling, footer text).</li>
+<li>The message is intentionally minimal and customer-focused.</li>
+</ul>
+<h3 id="62-create-the-plain-text-email-template">6.2 Create the plain-text email template</h3>
+<p>Create this file:</p>
+<p><code>templates/emails/plain/custom-status-email.php</code></p>
+<p>Add the following:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd"> * Custom status email (plain text): Awaiting Review</span>
+<span class="sd"> *</span>
+<span class="sd"> * Expected variables:</span>
+<span class="sd"> * @var WC_Order $order</span>
+<span class="sd"> * @var string   $email_heading</span>
+<span class="sd"> * @var bool     $sent_to_admin</span>
+<span class="sd"> * @var bool     $plain_text</span>
+<span class="sd"> * @var WC_Email $email</span>
+<span class="sd"> */</span>
+
+<span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span> <span class="s1">&#39;ABSPATH&#39;</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="k">exit</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="nv">$email_heading</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">;</span>
+
+<span class="cm">/* translators: %s: order number */</span>
+<span class="k">echo</span> <span class="nb">sprintf</span><span class="p">(</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Order #%s is awaiting review.&#39;</span><span class="p">,</span> <span class="s1">&#39;wc-custom-order-status&#39;</span> <span class="p">),</span> <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">get_order_number</span><span class="p">()</span> <span class="p">)</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">;</span>
+
+<span class="nx">esc_html_e</span><span class="p">(</span> <span class="s1">&#39;What this means: we\&#39;re performing a quick manual review before your order moves into processing.&#39;</span><span class="p">,</span> <span class="s1">&#39;wc-custom-order-status&#39;</span> <span class="p">);</span>
+<span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">;</span>
+
+<span class="nx">esc_html_e</span><span class="p">(</span> <span class="s1">&#39;Next step: no action is required from you. We\&#39;ll send a follow-up email as soon as your order is approved and processing begins.&#39;</span><span class="p">,</span> <span class="s1">&#39;wc-custom-order-status&#39;</span> <span class="p">);</span>
+<span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">;</span>
+
+<span class="nx">do_action</span><span class="p">(</span> <span class="s1">&#39;woocommerce_email_order_details&#39;</span><span class="p">,</span> <span class="nv">$order</span><span class="p">,</span> <span class="nv">$sent_to_admin</span><span class="p">,</span> <span class="nv">$plain_text</span><span class="p">,</span> <span class="nv">$email</span> <span class="p">);</span>
+</code></pre></div>
+<h3 id="63-point-your-email-class-at-these-template-files">6.3 Point your email class at these template files</h3>
+<p>In your <code>WC_Email</code> class (from Step 5), make sure the template names match
+these paths:</p>
+<div class="highlight"><pre><span></span><code><span class="x">$this-&gt;template_html  = &#39;emails/custom-status-email.php&#39;;</span>
+<span class="x">$this-&gt;template_plain = &#39;emails/plain/custom-status-email.php&#39;;</span>
+</code></pre></div>
+<p>And ensure <code>template_base</code> points to your plugin's <code>templates/</code> directory.</p>
+<h3 id="64-test-it-now">6.4 Test it now</h3>
+<p>You can test in either of these ways:</p>
+<p><strong>Option A: Preview from WooCommerce Email settings (if available)</strong></p>
+<ol>
+<li>Go to <strong>WooCommerce → Settings → Emails</strong></li>
+<li>Open <strong>Awaiting Review</strong></li>
+<li>Use the preview / test send option if your WooCommerce version
+    provides it</li>
+</ol>
+<p><strong>Option B (reliable): Trigger it from your admin order action</strong></p>
+<ol>
+<li>Go to <strong>WooCommerce → Orders</strong></li>
+<li>Open an order</li>
+<li>In <strong>Order actions</strong>, select <strong>Send Awaiting Review Email</strong></li>
+<li>Click the <strong>arrow button</strong> next to the dropdown</li>
+<li>Confirm:<ul>
+<li>a new order note appears (from Step 4)</li>
+<li>the customer email is sent (check MailHog / email logs / inbox,
+  depending on your setup)</li>
+</ul>
+</li>
+</ol>
+<h3 id="result_5">Result</h3>
+<p>Your custom email now has clean, minimal templates for both HTML and
+plain text, and customers get a clear explanation of what <strong>Awaiting
+Review</strong> means and what happens next.</p>
+<p><img alt="Screenshot of the Awaiting Review email template" src="../images/email_body.png" /></p>
+<p><strong>Figure 6.4</strong> - <em>Awaiting Review email template</em></p>
+<h2 id="step-7-trigger-the-email-automatically-when-the-status-changes">Step 7: Trigger the email automatically when the status changes</h2>
+<p>In this final step, you'll send the <strong>Awaiting Review</strong> email
+automatically whenever an order transitions into the awaiting-review
+status. You'll also add an optional "send once" safeguard to prevent
+duplicate emails and log the send as an order note.</p>
+<h3 id="71-create-includesstatus-email-triggersphp">7.1 Create includes/status-email-triggers.php</h3>
+<p>Create the file:</p>
+<p><code>includes/status-email-triggers.php</code></p>
+<p>Add the following code:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd"> * Status-based email triggers.</span>
+<span class="sd"> *</span>
+<span class="sd"> * @package wc-custom-order-status</span>
+<span class="sd"> */</span>
+
+<span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span> <span class="s1">&#39;ABSPATH&#39;</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="k">exit</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * When an order enters &quot;awaiting-review&quot;, trigger the customer email.</span>
+<span class="sd"> *</span>
+<span class="sd"> * Hook name format:</span>
+<span class="sd"> * woocommerce_order_status_{new_status}</span>
+<span class="sd"> * (status slug without &quot;wc-&quot; prefix)</span>
+<span class="sd"> */</span>
+<span class="nx">add_action</span><span class="p">(</span>
+    <span class="s1">&#39;woocommerce_order_status_awaiting-review&#39;</span><span class="p">,</span>
+    <span class="k">function</span> <span class="p">(</span> <span class="nv">$order_id</span><span class="p">,</span> <span class="nv">$order</span> <span class="o">=</span> <span class="k">null</span> <span class="p">)</span> <span class="p">{</span>
+
+        <span class="c1">// WooCommerce usually passes $order_id only, but some contexts may also provide $order.</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nv">$order</span> <span class="o">&amp;&amp;</span> <span class="nv">$order_id</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$order</span> <span class="o">=</span> <span class="nx">wc_get_order</span><span class="p">(</span> <span class="nv">$order_id</span> <span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nv">$order</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="sd">/**</span>
+<span class="sd">         * Optional: prevent duplicate sends.</span>
+<span class="sd">         * This is helpful if staff manually re-save or reapply the same status.</span>
+<span class="sd">         */</span>
+        <span class="nv">$already_sent</span> <span class="o">=</span> <span class="p">(</span><span class="nx">bool</span><span class="p">)</span> <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">get_meta</span><span class="p">(</span> <span class="s1">&#39;_wc_cos_awaiting_review_email_sent&#39;</span><span class="p">,</span> <span class="k">true</span> <span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="nv">$already_sent</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="sd">/**</span>
+<span class="sd">         * Trigger the email by calling the email class.</span>
+<span class="sd">         * We fetch it from WooCommerce&#39;s mailer so the instance is properly registered.</span>
+<span class="sd">         */</span>
+        <span class="nv">$mailer</span> <span class="o">=</span> <span class="nx">WC</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">mailer</span><span class="p">();</span>
+        <span class="nv">$emails</span> <span class="o">=</span> <span class="nv">$mailer</span><span class="o">-&gt;</span><span class="na">get_emails</span><span class="p">();</span>
+
+        <span class="k">if</span> <span class="p">(</span> <span class="nb">isset</span><span class="p">(</span> <span class="nv">$emails</span><span class="p">[</span><span class="s1">&#39;WC_Email_Awaiting_Review&#39;</span><span class="p">]</span> <span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nb">is_object</span><span class="p">(</span> <span class="nv">$emails</span><span class="p">[</span><span class="s1">&#39;WC_Email_Awaiting_Review&#39;</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$emails</span><span class="p">[</span><span class="s1">&#39;WC_Email_Awaiting_Review&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">trigger</span><span class="p">(</span> <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">get_id</span><span class="p">(),</span> <span class="nv">$order</span> <span class="p">);</span>
+
+            <span class="c1">// Mark as sent (so it only sends once).</span>
+            <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">update_meta_data</span><span class="p">(</span> <span class="s1">&#39;_wc_cos_awaiting_review_email_sent&#39;</span><span class="p">,</span> <span class="mi">1</span> <span class="p">);</span>
+            <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
+
+            <span class="c1">// Optional: add an order note for auditability.</span>
+            <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">add_order_note</span><span class="p">(</span>
+                <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Awaiting Review email sent automatically on status change.&#39;</span><span class="p">,</span> <span class="s1">&#39;wc-custom-order-status&#39;</span> <span class="p">)</span>
+            <span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="mi">10</span><span class="p">,</span>
+    <span class="mi">2</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>What this does:</p>
+<ul>
+<li>Listens for the status transition into awaiting-review</li>
+<li>Sends your custom email via the registered WooCommerce mailer</li>
+<li>Optionally prevents duplicate sends</li>
+<li>Logs an order note after sending</li>
+</ul>
+<h3 id="72-load-the-trigger-file-from-your-main-plugin-file">7.2 Load the trigger file from your main plugin file</h3>
+<p>In <code>wc-custom-order-status.php</code>, include the file:</p>
+<div class="highlight"><pre><span></span><code><span class="x">require_once __DIR__ . &#39;/includes/status-email-triggers.php&#39;;</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Include this file <strong>after</strong> your email registration code (Step 5).
+This ensures the email class is registered before the trigger fires.</p>
+</div>
+<h3 id="73-test-it-now">7.3 Test it now</h3>
+<ol>
+<li>Create a new test order (or use an existing test order)</li>
+<li>Go to <strong>WooCommerce → Orders</strong> and open the order</li>
+<li>Change the order status to <strong>Awaiting Review</strong> and save/update</li>
+<li>Confirm:<ul>
+<li>an order note appears: "Awaiting Review email sent automatically
+  on status change."</li>
+<li>the email is sent (check your mail logger / MailHog / SMTP logs /
+  inbox)</li>
+</ul>
+</li>
+</ol>
+<h3 id="result_6">Result</h3>
+<p>Orders that enter <strong>Awaiting Review</strong> now automatically notify
+customers — without requiring staff to manually trigger the email — while
+still giving you protection against duplicate sends.</p>
+<h2 id="summary">Summary</h2>
+<p>In this tutorial, you:</p>
+<ul>
+<li>Implemented a custom WooCommerce order status</li>
+<li>Added admin workflows to apply the status (bulk + single order)</li>
+<li>Built a custom <code>WC_Email</code> notification and templates</li>
+<li>Triggered emails manually and on status change</li>
+<li>Validated the feature using a QA-style approach</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

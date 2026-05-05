@@ -12,7 +12,7 @@
         <meta name="author" content="Alex Gekas">
       
       
-        <link rel="canonical" href="https://alex-gekas.github.io/slack-webhook/">
+        <link rel="canonical" href="https://alex-gekas.github.io/tutorial/">
       
       
       
@@ -25,7 +25,7 @@
     
     
       
-        <title>Case study: Integration tutorial writing - Alex Gekas — Technical Writing Portfolio</title>
+        <title>Index - Alex Gekas — Technical Writing Portfolio</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#case-study-integration-tutorial-writing" class="md-skip">
+        <a href="#title-case-study-woocommerce-order-status-emails" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Case study: Integration tutorial writing
+              Index
             
           </span>
         </div>
@@ -224,7 +224,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="article/" class="md-tabs__link">
+        <a href="../slack-webhook/article/" class="md-tabs__link">
           
   
   
@@ -284,7 +284,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../tutorial/woo_comm_tutorial/" class="md-tabs__link">
+        <a href="woo_comm_tutorial/" class="md-tabs__link">
           
   
   
@@ -666,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="article/" class="md-nav__link">
+      <a href="../slack-webhook/article/" class="md-nav__link">
         
   
   
@@ -1541,7 +1541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorial/woo_comm_tutorial/" class="md-nav__link">
+      <a href="woo_comm_tutorial/" class="md-nav__link">
         
   
   
@@ -1586,8 +1586,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1596,10 +1594,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
+  <a href="#title-case-study-woocommerce-order-status-emails" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Introduction
+        title: Case Study: WooCommerce Order Status &amp; Emails
       
     </span>
   </a>
@@ -1607,44 +1605,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-writing-challenge" class="md-nav__link">
+  <a href="#case-study-woocommerce-order-status-emails" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The writing challenge
+        Case Study: WooCommerce Order Status &amp; Emails
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#document-architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Document architecture
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-documentation-decisions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key documentation decisions
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Key documentation decisions">
+    <nav class="md-nav" aria-label="Case Study: WooCommerce Order Status &amp; Emails">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#isolating-the-webhook-first" class="md-nav__link">
+  <a href="#the-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Isolating the webhook first
+        The problem
       
     </span>
   </a>
@@ -1652,10 +1628,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#scoping-the-reference-material" class="md-nav__link">
+  <a href="#decisions-i-made" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scoping the reference material
+        Decisions I made
       
     </span>
   </a>
@@ -1663,10 +1639,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#matching-explanation-to-complexity" class="md-nav__link">
+  <a href="#what-this-demonstrates" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Matching explanation to complexity
+        What this demonstrates
       
     </span>
   </a>
@@ -1675,17 +1651,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Conclusion
-      
-    </span>
-  </a>
   
 </li>
       
@@ -1706,37 +1671,35 @@
 
 
 
-<h1 id="case-study-integration-tutorial-writing">Case study: Integration tutorial writing</h1>
-<h2 id="introduction">Introduction</h2>
-<p>This guide shows developers how to connect the Task API to Slack using an incoming webhook. It
-covers three Python notification scripts and how to schedule them with cron. It was written as a
-follow-on to the Task API documentation suite — after building and documenting the API, the next
-step was showing what you could build on top of it.</p>
-<h2 id="the-writing-challenge">The writing challenge</h2>
-<p>Integration tutorials are harder than single-product guides because readers have to manage two
-systems at once, with two sets of credentials and failure points in both. The guide needed to
-cover the prerequisites — a Slack workspace, an API token, test data — without overwhelming
-readers before they reach the first real step.</p>
-<h2 id="document-architecture">Document architecture</h2>
-<p>The guide follows a standard tutorial structure: state the goal, list prerequisites, build in
-order, verify, then extend. Each script is self-contained and a little more complex than the last.
-The conclusion points to two next steps rather than leaving the reader with nowhere to go.</p>
-<h2 id="key-documentation-decisions">Key documentation decisions</h2>
-<h3 id="isolating-the-webhook-first">Isolating the webhook first</h3>
-<p>The guide tests the Slack webhook on its own before introducing any Task API logic. This lets
-readers confirm one side of the integration works before connecting both systems, which makes
-debugging easier.</p>
-<h3 id="scoping-the-reference-material">Scoping the reference material</h3>
-<p>Instead of reproducing the full API reference, the guide includes a small table showing only the
-three fields the scripts actually use.</p>
-<h3 id="matching-explanation-to-complexity">Matching explanation to complexity</h3>
-<p>Each script includes a plain-language summary of what it does. The most complex script gets the
-most explanation.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>The guide takes the reader from zero to working Slack notifications without a lot of detours. It's
-a practical piece that shows what you can do once an API is well-documented — the tutorial
-exists because the foundation was solid enough to build on.</p>
-<p><a href="article/">→ Read the tutorial</a></p>
+<hr />
+<h2 id="title-case-study-woocommerce-order-status-emails">title: Case Study: WooCommerce Order Status &amp; Emails</h2>
+<h1 id="case-study-woocommerce-order-status-emails">Case Study: WooCommerce Order Status &amp; Emails</h1>
+<h2 id="the-problem">The problem</h2>
+<p>WooCommerce ships with a fixed set of order statuses. Stores that need a
+holding state — for fraud checks, inventory confirmation, or support
+investigations — have no built-in option. I chose this as a tutorial
+subject because the problem is real and there is little documentation about it.</p>
+<h2 id="decisions-i-made">Decisions I made</h2>
+<p><strong>HPOS compatibility.</strong> WooCommerce's High-Performance Order Storage
+(HPOS) uses a different admin screen URL than the legacy post-based orders
+screen. I scoped the bulk action implementation explicitly to
+<code>woocommerce_page_wc-orders</code> so it targets the current architecture rather
+than the legacy one.</p>
+<p><strong>Email trigger design.</strong> I routed the trigger through a custom
+<code>do_action()</code> hook (<code>wc_cos_trigger_awaiting_review_email</code>) instead of
+calling the email class directly from the admin action handler. This
+keeps the admin UI wiring independent of the email implementation, so
+either side can change without breaking the other.</p>
+<p><strong>Duplicate-send safeguard.</strong> Automatic triggers fire every time an order changes status, which means a staff member re-saving an order already in
+Awaiting Review would send the email twice. I added an order meta flag
+(<code>_wc_cos_awaiting_review_email_sent</code>) that prevents repeat sends without
+requiring any UI change.</p>
+<p><strong>Order note logging.</strong> Both the manual and automatic send paths log an order note. Store staff
+can see when the email was sent and why, without using additional tools.</p>
+<h2 id="what-this-demonstrates">What this demonstrates</h2>
+<p>This tutorial required more than documenting steps. Each decision — 
+decoupling the email trigger, targeting HPOS, preventing duplicate sends — 
+had a reason, and explaining that reasoning is what makes documentation useful.</p>
 
 
 
