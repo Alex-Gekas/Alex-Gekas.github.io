@@ -40,8 +40,8 @@ most explanation.
 
 ## Conclusion
 
-The guide takes the reader from zero to working Slack notifications without a lot of detours. It
-is a practical piece that shows what you can do once an API is well-documented — the tutorial
-exists because the foundation was solid enough to build on.  
+The guide takes the reader from zero to working Slack notifications without a lot of detours. It's
+a practical piece that shows what you can do once an API is well-documented — the tutorial
+exists because the foundation was solid enough to build on.
 
 [→ Read the tutorial](article.md)

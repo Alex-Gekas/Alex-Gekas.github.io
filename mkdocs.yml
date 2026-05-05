@@ -68,5 +68,5 @@ nav:
         - "Zones": nws-api-reference/endpoints/zones.md
   - GeoJSON explainer:
     - Explainer: geojson-explainer/explainer.md
-  - VR style guide:
-    - Guide: vr-style-guide/guide.md
+  - Add WooCommerce Order Statuses:
+    - Tutorial: tutorial/woo_comm_tutorial.md
