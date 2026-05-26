@@ -149,10 +149,10 @@ Use these terms consistently in Zaius documentation to keep language clear and c
 | timeline | time axis, chronostream | Use to mean a visual representation of events over time. |
 | Zaius's | Zaius' | Use *Zaius's*, not *Zaius'*, when writing the possessive form. The added "s" improves clarity. |
 
-> **Notes:**
-> - As terminology grows, new entries will be added here.
-> - Vale (a prose linter) flags terms to avoid and suggests preferred replacements. For configuration details, see [Using linters](#using-linters).
-> - Use these terms when explaining features, describing environments, or defining user actions so the language matches how VR is commonly described.
+> !!! note "Notes"
+    - As terminology grows, new entries will be added here.
+    - Vale (a prose linter) flags terms to avoid and suggests preferred replacements. For configuration details, see [Using linters](#using-linters).
+    - Use these terms when explaining features, describing environments, or defining user actions so the language matches how VR is commonly described.
 
 ## Topic types and templates
 
