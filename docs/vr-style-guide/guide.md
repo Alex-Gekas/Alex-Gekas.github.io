@@ -1,17 +1,29 @@
+!!! abstract "About this sample"
+
+    - **What this is:** A contributor style guide for Zaius Inc., a fictional company in the [Chronologue](https://chronologue.dev) universe created by the [Good Docs Project](https://www.thegooddocsproject.dev/), with an accompanying [case study](index.md) outlining the decisions behind it.
+
+    - **Audience:** Technical writers and documentation contributors working on Zaius products.
+
+    - **Tools used:** Vale, MkDocs, Markdown
+
+    - **What it demonstrates:**
+
+        * Adapting an industry-standard style guide (Google) for a domain with its own constraints — specifically, writing about astronomical events across time from a consistent user perspective
+        * Designing customized terminology lists for each audience (general vs. technical) enforced at the linting level
+        * Integrating Vale prose linting into a docs-as-code review workflow, including custom rules for product-specific terminology
+        * Building governance infrastructure — decision log, update cycle, escalation path — that scales beyond a single writer
+        * Applying Diátaxis content-type thinking to guide contributors toward focused, single-purpose documents
+
 # Zaius Style Guide
 
 **Version:** 1.0  
 **Updated:** 05/08/2026
-
----
 
 ## Introduction
 
 Welcome to the Zaius documentation style guide. This guide is for contributors to Zaius documentation. Use it to create clear, consistent content across all Zaius products.
 
 Before you begin, review the guidelines in each section, which cover how we write for our audiences, our default style guide, and linting practices.
-
----
 
 ## Our preferred style guide
 
@@ -91,8 +103,6 @@ Start with the style rules from the sections above. If your question isn't answe
 
 If you can't find the answer to your question, and you make a judgment call on an uncovered topic, document it in your work or merge request so the question can be reviewed for possible inclusion in the guide.
 
----
-
 ## Voice and tone
 
 Zaius documentation supports two main audience types. Understanding the audience helps you choose the right level of detail, terminology, and tone.
@@ -121,8 +131,6 @@ Don't use: "Let's explore how this API brings the event to life."
 
 Use: "To retrieve event data, run the request below."
 
----
-
 ## Glossary of preferred terms
 
 Use these terms consistently in Zaius documentation to keep language clear and consistent. The table lists preferred terms and terms to avoid, in alphabetical order.
@@ -146,8 +154,6 @@ Use these terms consistently in Zaius documentation to keep language clear and c
 > - Vale (a prose linter) flags terms to avoid and suggests preferred replacements. For configuration details, see [Using linters](#using-linters).
 > - Use these terms when explaining features, describing environments, or defining user actions so the language matches how VR is commonly described.
 
----
-
 ## Topic types and templates
 
 Before you draft your document, clarify your reader's goal and the audience type — general or technical. This choice determines the tone, terminology, and Vale rules for your document.
@@ -163,8 +169,6 @@ Focus each document on a single purpose. Avoid mixing step-by-step instructions,
 
 Templates are available to help you get started and stay focused. Using them is optional.
 
----
-
 ## Accessible writing
 
 Make sure your documentation is easy to use for people on different devices and in different situations. Improving accessibility also makes documentation clearer and more helpful for everyone.
@@ -176,8 +180,6 @@ Some key practices:
 - Write in plain language using short sentences and the active voice.
 - Avoid directional language. Describe the action, not the location. Use: *See Installation for details.* Don't use: *See the section below.*
 - Provide descriptive alt text for essential images.
-
----
 
 ## Inclusive and bias-free writing
 
@@ -193,8 +195,6 @@ Zaius products reach a global audience. Documentation should feel clear and neut
 Don't use: "A solar eclipse appears over America in 1200."
 
 Use: "A solar eclipse appears over North America in 1200."
-
----
 
 ## Using linters
 
@@ -259,8 +259,6 @@ Vale flags terminology, readability, and formatting issues directly in your term
 The editorial team will review the Zaius Style Guide in full every six months to ensure it stays current with product updates and the needs of our users. In between major reviews, we make minor adjustments as needed, especially when new features are released or when contributors flag unclear or outdated guidelines.
 
 All updates are tracked in the style guide Decision Log, and we communicate changes directly to documentation contributors. If you spot something that needs clarification, or you have a suggestion for improving the guide, contact the editorial team at [styleguide@zaiusinc.com](mailto:styleguide@zaiusinc.com).
-
----
 
 ## Decision log
 

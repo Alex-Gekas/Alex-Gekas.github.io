@@ -13,9 +13,7 @@ theme:
     scheme: default
     primary: custom
     accent: custom
-  font:
-    text: Open Sans
-    code: IBM Plex Mono
+  font: false
 
 extra_css:
   - stylesheets/extra.css
@@ -34,6 +32,8 @@ extra_javascript:
 
 nav:
   - Home: index.md
+  - VR Style Guide:
+    - Style guide: vr-style-guide/guide.md
   - Task API Docs:
     - Introduction: task-api-docs/about.md
     - System architecture: task-api-docs/system-architecture.md

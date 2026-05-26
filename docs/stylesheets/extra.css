@@ -4,7 +4,14 @@
    ═══════════════════════════════════════════════════════════════ */
 
 /* ─── Fonts ─────────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+/* System font stack used for body — no Google Font import needed */
+/* IBM Plex Mono retained for code, headers, and UI chrome       */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+/* ─── System font stack ─────────────────────────────────────── */
+:root {
+  --sys-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
 
 /* ─── Design tokens ─────────────────────────────────────────── */
 :root {
@@ -137,7 +144,7 @@ body:not(.home) .md-content,
 
 /* Nav links */
 .md-nav__link {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: var(--sys-font);
   font-size: 0.82rem;
   font-weight: 400;
   color: var(--doc-muted);
@@ -172,12 +179,13 @@ body:not(.home) .md-content,
 
 
 /* ════════════════════════════════════════════════════════════════
-   TYPOGRAPHY  ·  IBM Plex Sans headings + clean body
+   TYPOGRAPHY  ·  System font body + IBM Plex Mono headings
    ════════════════════════════════════════════════════════════════ */
 
 .md-typeset {
+  font-family: var(--sys-font);
   font-size: 0.875rem;
-  line-height: 1.65;
+  line-height: 1.5;
   color: var(--doc-text);
 }
 
@@ -185,14 +193,14 @@ body:not(.home) .md-content,
 .md-typeset li,
 .md-typeset td,
 .md-typeset th {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: var(--sys-font);
   font-size: 0.875rem;
-  line-height: 1.65;
+  line-height: 1.5;
   color: var(--doc-muted);
 }
 
 .md-typeset h1 {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: var(--sys-font);
   font-weight: 700;
   font-size: 1.55rem;
   letter-spacing: -0.025em;
@@ -204,7 +212,7 @@ body:not(.home) .md-content,
 }
 
 .md-typeset h2 {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: var(--sys-font);
   font-weight: 600;
   font-size: 1.1rem;
   letter-spacing: -0.01em;
@@ -216,7 +224,7 @@ body:not(.home) .md-content,
 }
 
 .md-typeset h3 {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: var(--sys-font);
   font-weight: 600;
   font-size: 0.9rem;
   letter-spacing: 0;
@@ -259,7 +267,7 @@ body:not(.home) .md-content,
   font-size: 0.8rem;
   font-weight: 400;
   background-color: #f0f3f7;
-  color: #c0392b;          /* keep the portfolio's red accent for inline code */
+  color: #c0392b;
   border: 1px solid #dce3eb;
   border-radius: 4px;
   padding: 0.1em 0.4em;
@@ -324,12 +332,8 @@ body:not(.home) .md-content,
 
 /* ════════════════════════════════════════════════════════════════
    HTTP METHOD BADGES
-   Usage in Markdown: wrap endpoint in backticks with a prefix:
-   `GET` /api/tasks  →  use a <span class="method get">GET</span>
-   OR — these auto-style any inline code that exactly matches a verb
    ════════════════════════════════════════════════════════════════ */
 
-/* Utility classes you can add in raw HTML blocks in Markdown */
 .method {
   display: inline-block;
   font-family: 'IBM Plex Mono', monospace;
@@ -372,7 +376,7 @@ body:not(.home) .md-content,
    ════════════════════════════════════════════════════════════════ */
 
 .md-typeset table:not([class]) {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: var(--sys-font);
   font-size: 0.83rem;
   border-collapse: collapse;
   width: 100%;
@@ -414,7 +418,6 @@ body:not(.home) .md-content,
   background-color: rgba(98, 90, 250, 0.025);
 }
 
-/* Required / optional parameter badges */
 .md-typeset td strong {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.78rem;
@@ -480,6 +483,13 @@ body:not(.home) .md-content,
 }
 .md-typeset .admonition.danger > .admonition-title { color: #b91c1c; }
 
+/* Abstract (used for "About this sample" admonition) */
+.md-typeset .admonition.abstract {
+  border-left-color: var(--doc-stripe);
+  background: rgba(98, 90, 250, 0.04);
+}
+.md-typeset .admonition.abstract > .admonition-title { color: var(--doc-stripe); }
+
 
 /* ════════════════════════════════════════════════════════════════
    TABLE OF CONTENTS  ·  Right sidebar
@@ -496,7 +506,7 @@ body:not(.home) .md-content,
 }
 
 .md-nav--secondary .md-nav__link {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: var(--sys-font);
   font-size: 0.78rem;
   color: var(--doc-subtle);
   padding: 0.2rem 0;
@@ -534,7 +544,7 @@ body:not(.home) .md-content,
    ════════════════════════════════════════════════════════════════ */
 
 .md-search__input {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: var(--sys-font);
   font-size: 0.875rem;
   background-color: rgba(255,255,255,0.1);
   color: var(--cream);
@@ -545,7 +555,7 @@ body:not(.home) .md-content,
 }
 
 .md-search-result__article {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: var(--sys-font);
 }
 
 .md-search-result__title {
