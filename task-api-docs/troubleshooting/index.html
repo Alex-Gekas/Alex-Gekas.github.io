@@ -611,7 +611,7 @@
   <span class="md-ellipsis">
     
   
-    How forecasts are structured
+    How the API structures forecasts
   
 
     
@@ -667,7 +667,7 @@
   <span class="md-ellipsis">
     
   
-    Weather forecast Offices (WFOs)
+    Weather forecast offices (WFOs)
   
 
     
@@ -1390,7 +1390,7 @@
   <a href="#server-wont-start-cannot-find-module" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Server won't start – Cannot find module
+        Server won't start: Cannot find module
       
     </span>
   </a>
@@ -1715,7 +1715,7 @@
   <a href="#server-wont-start-cannot-find-module" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Server won't start – Cannot find module
+        Server won't start: Cannot find module
       
     </span>
   </a>
@@ -1799,25 +1799,25 @@
 <p>This section describes common errors that can occur when installing the Task API or testing endpoints from a REST client. Many of these errors result from missing a step during installation. Review the <strong><a href="../getting-started/">Getting Started</a></strong> guide before troubleshooting.</p>
 <h3 id="npm-install-fails-on-windows">npm install fails on Windows</h3>
 <p><strong>Symptom</strong>: error messages that reference the <code>node-gyp</code> or missing Visual Studio.</p>
-<p><strong>Cause:</strong>: <code>better-sqlite3</code> is a native Node.js module. On Windows, some Node.js packages include native code that must be compiled during installation. If a prebuilt version is not available, npm uses build tools such as Python and the Visual C++ toolchain.</p>
+<p><strong>Cause:</strong> <code>better-sqlite3</code> is a native Node.js module. On Windows, some Node.js packages include native code that npm compiles during installation. If a prebuilt version isn't available, npm uses build tools such as Python and the Visual C++ toolchain.</p>
 <p><strong>There are two ways to resolve this issue:</strong>:</p>
 <ul>
 <li><strong>Option A: Install the required Windows build tools</strong>
 Use this option if you want your system to compile native Node.js modules correctly. This ensures data integrity and performance.</li>
 <li><strong>Option B: Replace <code>better-sqlite3</code> with <code>sql.js</code></strong> 
-Use this option to avoid native compilation by using a pure JavaScript SQLite implementation. However, your environment will still lack native-build tools, which may cause problems with other packages later. Use this option only for development or portfolio projects.</li>
+Use this option to avoid native compilation by using a pure JavaScript SQLite implementation. However, your environment still lacks native-build tools, which may cause problems with other packages later. Use this option only for development or portfolio projects.</li>
 </ul>
-<h3 id="server-wont-start-cannot-find-module"><strong>Server won't start – Cannot find module</strong></h3>
+<h3 id="server-wont-start-cannot-find-module">Server won't start: <code>Cannot find module</code></h3>
 <p><strong>Symptom:</strong> <code>Error: Cannot find module</code> when running <code>npm run dev</code></p>
 <p><strong>Cause:</strong> Two possible causes:</p>
 <ul>
-<li>Files are not in the correct folder structure-<code>src/</code> subfolders missing</li>
+<li>Files aren't in the correct folder structure-<code>src/</code> subfolders missing</li>
 <li>Dependencies not installed-<code>node_modules</code> folder missing or incomplete</li>
 </ul>
 <p><strong>Fix:</strong></p>
 <ul>
 <li>Verify the folder structure matches the one in <a href="../system-architecture/">System Architecture</a>.</li>
-<li>Run <code>npm install</code> if node_modules is missing.</li>
+<li>Run <code>npm install</code> if <code>node_modules</code> is missing.</li>
 <li>Check that all files are in their correct subdirectories.</li>
 </ul>
 <h3 id="401-errors">401 errors</h3>
@@ -1835,7 +1835,7 @@ Use this option to avoid native compilation by using a pure JavaScript SQLite im
 </ul>
 <p><strong>Expired token</strong></p>
 <ul>
-<li>Cause: the token was issued more than seven days ago</li>
+<li>Cause: the server issued the token more than seven days ago</li>
 <li>Fix: log in again to generate a new token. There is no refresh mechanism in this API</li>
 </ul>
 <h3 id="409-conflict-on-signup">409 Conflict on signup</h3>
@@ -1852,7 +1852,7 @@ Use this option to avoid native compilation by using a pure JavaScript SQLite im
 <p><strong>Wrong task ID</strong></p>
 <ul>
 <li>Cause: the task ID in the request path is incorrect or malformed</li>
-<li>Fix: copy the exact task ID from the response when the task was created, or retrieve it using <code>GET /api/tasks</code></li>
+<li>Fix: copy the exact task ID from the response when you created the task, or retrieve it using <code>GET /api/tasks</code></li>
 </ul>
 <p><strong>Wrong user</strong></p>
 <ul>
@@ -1864,7 +1864,7 @@ Use this option to avoid native compilation by using a pure JavaScript SQLite im
 <p><strong>Three causes and fixes:</strong></p>
 <p><strong>Missing title on task creation</strong></p>
 <ul>
-<li>Cause: <code>POST /api/tasks</code> was sent without a title field</li>
+<li>Cause: the <code>POST /api/tasks</code> request didn't include a title field</li>
 <li>Fix: include a title field in the request body. It's the only required field when creating a task</li>
 </ul>
 <p><strong>Invalid status value</strong></p>
@@ -1878,11 +1878,11 @@ Use this option to avoid native compilation by using a pure JavaScript SQLite im
 <li>Fix: use one of the accepted values: <code>low</code>, <code>medium</code>, <code>high</code></li>
 </ul>
 <h3 id="data-not-persisting-between-restarts"><strong>Data not persisting between restarts</strong></h3>
-<p><strong>Symptom:</strong> Tasks and user accounts created in a previous session are gone after restarting the server.</p>
-<p><strong>Cause:</strong> If <code>DB_PATH</code> isn't set in .env, the server uses the default path ./data/tasks.db. This works in most cases. If the server is started from a different directory, it can't find the database. As a result, the server creates a new empty database. Previously created users and tasks appear to be gone.</p>
+<p><strong>Symptom:</strong> Tasks and user accounts from a previous session disappear after you restart the server.</p>
+<p><strong>Cause:</strong> If <code>DB_PATH</code> isn't set in .env, the server uses the default path ./data/tasks.db. This works in most cases. If you start the server from a different directory, it can't find the database. As a result, the server creates a new empty database. Previously created users and tasks seem to disappear.</p>
 <p><strong>Fix</strong></p>
 <ul>
-<li>Open your <code>.env</code> file and confirm <code>DB_PATH=./data/tasks.db</code> is set</li>
+<li>Open your <code>.env</code> file and confirm that it sets <code>DB_PATH=./data/tasks.db</code></li>
 <li>Confirm the <code>data/</code> folder exists in your project root</li>
 <li>Restart the server and verify the <code>tasks.db</code> file appears in the <code>data/</code> folder after startup</li>
 </ul>
@@ -1950,6 +1950,8 @@ Use this option to avoid native compilation by using a pure JavaScript SQLite im
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../javascripts/mermaid-init.js"></script>
       
     
   </body>

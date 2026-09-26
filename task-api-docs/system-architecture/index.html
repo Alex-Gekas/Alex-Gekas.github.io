@@ -611,7 +611,7 @@
   <span class="md-ellipsis">
     
   
-    How forecasts are structured
+    How the API structures forecasts
   
 
     
@@ -667,7 +667,7 @@
   <span class="md-ellipsis">
     
   
-    Weather forecast Offices (WFOs)
+    Weather forecast offices (WFOs)
   
 
     
@@ -1863,7 +1863,7 @@
   <h1>System architecture</h1>
 
 <h2 id="architecture-overview">Architecture overview</h2>
-<p>The Task API is a stateless RESTful service built with Express. Authentication uses JSON Web Tokens (JWT). User credentials are stored securely using <code>bcrypt</code>. Task data is stored in a SQLite database. The app is organized into modules. Each module handles part of the request lifecycle.</p>
+<p>The Task API is a stateless RESTful service built with Express. Authentication uses JSON Web Tokens (JWT). The app hashes user passwords with <code>bcrypt</code> and stores task data in a SQLite database. Its code uses modules, and each module handles part of the request lifecycle.</p>
 <p>The API follows a typical REST architecture: requests pass through routing and authentication middleware before reaching controllers that handle business logic and database access.</p>
 <h2 id="what-the-api-does">What the API does</h2>
 <p>The Task API allows users to create and manage personal task lists. Each user has a separate account, and all task requests require a valid login token. The server checks this token before allowing access to any protected task endpoints.</p>
@@ -1922,16 +1922,16 @@
 <h2 id="design-considerations">Design considerations</h2>
 <ul>
 <li>
-<p>SQLite was chosen because it's lightweight and easy to set up for a small application. It doesn't require a separate database server.</p>
+<p>SQLite fits this project because it's lightweight and easy to set up for a small app. It doesn't require a separate database server.</p>
 </li>
 <li>
 <p>JWT authentication allows the server to verify users without storing session data. Because the server doesn't store session data, it can handle requests independently.</p>
 </li>
 <li>
-<p>Passwords are hashed with <code>bcrypt</code> before being saved, so the original password is never stored in the database.</p>
+<p>The app hashes passwords with <code>bcrypt</code> before saving them, so the database never stores the original password.</p>
 </li>
 <li>
-<p>The code is organized into routes, controllers, and middleware so that each part of the system has a clear responsibility and can be tested independently.</p>
+<p>The code separates routes, controllers, and middleware so that each part of the system has a clear responsibility and you can test it independently.</p>
 </li>
 </ul>
 <h2 id="folder-structure">Folder structure</h2>
@@ -1957,7 +1957,7 @@
 └── package.json
 </code></pre></div>
 <h2 id="users-table">Users table</h2>
-<p>The <code>users</code> table stores account information required for authentication and identification. Each user record is created at signup and is referenced by the <code>tasks</code> table.</p>
+<p>The <code>users</code> table stores account information required for authentication and identification. The app creates each user record at signup, and the <code>tasks</code> table references it.</p>
 <table>
 <thead>
 <tr>
@@ -1996,7 +1996,7 @@
 <td><code>created_at</code></td>
 <td>TEXT</td>
 <td>Yes</td>
-<td>ISO 8601 datetime. Set automatically when the record is created</td>
+<td>ISO 8601 datetime. Set automatically at record creation</td>
 </tr>
 </tbody>
 </table>
@@ -2015,7 +2015,7 @@
 <td><code>id</code></td>
 <td>TEXT</td>
 <td>Yes</td>
-<td>UUID primary key. Generated automatically when the task is created</td>
+<td>UUID primary key. Generated automatically at task creation</td>
 </tr>
 <tr>
 <td><code>user_id</code></td>
@@ -2057,7 +2057,7 @@
 <td><code>created_at</code></td>
 <td>TEXT</td>
 <td>Yes</td>
-<td>Timestamp when the task was created</td>
+<td>Task creation timestamp</td>
 </tr>
 <tr>
 <td><code>updated_at</code></td>
@@ -2099,7 +2099,7 @@
 <p>A client sends an HTTP request to the Express server.</p>
 </li>
 <li>
-<p>If the route is protected, the auth middleware verifies the JWT.</p>
+<p>If the route requires authentication, the auth middleware verifies the JWT.</p>
 </li>
 <li>
 <p>If valid, control passes to the appropriate controller.</p>
@@ -2108,7 +2108,7 @@
 <p>The controller performs validation and interacts with the database.</p>
 </li>
 <li>
-<p>A JSON response is returned to the client.</p>
+<p>The server returns a JSON response to the client.</p>
 </li>
 </ol>
 
@@ -2175,6 +2175,8 @@
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../javascripts/mermaid-init.js"></script>
       
     
   </body>

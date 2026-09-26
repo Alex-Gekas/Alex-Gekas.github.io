@@ -29,7 +29,7 @@
     
     
       
-        <title>Quick Start - Alex Gekas — Technical Writing Portfolio</title>
+        <title>Quick start - Alex Gekas — Technical Writing Portfolio</title>
       
     
     
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Quick Start
+              Quick start
             
           </span>
         </div>
@@ -717,7 +717,7 @@
   <span class="md-ellipsis">
     
   
-    How forecasts are structured
+    How the API structures forecasts
   
 
     
@@ -773,7 +773,7 @@
   <span class="md-ellipsis">
     
   
-    Weather forecast Offices (WFOs)
+    Weather forecast offices (WFOs)
   
 
     
@@ -1772,7 +1772,7 @@ just your terminal and a few simple <code>curl</code> commands.</p>
 <hr />
 <h2 id="step-2-get-grid-metadata">Step 2: Get grid metadata</h2>
 <p>Next, use the <code>/points/{lat,lon}</code> endpoint to translate your coordinates into the <strong>grid ID and coordinates</strong> used by NWS forecasts.</p>
-<p>This step is required—forecasts are organized by <strong>grid points</strong>, not by latitude and longitude directly.</p>
+<p>You need this step because the API organizes forecasts by <strong>grid points</strong> rather than by latitude and longitude.</p>
 <p>This request returns metadata including:</p>
 <ul>
 <li>Grid ID and X/Y coordinates</li>
@@ -1794,7 +1794,7 @@ just your terminal and a few simple <code>curl</code> commands.</p>
   -H "User-Agent: your-email@example.com"</code></p>
 <p>The response is a JSON forecast that includes:</p>
 <ul>
-<li>Period names (Today, Tonight, Monday, etc.)</li>
+<li>Period names (for example, Today, Tonight, Monday)</li>
 <li>Temperature and wind details</li>
 <li>Short and detailed forecast text</li>
 </ul>
@@ -1911,6 +1911,8 @@ just your terminal and a few simple <code>curl</code> commands.</p>
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../javascripts/mermaid-init.js"></script>
       
     
   </body>

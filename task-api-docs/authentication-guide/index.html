@@ -29,7 +29,7 @@
     
     
       
-        <title>Authentication Guide - Alex Gekas — Technical Writing Portfolio</title>
+        <title>Authentication guide - Alex Gekas — Technical Writing Portfolio</title>
       
     
     
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Authentication Guide
+              Authentication guide
             
           </span>
         </div>
@@ -611,7 +611,7 @@
   <span class="md-ellipsis">
     
   
-    How forecasts are structured
+    How the API structures forecasts
   
 
     
@@ -667,7 +667,7 @@
   <span class="md-ellipsis">
     
   
-    Weather forecast Offices (WFOs)
+    Weather forecast offices (WFOs)
   
 
     
@@ -1666,7 +1666,7 @@
 
 <p>Before you can authenticate using the Task API, you need to log in. See the <a href="../getting-started/">API Reference</a> for the steps on creating an account login.</p>
 <h2 id="jwt-and-why-its-used">JWT and why it’s used</h2>
-<p><strong>JWT (JSON Web Token)</strong> is a standard for encoding user information in a token. You can think of it like a wristband at an amusement park. When you enter the park, the attendant takes your payment (login) and gives you a wristband (the token). The wristband proves you were verified. For the rest of the day, you show it to enter different areas of the park.</p>
+<p><strong>JWT (JSON Web Token)</strong> is a standard for encoding user information in a token. You can think of it like a wristband at an amusement park. When you enter the park, the attendant takes your payment (login) and gives you a wristband (the token). The wristband proves someone checked your ID. For the rest of the day, you show it to enter different areas of the park.</p>
 <p>A JWT works the same way. It's a long string of characters that contains information about your user session. The API issues a JWT when you log in. The token stays valid for seven days.</p>
 <p>The token payload is <strong>base64 encoded</strong>, not encrypted. Anyone can decode it and read the contents.</p>
 <p>You can view the contents by pasting the token into the <strong>JWT Debugger at <a href="http://jwt.io">jwt.io</a></strong>. The debugger shows the payload, including:</p>
@@ -1680,7 +1680,7 @@
 <p><strong>How to include the token in requests</strong></p>
 <p>Include the token in the Authorization header of every request in this format: <code>Authorization: Bearer &lt;your_token&gt;</code>. Most REST clients, including Postman, support this directly.</p>
 <p><strong>Token expiry and invalid tokens</strong></p>
-<p>If the token is invalid, you receive a <code>401 InvalidToken</code> error. If the token is expired, you receive a <code>401 TokenExpired</code> error. In both cases, you can log in again to generate a new one. There is no refresh mechanism in the Task API for expired tokens.</p>
+<p>If the token is invalid, you receive a <code>401 InvalidToken</code> error. If the token has expired, you receive a <code>401 TokenExpired</code> error. In both cases, you can log in again to generate a new one. There is no refresh mechanism in the Task API for expired tokens.</p>
 <p><strong>Security note:</strong> never store tokens in plain text or expose them in client-side code.  </p>
 <p><strong>Invalid credentials</strong></p>
 <p>For requests that use the wrong email or password, you receive a <code>401 InvalidCredentials</code> error. Task API doesn't indicate which credential was incorrect. If this happens, check both and try again.</p>
@@ -1748,6 +1748,8 @@
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../javascripts/mermaid-init.js"></script>
       
     
   </body>

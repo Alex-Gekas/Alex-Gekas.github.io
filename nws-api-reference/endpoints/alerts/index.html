@@ -613,7 +613,7 @@
   <span class="md-ellipsis">
     
   
-    How forecasts are structured
+    How the API structures forecasts
   
 
     
@@ -669,7 +669,7 @@
   <span class="md-ellipsis">
     
   
-    Weather forecast Offices (WFOs)
+    Weather forecast offices (WFOs)
   
 
     
@@ -1190,7 +1190,7 @@
   <a href="#example-request-javascript" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example request (Javascript)
+        Example request (JavaScript)
       
     </span>
   </a>
@@ -1882,7 +1882,7 @@
   <a href="#example-request-javascript" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example request (Javascript)
+        Example request (JavaScript)
       
     </span>
   </a>
@@ -1952,14 +1952,14 @@
 
   <h1>Alerts</h1>
 
-<h2 id="get-alerts"><code>GET /alerts</code></h2>
+<h2 id="get-alerts"><span class="method get">GET</span> <code>/alerts</code></h2>
 <h2 id="overview">Overview</h2>
 <p>Returns active National Weather Service (NWS) alerts as GeoJSON features. Use this to list current warnings, watches, and statements for a location or alert type. No authentication required.</p>
 <h2 id="http-request">HTTP request</h2>
 <p><code>GET https://api.weather.gov/alerts</code></p>
 <h2 id="headers-and-authorization">Headers and authorization</h2>
-<p><code>User-Agent</code> (required): A string identifying your app and contact (for example, MyWeatherApp/1.0 (me@myweatherapp.com).</p>
-<p><code>Accept</code> (recommended): application/geo+json</p>
+<p><code>User-Agent</code> (required): A string identifying your app and contact (for example, <code>MyWeatherApp/1.0 (contact@myweatherapp.com)</code>).</p>
+<p><code>Accept</code> (recommended): <code>application/geo+json</code></p>
 <p><code>Authorization</code>: Not required.</p>
 <h2 id="path-parameters">Path parameters</h2>
 <p>None for this endpoint</p>
@@ -2006,7 +2006,7 @@
 </tr>
 <tr>
 <td><code>message_type</code></td>
-<td>Original, update, cancel, etc.</td>
+<td>Original, update, cancel, and so on</td>
 <td>No</td>
 <td><code>Alert</code></td>
 </tr>
@@ -2086,8 +2086,8 @@
 </code></pre></div>
 </details>
 
-<h2 id="example-request-javascript">Example request (Javascript)</h2>
-<p>The following JavaScript example returns active Flood Warnings for a gfor exampleaphic point in Monroe County, NY. The <code>point</code> parameter (<code>latitude</code>, <code>longitude</code>) is the most precise way to request alerts because it resolves to the specific forecast zones covering that location. If no active Flood Warnings affect that point, the response may be empty even if alerts are active in nearby areas.</p>
+<h2 id="example-request-javascript">Example request (JavaScript)</h2>
+<p>The following JavaScript example returns active Flood Warnings for a geographic point in Monroe County, NY. The <code>point</code> parameter (<code>latitude</code>, <code>longitude</code>) is the most precise way to request alerts because it resolves to the specific forecast zones covering that location. If no active Flood Warnings affect that point, the response may be empty even if alerts are active in nearby areas.</p>
 <div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">getFloodAlerts</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://api.weather.gov/alerts?event=Flood%20Warning&amp;point=43.1610,-77.6109"</span><span class="p">;</span>
 
@@ -2111,7 +2111,7 @@
 </code></pre></div>
 <h2 id="example-response-javascript">Example response (JavaScript)</h2>
 <details class="details">
-<summary>200 OK — minimal response (matching a flood warning at a given point)</summary>
+<summary>200 OK—minimal response (matching a flood warning at a given point)</summary>
 </details>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FeatureCollection"</span><span class="p">,</span>
@@ -2221,7 +2221,7 @@
 <h2 id="notes-and-tips">Notes and tips</h2>
 <ul>
 <li>
-<p><code>User-Agent</code> required: Requests without a clear User-Agent may be rejected.</p>
+<p><code>User-Agent</code> required: The API might reject requests without a clear <code>User-Agent</code>.</p>
 </li>
 <li>
 <p>Pagination: Use the HTTP Link header with rel="next" to paginate large result sets.</p>
@@ -2236,7 +2236,7 @@
 <p>Format: Prefer Accept: <code>application/geo+json</code> to ensure GeoJSON responses.</p>
 </li>
 </ul>
-<p><strong>Next:</strong> <a href="../forecasts/"> Endpoints: Forecasts →</a></p>
+<p><strong>Next:</strong> <a href="../forecasts/">Endpoints: Forecasts →</a></p>
 
 
 
@@ -2301,6 +2301,8 @@
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../../javascripts/mermaid-init.js"></script>
       
     
   </body>

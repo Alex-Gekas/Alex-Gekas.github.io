@@ -29,7 +29,7 @@
     
     
       
-        <title>API Reference - Alex Gekas — Technical Writing Portfolio</title>
+        <title>API reference - Alex Gekas — Technical Writing Portfolio</title>
       
     
     
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              API Reference
+              API reference
             
           </span>
         </div>
@@ -611,7 +611,7 @@
   <span class="md-ellipsis">
     
   
-    How forecasts are structured
+    How the API structures forecasts
   
 
     
@@ -667,7 +667,7 @@
   <span class="md-ellipsis">
     
   
-    Weather forecast Offices (WFOs)
+    Weather forecast offices (WFOs)
   
 
     
@@ -1800,7 +1800,7 @@ Before sending requests, create an account and obtain a token.</p>
 <tr>
 <td>409</td>
 <td>Conflict</td>
-<td>Email already registered</td>
+<td>An account with that email already exists</td>
 </tr>
 </tbody>
 </table>
@@ -1998,7 +1998,7 @@ Creates a new task for the authenticated user.</p>
 <td>Defaults to <code>medium</code>. Accepted values: <code>low</code>, <code>medium</code>, <code>high</code></td>
 </tr>
 <tr>
-<td>due_date</td>
+<td><code>due_date</code></td>
 <td>string</td>
 <td>No</td>
 <td>ISO 8601 date string, for example <code>2024-12-31</code></td>
@@ -2117,7 +2117,7 @@ Creates a new task for the authenticated user.</p>
 </table>
 <div class="highlight"><pre><span></span><code>PATCH /api/tasks/:id
 </code></pre></div>
-<p>Partially updates a task. Only the fields included in the request body are updated. Omitted fields keep their current values.</p>
+<p>Partially updates a task. The API updates only the fields included in the request body. Omitted fields keep their current values.</p>
 <p><strong>Authentication required:</strong> Yes</p>
 <p><strong>Path parameters:</strong></p>
 <table>
@@ -2174,7 +2174,7 @@ Creates a new task for the authenticated user.</p>
 <td>Accepted values: <code>low</code>, <code>medium</code>, <code>high</code></td>
 </tr>
 <tr>
-<td>due_date</td>
+<td><code>due_date</code></td>
 <td>string</td>
 <td>No</td>
 <td>ISO 8601 date string, for example <code>2024-12-31</code></td>
@@ -2232,7 +2232,7 @@ Creates a new task for the authenticated user.</p>
 </table>
 <div class="highlight"><pre><span></span><code>DELETE /api/tasks/:id
 </code></pre></div>
-<p>Permanently deletes a task. The task must belong to the authenticated user. This action cannot be undone.</p>
+<p>Permanently deletes a task. The task must belong to the authenticated user. This action can't be undone.</p>
 <p><strong>Authentication required:</strong> Yes</p>
 <p><strong>Path parameters:</strong></p>
 <table>
@@ -2347,6 +2347,8 @@ Creates a new task for the authenticated user.</p>
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../javascripts/mermaid-init.js"></script>
       
     
   </body>

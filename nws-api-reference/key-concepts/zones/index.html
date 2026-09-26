@@ -615,7 +615,7 @@
   <span class="md-ellipsis">
     
   
-    How forecasts are structured
+    How the API structures forecasts
   
 
     
@@ -671,7 +671,7 @@
   <span class="md-ellipsis">
     
   
-    Weather forecast Offices (WFOs)
+    Weather forecast offices (WFOs)
   
 
     
@@ -1613,14 +1613,14 @@
 <p>When you call <code>/points/{lat},{lon}</code>, the API returns links to all zones that contain that location. A point may belong to multiple zone types at once (for example, a forecast zone and a fire-weather zone).</p>
 <p>Zones matter because:</p>
 <ul>
-<li>Alerts are issued at the zone level.</li>
+<li>NWS issues alerts at the zone level.</li>
 <li>Many public-facing forecasts are zone-based, not grid-based.</li>
-<li>Zone metadata is required to interpret hazard and advisory products.</li>
+<li>You need zone metadata to interpret hazard and advisory products.</li>
 </ul>
 <p>Below is a diagram that shows the zones within a WFO:</p>
 <p><img alt="Forecast zones for the NWS Buffalo Forecast Office" src="../images/buf_zones.png" /></p>
 <p><strong>Figure:</strong> Buffalo NWS office (BUF) with zones highlighted.</p>
-<p><strong>Next:</strong> Lean about <a href="../developer-use-cases/">NWS API Developer Use Cases</a> → </p>
+<p><strong>Next:</strong> Learn about <a href="../developer-use-cases/">NWS API developer use cases</a> → </p>
 
 
 
@@ -1685,6 +1685,8 @@
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../../javascripts/mermaid-init.js"></script>
       
     
   </body>

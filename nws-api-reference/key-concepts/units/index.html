@@ -615,7 +615,7 @@
   <span class="md-ellipsis">
     
   
-    How forecasts are structured
+    How the API structures forecasts
   
 
     
@@ -671,7 +671,7 @@
   <span class="md-ellipsis">
     
   
-    Weather forecast Offices (WFOs)
+    Weather forecast offices (WFOs)
   
 
     
@@ -1737,7 +1737,7 @@
 
 
 <h1 id="units-of-measurement">Units of measurement</h1>
-<p>The National Weather Service API returns data using a combination of <strong>imperial</strong> and <strong>SI (metric)</strong> units, depending on the endpoint and user preferences. Understanding the default units and how to convert them ensures accurate interpretation of forecast and observation data.</p>
+<p>The National Weather Service API returns data using a combination of <strong>imperial</strong> and <strong>SI (metric)</strong> units. The units you get depend on the endpoint and user preferences. Understanding the default units and how to convert them ensures accurate interpretation of forecast and observation data.</p>
 <hr />
 <h2 id="default-units-by-data-type">Default units by data type</h2>
 <table>
@@ -1798,7 +1798,7 @@
 </table>
 <hr />
 <h2 id="unit-conversions">Unit conversions</h2>
-<p>For users needing metric units, you can convert the values manually or configure your client application to convert them automatically. Here's a quick reference:</p>
+<p>For users needing metric units, you can convert the values manually or configure your client app to convert them automatically. Here's a quick reference:</p>
 <table>
 <thead>
 <tr>
@@ -1831,12 +1831,12 @@
 </table>
 <hr />
 <h2 id="customizing-units-in-api-responses">Customizing units in API responses</h2>
-<p>Currently, the API doesn't allow unit customization through request parameters. All values are returned in default formats. Developers should implement unit conversion on the client side if metric units are required for international audiences.</p>
+<p>The API doesn't allow unit customization through request parameters, and it returns all values in their default formats. If your international audience needs metric units, convert them on the client side.</p>
 <hr />
 <h2 id="notes">Notes</h2>
 <ul>
-<li>Times and durations are returned in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a>.</li>
-<li>Coordinate values (latitude and longitude) are expressed in decimal degrees.</li>
+<li>The API returns times and durations in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a>.</li>
+<li>Coordinate values (latitude and longitude) use decimal degrees.</li>
 <li>All forecast grids use a consistent scale (~2.5 km resolution).</li>
 </ul>
 <hr />
@@ -1905,6 +1905,8 @@
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../../javascripts/mermaid-init.js"></script>
       
     
   </body>

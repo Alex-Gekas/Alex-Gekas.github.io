@@ -613,7 +613,7 @@
   <span class="md-ellipsis">
     
   
-    How forecasts are structured
+    How the API structures forecasts
   
 
     
@@ -669,7 +669,7 @@
   <span class="md-ellipsis">
     
   
-    Weather forecast Offices (WFOs)
+    Weather forecast offices (WFOs)
   
 
     
@@ -1086,10 +1086,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#response-fields-comonly-used" class="md-nav__link">
+  <a href="#response-fields-commonly-used" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Response fields (Comonly Used)
+        Response fields (commonly used)
       
     </span>
   </a>
@@ -1879,10 +1879,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#response-fields-comonly-used" class="md-nav__link">
+  <a href="#response-fields-commonly-used" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Response fields (Comonly Used)
+        Response fields (commonly used)
       
     </span>
   </a>
@@ -1931,13 +1931,13 @@
   <h1>Points</h1>
 
 <h2 id="get-metadata-by-geographic-point">Get metadata by geographic point</h2>
-<h2 id="get-pointslatitudelongitude"><code>GET /points/{latitude},{longitude}</code></h2>
+<h2 id="get-pointslatitudelongitude"><span class="method get">GET</span> <code>/points/{latitude},{longitude}</code></h2>
 <h2 id="overview">Overview</h2>
-<p>Returns metadata for a specific latitude/longitude, including the responsible NWS forecast office (gridId), the coordinates (gridX/gridY), local time zone, nearest location, and ready-to-use forecast URLs (7-day, hourly, grid data) plus links to zones (forecast, county, fire weather).</p>
+<p>Returns metadata for a specific latitude/longitude, including the responsible NWS forecast office (<code>gridId</code>), the grid coordinates (<code>gridX</code>/<code>gridY</code>), local time zone, nearest location, and ready-to-use forecast URLs (7-day, hourly, grid data) plus links to zones (forecast, county, fire weather).</p>
 <p>Use this first when you have a lat/lon and need to determine which gridpoint/office to query next.</p>
 <h2 id="headers-and-authorization">Headers and authorization</h2>
-<p><code>User-Agent</code> (required): A string identifying your app and contact (for example, MyWeatherApp/1.0 (me@myweatherapp.com).</p>
-<p><code>Accept</code> (recommended): application/geo+json</p>
+<p><code>User-Agent</code> (required): A string identifying your app and contact (for example, <code>MyWeatherApp/1.0 (contact@myweatherapp.com)</code>).</p>
+<p><code>Accept</code> (recommended): <code>application/geo+json</code></p>
 <p><code>Authorization</code>: Not required.</p>
 <h2 id="http-request">HTTP request</h2>
 <p><code>GET https://api.weather.gov/points/{latitude},{longitude}</code></p>
@@ -1971,7 +1971,7 @@
 </tbody>
 </table>
 <h2 id="query-parameters">Query parameters</h2>
-<p>This endpoint does not accept query parameters.</p>
+<p>This endpoint doesn't accept query parameters.</p>
 <h2 id="example-request-curl">Example request (cURL)</h2>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">"User-Agent: XYZ-WeatherApp/1.0 (alex@example.com)"</span><span class="w"> </span>
@@ -2050,7 +2050,7 @@
 <span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 </details>
-<h2 id="response-fields-comonly-used">Response fields (Comonly Used)</h2>
+<h2 id="response-fields-commonly-used">Response fields (commonly used)</h2>
 <table>
 <thead>
 <tr>
@@ -2063,7 +2063,7 @@
 <tr>
 <td><code>properties.gridId</code></td>
 <td>string</td>
-<td>Officfor exampleid code</td>
+<td>Office grid code</td>
 </tr>
 <tr>
 <td><code>properties.gridX</code></td>
@@ -2121,22 +2121,22 @@
 <tr>
 <td><code>properties.cwa</code></td>
 <td>string</td>
-<td>NWS County Warning Area (same as office code / gridId in most cases).</td>
+<td>NWS County Warning Area (same as office code / <code>gridId</code> in most cases).</td>
 </tr>
 <tr>
 <td><code>properties.gridId</code></td>
 <td>string</td>
-<td>Forecast officfor exampleid identifier (for example, <code>PHI</code>).</td>
+<td>Forecast office grid identifier (for example, <code>PHI</code>).</td>
 </tr>
 <tr>
 <td><code>properties.gridX</code></td>
 <td>integer</td>
-<td>Grid X index within officfor exampleid.</td>
+<td>Grid X index within office grid.</td>
 </tr>
 <tr>
 <td><code>properties.gridY</code></td>
 <td>integer</td>
-<td>Grid Y index within officfor exampleid.</td>
+<td>Grid Y index within office grid.</td>
 </tr>
 <tr>
 <td><code>properties.forecast</code></td>
@@ -2218,11 +2218,11 @@
 <h2 id="notes">Notes</h2>
 <ul>
 <li>This is typically the first endpoint developers call when building a location-based app.</li>
-<li>It returns thfor exampleidpoint (<code>gridX</code>, <code>gridY</code>) and forecast office (<code>cwa</code>) that serve the provided coordinates.</li>
+<li>It returns the gridpoint (<code>gridX</code>, <code>gridY</code>) and forecast office (<code>cwa</code>) that serve the provided coordinates.</li>
 <li>The response includes direct links to <strong>7-day forecast</strong>, <strong>hourly forecast</strong>, <strong>grid-level forecast data</strong>, and <strong>observation stations</strong>.</li>
 <li>The <code>forecastOffice</code> field provides a URL to the NWS Forecast Office responsible for this location. That office’s <strong>metadata</strong> includes its <strong>name</strong>, <strong>coverage region</strong>, <strong>contact information</strong>, and  <strong>forecast and alert zones</strong> for the office. Use this when you need zone-based warnings or region-specific forecast products.</li>
 </ul>
-<p><strong>Next:</strong> <a href="../stations/"> Endpoints: Stations →</a></p>
+<p><strong>Next:</strong> <a href="../stations/">Endpoints: Stations →</a></p>
 
 
 
@@ -2287,6 +2287,8 @@
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../../javascripts/mermaid-init.js"></script>
       
     
   </body>

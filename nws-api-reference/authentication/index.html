@@ -29,7 +29,7 @@
     
     
       
-        <title>Authentication and Headers - Alex Gekas — Technical Writing Portfolio</title>
+        <title>Authentication and headers - Alex Gekas — Technical Writing Portfolio</title>
       
     
     
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Authentication and Headers
+              Authentication and headers
             
           </span>
         </div>
@@ -565,19 +565,19 @@
   <a href="#user-agent-requirement" class="md-nav__link">
     <span class="md-ellipsis">
       
-        User-Agent Requirement
+        User-Agent requirement
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="User-Agent Requirement">
+    <nav class="md-nav" aria-label="User-Agent requirement">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#recommended-format" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Recommended Format
+        Recommended format
       
     </span>
   </a>
@@ -604,19 +604,19 @@
   <a href="#what-happens-without-a-user-agent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Happens Without a User-Agent?
+        What happens without a User-Agent?
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="What Happens Without a User-Agent?">
+    <nav class="md-nav" aria-label="What happens without a User-Agent?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#example-error-response" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example Error Response
+        Example error response
       
     </span>
   </a>
@@ -627,7 +627,7 @@
   <a href="#complete-request-example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Complete Request Example
+        Complete request example
       
     </span>
   </a>
@@ -643,7 +643,7 @@
   <a href="#best-practices" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Best Practices
+        Best practices
       
     </span>
   </a>
@@ -751,7 +751,7 @@
   <span class="md-ellipsis">
     
   
-    How forecasts are structured
+    How the API structures forecasts
   
 
     
@@ -807,7 +807,7 @@
   <span class="md-ellipsis">
     
   
-    Weather forecast Offices (WFOs)
+    Weather forecast offices (WFOs)
   
 
     
@@ -1722,19 +1722,19 @@
   <a href="#user-agent-requirement" class="md-nav__link">
     <span class="md-ellipsis">
       
-        User-Agent Requirement
+        User-Agent requirement
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="User-Agent Requirement">
+    <nav class="md-nav" aria-label="User-Agent requirement">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#recommended-format" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Recommended Format
+        Recommended format
       
     </span>
   </a>
@@ -1761,19 +1761,19 @@
   <a href="#what-happens-without-a-user-agent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Happens Without a User-Agent?
+        What happens without a User-Agent?
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="What Happens Without a User-Agent?">
+    <nav class="md-nav" aria-label="What happens without a User-Agent?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#example-error-response" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example Error Response
+        Example error response
       
     </span>
   </a>
@@ -1784,7 +1784,7 @@
   <a href="#complete-request-example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Complete Request Example
+        Complete request example
       
     </span>
   </a>
@@ -1800,7 +1800,7 @@
   <a href="#best-practices" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Best Practices
+        Best practices
       
     </span>
   </a>
@@ -1825,51 +1825,51 @@
 
 
 <h1 id="authentication-and-headers">Authentication and headers</h1>
-<p>The NWS API does not require an API key or authentication token. However, <strong>you must include a <code>User-Agent</code> header</strong> with every request to identify your application.</p>
-<h2 id="user-agent-requirement">User-Agent Requirement</h2>
+<p>The NWS API doesn't require an API key or authentication token. However, <strong>you must include a <code>User-Agent</code> header</strong> with every request to identify your app.</p>
+<h2 id="user-agent-requirement">User-Agent requirement</h2>
 <p>The <code>User-Agent</code> header should include:</p>
 <ol>
-<li><strong>Application name and version</strong></li>
+<li><strong>App name and version</strong></li>
 <li><strong>Valid contact method</strong> (email address or website)</li>
 </ol>
-<p>This allows NWS administrators to contact you if there are issues with your application or security concerns.</p>
-<h3 id="recommended-format">Recommended Format</h3>
+<p>This allows NWS administrators to contact you if there are issues with your app or security concerns.</p>
+<h3 id="recommended-format">Recommended format</h3>
 <div class="highlight"><pre><span></span><code><span class="err">User-Agent: ApplicationName/Version (contact@example.com)</span>
 </code></pre></div>
 <h3 id="examples">Examples</h3>
-<p><strong>Simple application</strong></p>
+<p><strong>Simple app</strong></p>
 <div class="highlight"><pre><span></span><code><span class="err">User-Agent: MyWeatherApp/1.0 (myemail@example.com)</span>
 </code></pre></div>
-<p><strong>Production application</strong>
+<p><strong>Production app</strong>
 <div class="highlight"><pre><span></span><code><span class="err">User-Agent: WeatherDashboard/2.3.1 (support@weatherdashboard.com)</span>
 </code></pre></div></p>
 <p><strong>Personal project</strong>
 <div class="highlight"><pre><span></span><code><span class="err">User-Agent: PersonalWeatherBot/1.0 (https://github.com/username/weather-bot)</span>
 </code></pre></div></p>
-<h2 id="what-happens-without-a-user-agent">What Happens Without a User-Agent?</h2>
-<p>Requests without a <code>User-Agent</code> header will be rejected with a <code>403 Forbidden</code> error.</p>
-<h3 id="example-error-response">Example Error Response</h3>
+<h2 id="what-happens-without-a-user-agent">What happens without a User-Agent?</h2>
+<p>The API rejects requests without a <code>User-Agent</code> header with a <code>403 Forbidden</code> error.</p>
+<h3 id="example-error-response">Example error response</h3>
 <div class="highlight"><pre><span></span><code><span class="err">Access Denied</span>
 <span class="err">You don't have permission to access</span>
 <span class="err">"http://api.weather.gov/points/43.1566,-77.6088" on this server.</span>
 <span class="err">Reference #18.c968dc17.1737489616.6bd4c22</span>
 </code></pre></div>
-<h3 id="complete-request-example">Complete Request Example</h3>
+<h3 id="complete-request-example">Complete request example</h3>
 <p>Here's a complete curl request with proper headers:</p>
 <p><code>bash
 curl "https://api.weather.gov/points/40.7766,-73.8742"
   -H "User-Agent: MyWeatherApp/1.0 (contact@example.com)"
   -H "Accept: application/geo+json"</code></p>
-<h2 id="best-practices">Best Practices</h2>
+<h2 id="best-practices">Best practices</h2>
 <ul>
-<li><strong>Always include a user-agent</strong> with your application name and contact info</li>
+<li><strong>Always include a user-agent</strong> with your app name and contact info</li>
 <li><strong>Use a valid email address</strong> so NWS can reach you if needed</li>
 <li><strong>Update the version number</strong> when you make significant changes to your app</li>
 <li><strong>Include your project URL</strong> if you don't want to share an email address</li>
 <li><strong>Don't use generic user-agents</strong> like "curl" or "python-requests"</li>
 <li><strong>Don't share user-agents</strong> across multiple unrelated applications</li>
 </ul>
-<p><strong>Next:</strong> <a href="../caching/"> Caching →</a></p>
+<p><strong>Next:</strong> <a href="../caching/">Caching →</a></p>
 
 
 
@@ -1934,6 +1934,8 @@ curl "https://api.weather.gov/points/40.7766,-73.8742"
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../javascripts/mermaid-init.js"></script>
       
     
   </body>

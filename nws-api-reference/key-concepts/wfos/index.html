@@ -615,7 +615,7 @@
   <span class="md-ellipsis">
     
   
-    How forecasts are structured
+    How the API structures forecasts
   
 
     
@@ -680,7 +680,7 @@
   <span class="md-ellipsis">
     
   
-    Weather forecast Offices (WFOs)
+    Weather forecast offices (WFOs)
   
 
     
@@ -698,7 +698,7 @@
   <span class="md-ellipsis">
     
   
-    Weather forecast Offices (WFOs)
+    Weather forecast offices (WFOs)
   
 
     
@@ -1777,7 +1777,7 @@
 <h2 id="why-this-matters">Why this matters</h2>
 <p><strong>Each WFO manages its own forecast grids.</strong> Two nearby coordinates may belong to different WFOs, so always use the WFO returned by <code>/points</code> when requesting gridpoint data.</p>
 <p><img alt="Map showing WFO coverage areas in the Northeastern United States" src="../images/WFOs.png" /></p>
-<p><strong>Figure:</strong> WFO boundaries in the Northeastern US. Notice how coverage areas meet at defined borders. Coordinates near these boundaries may be included under different WFOs.</p>
+<p><strong>Figure:</strong> WFO boundaries in the northeastern United States. Notice how coverage areas meet at defined borders. Coordinates near these boundaries might fall under different WFOs.</p>
 <h2 id="quick-visualization">Quick visualization</h2>
 <pre class="mermaid"><code>flowchart LR
   P["/points/{lat,lon}"] --&gt; W["WFO (gridId)"]
@@ -1858,6 +1858,8 @@
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../../javascripts/mermaid-init.js"></script>
       
     
   </body>

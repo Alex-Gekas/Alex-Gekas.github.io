@@ -25,7 +25,7 @@
     
     
       
-        <title>Index - Alex Gekas — Technical Writing Portfolio</title>
+        <title>Case study: WooCommerce order status and emails - Alex Gekas — Technical Writing Portfolio</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#title-case-study-woocommerce-order-status-emails" class="md-skip">
+        <a href="#case-study-woocommerce-order-status-and-emails" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              Case study: WooCommerce order status and emails
             
           </span>
         </div>
@@ -598,7 +598,7 @@
   <span class="md-ellipsis">
     
   
-    How forecasts are structured
+    How the API structures forecasts
   
 
     
@@ -654,7 +654,7 @@
   <span class="md-ellipsis">
     
   
-    Weather forecast Offices (WFOs)
+    Weather forecast offices (WFOs)
   
 
     
@@ -1556,6 +1556,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1564,29 +1566,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#title-case-study-woocommerce-order-status-emails" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        title: Case Study: WooCommerce Order Status &amp; Emails
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#case-study-woocommerce-order-status-emails" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Case Study: WooCommerce Order Status &amp; Emails
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Case Study: WooCommerce Order Status &amp; Emails">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#the-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1596,8 +1575,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#decisions-i-made" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1607,8 +1586,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#what-this-demonstrates" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1616,11 +1595,6 @@
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1641,13 +1615,11 @@
 
 
 
-<hr />
-<h2 id="title-case-study-woocommerce-order-status-emails">title: Case Study: WooCommerce Order Status &amp; Emails</h2>
-<h1 id="case-study-woocommerce-order-status-emails">Case Study: WooCommerce Order Status &amp; Emails</h1>
+<h1 id="case-study-woocommerce-order-status-and-emails">Case study: WooCommerce order status and emails</h1>
 <h2 id="the-problem">The problem</h2>
 <p>WooCommerce ships with a fixed set of order statuses. Stores that need a
-holding state — for fraud checks, inventory confirmation, or support
-investigations — have no built-in option. I chose this as a tutorial
+holding state—for fraud checks, inventory confirmation, or support
+investigations—have no built-in option. I chose this as a tutorial
 subject because the problem is real and there is little documentation about it.</p>
 <h2 id="decisions-i-made">Decisions I made</h2>
 <p><strong>HPOS compatibility.</strong> WooCommerce's High-Performance Order Storage
@@ -1655,7 +1627,7 @@ subject because the problem is real and there is little documentation about it.<
 screen. I scoped the bulk action implementation explicitly to
 <code>woocommerce_page_wc-orders</code> so it targets the current architecture rather
 than the legacy one.</p>
-<p><strong>Email trigger design.</strong> I routed the trigger through a custom
+<p><strong>The email trigger.</strong> I routed the trigger through a custom
 <code>do_action()</code> hook (<code>wc_cos_trigger_awaiting_review_email</code>) instead of
 calling the email class directly from the admin action handler. This
 keeps the admin UI wiring independent of the email implementation, so
@@ -1665,10 +1637,10 @@ Awaiting Review would send the email twice. I added an order meta flag
 (<code>_wc_cos_awaiting_review_email_sent</code>) that prevents repeat sends without
 requiring any UI change.</p>
 <p><strong>Order note logging.</strong> Both the manual and automatic send paths log an order note. Store staff
-can see when the email was sent and why, without using additional tools.</p>
+can see when WooCommerce sent the email and why, without using additional tools.</p>
 <h2 id="what-this-demonstrates">What this demonstrates</h2>
-<p>This tutorial required more than documenting steps. Each decision — 
-decoupling the email trigger, targeting HPOS, preventing duplicate sends — 
+<p>This tutorial required more than documenting steps. Each decision—
+decoupling the email trigger, targeting HPOS, preventing duplicate sends—
 had a reason, and explaining that reasoning is what makes documentation useful.</p>
 
 
@@ -1676,6 +1648,9 @@ had a reason, and explaining that reasoning is what makes documentation useful.<
 
 
 
+
+  
+  
 
 
 
@@ -1731,6 +1706,8 @@ had a reason, and explaining that reasoning is what makes documentation useful.<
       <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../javascripts/mermaid-init.js"></script>
       
     
   </body>

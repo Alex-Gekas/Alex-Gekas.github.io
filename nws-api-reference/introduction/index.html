@@ -29,7 +29,7 @@
     
     
       
-        <title>NWS API — Reorganized Reference - Alex Gekas — Technical Writing Portfolio</title>
+        <title>NWS API—reorganized reference - Alex Gekas — Technical Writing Portfolio</title>
       
     
     
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              NWS API — Reorganized Reference
+              NWS API—reorganized reference
             
           </span>
         </div>
@@ -506,17 +506,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#official-source-nws-services-web-api-documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Official source: NWS Services Web API Documentation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#quick-start" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -778,7 +767,7 @@
   <span class="md-ellipsis">
     
   
-    How forecasts are structured
+    How the API structures forecasts
   
 
     
@@ -834,7 +823,7 @@
   <span class="md-ellipsis">
     
   
-    Weather forecast Offices (WFOs)
+    Weather forecast offices (WFOs)
   
 
     
@@ -1746,17 +1735,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#official-source-nws-services-web-api-documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Official source: NWS Services Web API Documentation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#quick-start" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1902,7 +1880,8 @@
 <h1 id="overview">Overview</h1>
 <p>The <strong>National Weather Service (NWS) API</strong> is the official U.S. government source for weather forecasts, observations, and alerts. It provides free, public access to the same real-time data used by meteorologists, emergency managers, and news organizations, covering every location in the United States with highly localized 2.5 km forecast grids.</p>
 <p>This is an unofficial rewrite of the official API documentation. It focuses on the endpoints developers use most, clarifies the underlying spatial concepts (forecast offices, gridpoints, and zones), and streamlines the original where possible.</p>
-<h2 id="official-source-nws-services-web-api-documentation"><strong>Official source:</strong> <a href="https://www.weather.gov/documentation/services-web-api">NWS Services Web API Documentation</a></h2>
+<p><strong>Official source:</strong> <a href="https://www.weather.gov/documentation/services-web-api">NWS Services Web API Documentation</a></p>
+<hr />
 <h2 id="quick-start">Quick start</h2>
 <p><strong>Base URL:</strong> <code>https://api.weather.gov</code></p>
 <ul>
@@ -1916,11 +1895,11 @@
 Returns forecast URLs, grid coordinates, and station identifiers for that location.</p>
 <hr />
 <h2 id="what-this-api-provides">What this API provides</h2>
-<p>You can retrieve forecasts, observations, alerts, radar imagery, and specialized data for aviation, marine, and river conditions. All data is updated continuously.</p>
+<p>You can retrieve forecasts, observations, alerts, radar imagery, and specialized data for aviation, marine, and river conditions. NWS updates all data continuously.</p>
 <p>With nationwide coverage and highly localized 2.5 km grids, the NWS API supports both broad regional outlooks and point-level forecasts. It connects directly to the same systems used by government agencies and news outlets, so the data is authoritative and reliable. There are no subscription fees or commercial restrictions.</p>
 <hr />
 <h2 id="what-you-can-build">What you can build</h2>
-<p>If you're building a weather dashboard, analyzing climate data, or integrating alerts into a public safety application, the NWS API gives you direct access to the same data used by professionals.</p>
+<p>If you're building a weather dashboard, analyzing climate data, or integrating alerts into a public safety app, the NWS API gives you direct access to the same data used by professionals.</p>
 <p>You can:</p>
 <ul>
 <li>Build apps that display local forecasts and active weather alerts</li>
@@ -1940,12 +1919,12 @@ Returns forecast URLs, grid coordinates, and station identifiers for that locati
 <hr />
 <h2 id="how-it-works">How it works</h2>
 <p>The NWS API follows REST principles and uses standard HTTP methods such as <code>GET</code> to retrieve data. You access data by making requests to specific <strong>endpoints</strong>, each designed for a type of weather information, such as forecasts, alerts, observations, or zones.</p>
-<p>Most responses are returned in <strong>JSON</strong> or <a href="../../geojson-explainer/explainer/"><strong>GeoJSON</strong></a> format. GeoJSON includes geographic coordinates that define points, lines, or polygons, making it ideal for mapping or visualizing weather events.</p>
+<p>Most responses use <strong>JSON</strong> or <a href="../../geojson-explainer/explainer/"><strong>GeoJSON</strong></a> format. GeoJSON includes geographic coordinates that define points, lines, or polygons. This makes it ideal for mapping or visualizing weather events.</p>
 <p>You don't need an API key or token to start, simply include the base URL in your requests and specify the endpoint and parameters you need.</p>
 <hr />
 <h2 id="typical-request-flow">Typical request flow</h2>
 <p>The NWS API supports multiple weather data types, each retrieved differently. This diagram shows the typical flow from a <code>latitude/longitude</code> input to the correct API endpoints for forecasts, alerts, observations, and zones.</p>
-<p>In most cases, you will start with a coordinate and then either request the forecast directly or use <code>/points</code> to discover region-specific endpoints such as stations, grid cells, and zones.</p>
+<p>In most cases, you start with a coordinate and then either request the forecast directly or use <code>/points</code> to discover region-specific endpoints such as stations, grid cells, and zones.</p>
 <pre class="mermaid"><code>flowchart LR
   A["Client"] --&gt; B["api.weather.gov"]
 
@@ -1999,10 +1978,10 @@ Returns forecast URLs, grid coordinates, and station identifiers for that locati
 <hr />
 <h2 id="usage-guidelines">Usage guidelines</h2>
 <ul>
-<li>No authentication required — Start making requests immediately</li>
-<li>Include a User-Agent header — Identify your application (e.g., MyWeatherApp/1.0 (contact@example.com))</li>
-<li>Respect cache headers — Reduce server load and improve performance</li>
-<li>Rate limits — No official limits, but follow best practices to avoid throttling</li>
+<li>No authentication required—Start making requests immediately</li>
+<li>Include a User-Agent header—Identify your app (for example, <code>MyWeatherApp/1.0 (contact@example.com)</code>)</li>
+<li>Respect cache headers—Reduce server load and improve performance</li>
+<li>Rate limits—No official limits, but follow best practices to avoid throttling</li>
 </ul>
 <p><strong>Get started in 2 minutes</strong> → <a href="../quick-start/">Quick start guide</a></p>
 
@@ -2069,6 +2048,8 @@ Returns forecast URLs, grid coordinates, and station identifiers for that locati
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../javascripts/mermaid-init.js"></script>
       
     
   </body>

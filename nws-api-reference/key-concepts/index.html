@@ -29,7 +29,7 @@
     
     
       
-        <title>Concepts: How Forecasts Are Structured - Alex Gekas — Technical Writing Portfolio</title>
+        <title>Concepts: How the API structures forecasts - Alex Gekas — Technical Writing Portfolio</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-forecasts-are-structured" class="md-skip">
+        <a href="#how-the-api-structures-forecasts" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Concepts: How Forecasts Are Structured
+              Concepts: How the API structures forecasts
             
           </span>
         </div>
@@ -624,7 +624,7 @@
   <span class="md-ellipsis">
     
   
-    How forecasts are structured
+    How the API structures forecasts
   
 
     
@@ -642,7 +642,7 @@
   <span class="md-ellipsis">
     
   
-    How forecasts are structured
+    How the API structures forecasts
   
 
     
@@ -742,7 +742,7 @@
   <span class="md-ellipsis">
     
   
-    Weather forecast Offices (WFOs)
+    Weather forecast offices (WFOs)
   
 
     
@@ -1692,8 +1692,8 @@
 
 
 
-<h1 id="how-forecasts-are-structured">How forecasts are structured</h1>
-<p>The NWS API is built on a spatial data model. Forecasts, alerts, and observations aren't tied directly to latitude and longitude. Instead, they're organized into <strong>grids</strong>, <strong>zones</strong>, and <strong>forecast offices</strong>. Understanding this structure makes the rest of the API more predictable and helps you design applications that return the types of data you are looking for. </p>
+<h1 id="how-the-api-structures-forecasts">How the API structures forecasts</h1>
+<p>The NWS API uses a spatial data model. Forecasts, alerts, and observations aren't tied directly to latitude and longitude. Instead, they're organized into <strong>grids</strong>, <strong>zones</strong>, and <strong>forecast offices</strong>. Understanding this structure makes the rest of the API more predictable and helps you design apps that return the types of data you're looking for. </p>
 <div class="admonition info">
 <p class="admonition-title">What this section explains</p>
 <ul>
@@ -1706,15 +1706,15 @@
 <h2 id="the-big-picture">The big picture</h2>
 <div class="admonition info">
 <p class="admonition-title">What a geographic point resolves into</p>
-<p>Every NWS forecast starts with a geographic point, a latitude/longitude pair supplied by your application or your user. The API resolves tha point into three components:</p>
+<p>Every NWS forecast starts with a geographic point, a latitude/longitude pair supplied by your app or your user. The API resolves that point into three components:</p>
 <ol>
 <li><strong>A Weather Forecast Office (WFO)</strong>—the local NWS office responsible for producing forecasts for that area.</li>
 <li><strong>A forecast grid cell</strong>—a 2.5 km × 2.5 km cell that contains the detailed, location-specific forecast data.</li>
 <li><strong>One or more forecast zones</strong>—larger regional areas used for public forecasts, fire weather products, marine forecasts, and alerts.</li>
 </ol>
 </div>
-<p>This spatial model shapes the design of the NWS API. <strong>You never request a forecast directly from a coordinate.</strong> Instead, you call <code>/points/{lat},{lon}</code>, and the API tells you which grid, which zone, and which office own that location—along with links to the forecast and alert endpoints associated with them.</p>
-<p>Once you understand how this mapping works, the API becomes easier to integrate into your application.</p>
+<p>This spatial model shapes the design of the NWS API. <strong>You never request a forecast directly from a coordinate.</strong> Instead, you call <code>/points/{lat},{lon}</code>, and the API returns which grid, which zone, and which office own that location—along with links to the forecast and alert endpoints associated with them.</p>
+<p>Once you understand how this mapping works, the API becomes easier to integrate into your app.</p>
 <h2 id="conceptual-flow">Conceptual flow</h2>
 <div class="admonition info">
 <p class="admonition-title">How a geographic point maps through the NWS system</p>
@@ -1790,6 +1790,8 @@
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../javascripts/mermaid-init.js"></script>
       
     
   </body>

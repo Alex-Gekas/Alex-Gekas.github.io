@@ -29,7 +29,7 @@
     
     
       
-        <title>Grid Points - Alex Gekas — Technical Writing Portfolio</title>
+        <title>Grid points - Alex Gekas — Technical Writing Portfolio</title>
       
     
     
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Grid Points
+              Grid points
             
           </span>
         </div>
@@ -613,7 +613,7 @@
   <span class="md-ellipsis">
     
   
-    How forecasts are structured
+    How the API structures forecasts
   
 
     
@@ -669,7 +669,7 @@
   <span class="md-ellipsis">
     
   
-    Weather forecast Offices (WFOs)
+    Weather forecast offices (WFOs)
   
 
     
@@ -1865,15 +1865,15 @@
   <h1>Grid points</h1>
 
 <h2 id="get-a-forecast-by-gridpoint">Get a forecast by gridpoint</h2>
-<h2 id="get-gridpointsofficegridxgridy"><code>GET /gridpoints/{office}/{gridX},{gridY}</code></h2>
+<h2 id="get-gridpointsofficegridxgridy"><span class="method get">GET</span> <code>/gridpoints/{office}/{gridX},{gridY}</code></h2>
 <p>Returns gridpoint metadata for a specific National Weather Service (NWS) forecast grid cell, including links to the 7-day forecast, hourly forecast, grid forecast data, local time zone, nearest observation stations, and a relative location.
 Use this to look up the correct forecast endpoints for a latitude and longitude you’ve mapped to an NWS office and grid coordinates.</p>
 <p>Use after converting <code>lat/lon</code> to office and grid (via <code>/points/{lat},{lon}</code>), call this to retrieve the forecast URLs and context for that grid.</p>
 <h2 id="http-request">HTTP request</h2>
 <p><code>GET https://api.weather.gov/gridpoints/{office}/{gridX},{gridY}</code></p>
 <h2 id="headers-and-authorization">Headers and authorization</h2>
-<p><code>User-Agent</code> (required): A string identifying your app and contact (for example, MyWeatherApp/1.0 (me@myweatherapp.com).</p>
-<p><code>Accept</code> (recommended): application/geo+json</p>
+<p><code>User-Agent</code> (required): A string identifying your app and contact (for example, <code>MyWeatherApp/1.0 (contact@myweatherapp.com)</code>).</p>
+<p><code>Accept</code> (recommended): <code>application/geo+json</code></p>
 <p><code>Authorization</code>: Not required.</p>
 <h2 id="path-parameters">Path parameters</h2>
 <table>
@@ -2005,14 +2005,14 @@ Use this to look up the correct forecast endpoints for a latitude and longitude 
 <p>➡️ See <a href="../../key-concepts/status-codes/">HTTP Status Codes</a> for a full reference.</p>
 <h2 id="notes">Notes</h2>
 <ul>
-<li>Gridpoints are assigned to local NWS Forecast Offices (WFOs). For a list of WFOs, please see the <strong>Additional Resources</strong> section. [add link and page]</li>
+<li>Each gridpoint belongs to a local NWS forecast office (WFO). To learn how offices divide coverage, see <a href="../../key-concepts/wfos/">Weather forecast offices</a>.</li>
 <li>The <code>gridX</code> and <code>gridY</code> values define a cell in the WFO's forecast grid.</li>
-<li>You can get these values by calling the <a href="../forecasts/"><code>/points/{lat},{lon}</code></a> endpoint first.</li>
-<li>The forecast response includes time-segmented periods (day, night, etc.), each with <strong>temperature</strong>, <strong>wind speed</strong>,and <strong>forecast description</strong>.</li>
-<li>The endpoint path may be extended to include <code>/forecast/hourly</code> for hourly forecasts.</li>
+<li>You can get these values by calling the <a href="../points/"><code>/points/{lat},{lon}</code></a> endpoint first.</li>
+<li>The forecast response includes time-segmented periods (such as day and night), each with <strong>temperature</strong>, <strong>wind speed</strong>, and <strong>forecast description</strong>.</li>
+<li>For hourly forecasts, add <code>/forecast/hourly</code> to the endpoint path.</li>
 <li>For more details on the system, see <a href="./key-concepts/geolocation/#forecast-coverage-areas">Gridpoints explained</a>.</li>
 </ul>
-<p><strong>Next:</strong> <a href="../points/"> Endpoints: Points (lat and lon) →</a></p>
+<p><strong>Next:</strong> <a href="../points/">Endpoints: Points (lat and lon) →</a></p>
 
 
 
@@ -2077,6 +2077,8 @@ Use this to look up the correct forecast endpoints for a latitude and longitude 
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../../javascripts/mermaid-init.js"></script>
       
     
   </body>

@@ -604,7 +604,7 @@
   <span class="md-ellipsis">
     
   
-    How forecasts are structured
+    How the API structures forecasts
   
 
     
@@ -660,7 +660,7 @@
   <span class="md-ellipsis">
     
   
-    Weather forecast Offices (WFOs)
+    Weather forecast offices (WFOs)
   
 
     
@@ -1877,7 +1877,7 @@
 <div class="admonition abstract">
 <p class="admonition-title">About this sample</p>
 <ul>
-<li><strong>What this is:</strong> A step-by-step tutorial for connecting the Task API to Slack using an incoming webhook — covers three Python notification scripts and cron scheduling, written as a published developer article.</li>
+<li><strong>What this is:</strong> A step-by-step tutorial for connecting the Task API to Slack using an incoming webhook—covers three Python notification scripts and cron scheduling, written as a published developer article.</li>
 <li><strong>Audience:</strong> Developers and DevOps engineers.</li>
 <li><strong>Tools used:</strong> MkDocs, Markdown, Slack Webhooks API, Python, cron.</li>
 <li><strong>What it demonstrates:</strong> How to write a tutorial that gives developers enough context to understand what they're doing, while staying out of the way of actually doing it.</li>
@@ -1886,10 +1886,10 @@
 </div>
 <h1 id="send-task-updates-from-an-api-to-slack-using-webhooks">Send task updates from an API to Slack using webhooks</h1>
 <h2 id="introduction">Introduction</h2>
-<p>Many SaaS applications send notifications to Slack when important events occur. Instead of checking dashboards throughout the day, updates can appear directly in a Slack message. While documenting a small Task API that I recently built, I started wondering whether it could be integrated with Slack to send task updates. I decided to connect the Task API to Slack using a webhook.</p>
-<p>In this guide, I'll show you how I set up this integration and give step-by-step instructions to create the webhook in Slack, integrate it into your Python scripts, and set the scripts to run automatically to generate daily DM updates from the Task API. This guide gives you a solid foundation for integrating Slack with a third-party API. You can apply the concepts to more complex integrations.</p>
+<p>Many SaaS applications send notifications to Slack when important events occur. Instead of checking dashboards throughout the day, updates can appear directly in a Slack message. This guide connects a small Task API to Slack through an incoming webhook, so task updates arrive as Slack messages.</p>
+<p>It gives step-by-step instructions to create the webhook in Slack, integrate it into your Python scripts, and set the scripts to run automatically to generate daily DM updates from the Task API. This guide gives you a solid foundation for integrating Slack with a third-party API. You can apply the concepts to more complex integrations.</p>
 <h2 id="get-started">Get started</h2>
-<p>Once I connected the two apps, I built three Python scripts to scan the Task API for different task statuses: incomplete tasks (pending or in progress), incomplete tasks past their deadline, and completed tasks. Each script posts a message to the Slack webhook, triggering a notification in the Slack DM channel. After testing the scripts, I installed them on my server and set them to query the Task API on a set schedule, giving me a daily DM in Slack to stay updated on my tasks.</p>
+<p>The integration uses three Python scripts that scan the Task API for different task statuses: incomplete tasks (pending or in progress), incomplete tasks past their deadline, and completed tasks. Each script posts a message to the Slack webhook, which triggers a notification in the Slack DM channel. After you test the scripts, you install them on your server and schedule them to query the Task API, so you get a daily DM in Slack with your task updates.</p>
 <p>To follow along, you'll need:</p>
 <ul>
 <li>Python installed</li>
@@ -1910,11 +1910,11 @@
 <li>Toggle <strong>Activate Incoming Webhooks</strong> to on.</li>
 <li>Click <strong>Add New Webhook to Workspace</strong> at the bottom of the page.</li>
 <li>Select the channel or DM you want the webhook to post to and click <strong>Allow</strong>.</li>
-<li>Copy the webhook URL that appears — it will look like <code>https://hooks.slack.com/services/T00/B00/xxx</code>.</li>
+<li>Copy the webhook URL that appears—it looks like <code>https://hooks.slack.com/services/T00/B00/xxx</code>.</li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Your actual webhook will display a unique code instead of the <code>xxx</code> shown above.</p>
+<p>Your actual webhook URL contains a unique code instead of the <code>xxx</code> shown in the preceding example.</p>
 </div>
 <h2 id="query-the-task-api">Query the Task API</h2>
 <p>The Task API stores all of your personal tasks with their statuses and due dates. To complete the steps below, you need to set up a user account in the Task API and generate a token. You also need to have one task in <code>pending</code> or <code>in_progress</code> status, one in <code>completed</code> status, and one overdue task. For a full reference on creating an account and setting up tasks in the Task API, see the <a href="../../task-api-docs/setup/">documentation here</a>.</p>
@@ -1922,7 +1922,7 @@
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">"http://your-server-address:3000/api/tasks"</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">"Authorization: Bearer your-api-key-here"</span>
 </code></pre></div>
-<p>Your API key is your JWT — the unique token associated with your account. The API returns all tasks associated with your token:</p>
+<p>Your API key is your JWT—the unique token associated with your account. The API returns all tasks associated with your token:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">"tasks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
@@ -1991,7 +1991,7 @@
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Failed to send message. Status code: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre></div>
-<p>If you get <code>Message sent successfully</code> and a DM appears in Slack, your webhook URL is configured correctly. If nothing happens, check that you replaced the placeholder URL with your actual webhook URL.</p>
+<p>If you get <code>Message sent successfully</code> and a DM appears in Slack, you configured your webhook URL correctly. If nothing happens, check that you replaced the placeholder URL with your actual webhook URL.</p>
 <p>Next, query the <code>/tasks</code> endpoint and evaluate the response fields. Each script sends a different DM with one of the following notifications: <strong>Incomplete Tasks</strong>, <strong>Overdue Tasks</strong>, and <strong>Completed Tasks</strong>.</p>
 <h3 id="incomplete-tasks">Incomplete tasks</h3>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
@@ -2076,7 +2076,7 @@
 <p>You've now built three scripts that query the Task API and send Slack DMs using a webhook. Scheduling these scripts to run on a cron job ensures that you receive reminder messages and stay up to date with your tasks. You now understand how to use webhooks to integrate third-party apps into Slack. You can build on what you've learned to:</p>
 <ul>
 <li>Extend the existing scripts to filter tasks by priority and route notifications to different Slack channels.</li>
-<li>Configure the Task API to send a DM the moment a task is updated, removing the need for a scheduled cron job.</li>
+<li>Configure the Task API to send a DM the moment a task changes, removing the need for a scheduled cron job.</li>
 </ul>
 
 
@@ -2142,6 +2142,8 @@
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../javascripts/mermaid-init.js"></script>
       
     
   </body>

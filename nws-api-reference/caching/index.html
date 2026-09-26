@@ -708,7 +708,7 @@
   <span class="md-ellipsis">
     
   
-    How forecasts are structured
+    How the API structures forecasts
   
 
     
@@ -764,7 +764,7 @@
   <span class="md-ellipsis">
     
   
-    Weather forecast Offices (WFOs)
+    Weather forecast offices (WFOs)
   
 
     
@@ -1742,7 +1742,7 @@
 
   <h1>Caching best practices</h1>
 
-<p>Although the NWS API doesn't enforce strict rate limits (the exact limit is undisclosed but described as "generous"), applications that rely on it can significantly improve performance and efficiency by implementing caching best practices. Certain endpoints are updated more frequently than others, and a caching strategy can reduce load on the API, decrease response time, and optimize bandwidth usage. </p>
+<p>Although the NWS API doesn't enforce strict rate limits (NWS doesn't publish the exact limit but describes it as "generous"), applications that rely on it can significantly improve performance and efficiency by implementing caching best practices. NWS updates certain endpoints more often than others, and a caching strategy can reduce load on the API, decrease response time, and optimize bandwidth usage. </p>
 <h3 id="when-should-you-cache-nws-api-responses"><strong>When should you cache NWS API responses?</strong></h3>
 <table>
   <tr>
@@ -1844,7 +1844,7 @@ cache = redis.Redis(host='localhost', port=6379, db=0)
 
 def get_forecast(zone_id):
     cache_key = f"forecast:{zone_id}"
-    cached_response = cachfor examplet(cache_key)
+    cached_response = cache.get(cache_key)
 
     if cached_response:
         print("Returning cached data")
@@ -1871,7 +1871,7 @@ print(zone_forecast)
 - Cache short-lived data (like alerts) for <strong>5–10 minutes</strong><br />
 - Cache static data (like zone definitions) for <strong>hours or days</strong></p>
 </blockquote>
-<p><strong>Next:</strong> <a href="../key-concepts/"> Concepts: How forecasts are structured →</a></p>
+<p><strong>Next:</strong> <a href="../key-concepts/">Concepts: How the API structures forecasts →</a></p>
 
 
 
@@ -1936,6 +1936,8 @@ print(zone_forecast)
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../javascripts/mermaid-init.js"></script>
       
     
   </body>

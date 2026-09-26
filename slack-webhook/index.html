@@ -598,7 +598,7 @@
   <span class="md-ellipsis">
     
   
-    How forecasts are structured
+    How the API structures forecasts
   
 
     
@@ -654,7 +654,7 @@
   <span class="md-ellipsis">
     
   
-    Weather forecast Offices (WFOs)
+    Weather forecast offices (WFOs)
   
 
     
@@ -1679,13 +1679,13 @@
 <h1 id="case-study-integration-tutorial-writing">Case study: Integration tutorial writing</h1>
 <h2 id="introduction">Introduction</h2>
 <p>This guide shows developers how to connect the Task API to Slack using an incoming webhook. It
-covers three Python notification scripts and how to schedule them with cron. It was written as a
-follow-on to the Task API documentation suite — after building and documenting the API, the next
+covers three Python notification scripts and how to schedule them with cron. I wrote it as a
+follow-on to the Task API documentation suite—after building and documenting the API, the next
 step was showing what you could build on top of it.</p>
 <h2 id="the-writing-challenge">The writing challenge</h2>
 <p>Integration tutorials are harder than single-product guides because readers have to manage two
-systems at once, with two sets of credentials and failure points in both. The guide needed to
-cover the prerequisites — a Slack workspace, an API token, test data — without overwhelming
+systems at once. Each system has its own credentials and its own failure points. The guide needed to
+cover the prerequisites—a Slack workspace, an API token, test data—without overwhelming
 readers before they reach the first real step.</p>
 <h2 id="document-architecture">Document architecture</h2>
 <p>The guide follows a standard tutorial structure: state the goal, list prerequisites, build in
@@ -1704,7 +1704,7 @@ three fields the scripts actually use.</p>
 most explanation.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>The guide takes the reader from zero to working Slack notifications without a lot of detours. It's
-a practical piece that shows what you can do once an API is well-documented — the tutorial
+a practical piece that shows what you can do once an API is well-documented—the tutorial
 exists because the foundation was solid enough to build on.</p>
 <p><a href="article/">→ Read the tutorial</a></p>
 
@@ -1768,6 +1768,8 @@ exists because the foundation was solid enough to build on.</p>
       <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../javascripts/mermaid-init.js"></script>
       
     
   </body>

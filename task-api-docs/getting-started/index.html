@@ -611,7 +611,7 @@
   <span class="md-ellipsis">
     
   
-    How forecasts are structured
+    How the API structures forecasts
   
 
     
@@ -667,7 +667,7 @@
   <span class="md-ellipsis">
     
   
-    Weather forecast Offices (WFOs)
+    Weather forecast offices (WFOs)
   
 
     
@@ -1317,7 +1317,7 @@
   <a href="#step-1-create-a-user-account" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1 - Create a user account
+        Step 1: Create a user account
       
     </span>
   </a>
@@ -1325,10 +1325,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2log-in-and-receive-a-token" class="md-nav__link">
+  <a href="#step-2-log-in-and-receive-a-token" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2–Log in and receive a token
+        Step 2: Log in and receive a token
       
     </span>
   </a>
@@ -1336,15 +1336,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3create-your-first-task" class="md-nav__link">
+  <a href="#step-3-create-your-first-task" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3–Create your first task
+        Step 3: Create your first task
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 3–Create your first task">
+    <nav class="md-nav" aria-label="Step 3: Create your first task">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1364,10 +1364,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-verify-the-task-was-created" class="md-nav__link">
+  <a href="#step-4-verify-the-new-task" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4-Verify the task was created
+        Step 4: Verify the new task
       
     </span>
   </a>
@@ -1743,7 +1743,7 @@
   <a href="#step-1-create-a-user-account" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1 - Create a user account
+        Step 1: Create a user account
       
     </span>
   </a>
@@ -1751,10 +1751,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2log-in-and-receive-a-token" class="md-nav__link">
+  <a href="#step-2-log-in-and-receive-a-token" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2–Log in and receive a token
+        Step 2: Log in and receive a token
       
     </span>
   </a>
@@ -1762,15 +1762,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3create-your-first-task" class="md-nav__link">
+  <a href="#step-3-create-your-first-task" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3–Create your first task
+        Step 3: Create your first task
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 3–Create your first task">
+    <nav class="md-nav" aria-label="Step 3: Create your first task">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1790,10 +1790,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-verify-the-task-was-created" class="md-nav__link">
+  <a href="#step-4-verify-the-new-task" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4-Verify the task was created
+        Step 4: Verify the new task
       
     </span>
   </a>
@@ -1846,7 +1846,7 @@
 <li>You have a REST client such as Postman, Hoppscotch, or curl</li>
 <li>You know the base URL (for example: <code>http://localhost:3000</code> if you have installed it locally or <code>https://your-server-address:3000</code></li>
 </ul>
-<h2 id="step-1-create-a-user-account">Step 1 - Create a user account</h2>
+<h2 id="step-1-create-a-user-account">Step 1: Create a user account</h2>
 <p>Send a POST request to <code>/api/auth/signup</code> to create your account.</p>
 <p><strong>Request body:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -1868,15 +1868,15 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>Keep your token–you need it to make requests in the following steps.</p>
-<h2 id="step-2log-in-and-receive-a-token">Step 2–Log in and receive a token</h2>
-<p>Send a POST request to <code>POST /api/auth/login</code> to generate and receive a token:</p>
+<h2 id="step-2-log-in-and-receive-a-token">Step 2: Log in and receive a token</h2>
+<p>Send a POST request to <code>/api/auth/login</code> to generate and receive a token:</p>
 <p><strong>Request body:</strong></p>
 <p><div class="highlight"><pre><span></span><code>{
   "email": "user@example.com",
   "password": "password123"
 }
 </code></pre></div>
-The server verifies the password. If valid, a JWT token is generated and appears in the response.</p>
+The server verifies the password. If it's valid, the server generates a JWT and returns it in the response.</p>
 <p><strong>HTTP 200 OK</strong> and a JSON response containing a <code>token</code> field</p>
 <p><strong>Response:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -1889,9 +1889,9 @@ The server verifies the password. If valid, a JWT token is generated and appears
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></p>
-<p>Save this token. It is required for all protected routes.</p>
-<h2 id="step-3create-your-first-task">Step 3–Create your first task</h2>
-<p>Send a POST request to <code>POST /api/tasks</code></p>
+<p>Save this token. It's required for all protected routes.</p>
+<h2 id="step-3-create-your-first-task">Step 3: Create your first task</h2>
+<p>Send a POST request to <code>/api/tasks</code></p>
 <p>Add this header:</p>
 <div class="highlight"><pre><span></span><code>Authorization: Bearer &lt;your_token_here&gt;
 </code></pre></div>
@@ -1903,9 +1903,9 @@ The server verifies the password. If valid, a JWT token is generated and appears
 <h3 id="what-happens-next">What happens next</h3>
 <ul>
 <li>The authentication middleware verifies the token.</li>
-<li>The request is passed to the task controller.</li>
-<li>A new task record is inserted into the database.</li>
-<li>The created task is returned in the response.</li>
+<li>The API passes the request to the task controller.</li>
+<li>The controller inserts a new task record into the database.</li>
+<li>The API returns the created task in the response.</li>
 </ul>
 <p><strong>Response:</strong></p>
 <p><strong>HTTP 201 Created</strong></p>
@@ -1924,7 +1924,7 @@ The server verifies the password. If valid, a JWT token is generated and appears
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="step-4-verify-the-task-was-created">Step 4-Verify the task was created</h2>
+<h2 id="step-4-verify-the-new-task">Step 4: Verify the new task</h2>
 <p>Send a GET request to <code>GET /api/tasks</code> with the same Authorization header you used in the previous step.</p>
 <p>You should see a list of tasks associated with your user ID:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -2017,6 +2017,8 @@ The server verifies the password. If valid, a JWT token is generated and appears
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../javascripts/mermaid-init.js"></script>
       
     
   </body>
