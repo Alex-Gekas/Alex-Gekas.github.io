@@ -1,5 +1,5 @@
 ---
-title: Task API Documentation
+title: Task API documentation
 description: A production-style REST API documentation suite covering setup, authentication, endpoints, and troubleshooting.
 ---
 
@@ -13,7 +13,7 @@ description: A production-style REST API documentation suite covering setup, aut
 
 ## Introduction
 
-The Task API is a REST API for managing task lists. It uses JWT authentication to protect user data and is built with Node.js, Express, and SQLite. Its lightweight design makes it suitable for personal projects or small deployments.
+The Task API is a REST API for managing task lists. It uses JWT authentication to protect user data and runs on Node.js, Express, and SQLite. Its lightweight design makes it suitable for personal projects or small deployments.
 
 **Tech stack:** Node.js • Express • SQLite • JWT authentication
 
@@ -65,7 +65,7 @@ flowchart LR
 
 ## Who this documentation is for
 
-This documentation is for developers using the Task API as a backend for to-do apps. It covers authentication and CRUD endpoints to help build a frontend without starting the backend from scratch. It also serves as a guide for those wanting to learn about authenticated REST APIs. Developers can see how JWT authentication, password hashing, and protected routes work together in a real Node.js application.
+This documentation is for developers using the Task API as a backend for to-do apps. It covers authentication and CRUD endpoints to help build a frontend without starting the backend from scratch. It also serves as a guide for those wanting to learn about authenticated REST APIs. Developers can see how JWT authentication, password hashing, and protected routes work together in a real Node.js app.
 
 ## What's in this documentation
 

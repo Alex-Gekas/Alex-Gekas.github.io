@@ -4,7 +4,7 @@ title: "Alerts"
 parent: "Endpoints"
 nav_order: 1
 ---
-## `GET /alerts`
+## <span class="method get">GET</span> `/alerts`
 
 ## Overview
 Returns active National Weather Service (NWS) alerts as GeoJSON features. Use this to list current warnings, watches, and statements for a location or alert type. No authentication required.
@@ -15,9 +15,9 @@ Returns active National Weather Service (NWS) alerts as GeoJSON features. Use th
 
 ## Headers and authorization
 
-`User-Agent` (required): A string identifying your app and contact (for example, MyWeatherApp/1.0 (me@myweatherapp.com).
+`User-Agent` (required): A string identifying your app and contact (for example, `MyWeatherApp/1.0 (contact@myweatherapp.com)`).
 
-`Accept` (recommended): application/geo+json
+`Accept` (recommended): `application/geo+json`
 
 `Authorization`: Not required.
 
@@ -34,7 +34,7 @@ None for this endpoint
 | `status`   | Filter by alert status (`actual`, `expired`)     | No       | `actual`            |
 | `zone`     | Filter by zone ID (for example, public or fire zones)   | No       | `NYZ001`            |
 | `severity` | Filter by severity level                         | No       | `Severe`            |
-| `message_type` | Original, update, cancel, etc.               | No       | `Alert`             |     |
+| `message_type` | Original, update, cancel, and so on               | No       | `Alert`             |     |
 
 ## Decision guide
 
@@ -95,9 +95,9 @@ curl -s -H "User-Agent: your-email@example.com" -H "Accept: application/geo+json
 ```
 </details>
 
-## Example request (Javascript)
+## Example request (JavaScript)
 
-The following JavaScript example returns active Flood Warnings for a gfor exampleaphic point in Monroe County, NY. The `point` parameter (`latitude`, `longitude`) is the most precise way to request alerts because it resolves to the specific forecast zones covering that location. If no active Flood Warnings affect that point, the response may be empty even if alerts are active in nearby areas.
+The following JavaScript example returns active Flood Warnings for a geographic point in Monroe County, NY. The `point` parameter (`latitude`, `longitude`) is the most precise way to request alerts because it resolves to the specific forecast zones covering that location. If no active Flood Warnings affect that point, the response may be empty even if alerts are active in nearby areas.
 
 
 ```JavaScript
@@ -126,7 +126,7 @@ getFloodAlerts();
 
 ## Example response (JavaScript)
 
-??? details "200 OK — minimal response (matching a flood warning at a given point)"
+??? details "200 OK—minimal response (matching a flood warning at a given point)"
 ```json
     {
       "type": "FeatureCollection",
@@ -184,7 +184,7 @@ For a complete list of fields defined in the CAP alert format used by NWS, see:
 
 ## Notes and tips
 
-* `User-Agent` required: Requests without a clear User-Agent may be rejected.
+* `User-Agent` required: The API might reject requests without a clear `User-Agent`.
 
 * Pagination: Use the HTTP Link header with rel="next" to paginate large result sets.
 
@@ -194,4 +194,4 @@ For a complete list of fields defined in the CAP alert format used by NWS, see:
 
 * Format: Prefer Accept: `application/geo+json` to ensure GeoJSON responses.
 
-**Next:** [ Endpoints: Forecasts →](./forecasts.md)
+**Next:** [Endpoints: Forecasts →](./forecasts.md)

@@ -7,19 +7,19 @@ nav_order: 4
 
 ## Get metadata by geographic point
 
-## `GET /points/{latitude},{longitude}`
+## <span class="method get">GET</span> `/points/{latitude},{longitude}`
 
 
 ## Overview
-Returns metadata for a specific latitude/longitude, including the responsible NWS forecast office (gridId), the coordinates (gridX/gridY), local time zone, nearest location, and ready-to-use forecast URLs (7-day, hourly, grid data) plus links to zones (forecast, county, fire weather).
+Returns metadata for a specific latitude/longitude, including the responsible NWS forecast office (`gridId`), the grid coordinates (`gridX`/`gridY`), local time zone, nearest location, and ready-to-use forecast URLs (7-day, hourly, grid data) plus links to zones (forecast, county, fire weather).
 
 Use this first when you have a lat/lon and need to determine which gridpoint/office to query next.
 
 ## Headers and authorization
 
-`User-Agent` (required): A string identifying your app and contact (for example, MyWeatherApp/1.0 (me@myweatherapp.com).
+`User-Agent` (required): A string identifying your app and contact (for example, `MyWeatherApp/1.0 (contact@myweatherapp.com)`).
 
-`Accept` (recommended): application/geo+json
+`Accept` (recommended): `application/geo+json`
 
 `Authorization`: Not required.
 
@@ -37,7 +37,7 @@ Example: `/points/40.073,-74.86` (Burlington Twp, NJ area)
 
 ## Query parameters
 
-This endpoint does not accept query parameters.
+This endpoint doesn't accept query parameters.
 
 ## Example request (cURL)
 
@@ -119,10 +119,10 @@ console.log(data.properties.forecastHourly);  // hourly forecast URL
       the requested latitude/longitude."
      }
     ```
-## Response fields (Comonly Used)
+## Response fields (commonly used)
 | Field                 | Type    | Description             |
 | --------------------- | ------- | ----------------------- |
-| `properties.gridId`   | string  | Officfor exampleid code        |
+| `properties.gridId`   | string  | Office grid code     |
 | `properties.gridX`    | integer | Grid coordinate X       |
 | `properties.gridY`    | integer | Grid coordinate Y       |
 | `properties.forecast` | URL     | 7-day forecast endpoint |
@@ -135,10 +135,10 @@ console.log(data.properties.forecastHourly);  // hourly forecast URL
     | `type`                           | string        | GeoJSON type (`Feature`).                                             |
     | `geometry`                       | GeoJSON Point | The exact point you queried (lon, lat).                               |
     | `properties`                     | object        | Point metadata (see below).                                           |
-    | `properties.cwa`                 | string        | NWS County Warning Area (same as office code / gridId in most cases). |
-    | `properties.gridId`              | string        | Forecast officfor exampleid identifier (for example, `PHI`).                        |
-    | `properties.gridX`               | integer       | Grid X index within officfor exampleid.                                      |
-    | `properties.gridY`               | integer       | Grid Y index within officfor exampleid.                                      |
+    | `properties.cwa`                 | string        | NWS County Warning Area (same as office code / `gridId` in most cases). |
+    | `properties.gridId`              | string        | Forecast office grid identifier (for example, `PHI`).                        |
+    | `properties.gridX`               | integer       | Grid X index within office grid.                                      |
+    | `properties.gridY`               | integer       | Grid Y index within office grid.                                      |
     | `properties.forecast`            | string (URL)  | **7-day forecast** endpoint for this point.                           |
     | `properties.forecastHourly`      | string (URL)  | **Hourly forecast** endpoint for this point.                          |
     | `properties.forecastGridData`    | string (URL)  | Grid-based quantitative forecast data for this grid cell.             |
@@ -163,8 +163,8 @@ console.log(data.properties.forecastHourly);  // hourly forecast URL
 ## Notes
 
 - This is typically the first endpoint developers call when building a location-based app.
-- It returns thfor exampleidpoint (`gridX`, `gridY`) and forecast office (`cwa`) that serve the provided coordinates.
+- It returns the gridpoint (`gridX`, `gridY`) and forecast office (`cwa`) that serve the provided coordinates.
 - The response includes direct links to **7-day forecast**, **hourly forecast**, **grid-level forecast data**, and **observation stations**.
 - The `forecastOffice` field provides a URL to the NWS Forecast Office responsible for this location. That office’s **metadata** includes its **name**, **coverage region**, **contact information**, and  **forecast and alert zones** for the office. Use this when you need zone-based warnings or region-specific forecast products.
 
-**Next:** [ Endpoints: Stations →](./stations.md)
+**Next:** [Endpoints: Stations →](./stations.md)

@@ -301,3 +301,13 @@ body:not(.home) .md-content { background-color: var(--cream); }
   color: var(--ink-soft);
   margin-bottom: 0.2rem;
 }
+
+/* Collapsible blocks ("??? type") use <details>/<summary>; match the warm callouts */
+.md-typeset details.note, .md-typeset details.info, .md-typeset details.abstract { border-left-color: #2f4a7a; background: var(--paper); }
+.md-typeset details.note > summary, .md-typeset details.info > summary, .md-typeset details.abstract > summary { color: #2f4a7a; }
+.md-typeset details.tip { border-left-color: #1f5f57; background: var(--paper); }
+.md-typeset details.tip > summary { color: #1f5f57; }
+.md-typeset details.warning { border-left-color: #a8620e; background: var(--paper); }
+.md-typeset details.warning > summary { color: #8a4f0a; }
+.md-typeset details.danger { border-left-color: var(--accent); background: var(--paper); }
+.md-typeset details.danger > summary { color: var(--accent); }

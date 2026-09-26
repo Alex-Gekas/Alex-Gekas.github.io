@@ -7,9 +7,9 @@ nav_order: 6
 
 ## Get zone endpoints
 
-### `/zones`  
-### `/zones/{type}`
-### `/zones/{type}/{zoneId}`
+### <span class="method get">GET</span> `/zones`
+### <span class="method get">GET</span> `/zones/{type}`
+### <span class="method get">GET</span> `/zones/{type}/{zoneId}`
 
 The Zones endpoints let you look up NWS forecast, county, and fire weather zones and their metadata.
 
@@ -22,9 +22,9 @@ You can:
 
 ## Headers and authorization
 
-`User-Agent` (required): A string identifying your app and contact (for example, MyWeatherApp/1.0 (me@myweatherapp.com).
+`User-Agent` (required): A string identifying your app and contact (for example, `MyWeatherApp/1.0 (contact@myweatherapp.com)`).
 
-`Accept` (recommended): application/geo+json
+`Accept` (recommended): `application/geo+json`
 
 `Authorization`: Not required.
 
@@ -55,7 +55,7 @@ These path parameters apply to `GET /zones/{type}` and `GET /zones/{type}/{zoneI
 | Name    | Type   | Required                                | Description                                                              |
 |---------|--------|-------------------------------------------|--------------------------------------------------------------------------|
 | type    | string | Yes                                       | Zone type. Common values include `forecast`, `county`, and `fire`.       |
-| zoneId  | string | Yes (for `/zones/{type}/{zoneId}`)        | Zone ID (for example, `ALZ023` for a forecast zone or `ALC125` for a county zone). |
+| `zoneId` | string | Yes (for `/zones/{type}/{zoneId}`)        | Zone ID (for example, `ALZ023` for a forecast zone or `ALC125` for a county zone). |
 
 ## Query parameters
 
@@ -71,7 +71,7 @@ The `/zones` and `/zones/{type}` endpoints support several filters
 
 ## Example requests
 
-### cURL–List forecast zones for a state
+### cURL: list forecast zones for a state
 
 Get forecast zones for New York, including geometry, limited to 50 results:
 
@@ -80,7 +80,7 @@ curl "https://api.weather.gov/zones/forecast?area=NY&includegeometry=true&limit=
   -H "User-Agent: MyWeatherApp/1.0 (me@myweatherapp.com)" 
   -H "Accept: application/geo+json"
 ```
-### cURL–Find zones that contain a point
+### cURL: find zones that contain a point
 
 Get any zones (all types) that contain a point near Tuscaloosa, AL:
 
@@ -90,7 +90,7 @@ curl "https://api.weather.gov/zones?point=33.212,-87.5459"
   -H "Accept: application/geo+json"
 ```
 
-### JavaScript (fetch)–List forecast zones and log their names
+### JavaScript (fetch): list forecast zones and log their names
 
 ```bash
 const url = "https://api.weather.gov/zones/forecast?area=AL&limit=10";
@@ -118,7 +118,7 @@ fetch(url, {
     console.error("Error fetching zones:", error);
   });
 ```
-### JavaScript (fetch)–Get metadata for a single zone
+### JavaScript (fetch): get metadata for a single zone
 
 ```bash
 const zoneType = "forecast";
@@ -240,7 +240,7 @@ fetch(url, {
     }
     ```
 
-## Status oodes
+## Status codes
 
 | Status | Meaning | When you’ll see it |
 |--------|---------|--------------------|
@@ -254,6 +254,6 @@ fetch(url, {
 ## Notes and tips
 
 - **Pair zones with alerts.** The Alerts API uses `affectedZones` to list the zones for each alert. Use the Zones endpoints to understand or map those areas. ([National Weather Service](https://www.weather.gov/documentation/services-web-api?))
-- **Use `point` for geolocation.** If you have a latitude/longitude, the `point` query parameter can return zones that contain that location. This is handy if you’re building “what zone am I in?” features.
+- **Use `point` for geolocation.** If you have a latitude/longitude, the `point` query parameter can return zones that contain that location. This is handy if you’re building features that look up the zone for a user's location.
 - **Be careful with `includegeometry`.** Zone polygons can be large and add significant response size. Turn geometry on only when you need it (for example, when drawing maps).
 - **Limit results.** Always use `limit` when listing zones to avoid large payloads and to stay within rate limits.

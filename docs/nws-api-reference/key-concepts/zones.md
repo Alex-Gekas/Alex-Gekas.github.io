@@ -17,9 +17,9 @@ When you call `/points/{lat},{lon}`, the API returns links to all zones that con
 
 Zones matter because:
 
-- Alerts are issued at the zone level.
+- NWS issues alerts at the zone level.
 - Many public-facing forecasts are zone-based, not grid-based.
-- Zone metadata is required to interpret hazard and advisory products.
+- You need zone metadata to interpret hazard and advisory products.
 
 Below is a diagram that shows the zones within a WFO:
 
@@ -27,5 +27,5 @@ Below is a diagram that shows the zones within a WFO:
 
 **Figure:** Buffalo NWS office (BUF) with zones highlighted.
 
-**Next:** Lean about [NWS API Developer Use Cases](./developer-use-cases.md) → 
+**Next:** Learn about [NWS API developer use cases](./developer-use-cases.md) → 
 

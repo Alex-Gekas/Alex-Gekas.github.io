@@ -1,5 +1,5 @@
 ---
-title: "Status Codes"
+title: "Status codes"
 description: "Explains the NWS Status Codes."
 ---
 
@@ -12,7 +12,7 @@ See the [Endpoints section](../endpoints/index.md) for details.
 
 ---
 
-## 2xx–Success
+## 2xx: success
 
 | Code | Meaning             | Description                                           |
 |------|---------------------|-------------------------------------------------------|
@@ -21,28 +21,28 @@ See the [Endpoints section](../endpoints/index.md) for details.
 
 ---
 
-## 3xx–Redirection
+## 3xx: redirection
 
 | Code | Meaning             | Description                                           |
 |------|---------------------|-------------------------------------------------------|
-| 304  | Not Modified        | The resource has not changed since the last request (used with caching headers). |
+| 304  | Not Modified        | The resource hasn't changed since the last request (used with caching headers). |
 
 ---
 
-## 4xx–Client Errors
+## 4xx: client errors
 
 | Code | Meaning             | Description                                           |
 |------|---------------------|-------------------------------------------------------|
 | 400  | Bad Request         | The request was invalid or malformed (for example, incorrect parameter format). |
 | 401  | Unauthorized        | Missing or invalid `User-Agent` header. |
 | 403  | Forbidden           | You aren't authorized to access this resource. |
-| 404  | Not Found           | The endpoint or resource couldn't be found. |
+| 404  | Not Found           | The API couldn't find the endpoint or resource. |
 | 406  | Not Acceptable      | The server can't produce a response matching the requested format. |
 | 429  | Too Many Requests   | You have exceeded the rate limit or quota. |
 
 ---
 
-## 5xx–Server Errors
+## 5xx: server errors
 
 | Code | Meaning             | Description                                           |
 |------|---------------------|-------------------------------------------------------|

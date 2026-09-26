@@ -7,7 +7,7 @@ nav_order: 5
 
 # Get observation stations
 
-## `GET /stations`
+## <span class="method get">GET</span> `/stations`
 
 ## Overview
 
@@ -15,9 +15,9 @@ Returns metadata for official NWS observation stations. Use it to discover stati
 
 ## Headers and authorization
 
-`User-Agent` (required): A string identifying your app and contact (for example, MyWeatherApp/1.0 (me@myweatherapp.com).
+`User-Agent` (required): A string identifying your app and contact (for example, `MyWeatherApp/1.0 (contact@myweatherapp.com)`).
 
-`Accept` (recommended): application/geo+json
+`Accept` (recommended): `application/geo+json`
 
 `Authorization`: Not required.
 
@@ -41,9 +41,9 @@ For a specific station:
 
 | Name        | Type          | Required | Default | Constraints                                    | Example                                               |
 | ----------- | ------------- | -------: | ------- | ---------------------------------------------- | ----------------------------------------------------- |
-| `state`     | string or CSV |          |         | One or more US state codes                     | `state=NY` or `state=OK,TX` ([zenpacks.zenoss.io][1]) |
+| `state`     | string or CSV |          |         | One or more two-letter state codes             | `state=NY` or `state=OK,TX` |
 | `bbox`      | string        |          |         | `west,south,east,north` (WGS84)                | `bbox=-79.9,42.4,-78.2,43.4` *(example format)*       |
-| `limit`     | integer       |          | 25      | Max **500** per request                        | `limit=200` ([GitHub][2])                             |
+| `limit`     | integer       |          | 25      | Max **500** per request                        | `limit=200`                             |
 | `cursor`    | string        |          |         | Use value from server to paginate to next page | `cursor=…`                                            |
 | `stationId` | string or CSV |          |         | Filter to one or more known ids                | `stationId=KBUF,KIAG`                                 |
                              |
@@ -57,7 +57,7 @@ curl -s "https://api.weather.gov/stations?state=NY&limit=100"
   -H "User-Agent: MyWeatherApp/1.0 (me@myweatherapp.com)" 
   -H "Accept: application/geo+json"
 ```
-JavaScript (Node)—get one station and its latest obs link
+JavaScript (Node)—get one station and its `latest` observation link
 ```bash
 import fetch from "node-fetch";
 
@@ -185,13 +185,13 @@ console.log(station.properties.stationIdentifier, station.properties.name);
 
     | Field                           | Type         | Description                                                                                                                                               |
     | ------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | `type`                          | string       | GeoJSON type (`FeatureCollection` or `Feature`). ([National Weather Service][1])                                                                          |
+    | `type`                          | string       | GeoJSON type (`FeatureCollection` or `Feature`).                                                                          |
     | `features[]`                    | array        | List of station features (for collection responses).                                                                                                      |
     | `id`                            | string (URL) | Canonical URL for this station resource.                                                                                                                  |
     | `geometry.type`                 | string       | Always `Point` for station features.                                                                                                                      |
     | `geometry.coordinates`          | number[2]    | `[lon, lat]` in WGS84.                                                                                                                                    |
     | `properties.stationIdentifier`  | string       | Station ID (for example, `KBUF`).                                                                                                                                |
-    | `properties.name`               | string       | Human-readable station name. *(Added to observations “latest” per 2025 SCN; often present on station resources as well.)* ([National Weather Service][2]) |
+    | `properties.name`               | string       | Human-readable station name. *(Added to observations “latest” per 2025 SCN; often present on station resources as well.)* |
     | `properties.timeZone`           | string       | IANA time zone for the station.                                                                                                                           |
     | `properties.elevation.unitCode` | string       | Unit per WMO code list (for example, `wmoUnit:m`).                                                                                                               |
     | `properties.elevation.value`    | number       | Elevation value in meters.                                                                                                                                |
@@ -202,15 +202,14 @@ console.log(station.properties.stationIdentifier, station.properties.name);
 | ---: | ------------ | ------------------------------------------------------------- |
 |  200 | OK           |—                                                            |
 |  400 | Bad Request  | Check parameter shapes (for example, `bbox` order/format).           |
-|  403 | Forbidden    | Add a valid `User-Agent` header. ([weather-gov.github.io][1]) |
+|  403 | Forbidden    | Add a valid `User-Agent` header. |
 |  404 | Not Found    | Verify `stationId`.                                           |
 |  5xx | Server error | Retry with backoff; respect rate limits.                      |
 
 ## Notes and tips
 
-**Pagination**: Use limit (max 500) and the server-provided paging mechanism (cursor / “next” link) to iterate through large result sets. 
-GitHub
+**Pagination:** Use `limit` (max 500) and the server-provided paging mechanism (cursor / “next” link) to iterate through large result sets. 
 
-**Discoverability**: From `/points/{lat},{lon}` you can follow observationStations to the list of nearby stations for that gridpoint.
+**Finding stations:** From `/points/{lat},{lon}`, follow the `observationStations` link to the list of nearby stations for that gridpoint.
 
-**Next:** [ Endpoints: Zones →](./zones.md)
+**Next:** [Endpoints: Zones →](./zones.md)

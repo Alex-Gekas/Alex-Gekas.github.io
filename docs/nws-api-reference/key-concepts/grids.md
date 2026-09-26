@@ -1,5 +1,5 @@
 ---
-title: "Gridpoints and Grids"
+title: "Gridpoints and grids"
 description: "Explains the 2.5 km forecast grid system and how grid IDs and coordinates work."
 ---
 
@@ -14,7 +14,7 @@ Each grid belongs to a **Weather Forecast Office (WFO)**. When you provide a lat
 1. Determines which WFO owns that location
 2. Identifies which grid cell contains the point
 3. Returns the grid identifiers needed to request forecasts:
-    - `gridId`-WFO identifier (e.g., `BUF`, `OKX`, `LWX`)
+    - `gridId`-WFO identifier (for example, `BUF`, `OKX`, `LWX`)
     - `gridX` / `gridY`-cell's horizontal and vertical index  within that WFO's grid
 
 Use these values to construct forecast requests: `/gridpoints/{gridId}/{gridX},{gridY}`

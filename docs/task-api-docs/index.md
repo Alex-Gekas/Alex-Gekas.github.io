@@ -1,4 +1,4 @@
-# Case study: Documenting a lightweight REST API
+# Case study: documenting a lightweight REST API
 
 ## Introduction
 
@@ -19,7 +19,7 @@ developers.
 
 ## Documentation architecture
 
-The suite is organized into seven documents. Each document covers a different phase of using the
+The suite has seven documents. Each document covers a different phase of using the
 API: setup, authentication, getting started, endpoint reference, architecture, and troubleshooting.
 Documents are cross-linked so developers can navigate between them easily.
 
@@ -28,9 +28,9 @@ of the one before it. This keeps the documentation incremental and easier to fol
 
 ## Key documentation decisions
 
-### Separating Setup from Getting Started
+### Separating setup from getting started
 
-Setup covers server deployment — SSH, PM2, and environment variables. Getting Started covers the
+Setup covers server deployment—SSH, PM2, and environment variables. Getting Started covers the
 API workflow. Keeping them separate allows developers to skip to the section they need.
 
 ### Authentication as a standalone document
@@ -38,15 +38,15 @@ API workflow. Keeping them separate allows developers to skip to the section the
 Authentication gets its own document because it needs more than a quick explanation. A wristband
 analogy explains how JWTs work. The guide also covers token expiry and security behavior.
 
-### The System Architecture document
+### The system architecture document
 
-The System Architecture document is written for developers who want to understand or extend the
+The System Architecture document targets developers who want to understand or extend the
 codebase. It explains the technical choices behind the API design and includes the folder
 structure, data models, and two Mermaid diagrams.
 
 ### Troubleshooting grounded in real errors
 
-Errors are organized by symptom, not error code. Every entry includes a cause and a fix.
+The guide organizes errors by symptom, not error code. Every entry includes a cause and a fix.
 
 ## Conclusion
 

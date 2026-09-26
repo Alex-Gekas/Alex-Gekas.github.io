@@ -18,13 +18,13 @@ This isn't a tutorial or reference, but a quick orientation. This page covers:
 - Where GeoJSON shows up in a real project
 - How GeoJSON integrates with the NWS API
 
-## What is GeoJSON?
+## What's GeoJSON?
 
 GeoJSON is an open standard format for representing geographical features as shapes. It's based on JSON, but adds a strict structure that pairs every shape with a `properties` object. The `properties` object is a flexible container that stores metadata for each shape. For the NWS API, that metadata is weather data: severity, event type, and affected area.
 
 ## The GeoJSON data model
 
-To visualize how the GeoJSON model works, we'll look at an example response from the NWS API. Let's say there's a thunderstorm warning in effect for a specified area. The API response for that area returns an object that contains a shape and severity data, bundled together into three main building blocks: `FeatureCollection`, `Feature`, and `Geometry`.
+To visualize how the GeoJSON model works, consider an example response from the NWS API. Suppose there's a thunderstorm warning in effect for a specified area. The API response for that area returns an object that contains a shape and severity data, bundled together into three main building blocks: `FeatureCollection`, `Feature`, and `Geometry`.
 
 The structure is hierarchical:
 
@@ -37,7 +37,7 @@ FeatureCollection
 
 The hierarchy matters for three practical reasons:
 
-- **Weather data is nested.** Because `Features` are nested, weather data like severity lives inside the `Properties` object, not at the top level. To access it, navigate from the top down: `feature.properties.severity`.
+- **Weather data sits inside nested objects.** Because each `Feature` sits inside the collection, weather data like severity lives inside the `Properties` object, not at the top level. To access it, navigate from the top down: `feature.properties.severity`.
 - **Responses can contain multiple features.** A single NWS response can return multiple `Features` at once, so you'll loop over them rather than handle one at a time.
 - **Shapes vary between features.** Not every `Feature` has the same shape. One alert might be a polygon, another a point, so your code needs to handle both.
 
@@ -73,7 +73,7 @@ In the NWS thunderstorm example, the entire API response is a `FeatureCollection
 
 Reading from the top down:
 
-- `"type": "FeatureCollection"` is the outer envelope that holds all warnings currently in effect for this request.
+- `"type": "FeatureCollection"` is the outer envelope that holds all warnings in effect for this request.
 - `"features": [...]` is the array inside the envelope. Each item is one warning. Here there's only one, but a single API call can return many.
 - `"type": "Feature"` identifies this item as a single warning: one shape paired with one set of weather data.
 - `"geometry"` is the shape of the affected area. In this case, a `Polygon`, which is a set of coordinates that draws the boundary of the warning zone on a map.
@@ -123,7 +123,7 @@ GeoJSON works well at every part of a typical web project, which is why it becam
 
 **Front end:** Leaflet, Mapbox GL JS, and OpenLayers can render a GeoJSON shape with a single line, `L.geoJSON(myGeoJSON).addTo(map)`, and their built-in methods handle styling and interactivity from there.
 
-**Between services:** Tools like OpenStreetMap and Google Maps send and receive GeoJSON directly, so location data moves between systems without needing to be converted first.
+**Between services:** Tools like OpenStreetMap and Google Maps send and receive GeoJSON directly, so location data moves between systems without conversion.
 
 **Storage:** PostgreSQL with PostGIS stores GeoJSON natively and supports location-based queries against it without any format conversion.
 
@@ -172,16 +172,16 @@ GeoJSON is the right default for most web and API use cases, but there are scena
 
 **Strengths:** Lightweight, human-readable, and easy to debug. No special parsers or tooling required. Broadly supported across mapping libraries, APIs, and databases.
 
-**Limitations:** GeoJSON treats each shape independently. It doesn't track shared borders between adjacent shapes, which matters if you're building something like a choropleth map where regions touch each other. For those cases, TopoJSON is a better fit. GeoJSON is also a text format, so very large files can be slow to load and parse. For high-volume workloads, compact binary formats are faster.
+**Limitations:** GeoJSON treats each shape independently. It doesn't track shared borders between adjacent shapes, which matters if you're building something like a choropleth map where regions share edges. For those cases, TopoJSON is a better fit. GeoJSON is also a text format, so very large files can be slow to load and parse. For high-volume workloads, compact binary formats are faster.
 
-| Format    | Best for                          | Watch out for                        |
+| Format    | Use it for                        | Watch out for                        |
 |-----------|-----------------------------------|--------------------------------------|
 | GeoJSON   | Web apps, APIs, quick integration | Large files, no shared borders       |
 | Shapefile | Legacy GIS workflows              | Multi-file, not web-friendly         |
 | KML       | Google Earth, rich styling        | Verbose, slower to parse             |
 | TopoJSON  | Shared borders, smaller files     | Requires a conversion step before use|
 
-**TL;DR:** GeoJSON is easy to read, easy to render, and supported almost everywhere. For most developers building on the web, it's the right starting point and usually the only format you'll need.
+**Summary:** GeoJSON is easy to read, easy to render, and supported almost everywhere. For most developers building on the web, it's the right starting point and usually the only format you'll need.
 
 ## Summary and next steps
 

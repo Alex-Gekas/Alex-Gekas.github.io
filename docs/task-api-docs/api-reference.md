@@ -1,5 +1,5 @@
 ---
-title: API Reference
+title: API reference
 description: API endpoints and responses
 ---
 This section documents all available endpoints in the Task API.
@@ -64,7 +64,7 @@ Creates a new user account and returns a JWT token.
 | Status code | Error           | Cause                      |
 |-------------|-----------------|----------------------------|
 | 400         | ValidationError | Missing or invalid fields  |
-| 409         | Conflict        | Email already registered   |
+| 409         | Conflict        | An account with that email already exists |
 
 ```
 POST /api/auth/login
@@ -201,7 +201,7 @@ Creates a new task for the authenticated user.
 | description | string | No       | Additional notes about the task |
 | status      | string | No       | Defaults to `pending`. Accepted values: `pending`, `in_progress`, `completed` |
 | priority    | string | No       | Defaults to `medium`. Accepted values: `low`, `medium`, `high` |
-| due_date    | string | No       | ISO 8601 date string, for example `2024-12-31` |
+| `due_date`  | string | No       | ISO 8601 date string, for example `2024-12-31` |
 
 **Example request:**
 
@@ -289,7 +289,7 @@ GET /api/tasks/dc189961-2875-4220-823e-bee426e62242
 PATCH /api/tasks/:id
 ```
 
-Partially updates a task. Only the fields included in the request body are updated. Omitted fields keep their current values.
+Partially updates a task. The API updates only the fields included in the request body. Omitted fields keep their current values.
 
 **Authentication required:** Yes
 
@@ -307,7 +307,7 @@ Partially updates a task. Only the fields included in the request body are updat
 | description | string | No       | Updated task notes |
 | status      | string | No       | Accepted values: `pending`, `in_progress`, `completed` |
 | priority    | string | No       | Accepted values: `low`, `medium`, `high` |
-| due_date    | string | No       | ISO 8601 date string, for example `2024-12-31` |
+| `due_date`  | string | No       | ISO 8601 date string, for example `2024-12-31` |
 
 **Example request:**
 
@@ -350,7 +350,7 @@ Partially updates a task. Only the fields included in the request body are updat
 DELETE /api/tasks/:id
 ```
 
-Permanently deletes a task. The task must belong to the authenticated user. This action cannot be undone.
+Permanently deletes a task. The task must belong to the authenticated user. This action can't be undone.
 
 **Authentication required:** Yes
 

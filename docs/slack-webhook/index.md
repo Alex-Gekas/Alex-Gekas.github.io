@@ -3,15 +3,15 @@
 ## Introduction
 
 This guide shows developers how to connect the Task API to Slack using an incoming webhook. It
-covers three Python notification scripts and how to schedule them with cron. It was written as a
-follow-on to the Task API documentation suite — after building and documenting the API, the next
+covers three Python notification scripts and how to schedule them with cron. I wrote it as a
+follow-on to the Task API documentation suite—after building and documenting the API, the next
 step was showing what you could build on top of it.
 
 ## The writing challenge
 
 Integration tutorials are harder than single-product guides because readers have to manage two
-systems at once, with two sets of credentials and failure points in both. The guide needed to
-cover the prerequisites — a Slack workspace, an API token, test data — without overwhelming
+systems at once. Each system has its own credentials and its own failure points. The guide needed to
+cover the prerequisites—a Slack workspace, an API token, test data—without overwhelming
 readers before they reach the first real step.
 
 ## Document architecture
@@ -41,7 +41,7 @@ most explanation.
 ## Conclusion
 
 The guide takes the reader from zero to working Slack notifications without a lot of detours. It's
-a practical piece that shows what you can do once an API is well-documented — the tutorial
+a practical piece that shows what you can do once an API is well-documented—the tutorial
 exists because the foundation was solid enough to build on.
 
 [→ Read the tutorial](article.md)

@@ -1,5 +1,5 @@
 ---
-title: Technical Tutorial-WooCommerce Order Status & Emails
+title: "Tutorial: WooCommerce order status and emails"
 tags:
   - tutorial
   - WooCommerce
@@ -7,15 +7,15 @@ tags:
 !!! abstract "About this sample"
     - **What this is:** A step-by-step tutorial for building a production-ready WooCommerce plugin that adds a custom order status with automated customer email notifications.
     - **Audience:** Intermediate WordPress and WooCommerce developers comfortable with PHP and WordPress hooks.
-    - **Tools used:** WordPress, WooCommerce, PHP, HPOS (High-Performance Order Storage), WC_Email.
-    - **What it demonstrates:** How to extend WooCommerce at multiple integration points — status registry, admin UI, and mailer — within a single plugin, and how to document each step so it produces a result you can test.
+    - **Tools used:** WordPress, WooCommerce, PHP, HPOS (High-Performance Order Storage), `WC_Email`.
+    - **What it demonstrates:** How to extend WooCommerce at multiple integration points—status registry, admin UI, and mailer—within a single plugin, and how to document each step so it produces a result you can test.
     - **Behind the docs:** [Read the case study →](index.md)
 
 # Build a custom WooCommerce order status with customer email notifications
 
 ## Background
 
-The default installation of WooCommerce does not include the option to
+The default installation of WooCommerce doesn't include the option to
 add a custom order status. Some stores need to place certain orders into
 a **manual review** state before fulfillment (for example, fraud checks
 or stock confirmation). In this tutorial, you'll implement an
@@ -34,8 +34,8 @@ include:
 
 - **Fraud or payment verification:** hold flagged or high-value orders
   for manual review before fulfillment.
-- **Inventory confirmation:** pause fulfillment until stock or supplier
-  availability is confirmed.
+- **Inventory confirmation:** pause fulfillment until you confirm stock or supplier
+  availability.
 - **Support investigation:** give staff a safe holding state while
   resolving issues, with a clear customer message.
 
@@ -62,7 +62,7 @@ By the end of this tutorial, you'll be able to:
 - Add a **custom order status** to WooCommerce.
 - Add **admin workflows** to apply the status (bulk + single-order
   action).
-- Create and register a **custom WC_Email** notification.
+- Create and register a custom `WC_Email` notification.
 - Trigger the email **manually** (admin action) and **automatically**
   (on status change).
 - Verify the feature with a **QA checklist**.
@@ -137,7 +137,7 @@ You'll add the plugin header and an ABSPATH guard in the next step.
 
 ### 3. Create supporting folders
 
-Create these folders (we'll use them later for implementation and email
+Create these folders (you use them later for implementation and email
 templates):
 
 `includes/`
@@ -170,8 +170,8 @@ selectable in the admin order screen.
 
 Use `register_post_status()` to register a new status called
 `wc-awaiting-review`.
-WooCommerce order statuses are registered as WordPress post statuses and
-must be prefixed with `wc-`.
+WooCommerce registers order statuses as WordPress post statuses, and
+each status name must start with `wc-`.
 
 ```php
 add_action( 'init', 'wc_register_awaiting_review_status' );
@@ -195,7 +195,7 @@ interface.
 
 ### 2.2 Add the status to WooCommerce's status list
 
-Registering the post status alone is not enough. You must also add it to
+Registering the post status alone isn't enough. You must also add it to
 WooCommerce's internal list of order statuses so it appears in dropdowns
 and filters.
 
@@ -357,7 +357,7 @@ What this file does:
   the Orders list UI.
 - **Handles the action** by looping through selected orders and calling
   `update_status( 'awaiting-review' )`.
-- **Adds an admin notice** showing how many orders were updated.
+- **Adds an admin notice** showing how many orders changed.
 
 ### 3.2 Load the bulk-actions file from your main plugin file
 
@@ -388,7 +388,7 @@ so it runs in wp-admin:
 ### Result
 
 Store staff can now set **Awaiting Review** on multiple orders in a
-single action — useful for fraud review queues, inventory holds, or
+single action—useful for fraud review queues, inventory holds, or
 support investigations.
 
 ![Drop-down in Bulk Actions showing Change status to Awaiting Review](images/change_status.png)
@@ -427,7 +427,7 @@ add_filter( 'woocommerce_order_actions', function( $actions ) {
 
 	// Action keys should be unique and slug-like.
 	$actions['wc_cos_send_awaiting_review_email'] = __(
-		'Send Awaiting Review Email',
+		'Send Awaiting Review email',
 		'wc-custom-order-status'
 	);
 
@@ -437,11 +437,11 @@ add_filter( 'woocommerce_order_actions', function( $actions ) {
 
 ### 4.2 Handle the action when an admin runs it
 
-WooCommerce fires a dynamic hook when the action is executed:
+WooCommerce fires a dynamic hook when an admin runs the action:
 
 `woocommerce_order_action_{your_action_key}`
 
-Add the handler hook using the same action key you registered above:
+Add the handler hook using the same action key you registered earlier:
 
 ```php
 add_action(
@@ -478,7 +478,7 @@ Why the `do_action()` placeholder?
   `wc_cos_trigger_awaiting_review_email`.
 
 If you already have your email class, you can replace the placeholder
-with your direct call later — no need to change Step 4's UI wiring.
+with your direct call later—no need to change Step 4's UI wiring.
 
 ### 4.3 Load the module from your main plugin file
 
@@ -497,7 +497,7 @@ require_once __DIR__ . '/includes/admin-order-actions.php';
 3.  Find the **Order actions** dropdown (usually in the **Order
     actions** box on the right)
 
-4.  Select **Send Awaiting Review Email**
+4.  Select **Send Awaiting Review email**
 
 5.  Click the **arrow button** next to the dropdown (not the main
     **Update** button)
@@ -564,7 +564,7 @@ class WC_Email_Awaiting_Review extends WC_Email {
 		$this->heading = __( 'Your order is awaiting review', 'wc-custom-order-status' );
 		$this->subject = __( '[{site_title}] Your order is awaiting review', 'wc-custom-order-status' );
 
-		// Templates (overrideable by themes if you place them under /woocommerce/emails/).
+		// Templates (overridable by themes if you place them under /woocommerce/emails/).
 		$this->template_html  = 'emails/customer-awaiting-review.php';
 		$this->template_plain = 'emails/plain/customer-awaiting-review.php';
 
@@ -790,8 +790,8 @@ Then include the registration file from your main plugin file:
 require_once __DIR__ . '/includes/emails/register-emails.php';
 ```
 
-Why register via `woocommerce_email_classes`? It ensures your email is
-loaded at the right time — after WooCommerce has loaded its mailer and
+Why register via `woocommerce_email_classes`? It ensures WooCommerce loads your email
+at the right time—after it has loaded its mailer and
 `WC_Email` is available.
 
 ### 5.4 Test it now
@@ -802,25 +802,25 @@ loaded at the right time — after WooCommerce has loaded its mailer and
 
 3.  Click it and confirm you can:
 
-    - enable/disable the email
+    - turn the email on or off
 
     - edit the subject/heading (if desired)
 
 ### Result
 
-![Customer Email Template](images/email_template.png)
+![Customer email template](images/email_template.png)
 
 **Figure 5.4** - *Customer email template*
 
-Your custom **Awaiting Review** email is now registered in WooCommerce
-and can be managed in the admin. In the next step, you'll validate the
+WooCommerce now registers your custom **Awaiting Review** email,
+and you can manage it in the admin. In the next step, you'll validate the
 end-to-end flow by triggering it from the **Order actions** dropdown
 and confirming delivery.
 
 ## Step 6: Add minimal email templates (HTML + plain text)
 
 In this step, you'll create the actual email templates for your
-**Awaiting Review** email — one HTML template and one plain-text
+**Awaiting Review** email—one HTML template and one plain-text
 template. Each template should clearly communicate:
 
 - the **order number**
@@ -956,7 +956,7 @@ And ensure `template_base` points to your plugin's `templates/` directory.
 
 You can test in either of these ways:
 
-**Option A: Preview from WooCommerce Email settings (if available)**
+**Option A: Preview from the WooCommerce email settings (if available)**
 
 1.  Go to **WooCommerce → Settings → Emails**
 2.  Open **Awaiting Review**
@@ -967,11 +967,11 @@ You can test in either of these ways:
 
 1.  Go to **WooCommerce → Orders**
 2.  Open an order
-3.  In **Order actions**, select **Send Awaiting Review Email**
+3.  In **Order actions**, select **Send Awaiting Review email**
 4.  Click the **arrow button** next to the dropdown
 5.  Confirm:
     - a new order note appears (from Step 4)
-    - the customer email is sent (check MailHog / email logs / inbox,
+    - WooCommerce sends the customer email (check MailHog / email logs / inbox,
       depending on your setup)
 
 ### Result
@@ -1082,7 +1082,7 @@ require_once __DIR__ . '/includes/status-email-triggers.php';
 
 !!! tip
     Include this file **after** your email registration code (Step 5).
-    This ensures the email class is registered before the trigger fires.
+    This ensures WooCommerce registers the email class before the trigger fires.
 
 ### 7.3 Test it now
 
@@ -1092,13 +1092,13 @@ require_once __DIR__ . '/includes/status-email-triggers.php';
 4.  Confirm:
     - an order note appears: "Awaiting Review email sent automatically
       on status change."
-    - the email is sent (check your mail logger / MailHog / SMTP logs /
+    - WooCommerce sends the email (check your mail logger / MailHog / SMTP logs /
       inbox)
 
 ### Result
 
 Orders that enter **Awaiting Review** now automatically notify
-customers — without requiring staff to manually trigger the email — while
+customers—without requiring staff to manually trigger the email—while
 still giving you protection against duplicate sends.
 
 ## Summary

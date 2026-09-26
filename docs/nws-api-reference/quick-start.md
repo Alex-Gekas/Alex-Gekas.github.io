@@ -1,5 +1,5 @@
 ---
-title: "Quick Start"
+title: "Quick start"
 description: "Get up and running with the NWS API"
 ---
 
@@ -29,7 +29,7 @@ You can get coordinates from any mapping tool or geocoding service such as:
 
 Next, use the `/points/{lat,lon}` endpoint to translate your coordinates into the **grid ID and coordinates** used by NWS forecasts.
 
-This step is required—forecasts are organized by **grid points**, not by latitude and longitude directly.
+You need this step because the API organizes forecasts by **grid points** rather than by latitude and longitude.
 
 This request returns metadata including:
 
@@ -57,7 +57,7 @@ Example:
 
 The response is a JSON forecast that includes:
 
-* Period names (Today, Tonight, Monday, etc.)
+* Period names (for example, Today, Tonight, Monday)
 * Temperature and wind details
 * Short and detailed forecast text
 

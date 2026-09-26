@@ -24,7 +24,7 @@ Responses are typically in JSON or GeoJSON format.
 
 ## Organization
 
-Endpoints are grouped by resource:
+This reference groups endpoints by resource:
 
 - **Forecasts**: `/gridpoints/{office}/{gridX},{gridY}`
 - **Alerts**: `/alerts`, with optional filters

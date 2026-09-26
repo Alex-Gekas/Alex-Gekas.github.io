@@ -3,7 +3,7 @@ title: Send task updates from an API to Slack using webhooks
 description: How to connect the Task API to Slack using a webhook and Python scripts to receive daily task update notifications.
 ---
 !!! abstract "About this sample"
-    - **What this is:** A step-by-step tutorial for connecting the Task API to Slack using an incoming webhook — covers three Python notification scripts and cron scheduling, written as a published developer article.
+    - **What this is:** A step-by-step tutorial for connecting the Task API to Slack using an incoming webhook—covers three Python notification scripts and cron scheduling, written as a published developer article.
     - **Audience:** Developers and DevOps engineers.
     - **Tools used:** MkDocs, Markdown, Slack Webhooks API, Python, cron.
     - **What it demonstrates:** How to write a tutorial that gives developers enough context to understand what they're doing, while staying out of the way of actually doing it.
@@ -13,13 +13,13 @@ description: How to connect the Task API to Slack using a webhook and Python scr
 
 ## Introduction
 
-Many SaaS applications send notifications to Slack when important events occur. Instead of checking dashboards throughout the day, updates can appear directly in a Slack message. While documenting a small Task API that I recently built, I started wondering whether it could be integrated with Slack to send task updates. I decided to connect the Task API to Slack using a webhook.
+Many SaaS applications send notifications to Slack when important events occur. Instead of checking dashboards throughout the day, updates can appear directly in a Slack message. This guide connects a small Task API to Slack through an incoming webhook, so task updates arrive as Slack messages.
 
-In this guide, I'll show you how I set up this integration and give step-by-step instructions to create the webhook in Slack, integrate it into your Python scripts, and set the scripts to run automatically to generate daily DM updates from the Task API. This guide gives you a solid foundation for integrating Slack with a third-party API. You can apply the concepts to more complex integrations.
+It gives step-by-step instructions to create the webhook in Slack, integrate it into your Python scripts, and set the scripts to run automatically to generate daily DM updates from the Task API. This guide gives you a solid foundation for integrating Slack with a third-party API. You can apply the concepts to more complex integrations.
 
 ## Get started
 
-Once I connected the two apps, I built three Python scripts to scan the Task API for different task statuses: incomplete tasks (pending or in progress), incomplete tasks past their deadline, and completed tasks. Each script posts a message to the Slack webhook, triggering a notification in the Slack DM channel. After testing the scripts, I installed them on my server and set them to query the Task API on a set schedule, giving me a daily DM in Slack to stay updated on my tasks.
+The integration uses three Python scripts that scan the Task API for different task statuses: incomplete tasks (pending or in progress), incomplete tasks past their deadline, and completed tasks. Each script posts a message to the Slack webhook, which triggers a notification in the Slack DM channel. After you test the scripts, you install them on your server and schedule them to query the Task API, so you get a daily DM in Slack with your task updates.
 
 To follow along, you'll need:
 
@@ -42,10 +42,10 @@ To connect the Task API to Slack, you need to create an app with a webhook in Sl
 4. Toggle **Activate Incoming Webhooks** to on.
 5. Click **Add New Webhook to Workspace** at the bottom of the page.
 6. Select the channel or DM you want the webhook to post to and click **Allow**.
-7. Copy the webhook URL that appears — it will look like `https://hooks.slack.com/services/T00/B00/xxx`.
+7. Copy the webhook URL that appears—it looks like `https://hooks.slack.com/services/T00/B00/xxx`.
 
 !!! note
-    Your actual webhook will display a unique code instead of the `xxx` shown above.
+    Your actual webhook URL contains a unique code instead of the `xxx` shown in the preceding example.
 
 ## Query the Task API
 
@@ -58,7 +58,7 @@ curl -X GET "http://your-server-address:3000/api/tasks" \
   -H "Authorization: Bearer your-api-key-here"
 ```
 
-Your API key is your JWT — the unique token associated with your account. The API returns all tasks associated with your token:
+Your API key is your JWT—the unique token associated with your account. The API returns all tasks associated with your token:
 
 ```json
 {
@@ -116,7 +116,7 @@ else:
     print(f"Failed to send message. Status code: {response.status_code}")
 ```
 
-If you get `Message sent successfully` and a DM appears in Slack, your webhook URL is configured correctly. If nothing happens, check that you replaced the placeholder URL with your actual webhook URL.
+If you get `Message sent successfully` and a DM appears in Slack, you configured your webhook URL correctly. If nothing happens, check that you replaced the placeholder URL with your actual webhook URL.
 
 Next, query the `/tasks` endpoint and evaluate the response fields. Each script sends a different DM with one of the following notifications: **Incomplete Tasks**, **Overdue Tasks**, and **Completed Tasks**.
 
@@ -223,4 +223,4 @@ Add a line specifying when and how often to run the script. For example, to run 
 You've now built three scripts that query the Task API and send Slack DMs using a webhook. Scheduling these scripts to run on a cron job ensures that you receive reminder messages and stay up to date with your tasks. You now understand how to use webhooks to integrate third-party apps into Slack. You can build on what you've learned to:
 
 - Extend the existing scripts to filter tasks by priority and route notifications to different Slack channels.
-- Configure the Task API to send a DM the moment a task is updated, removing the need for a scheduled cron job.
+- Configure the Task API to send a DM the moment a task changes, removing the need for a scheduled cron job.

@@ -23,7 +23,7 @@ flowchart TD
   class A,B,C,D concept;
 ```
 
-**Figure:** Forecast data is organized hierarchically; a point belongs to a grid, which belongs to a zone, all managed by a forecast office (WFO).
+**Figure:** The API organizes forecast data hierarchically: a point belongs to a grid, which belongs to a zone, all managed by a forecast office (WFO).
 
 ---
 

@@ -33,6 +33,7 @@ markdown_extensions:
 
 extra_javascript:
   - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+  - javascripts/mermaid-init.js
 
 nav:
   - Home: index.md
@@ -43,9 +44,9 @@ nav:
       - Authentication and headers: nws-api-reference/authentication.md
       - Caching best practices: nws-api-reference/caching.md
       - Key concepts:
-          - "How forecasts are structured": nws-api-reference/key-concepts/index.md
+          - "How the API structures forecasts": nws-api-reference/key-concepts/index.md
           - "Forecast hierarchy": nws-api-reference/key-concepts/hierarchy.md
-          - "Weather forecast Offices (WFOs)": nws-api-reference/key-concepts/wfos.md
+          - "Weather forecast offices (WFOs)": nws-api-reference/key-concepts/wfos.md
           - "Gridpoints and grids": nws-api-reference/key-concepts/grids.md
           - "Zones": nws-api-reference/key-concepts/zones.md
           - "Developer use cases": nws-api-reference/key-concepts/developer-use-cases.md

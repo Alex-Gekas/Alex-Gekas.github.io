@@ -1,1 +1,3 @@
-"site/" 
+site/
+# Vale style package (download with `vale sync`)
+styles/Google/

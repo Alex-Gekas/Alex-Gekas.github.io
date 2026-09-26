@@ -1,5 +1,5 @@
 ---
-title: "NWS API — Reorganized Reference"
+title: "NWS API—reorganized reference"
 description: "Introduction to the NWS API"
 ---
 !!! abstract "About this sample"
@@ -23,6 +23,7 @@ The **National Weather Service (NWS) API** is the official U.S. government sourc
 This is an unofficial rewrite of the official API documentation. It focuses on the endpoints developers use most, clarifies the underlying spatial concepts (forecast offices, gridpoints, and zones), and streamlines the original where possible.
 
 **Official source:** [NWS Services Web API Documentation](https://www.weather.gov/documentation/services-web-api)
+
 ---
 
 ## Quick start
@@ -43,7 +44,7 @@ Returns forecast URLs, grid coordinates, and station identifiers for that locati
 
 ## What this API provides
 
-You can retrieve forecasts, observations, alerts, radar imagery, and specialized data for aviation, marine, and river conditions. All data is updated continuously.
+You can retrieve forecasts, observations, alerts, radar imagery, and specialized data for aviation, marine, and river conditions. NWS updates all data continuously.
 
 With nationwide coverage and highly localized 2.5 km grids, the NWS API supports both broad regional outlooks and point-level forecasts. It connects directly to the same systems used by government agencies and news outlets, so the data is authoritative and reliable. There are no subscription fees or commercial restrictions.
 
@@ -51,7 +52,7 @@ With nationwide coverage and highly localized 2.5 km grids, the NWS API supports
 
 ## What you can build
 
-If you're building a weather dashboard, analyzing climate data, or integrating alerts into a public safety application, the NWS API gives you direct access to the same data used by professionals.
+If you're building a weather dashboard, analyzing climate data, or integrating alerts into a public safety app, the NWS API gives you direct access to the same data used by professionals.
 
 You can:
 
@@ -76,7 +77,7 @@ You can:
 
 The NWS API follows REST principles and uses standard HTTP methods such as `GET` to retrieve data. You access data by making requests to specific **endpoints**, each designed for a type of weather information, such as forecasts, alerts, observations, or zones.
 
-Most responses are returned in **JSON** or [**GeoJSON**](../geojson-explainer/explainer.md) format. GeoJSON includes geographic coordinates that define points, lines, or polygons, making it ideal for mapping or visualizing weather events.
+Most responses use **JSON** or [**GeoJSON**](../geojson-explainer/explainer.md) format. GeoJSON includes geographic coordinates that define points, lines, or polygons. This makes it ideal for mapping or visualizing weather events.
 
 You don't need an API key or token to start, simply include the base URL in your requests and specify the endpoint and parameters you need.
 
@@ -86,7 +87,7 @@ You don't need an API key or token to start, simply include the base URL in your
 
 The NWS API supports multiple weather data types, each retrieved differently. This diagram shows the typical flow from a `latitude/longitude` input to the correct API endpoints for forecasts, alerts, observations, and zones.
 
-In most cases, you will start with a coordinate and then either request the forecast directly or use `/points` to discover region-specific endpoints such as stations, grid cells, and zones.
+In most cases, you start with a coordinate and then either request the forecast directly or use `/points` to discover region-specific endpoints such as stations, grid cells, and zones.
 
 ```mermaid
 flowchart LR
@@ -125,10 +126,10 @@ Most developers use JSON. Advanced integrations support:
 ---
 ## Usage guidelines
 
-* No authentication required — Start making requests immediately
-* Include a User-Agent header — Identify your application (e.g., MyWeatherApp/1.0 (contact@example.com))
-* Respect cache headers — Reduce server load and improve performance
-* Rate limits — No official limits, but follow best practices to avoid throttling
+* No authentication required—Start making requests immediately
+* Include a User-Agent header—Identify your app (for example, `MyWeatherApp/1.0 (contact@example.com)`)
+* Respect cache headers—Reduce server load and improve performance
+* Rate limits—No official limits, but follow best practices to avoid throttling
 
 
 **Get started in 2 minutes** → [Quick start guide](./quick-start.md)

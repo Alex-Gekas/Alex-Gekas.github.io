@@ -5,7 +5,7 @@ description: "Explains Units Used by the NWS API."
 
 # Units of measurement
 
-The National Weather Service API returns data using a combination of **imperial** and **SI (metric)** units, depending on the endpoint and user preferences. Understanding the default units and how to convert them ensures accurate interpretation of forecast and observation data.
+The National Weather Service API returns data using a combination of **imperial** and **SI (metric)** units. The units you get depend on the endpoint and user preferences. Understanding the default units and how to convert them ensures accurate interpretation of forecast and observation data.
 
 ---
 
@@ -27,7 +27,7 @@ The National Weather Service API returns data using a combination of **imperial*
 
 ## Unit conversions
 
-For users needing metric units, you can convert the values manually or configure your client application to convert them automatically. Here's a quick reference:
+For users needing metric units, you can convert the values manually or configure your client app to convert them automatically. Here's a quick reference:
 
 | Imperial Unit | Metric Equivalent   |
 |---------------|---------------------|
@@ -41,14 +41,14 @@ For users needing metric units, you can convert the values manually or configure
 
 ## Customizing units in API responses
 
-Currently, the API doesn't allow unit customization through request parameters. All values are returned in default formats. Developers should implement unit conversion on the client side if metric units are required for international audiences.
+The API doesn't allow unit customization through request parameters, and it returns all values in their default formats. If your international audience needs metric units, convert them on the client side.
 
 ---
 
 ## Notes
 
-- Times and durations are returned in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601).
-- Coordinate values (latitude and longitude) are expressed in decimal degrees.
+- The API returns times and durations in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601).
+- Coordinate values (latitude and longitude) use decimal degrees.
 - All forecast grids use a consistent scale (~2.5 km resolution).
 
 ---

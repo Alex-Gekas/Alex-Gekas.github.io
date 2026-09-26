@@ -21,7 +21,7 @@ Before you begin, make sure:
 - You have a REST client such as Postman, Hoppscotch, or curl
 - You know the base URL (for example: `http://localhost:3000` if you have installed it locally or `https://your-server-address:3000`
 
-## Step 1 - Create a user account
+## Step 1: Create a user account
 
 Send a POST request to `/api/auth/signup` to create your account.
 
@@ -53,9 +53,9 @@ The API hashes your password and creates a new user record. If the request is su
 
 Keep your token–you need it to make requests in the following steps.
 
-## Step 2–Log in and receive a token
+## Step 2: Log in and receive a token
 
-Send a POST request to `POST /api/auth/login` to generate and receive a token:
+Send a POST request to `/api/auth/login` to generate and receive a token:
 
 **Request body:**
 
@@ -65,7 +65,7 @@ Send a POST request to `POST /api/auth/login` to generate and receive a token:
   "password": "password123"
 }
 ```
-The server verifies the password. If valid, a JWT token is generated and appears in the response.
+The server verifies the password. If it's valid, the server generates a JWT and returns it in the response.
 
 **HTTP 200 OK** and a JSON response containing a `token` field
 
@@ -82,11 +82,11 @@ The server verifies the password. If valid, a JWT token is generated and appears
 }
 ```
 
-Save this token. It is required for all protected routes.
+Save this token. It's required for all protected routes.
 
-## Step 3–Create your first task
+## Step 3: Create your first task
 
-Send a POST request to `POST /api/tasks`
+Send a POST request to `/api/tasks`
 
 Add this header:
 
@@ -105,9 +105,9 @@ Authorization: Bearer <your_token_here>
 ### What happens next
 
 - The authentication middleware verifies the token.
-- The request is passed to the task controller.
-- A new task record is inserted into the database.
-- The created task is returned in the response.
+- The API passes the request to the task controller.
+- The controller inserts a new task record into the database.
+- The API returns the created task in the response.
 
 **Response:**
 
@@ -130,7 +130,7 @@ Authorization: Bearer <your_token_here>
 }
 ```
 
-## Step 4-Verify the task was created
+## Step 4: Verify the new task
 
 Send a GET request to `GET /api/tasks` with the same Authorization header you used in the previous step.
 

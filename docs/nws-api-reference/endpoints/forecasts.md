@@ -7,7 +7,7 @@ nav_order: 2
 
 ## Get the forecast for a location
 
-## `GET /points/{lat},{lon}/forecast`
+## <span class="method get">GET</span> `/points/{lat},{lon}/forecast`
 
 Returns the seven-day forecast (day & night periods) for the grid cell covering a latitude and longitude in the U.S. Use this endpoint when you have a point and want the official NWS text-based forecast without converting the point to grid coordinates. The `points` endpoint resolves your `lat/lon` to the correct 2.5 km NWS forecast grid and local forecast office behind the scenes.
 
@@ -18,9 +18,9 @@ Returns the seven-day forecast (day & night periods) for the grid cell covering 
 
 ## Headers and authorization
 
-`User-Agent` (required): A string identifying your app and contact (for example, MyWeatherApp/1.0 (me@myweatherapp.com).
+`User-Agent` (required): A string identifying your app and contact (for example, `MyWeatherApp/1.0 (contact@myweatherapp.com)`).
 
-`Accept` (recommended): application/geo+json
+`Accept` (recommended): `application/geo+json`
 
 `Authorization`: Not required.
 
@@ -145,7 +145,7 @@ getForecast(43.1610, -77.6109).then(data => {
     | Field                             | Type                       | Description                                         |
     | --------------------------------- | -------------------------- | --------------------------------------------------- |
     | `type`                            | string                     | Always `Feature` for this endpoint.                 |
-    | `geometry`                        | GeoJSON geometry | null    | Polygon for thfor exampleid cell (often present).          |
+    | `geometry`                        | GeoJSON geometry | null    | Polygon for the grid cell (often present).          |
     | `properties.updated`              | string (ISO 8601)          | Timestamp the forecast text was last updated.       |
     | `properties.units`                | string                     | Unit system (`us` commonly used).                   |
     | `properties.updateTime`           | string (ISO 8601)          | Synced update timestamp.                            |
@@ -179,8 +179,8 @@ getForecast(43.1610, -77.6109).then(data => {
 
 * Start with `/points`: It’s the supported way to map a `lat/lon` to the right grid and forecast office. The same route also advertises related URLs (for example, hourly forecast). 
 
-* Grid resolution: Forecasts are issued on a 2.5 km grid by local offices; neighboring points can have wildly different forecasts. 
+* Grid resolution: Local offices issue forecasts on a 2.5 km grid, so neighboring points can have very different forecasts. 
 
 * Hourly forecasts: Use `/points/{lat},{lon}/forecast/hourly` for 48-hour hourly periods
 
-**Next:** [ Endpoints: Grid points →](./grid-points.md)
+**Next:** [Endpoints: Grid points →](./grid-points.md)

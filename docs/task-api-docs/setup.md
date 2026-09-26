@@ -17,7 +17,7 @@ Before installing Task API, make sure your environment includes:
 * Git
 * A domain name or static external IP address (for production access)
 
-# Step 1: Prepare the server
+## Step 1: Prepare the server
 
 SSH into your server:
 
@@ -39,7 +39,7 @@ npm -v
 
 Both commands should return version numbers.
 
-# Step 2: Clone the repository
+## Step 2: Clone the repository
 
 Clone the Task API repository:
 
@@ -53,7 +53,7 @@ Navigate to the project directory:
 cd developer-task-api
 ```
 
-# Step 3: Install dependencies
+## Step 3: Install dependencies
 
 Install the required Node.js packages:
 
@@ -69,11 +69,11 @@ The installation is successful if:
 - npm prints a summary such as `added 85 packages`
 - a `node_modules` directory appears in the project folder
 
-# Step 4: Configure environment variables
+## Step 4: Configure environment variables
 
 > [!NOTE]
 > Environment variables allow configuration values to change between development
-> and production environments without modifying the application code.
+> and production environments without modifying the app code.
 
 Task API uses environment variables for configuration.
 
@@ -98,7 +98,7 @@ Update the configuration values.
 | JWT_EXPIRES_IN | Token expiration time |
 | DB_PATH | Path to the SQLite database file |
 
-## Generate a secure JWT secret
+### Generate a secure JWT secret
 
 > [!IMPORTANT]
 > In production, generate a strong random value for `JWT_SECRET`.
@@ -114,7 +114,7 @@ Copy the generated string and paste it into the `.env` file.
 
 Save the file and exit the editor.
 
-# Step 5: Start the API
+## Step 5: Start the API
 
 Start the server:
 
@@ -124,7 +124,7 @@ npm start
 
 If the startup is successful, the server logs show that the API is listening on the configured port.
 
-# Step 6: Verify the API
+## Step 6: Verify the API
 
 Use `curl` to confirm the API is running:
 
@@ -141,7 +141,7 @@ Expected response:
 
 This confirms the API is running and responding to requests.
 
-# Step 7: Run the API with PM2 (recommended)
+## Step 7: Run the API with PM2 (recommended)
 
 > [!TIP]
 > For production environments, use a **process manager** to keep the API running if the app crashes or the server restarts.
@@ -155,7 +155,7 @@ Install PM2 globally:
 ```
 npm install -g pm2
 ```
-Start the application with PM2:
+Start the app with PM2:
 
 ```
 pm2 start npm --name task-api -- start
@@ -173,7 +173,7 @@ pm2 startup
 ```
 pm2 save
 ```
-# Next steps
+## Next steps
 
 You can now begin using the API.
 

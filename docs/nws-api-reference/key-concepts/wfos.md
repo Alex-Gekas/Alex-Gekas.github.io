@@ -26,7 +26,7 @@ All forecast data for this location must use WFO `LWX`.
   
   ![Map showing WFO coverage areas in the Northeastern United States](./images/WFOs.png)
 
-**Figure:** WFO boundaries in the Northeastern US. Notice how coverage areas meet at defined borders. Coordinates near these boundaries may be included under different WFOs.
+**Figure:** WFO boundaries in the northeastern United States. Notice how coverage areas meet at defined borders. Coordinates near these boundaries might fall under different WFOs.
 
 
 ## Quick visualization

@@ -3,7 +3,7 @@ title: "Caching"
 description: "Explains Caching Best Practices in the NWS API"
 ---
 
-Although the NWS API doesn't enforce strict rate limits (the exact limit is undisclosed but described as "generous"), applications that rely on it can significantly improve performance and efficiency by implementing caching best practices. Certain endpoints are updated more frequently than others, and a caching strategy can reduce load on the API, decrease response time, and optimize bandwidth usage. 
+Although the NWS API doesn't enforce strict rate limits (NWS doesn't publish the exact limit but describes it as "generous"), applications that rely on it can significantly improve performance and efficiency by implementing caching best practices. NWS updates certain endpoints more often than others, and a caching strategy can reduce load on the API, decrease response time, and optimize bandwidth usage. 
 
 
 ### **When should you cache NWS API responses?**
@@ -115,7 +115,7 @@ cache = redis.Redis(host='localhost', port=6379, db=0)
 
 def get_forecast(zone_id):
     cache_key = f"forecast:{zone_id}"
-    cached_response = cachfor examplet(cache_key)
+    cached_response = cache.get(cache_key)
 
     if cached_response:
         print("Returning cached data")
@@ -142,5 +142,5 @@ print(zone_forecast)
 > - Cache short-lived data (like alerts) for **5–10 minutes**  
 > - Cache static data (like zone definitions) for **hours or days**
 
-**Next:** [ Concepts: How forecasts are structured →](./key-concepts/index.md)
+**Next:** [Concepts: How the API structures forecasts →](./key-concepts/index.md)
 

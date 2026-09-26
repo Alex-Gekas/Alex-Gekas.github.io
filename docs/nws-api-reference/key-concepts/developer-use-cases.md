@@ -1,5 +1,5 @@
 ---
-title: "Developer Use Cases"
+title: "Developer use cases"
 description: "Practical examples of how grids, zones, and WFOs shape real API workflows."
 ---
 
@@ -12,33 +12,33 @@ Understanding grids, zones, and WFOs helps you:
 - organize cached weather data by region
 - handle multi-region or nationwide apps reliably
 
-If you know how a point maps to a grid and zone, you will know which endpoint to use in the following use cases:
+If you know how a point maps to a grid and zone, you know which endpoint to use in the following use cases:
 
 ---
 
-## Use Case 1: Getting a point forecast
+## Use case 1: Getting a point forecast
 
 - You must resolve a point to a grid cell  
-- **Why:** Forecasts arfor exampleid-based  
+- **Why:** Forecasts are grid-based  
 - **Workflow:** `/points → forecast URL → /gridpoints`
 
-## Use Case 2: Showing regional alerts
+## Use case 2: Showing regional alerts
 
 - Alerts reference zone IDs  
 - Workflow: `/points → zone links → /zones → /alerts?zone=...`
 
-## Use Case 3: Mapping or visualizing coverage
+## Use case 3: Mapping or visualizing coverage
 
 - Zones provide boundaries  
 - Grids provide local detail  
 - Use `include-geometry` when you need polygon shapes
 
-## Use Case 4: Building scalable weather widgets
+## Use case 4: Building scalable weather widgets
 
 - Grid-based forecasts are stable and cacheable  
 - Zones help avoid duplicate alert checks
 
-## Use Case 5: Supporting marine or fire-weather users
+## Use case 5: Supporting marine or fire-weather users
 
 - `/points` identifies special zone types  
 - Different zone types map to different forecast products
@@ -58,6 +58,6 @@ The NWS API always follows the same pattern:
 **Guidance:**
 
 > When in doubt, start with `/points/{lat},{lon}`.  
-> It will always give you the correct links to follow next.
+> It always gives you the correct links to follow next.
 
 👉**Next:** Learn [Status codes](./status-codes.md) → 

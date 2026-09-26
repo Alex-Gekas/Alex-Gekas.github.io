@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "Grid Points"
+title: "Grid points"
 parent: "Endpoints"
 nav_order: 3
 ---
 
 ## Get a forecast by gridpoint
 
-## `GET /gridpoints/{office}/{gridX},{gridY}`
+## <span class="method get">GET</span> `/gridpoints/{office}/{gridX},{gridY}`
 
 Returns gridpoint metadata for a specific National Weather Service (NWS) forecast grid cell, including links to the 7-day forecast, hourly forecast, grid forecast data, local time zone, nearest observation stations, and a relative location.
 Use this to look up the correct forecast endpoints for a latitude and longitude you’ve mapped to an NWS office and grid coordinates.
@@ -22,9 +22,9 @@ Use after converting `lat/lon` to office and grid (via `/points/{lat},{lon}`), c
 
 ## Headers and authorization
 
-`User-Agent` (required): A string identifying your app and contact (for example, MyWeatherApp/1.0 (me@myweatherapp.com).
+`User-Agent` (required): A string identifying your app and contact (for example, `MyWeatherApp/1.0 (contact@myweatherapp.com)`).
 
-`Accept` (recommended): application/geo+json
+`Accept` (recommended): `application/geo+json`
 
 `Authorization`: Not required.
 
@@ -126,11 +126,11 @@ console.log(data.properties.forecastHourly); // hourly forecast URL
 ➡️ See [HTTP Status Codes](../key-concepts/status-codes.md) for a full reference.
 ## Notes
 
-- Gridpoints are assigned to local NWS Forecast Offices (WFOs). For a list of WFOs, please see the **Additional Resources** section. [add link and page]
+- Each gridpoint belongs to a local NWS forecast office (WFO). To learn how offices divide coverage, see [Weather forecast offices](../key-concepts/wfos.md).
 - The `gridX` and `gridY` values define a cell in the WFO's forecast grid.
-- You can get these values by calling the [`/points/{lat},{lon}`](./forecasts.md) endpoint first.
-- The forecast response includes time-segmented periods (day, night, etc.), each with **temperature**, **wind speed**,and **forecast description**.
-- The endpoint path may be extended to include `/forecast/hourly` for hourly forecasts.
+- You can get these values by calling the [`/points/{lat},{lon}`](./points.md) endpoint first.
+- The forecast response includes time-segmented periods (such as day and night), each with **temperature**, **wind speed**, and **forecast description**.
+- For hourly forecasts, add `/forecast/hourly` to the endpoint path.
 - For more details on the system, see [Gridpoints explained](./key-concepts/geolocation/#forecast-coverage-areas).
 
-**Next:** [ Endpoints: Points (lat and lon) →](./points.md)
+**Next:** [Endpoints: Points (lat and lon) →](./points.md)
