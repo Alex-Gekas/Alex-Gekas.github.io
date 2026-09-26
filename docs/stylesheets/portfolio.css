@@ -1,0 +1,303 @@
+/* ═══════════════════════════════════════════════════════════════
+   Alex Gekas — Technical Writing Portfolio
+   portfolio.css  ·  loaded after extra.css
+   Carries the homepage look (cream paper, serif text, mono labels,
+   red accent) onto every sample page so the site reads as one.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root,
+[data-md-color-scheme="default"] {
+  --cream:     #f7f4ef;
+  --paper:     #fffdf9;
+  --ink:       #1a1814;
+  --ink-body:  #2e2a25;
+  --ink-mid:   #4a4540;
+  --ink-soft:  #5e584f;
+  --rule:      #d8d0c4;
+  --rule-soft: #e6dfd4;
+  --accent:    #b03224;
+  --accent-dk: #7e2417;
+  --code-bg:   #1f1c18;
+  --code-text: #ede7dc;
+  --code-inline-bg: #eee9e1;
+  --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --mono:  'IBM Plex Mono', ui-monospace, monospace;
+
+  /* Material theme hooks */
+  --md-primary-fg-color:        var(--ink);
+  --md-primary-fg-color--light: var(--ink-mid);
+  --md-primary-fg-color--dark:  #000;
+  --md-primary-bg-color:        var(--ink);
+  --md-accent-fg-color:         var(--accent);
+  --md-default-bg-color:        var(--cream);
+  --md-default-fg-color:        var(--ink);
+  --md-typeset-color:           var(--ink-body);
+  --md-typeset-a-color:         var(--accent);
+  --md-code-bg-color:           var(--code-inline-bg);
+  --md-code-fg-color:           var(--ink);
+}
+
+body, .md-main, .md-main__inner, .md-content,
+body:not(.home) .md-content { background-color: var(--cream); }
+
+/* ─── Header: cream masthead instead of the dark bar ─────────── */
+.md-header {
+  background-color: var(--cream);
+  color: var(--ink);
+  box-shadow: none;
+  border-bottom: 1px solid var(--rule);
+}
+.md-header__button, .md-header__title { color: var(--ink); }
+.md-header__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-transform: none;
+}
+.md-header__button.md-logo { display: none; }
+.md-header__title { margin-left: 0.4rem; }
+
+/* Search box on a light header */
+.md-search__form { background-color: var(--paper); border: 1px solid var(--rule); border-radius: 4px; box-shadow: none; }
+.md-search__form:hover { background-color: var(--paper); }
+.md-search__input, .md-search__input::placeholder { color: var(--ink-soft); font-family: var(--serif); }
+.md-search__input { color: var(--ink); background: transparent; }
+.md-search__icon { color: var(--ink-soft); }
+
+/* ─── Tabs ───────────────────────────────────────────────────── */
+.md-tabs {
+  background-color: var(--cream);
+  color: var(--ink);
+  border-bottom: 2px solid var(--ink);
+}
+.md-tabs__link {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  opacity: 1;
+}
+.md-tabs__link:hover { color: var(--ink); }
+.md-tabs__item--active .md-tabs__link,
+.md-tabs__link--active { color: var(--ink); }
+.md-tabs__item--active { box-shadow: inset 0 -2px 0 var(--accent); }
+
+/* ─── Sidebars ───────────────────────────────────────────────── */
+.md-sidebar--primary { background-color: transparent; border-right: 0; }
+.md-sidebar--secondary { border-left: 0; }
+
+.md-nav__title {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  background: transparent;
+  box-shadow: none;
+}
+.md-nav__link {
+  font-family: var(--serif);
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  border-radius: 0;
+}
+.md-nav__link:hover { background-color: transparent; color: var(--ink); }
+.md-nav__link--active {
+  color: var(--ink) !important;
+  background-color: transparent !important;
+  font-weight: 600;
+}
+.md-nav__link--active::before { background: var(--accent); width: 2px; border-radius: 0; }
+
+/* Right-hand "On this page" */
+.md-nav--secondary .md-nav__title { color: var(--ink-soft); }
+.md-nav--secondary .md-nav__list { border-left: 1px solid var(--rule); }
+.md-nav--secondary .md-nav__link {
+  font-family: var(--serif);
+  font-size: 0.76rem;
+  color: var(--ink-soft);
+  padding: 0.22rem 0 0.22rem 0.7rem;
+}
+.md-nav--secondary .md-nav__link:hover { color: var(--ink); }
+.md-nav--secondary .md-nav__link--active {
+  color: var(--ink) !important;
+  box-shadow: inset 2px 0 0 var(--accent);
+}
+
+/* ─── Typography ─────────────────────────────────────────────── */
+.md-typeset,
+.md-typeset p, .md-typeset li, .md-typeset td, .md-typeset th {
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--ink-body);
+}
+.md-typeset h1, .md-typeset h2, .md-typeset h3 {
+  font-family: var(--serif);
+  color: var(--ink);
+  letter-spacing: -0.012em;
+}
+.md-typeset h1 {
+  font-size: 1.9rem;
+  font-weight: 600;
+  line-height: 1.12;
+  border-bottom: 0;
+  padding-bottom: 0;
+  margin: 1.2rem 0 1rem;
+}
+.md-typeset h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
+  margin-top: 2.4rem;
+}
+.md-typeset h3 { font-size: 1.02rem; font-weight: 600; }
+.md-typeset h4 { font-family: var(--mono); color: var(--ink-soft); }
+
+.md-typeset a { color: var(--accent); border-bottom: 1px solid transparent; }
+.md-typeset a:hover { color: var(--accent-dk); border-bottom-color: currentColor; }
+
+/* ─── Code ───────────────────────────────────────────────────── */
+.md-typeset code:not(pre code) {
+  font-family: var(--mono);
+  font-size: 0.78em;
+  background-color: var(--code-inline-bg);
+  color: var(--ink);
+  border: 0;
+  border-radius: 3px;
+  padding: 0.1em 0.35em;
+}
+.md-typeset pre {
+  background: var(--code-bg) !important;
+  border: 0;
+  border-radius: 6px;
+  box-shadow: none;
+}
+.md-typeset pre > code { color: var(--code-text); }
+.md-typeset .highlight::before { background: #2a2621; border-bottom-color: #3a352f; color: #b8b0a3; }
+
+/* ─── Tables ─────────────────────────────────────────────────── */
+.md-typeset table:not([class]) {
+  font-family: var(--serif);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
+.md-typeset table:not([class]) thead { background-color: var(--cream); }
+.md-typeset table:not([class]) th { font-family: var(--mono); color: var(--ink-soft); border-bottom: 1px solid var(--rule); }
+.md-typeset table:not([class]) td { color: var(--ink-body); border-bottom: 1px solid var(--rule-soft); }
+.md-typeset table:not([class]) tr:hover td { background-color: transparent; }
+
+/* ─── Admonitions: warm, no neon ─────────────────────────────── */
+.md-typeset .admonition, .md-typeset details {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-left-width: 3px;
+  border-radius: 4px;
+  box-shadow: none;
+  font-size: 0.86rem;
+}
+.md-typeset .admonition-title, .md-typeset summary { font-family: var(--mono); background: transparent; }
+.md-typeset .admonition.note, .md-typeset .admonition.info { border-left-color: #2f4a7a; background: var(--paper); }
+.md-typeset .admonition.note > .admonition-title, .md-typeset .admonition.info > .admonition-title { color: #2f4a7a; }
+.md-typeset .admonition.tip { border-left-color: #1f5f57; background: var(--paper); }
+.md-typeset .admonition.tip > .admonition-title { color: #1f5f57; }
+.md-typeset .admonition.warning { border-left-color: #a8620e; background: var(--paper); }
+.md-typeset .admonition.warning > .admonition-title { color: #8a4f0a; }
+.md-typeset .admonition.danger { border-left-color: var(--accent); background: var(--paper); }
+.md-typeset .admonition.danger > .admonition-title { color: var(--accent); }
+
+/* ─── "About this sample" (abstract) → compact brief card ────── */
+.md-typeset .admonition.abstract {
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--paper);
+  padding: 1rem 1.3rem 0.9rem;
+  margin: 0.4rem 0 1.6rem;
+}
+.md-typeset .admonition.abstract > .admonition-title {
+  color: var(--accent);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  margin: 0 0 0.6rem;
+}
+.md-typeset .admonition.abstract > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem 2rem;
+}
+.md-typeset .admonition.abstract > ul > li {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--ink-body);
+}
+.md-typeset .admonition.abstract > ul > li > strong:first-child {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.2rem;
+}
+/* long items and the case-study link take the full width */
+.md-typeset .admonition.abstract > ul > li:has(ul),
+.md-typeset .admonition.abstract > ul > li:last-child { grid-column: 1 / -1; }
+.md-typeset .admonition.abstract > ul > li:last-child {
+  border-top: 1px solid var(--rule-soft);
+  padding-top: 0.7rem;
+}
+.md-typeset .admonition.abstract > ul > li ul { margin: 0.2rem 0 0 1.1rem; }
+.md-typeset .admonition.abstract > ul > li ul li { font-size: 0.84rem; margin: 0.15rem 0; }
+
+/* ─── Misc ───────────────────────────────────────────────────── */
+.md-typeset blockquote { border-left: 2px solid var(--rule); background: transparent; }
+.md-typeset hr { border-top-color: var(--rule); }
+.md-content__inner { max-width: 780px; padding-top: 0.6rem; }
+.md-content__inner::before { height: 0.4rem; }
+
+.md-footer, .md-footer-meta { background-color: var(--ink); color: var(--cream); }
+
+@media (max-width: 76.1875em) {
+  .md-sidebar--primary { background-color: var(--cream); }
+  .md-nav--primary .md-nav__title { background-color: var(--cream); color: var(--ink); }
+}
+@media (max-width: 44.9375em) {
+  .md-typeset h1 { font-size: 1.5rem; }
+  .md-typeset .admonition.abstract > ul { grid-template-columns: 1fr; }
+}
+
+/* ─── Fixes: sticky nav titles, card title bar, loose lists ──── */
+.md-nav__title,
+.md-nav--primary .md-nav__title,
+.md-nav--secondary .md-nav__title {
+  background-color: var(--cream) !important;
+  box-shadow: 0 0 0.4rem 0.4rem var(--cream) !important;
+}
+.md-typeset .admonition.abstract > .admonition-title {
+  background: transparent !important;
+  border: 0;
+  padding: 0;
+  margin-left: 0;
+}
+.md-typeset .admonition.abstract > .admonition-title::before,
+.md-typeset .admonition.abstract > .admonition-title::after { display: none; }
+.md-typeset .admonition.abstract > ul > li > p { margin: 0; }
+.md-typeset .admonition.abstract > ul > li > p:first-child > strong:first-child {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.2rem;
+}

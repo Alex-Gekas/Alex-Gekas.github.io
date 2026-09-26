@@ -17,8 +17,12 @@ theme:
 
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/portfolio.css
 
 markdown_extensions:
+  - toc:
+      title: On this page
+      permalink: false
   - admonition
   - pymdownx.details
   - pymdownx.superfences:
@@ -32,41 +36,39 @@ extra_javascript:
 
 nav:
   - Home: index.md
-  - VR Style Guide:
-    - Style guide: vr-style-guide/guide.md
-  - Task API Docs:
-    - Introduction: task-api-docs/about.md
-    - System architecture: task-api-docs/system-architecture.md
-    - Setup: task-api-docs/setup.md
-    - Getting started: task-api-docs/getting-started.md
-    - Authentication guide: task-api-docs/authentication-guide.md
-    - API reference: task-api-docs/api-reference.md
-    - Troubleshooting: task-api-docs/troubleshooting.md
-  - Slack webhook:
-    - Article: slack-webhook/article.md
-  - NWS API reference:
-    - Overview of the NWS API: nws-api-reference/introduction.md
-    - Quick start: nws-api-reference/quick-start.md
-    - Authentication and headers: nws-api-reference/authentication.md
-    - Caching best practices: nws-api-reference/caching.md
-    - Key concepts:
-        - "How forecasts are structured": nws-api-reference/key-concepts/index.md
-        - "Forecast hierarchy": nws-api-reference/key-concepts/hierarchy.md
-        - "Weather forecast Offices (WFOs)": nws-api-reference/key-concepts/wfos.md
-        - "Gridpoints and grids": nws-api-reference/key-concepts/grids.md
-        - "Zones": nws-api-reference/key-concepts/zones.md
-        - "Developer use cases": nws-api-reference/key-concepts/developer-use-cases.md
-        - "Status codes": nws-api-reference/key-concepts/status-codes.md
-        - "Units and conventions": nws-api-reference/key-concepts/units.md
-    - Endpoints:
-        - "Endpoints overview": nws-api-reference/endpoints/index.md
-        - "Points": nws-api-reference/endpoints/points.md
-        - "Forecasts": nws-api-reference/endpoints/forecasts.md
-        - "Grid points": nws-api-reference/endpoints/grid-points.md
-        - "Stations": nws-api-reference/endpoints/stations.md
-        - "Alerts": nws-api-reference/endpoints/alerts.md
-        - "Zones": nws-api-reference/endpoints/zones.md
-  - GeoJSON explainer:
-    - Explainer: geojson-explainer/explainer.md
-  - Add WooCommerce Order Statuses:
-    - Tutorial: tutorial/woo_comm_tutorial.md
+  - API docs:
+    - NWS API reference:
+      - Overview of the NWS API: nws-api-reference/introduction.md
+      - Quick start: nws-api-reference/quick-start.md
+      - Authentication and headers: nws-api-reference/authentication.md
+      - Caching best practices: nws-api-reference/caching.md
+      - Key concepts:
+          - "How forecasts are structured": nws-api-reference/key-concepts/index.md
+          - "Forecast hierarchy": nws-api-reference/key-concepts/hierarchy.md
+          - "Weather forecast Offices (WFOs)": nws-api-reference/key-concepts/wfos.md
+          - "Gridpoints and grids": nws-api-reference/key-concepts/grids.md
+          - "Zones": nws-api-reference/key-concepts/zones.md
+          - "Developer use cases": nws-api-reference/key-concepts/developer-use-cases.md
+          - "Status codes": nws-api-reference/key-concepts/status-codes.md
+          - "Units and conventions": nws-api-reference/key-concepts/units.md
+      - Endpoints:
+          - "Endpoints overview": nws-api-reference/endpoints/index.md
+          - "Points": nws-api-reference/endpoints/points.md
+          - "Forecasts": nws-api-reference/endpoints/forecasts.md
+          - "Grid points": nws-api-reference/endpoints/grid-points.md
+          - "Stations": nws-api-reference/endpoints/stations.md
+          - "Alerts": nws-api-reference/endpoints/alerts.md
+          - "Zones": nws-api-reference/endpoints/zones.md
+    - Task API documentation:
+      - Introduction: task-api-docs/about.md
+      - System architecture: task-api-docs/system-architecture.md
+      - Setup: task-api-docs/setup.md
+      - Getting started: task-api-docs/getting-started.md
+      - Authentication guide: task-api-docs/authentication-guide.md
+      - API reference: task-api-docs/api-reference.md
+      - Troubleshooting: task-api-docs/troubleshooting.md
+  - Tutorials:
+    - WooCommerce order status: tutorial/woo_comm_tutorial.md
+    - Slack webhook integration: slack-webhook/article.md
+  - Explainers:
+    - GeoJSON explainer: geojson-explainer/explainer.md
