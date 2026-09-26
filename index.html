@@ -16,14 +16,14 @@
       
       
       
-        <link rel="next" href="vr-style-guide/guide/">
+        <link rel="next" href="nws-api-reference/introduction/">
       
       
         
       
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
@@ -48,6 +48,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="stylesheets/portfolio.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -197,60 +199,7 @@
   
     
     
-      <li class="md-tabs__item">
-        <a href="vr-style-guide/guide/" class="md-tabs__link">
-          
-  
-  
-  VR Style Guide
-
-        </a>
-      </li>
-    
-  
-
       
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="task-api-docs/about/" class="md-tabs__link">
-          
-  
-  
-  Task API Docs
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="slack-webhook/article/" class="md-tabs__link">
-          
-  
-  
-  Slack webhook
-
-        </a>
-      </li>
-    
-  
-
-      
-        
   
   
   
@@ -262,7 +211,30 @@
           
   
   
-  NWS API reference
+  API docs
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="tutorial/woo_comm_tutorial/" class="md-tabs__link">
+          
+  
+  
+  Tutorials
 
         </a>
       </li>
@@ -282,27 +254,7 @@
           
   
   
-  GeoJSON explainer
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="tutorial/woo_comm_tutorial/" class="md-tabs__link">
-          
-  
-  
-  Add WooCommerce Order Statuses
+  Explainers
 
         </a>
       </li>
@@ -319,561 +271,295 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 
 <style>
-
   /* ─── Reset MkDocs chrome on homepage ─────────────────── */
+  .md-header, .md-tabs { display: none; }
+  .md-main { margin-top: 0 !important; }
   .md-main__inner { margin: 0; max-width: 100%; }
   .md-content { max-width: 100%; padding: 0; }
-  .md-content__inner { margin: 0; padding: 0; }
+  .md-content__inner { margin: 0; padding: 0 !important; max-width: none !important; }
   .md-content__inner > h1:first-child { display: none; }
-  .md-typeset h1, .md-typeset h2 { margin: 0; }
-  article.md-content__inner { padding: 0 !important; }
-
-  /* ─── Design tokens ────────────────────────────────────── */
-  :root {
-    --cream:    #f7f4ef;
-    --ink:      #1a1814;
-    --ink-mid:  #4a4540;
-    --ink-light:#8c857a;
-    --rule:     #d8d0c4;
-    --accent:   #c0392b;
-    --accent-dk:#96291f;
-    --mono-bg:  #eee9e1;
-    --card-bg:  #f2ede6;
-    --soon:     #b0a898;
-  }
+  .md-footer { display: none; }
 
   /* ─── Page shell ───────────────────────────────────────── */
   .ag-home {
+    --pad: 96px;
     font-family: 'Source Serif 4', Georgia, serif;
     background: var(--cream);
     color: var(--ink);
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .ag-home a { color: var(--accent); }
+  .ag-home a:hover { color: var(--accent-dk); }
+  .ag-mono {
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
 
-  /* ─── MASTHEAD ─────────────────────────────────────────── */
+  /* ─── Masthead ─────────────────────────────────────────── */
   .ag-masthead {
+    padding: 44px var(--pad) 28px;
     border-bottom: 2px solid var(--ink);
-    padding: 48px 64px 32px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: end;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
     gap: 24px;
-    animation: fadeUp 0.6s ease both;
   }
-
   .ag-name {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-size: clamp(2.6rem, 5vw, 3.75rem);
     font-weight: 800;
     letter-spacing: -0.02em;
     line-height: 1;
     color: var(--ink);
   }
-
-  .ag-name span {
-    color: var(--accent);
-  }
-
-  .ag-title-line {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-light);
-    margin-top: 8px;
-  }
-
-  .ag-masthead-right {
-    text-align: right;
-  }
-
-  .ag-masthead-right a {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-mid);
+  .ag-name span { color: var(--accent); }
+  .ag-title-line { font-size: 0.8rem; color: var(--ink-soft); margin-top: 10px; }
+  .ag-profile-links { display: flex; gap: 28px; font-size: 0.8rem; }
+  .ag-home .ag-profile-links a {
+    color: var(--ink);
     text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding: 12px 0 4px;
+  }
+  .ag-home .ag-profile-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ─── Intro ────────────────────────────────────────────── */
+  .ag-intro {
+    padding: 72px var(--pad) 64px;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 32px;
     border-bottom: 1px solid var(--rule);
-    padding-bottom: 1px;
-    transition: color 0.2s, border-color 0.2s;
   }
-
-  .ag-masthead-right a:hover {
-    color: var(--accent);
-    border-color: var(--accent);
+  .ag-intro-main { grid-column: span 7; display: flex; flex-direction: column; gap: 24px; }
+  .ag-home h1.ag-headline {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: clamp(2.1rem, 3.6vw, 3.25rem);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    color: var(--ink);
   }
-
-  .ag-masthead-links {
-    display: flex;
-    gap: 20px;
-    justify-content: flex-end;
-    margin-top: 4px;
-  }
-
-  /* ─── EDITION LINE ─────────────────────────────────────── */
-  .ag-edition {
+  .ag-lede { margin: 0; font-size: 1.3rem; line-height: 1.6; color: var(--ink-mid); max-width: 36em; }
+  .ag-actions { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; padding-top: 8px; }
+  .ag-home a.ag-button {
     background: var(--ink);
     color: var(--cream);
-    padding: 7px 64px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    display: flex;
-    justify-content: space-between;
-    animation: fadeUp 0.6s 0.1s ease both;
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 15px 22px;
+    border-radius: 4px;
   }
+  .ag-home a.ag-button:hover { background: #000; color: var(--cream); }
+  .ag-email { font-size: 1.1rem; padding: 12px 0; }
 
-  /* ─── HERO ─────────────────────────────────────────────── */
-  .ag-hero {
+  .ag-skills { grid-column: 9 / span 4; display: flex; flex-direction: column; gap: 18px; padding-top: 8px; }
+  .ag-label { font-size: 0.75rem; color: var(--accent); }
+  .ag-skills ul { margin: 0; padding: 0; list-style: none; font-family: 'Source Serif 4', Georgia, serif; font-size: 1.1rem; line-height: 1.45; }
+  .ag-skills li { padding: 12px 0; border-top: 1px solid var(--rule); margin: 0; }
+  .ag-skills li:last-child { border-bottom: 1px solid var(--rule); }
+
+  /* ─── Samples ──────────────────────────────────────────── */
+  .ag-samples { padding: 64px var(--pad) 40px; display: flex; flex-direction: column; gap: 28px; }
+  .ag-samples-head { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; flex-wrap: wrap; }
+  .ag-home h2.ag-h2 {
+    margin: 0; padding: 0; border: 0;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 2.1rem; font-weight: 600; letter-spacing: -0.01em; color: var(--ink);
+  }
+  .ag-note { font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; color: var(--ink-soft); }
+
+  .ag-rows { display: flex; flex-direction: column; }
+  .ag-row {
     display: grid;
-    grid-template-columns: 1fr 1px 1fr;
-    gap: 0;
-    border-bottom: 1.5px solid var(--rule);
-    animation: fadeUp 0.6s 0.2s ease both;
-  }
-
-  .ag-hero-left {
-    padding: 56px 64px 56px 64px;
-  }
-
-  .ag-divider-v {
-    background: var(--rule);
-    width: 1px;
-    margin: 40px 0;
-  }
-
-  .ag-hero-right {
-    padding: 56px 64px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 16px;
-  }
-
-  .ag-kicker {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .ag-kicker::before {
-    content: '';
-    display: inline-block;
-    width: 20px;
-    height: 1.5px;
-    background: var(--accent);
-  }
-
-  .ag-hero-headline {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-    font-weight: 700;
-    line-height: 1.15;
-    color: var(--ink);
-    margin-bottom: 0;
-  }
-
-  .ag-hero-body {
-    font-size: 1.05rem;
-    line-height: 1.75;
-    color: var(--ink-mid);
-    font-weight: 300;
-    max-width: 480px;
-  }
-
-  .ag-hero-body strong {
-    color: var(--ink);
-    font-weight: 600;
-  }
-
-  /* ─── SECTION RULE ─────────────────────────────────────── */
-  .ag-section-rule {
-    padding: 0 64px;
-    margin: 0;
-    animation: fadeUp 0.6s 0.3s ease both;
-  }
-
-  .ag-section-rule-inner {
-    border-top: 2px solid var(--ink);
-    padding-top: 10px;
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-  }
-
-  .ag-section-label {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--ink);
-  }
-
-  .ag-section-sub {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.62rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-light);
-  }
-
-  /* ─── SAMPLES TABLE ────────────────────────────────────── */
-  .ag-samples {
-    padding: 24px 64px 56px;
-    animation: fadeUp 0.6s 0.35s ease both;
-  }
-
-  .ag-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .ag-table thead tr {
-    border-bottom: 1px solid var(--ink);
-  }
-
-  .ag-table thead th {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-light);
-    padding: 0 16px 10px 0;
-    font-weight: 500;
-    text-align: left;
-  }
-
-  .ag-table thead th:first-child { padding-left: 0; }
-
-  .ag-table tbody tr {
+    grid-template-columns: 200px minmax(0, 1fr) 260px 110px;
+    column-gap: 32px;
+    padding: 24px 0;
     border-bottom: 1px solid var(--rule);
-    transition: background 0.15s;
-    cursor: default;
+    align-items: baseline;
   }
-
-  .ag-table tbody tr.ag-row-active:hover {
-    background: var(--card-bg);
+  .ag-row-head {
+    padding: 0 0 12px;
+    border-bottom: 2px solid var(--ink);
+    font-size: 0.75rem;
+    color: var(--ink-soft);
   }
-
-  .ag-table tbody td {
-    padding: 18px 16px 18px 0;
-    vertical-align: middle;
+  .ag-type { font-size: 0.8rem; letter-spacing: 0.06em; color: var(--accent); }
+  .ag-sample { display: flex; flex-direction: column; gap: 6px; }
+  .ag-home a.ag-sample-title {
+    font-size: 1.45rem; font-weight: 600; line-height: 1.25;
+    color: var(--ink); text-decoration: none;
   }
+  .ag-home a.ag-sample-title:hover { color: var(--accent); }
+  .ag-desc, .ag-for { font-size: 1rem; line-height: 1.5; color: var(--ink-mid); }
+  .ag-read { font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; }
 
-  .ag-table tbody td:first-child { padding-left: 0; }
-
-  .ag-sample-num {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--ink-light);
-    width: 32px;
+  /* ─── How I work ───────────────────────────────────────── */
+  .ag-how {
+    margin: 24px var(--pad) 0;
+    padding: 40px 0 48px;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 32px;
   }
+  .ag-how .ag-label { grid-column: span 4; }
+  .ag-how p { grid-column: 5 / span 8; margin: 0; font-size: 1.2rem; line-height: 1.6; color: var(--ink-mid); }
 
-  .ag-sample-title {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--ink);
-    line-height: 1.3;
-  }
-
-  .ag-sample-audience {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.05em;
-    color: var(--ink-mid);
-    min-width: 140px;
-  }
-
-  .ag-sample-type {
-    min-width: 100px;
-  }
-
-  .ag-tag {
-    display: inline-block;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.58rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 3px 8px;
-    border-radius: 2px;
-    border: 1px solid;
-  }
-
-  .ag-tag-api    { color: #1a5276; background: #d6eaf8; border-color: #a9cce3; }
-  .ag-tag-tut    { color: #145a32; background: #d5f5e3; border-color: #a9dfbf; }
-  .ag-tag-expl   { color: #6e2f02; background: #fdebd0; border-color: #f0b27a; }
-  .ag-tag-guide  { color: #4a235a; background: #e8daef; border-color: #c39bd3; }
-
-  .ag-sample-links {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    min-width: 120px;
-  }
-
-  .ag-link {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.62rem;
-    letter-spacing: 0.06em;
-    color: var(--accent);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    transition: color 0.15s;
-  }
-
-  .ag-link:hover { color: var(--accent-dk); }
-
-  .ag-link::before {
-    content: '→';
-    font-size: 0.7rem;
-  }
-
-  /* ─── FOOTER STRIP ─────────────────────────────────────── */
+  /* ─── Footer ───────────────────────────────────────────── */
   .ag-footer {
+    margin-top: auto;
     border-top: 2px solid var(--ink);
-    padding: 24px 64px;
+    padding: 26px var(--pad);
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    animation: fadeUp 0.6s 0.4s ease both;
+    gap: 16px;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
   }
-
-  .ag-footer-left {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    color: var(--ink-light);
-  }
-
-  .ag-footer-right {
-    display: flex;
-    gap: 20px;
-  }
-
-  .ag-footer-right a {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-mid);
-    text-decoration: none;
-    transition: color 0.15s;
-  }
-
-  .ag-footer-right a:hover { color: var(--accent); }
-
-  /* ─── Animation ────────────────────────────────────────── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+  .ag-footer-links { display: flex; gap: 24px; }
+  .ag-home .ag-footer-links a { color: var(--ink); }
 
   /* ─── Responsive ───────────────────────────────────────── */
-  @media (max-width: 900px) {
-    .ag-masthead, .ag-edition,
-    .ag-section-rule, .ag-samples, .ag-footer {
-      padding-left: 24px;
-      padding-right: 24px;
-    }
-
-    .ag-hero {
-      grid-template-columns: 1fr;
-    }
-
-    .ag-divider-v { display: none; }
-
-    .ag-hero-left, .ag-hero-right {
-      padding: 32px 24px;
-    }
-
-    .ag-hero-right { border-top: 1px solid var(--rule); }
-
-    .ag-masthead { grid-template-columns: 1fr; }
-    .ag-masthead-right { text-align: left; }
-    .ag-masthead-links { justify-content: flex-start; }
-
-    .ag-table thead th:nth-child(3),
-    .ag-table tbody td:nth-child(3) { display: none; }
-
-    .ag-footer { flex-direction: column; gap: 12px; align-items: flex-start; }
+  @media (max-width: 1100px) {
+    .ag-home { --pad: 48px; }
+    .ag-row { grid-template-columns: 170px minmax(0, 1fr) 200px 90px; column-gap: 24px; }
   }
-
-  /* Hide Material header on homepage only */
-  .md-header { display: none; }
-  .md-tabs { display: none; }
-  .md-main { margin-top: 0 !important; }
+  @media (max-width: 860px) {
+    .ag-home { --pad: 20px; }
+    .ag-masthead { flex-direction: column; align-items: flex-start; padding-top: 28px; }
+    .ag-profile-links { gap: 22px; }
+    .ag-intro { display: flex; flex-direction: column; gap: 32px; padding-top: 32px; padding-bottom: 32px; }
+    .ag-lede { font-size: 1.15rem; }
+    .ag-samples { padding-top: 32px; }
+    .ag-home h2.ag-h2 { font-size: 1.65rem; }
+    .ag-row { display: flex; flex-direction: column; gap: 6px; padding: 18px 0; }
+    .ag-rows .ag-row:nth-child(2) { border-top: 2px solid var(--ink); }
+    .ag-row.ag-row-head { display: none; }
+    .ag-read { display: none; }
+    .ag-how { display: flex; flex-direction: column; gap: 10px; padding: 28px 0; }
+    .ag-how p { font-size: 1.05rem; }
+    .ag-footer { flex-direction: column; }
+  }
 </style>
 
 <div class="ag-home">
 
-  <!-- MASTHEAD -->
   <header class="ag-masthead">
     <div>
       <div class="ag-name">Alex <span>Gekas</span></div>
-      <div class="ag-title-line">Technical Writer &nbsp;·&nbsp; API &amp; Developer Documentation</div>
+      <div class="ag-title-line ag-mono">Technical writer &nbsp;·&nbsp; API &amp; developer documentation</div>
     </div>
-    <div class="ag-masthead-right">
-      <div class="ag-masthead-links">
-        <a href="https://github.com/alex-gekas" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/alex-gekas" target="_blank">LinkedIn</a>
-      </div>
-    </div>
+    <nav class="ag-profile-links ag-mono" aria-label="Profiles">
+      <a href="https://github.com/alex-gekas" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/alex-gekas" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://alexgekas.com" target="_blank" rel="noopener">alexgekas.com</a>
+    </nav>
   </header>
 
-  <!-- EDITION LINE -->
-  <div class="ag-edition">
-    <span>Writing Portfolio &nbsp;·&nbsp; Technical Documentation Samples</span>
-    <span>github.io/alex-gekas</span>
-  </div>
+  <section class="ag-intro">
+    <div class="ag-intro-main">
+      <h1 class="ag-headline">Portfolio of technical writing samples</h1>
+      <p class="ag-lede">Independent documentation projects and rewrites of public docs: API references, tutorials, explainers and style guides. Each sample opens with a short brief on its audience, tools and what it demonstrates.</p>
+      <div class="ag-actions">
+        <a class="ag-button ag-mono" href="#samples">Read the samples</a>
+        <a class="ag-email" href="mailto:alex.gekas@gmail.com">alex.gekas@gmail.com</a>
+      </div>
+    </div>
+    <aside class="ag-skills" aria-label="Skills">
+      <div class="ag-label ag-mono">Skills</div>
+      <ul>
+        <li>Document planning</li>
+        <li>Information architecture</li>
+        <li>Technical editing</li>
+        <li>Style guides: Google, Microsoft and custom guides scaled to a project</li>
+      </ul>
+    </aside>
+  </section>
 
-  <!-- HERO -->
-  <section class="ag-hero">
-    <div class="ag-hero-left">
-      <div class="ag-kicker">About this portfolio</div>
-      <h1 class="ag-hero-headline">
-        Clear documentation for developer tools.
-      </h1>
-      <p class="ag-hero-body" style="margin-top: 24px;">
-        I create implementation-focused documentation for APIs, SaaS products,
-        and integrations. My work combines hands-on builds with clear onboarding
-        guides, tutorials, and developer content designed to reduce friction and
-        improve product adoption.
-      </p>
-  
+  <section class="ag-samples" id="samples">
+    <div class="ag-samples-head">
+      <h2 class="ag-h2">Samples by job type</h2>
+      <div class="ag-note">Each sample opens with a short brief: audience, tools, what it shows</div>
     </div>
 
-    <div class="ag-divider-v"></div>
+    <div class="ag-rows">
+      <div class="ag-row ag-row-head ag-mono" aria-hidden="true">
+        <div>Job type</div><div>Sample</div><div>Written for</div><div></div>
+      </div>
 
-    <div class="ag-hero-right">
-      <div class="ag-kicker">Available for contract work</div>
-      <p class="ag-hero-body">
-        Technical writing &amp; UX writing &nbsp;·&nbsp; <a href="mailto:alex.gekas@gmail.com" style="color: var(--accent); text-decoration: none;">alex.gekas@gmail.com</a>
-      </p>
-      <br>
-      <p class="ag-hero-body" style="font-size: 0.8rem; color: var(--ink-light); line-height: 1.8;">
-        <strong style="color: var(--ink-mid); font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;">I work with</strong><br>
-        MkDocs · Material for MkDocs · Diataxis · Markdown · REST APIs · OpenAPI/Swagger · JWT authentication · Node.js · Git · GitHub Pages · Vale
-      </p>
+      <div class="ag-row">
+        <div class="ag-type ag-mono">API reference</div>
+        <div class="ag-sample">
+          <a class="ag-sample-title" href="nws-api-reference/introduction/">NWS API reference</a>
+          <div class="ag-desc">A developer-focused rewrite of a large public API, organized by use case.</div>
+        </div>
+        <div class="ag-for">Backend developers and API integrators</div>
+        <a class="ag-read" href="nws-api-reference/introduction/">Read →</a>
+      </div>
+
+      <div class="ag-row">
+        <div class="ag-type ag-mono">API docs set</div>
+        <div class="ag-sample">
+          <a class="ag-sample-title" href="task-api-docs/about/">Task API documentation</a>
+          <div class="ag-desc">Setup, authentication, reference and troubleshooting for a REST API.</div>
+        </div>
+        <div class="ag-for">Backend developers and API integrators</div>
+        <a class="ag-read" href="task-api-docs/about/">Read →</a>
+      </div>
+
+      <div class="ag-row">
+        <div class="ag-type ag-mono">Developer tutorial</div>
+        <div class="ag-sample">
+          <a class="ag-sample-title" href="tutorial/woo_comm_tutorial/">Build a custom WooCommerce order status with customer emails</a>
+          <div class="ag-desc">A plugin that adds an “Awaiting Review” status, admin actions and a customer email.</div>
+        </div>
+        <div class="ag-for">WordPress and WooCommerce developers</div>
+        <a class="ag-read" href="tutorial/woo_comm_tutorial/">Read →</a>
+      </div>
+
+      <div class="ag-row">
+        <div class="ag-type ag-mono">Integration tutorial</div>
+        <div class="ag-sample">
+          <a class="ag-sample-title" href="slack-webhook/article/">Slack webhook integration</a>
+          <div class="ag-desc">Sending application alerts into Slack, step by step.</div>
+        </div>
+        <div class="ag-for">Developers and DevOps engineers</div>
+        <a class="ag-read" href="slack-webhook/article/">Read →</a>
+      </div>
+
+      <div class="ag-row">
+        <div class="ag-type ag-mono">Explainer</div>
+        <div class="ag-sample">
+          <a class="ag-sample-title" href="geojson-explainer/explainer/">GeoJSON explainer</a>
+          <div class="ag-desc">A plain-language introduction to a technical data format.</div>
+        </div>
+        <div class="ag-for">Product managers and data analysts</div>
+        <a class="ag-read" href="geojson-explainer/explainer/">Read →</a>
+      </div>
     </div>
   </section>
 
-  <!-- SAMPLES TABLE -->
-  <div class="ag-section-rule">
-    <div class="ag-section-rule-inner">
-      <span class="ag-section-label">Writing Samples</span>
-      <span class="ag-section-sub">Five pieces across API references, tutorials, and explainers</span>
-    </div>
-  </div>
+  <section class="ag-how">
+    <div class="ag-label ag-mono">How I work</div>
+    <p>I follow the Google developer documentation style guide, structure content with the Diátaxis framework, lint with Vale and publish with MkDocs Material. I write in Markdown, work in Git and test every procedure before it goes out.</p>
+  </section>
 
-  <div class="ag-samples">
-    <table class="ag-table">
-      <thead>
-        <tr>
-          <th style="width:32px;">#</th>
-          <th>Sample</th>
-          <th>Audience</th>
-          <th>Format</th>
-          <th>Read</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!--
-        <tr class="ag-row-active">
-          <td class="ag-sample-num">01</td>
-          <td><div class="ag-sample-title">Contributor style guide with Vale integration</div></td>
-          <td class="ag-sample-audience">technical writers,<br>open source contributors</td>
-          <td class="ag-sample-type"><span class="ag-tag ag-tag-tut">Style Guide</span></td>
-          <td>
-            <div class="ag-sample-links">
-              <a class="ag-link" href="vr-style-guide/guide/">Read guide</a>
-            </div>
-          </td>
-        </tr>
-        -->
-        <tr class="ag-row-active">
-          <td class="ag-sample-num">01</td>
-          <td><div class="ag-sample-title">NWS API reference</div></td>
-          <td class="ag-sample-audience">backend developers,<br>API integrators</td>
-          <td class="ag-sample-type"><span class="ag-tag ag-tag-api">API Docs</span></td>
-          <td>
-            <div class="ag-sample-links">
-              <a class="ag-link" href="nws-api-reference/introduction/">Read docs</a>
-            </div>
-          </td>
-        </tr>
-
-        <tr class="ag-row-active">
-          <td class="ag-sample-num">02</td>
-          <td><div class="ag-sample-title">GeoJSON explainer</div></td>
-          <td class="ag-sample-audience">product managers,<br>data analysts</td>
-          <td class="ag-sample-type"><span class="ag-tag ag-tag-expl">Explainer</span></td>
-          <td>
-            <div class="ag-sample-links">
-              <a class="ag-link" href="geojson-explainer/explainer/">Read explainer</a>
-            </div>
-          </td>
-        </tr>
-
-        <tr class="ag-row-active">
-          <td class="ag-sample-num">03</td>
-          <td><div class="ag-sample-title">WooCommerce order status and emails</div></td>
-          <td class="ag-sample-audience">e-commerce developers</td>
-          <td class="ag-sample-type"><span class="ag-tag ag-tag-tut">Tutorial</span></td>
-          <td>
-            <div class="ag-sample-links">
-              <a class="ag-link" href="tutorial/woo_comm_tutorial/">Read tutorial</a>
-            </div>
-          </td>
-        </tr>
-
-        <tr class="ag-row-active">
-          <td class="ag-sample-num">04</td>
-          <td><div class="ag-sample-title">Slack webhook integration</div></td>
-          <td class="ag-sample-audience">developers,<br>DevOps engineers</td>
-          <td class="ag-sample-type"><span class="ag-tag ag-tag-tut">Tutorial</span></td>
-          <td>
-            <div class="ag-sample-links">
-              <a class="ag-link" href="slack-webhook/article/">Read article</a>
-            </div>
-          </td>
-        </tr>
-
-        <tr class="ag-row-active">
-          <td class="ag-sample-num">05</td>
-          <td><div class="ag-sample-title">Task API documentation</div></td>
-          <td class="ag-sample-audience">backend developers,<br>API integrators</td>
-          <td class="ag-sample-type"><span class="ag-tag ag-tag-api">API docs</span></td>
-          <td>
-            <div class="ag-sample-links">
-              <a class="ag-link" href="task-api-docs/about/">Read docs</a>
-            </div>
-          </td>
-        </tr>
-
-      </tbody>
-    </table>
-  </div>
-
-  <!-- FOOTER -->
-  <footer class="ag-footer">
-    <div class="ag-footer-left">© Alex Gekas &nbsp;·&nbsp; Built with Material for MkDocs</div>
-    <div class="ag-footer-right">
-      <a href="https://github.com/alex-gekas" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/alex-gekas" target="_blank">LinkedIn</a>
+  <footer class="ag-footer ag-mono">
+    <div>© Alex Gekas &nbsp;·&nbsp; Available for contract work</div>
+    <div class="ag-footer-links">
       <a href="mailto:alex.gekas@gmail.com">Contact</a>
+      <a href="https://github.com/alex-gekas" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/alex-gekas" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </footer>
 
@@ -972,7 +658,7 @@
   <span class="md-ellipsis">
     
   
-    VR Style Guide
+    API docs
   
 
     
@@ -988,7 +674,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    VR Style Guide
+    API docs
   
 
           </label>
@@ -996,41 +682,6 @@
             
               
                 
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="vr-style-guide/guide/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Style guide
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
   
   
   
@@ -1047,348 +698,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Task API Docs
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Task API Docs
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="task-api-docs/about/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Introduction
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="task-api-docs/system-architecture/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    System architecture
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="task-api-docs/setup/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Setup
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="task-api-docs/getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Getting started
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="task-api-docs/authentication-guide/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Authentication guide
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="task-api-docs/api-reference/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API reference
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="task-api-docs/troubleshooting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Troubleshooting
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Slack webhook
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Slack webhook
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="slack-webhook/article/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Article
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
             
   
   
@@ -1406,8 +719,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1547,10 +860,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
         
           
-          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
             
   
   
@@ -1568,8 +881,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_5">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1829,10 +1142,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_6" >
         
           
-          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_1_6" id="__nav_2_1_6_label" tabindex="0">
             
   
   
@@ -1850,8 +1163,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_6">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2071,6 +1384,268 @@
     </li>
   
 
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task API documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Task API documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="task-api-docs/about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="task-api-docs/system-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="task-api-docs/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="task-api-docs/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="task-api-docs/authentication-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="task-api-docs/api-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="task-api-docs/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -2090,17 +1665,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    GeoJSON explainer
+    Tutorials
   
 
     
@@ -2111,12 +1686,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
-    GeoJSON explainer
+    Tutorials
   
 
           </label>
@@ -2129,14 +1704,42 @@
   
   
     <li class="md-nav__item">
-      <a href="geojson-explainer/explainer/" class="md-nav__link">
+      <a href="tutorial/woo_comm_tutorial/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Explainer
+    WooCommerce order status
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="slack-webhook/article/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slack webhook integration
   
 
     
@@ -2175,17 +1778,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    Add WooCommerce Order Statuses
+    Explainers
   
 
     
@@ -2196,12 +1799,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Add WooCommerce Order Statuses
+    Explainers
   
 
           </label>
@@ -2214,14 +1817,14 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorial/woo_comm_tutorial/" class="md-nav__link">
+      <a href="geojson-explainer/explainer/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Tutorial
+    GeoJSON explainer
   
 
     
@@ -2257,7 +1860,9 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
   
   
   
@@ -2288,6 +1893,24 @@
         
       </main>
       
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
     </div>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
@@ -2300,7 +1923,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       
