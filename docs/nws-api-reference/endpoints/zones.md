@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Zones"
+description: "Reference for the NWS API zone endpoints (/zones, /zones/{type}, /zones/{type}/{zoneId}): request formats, parameters, and responses."
 parent: "Endpoints"
 nav_order: 6
 ---

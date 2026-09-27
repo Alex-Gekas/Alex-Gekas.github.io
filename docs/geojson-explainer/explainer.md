@@ -1,3 +1,7 @@
+---
+seo_title: "GeoJSON Explainer for Developers – Technical Writing Sample | Alex Gekas"
+description: "Concept guide to GeoJSON for developers using the National Weather Service API: FeatureCollection, Feature, and Geometry, explained with NWS examples."
+---
 !!! abstract "About this sample"
     - **What this is:** A concept guide explaining GeoJSON spatial data formats for non-engineering audiences, focused on giving a basic understanding of the format to understand responses from the NWS API.
     - **Audience:** Developers new to GeoJSON, product managers, and data analysts.

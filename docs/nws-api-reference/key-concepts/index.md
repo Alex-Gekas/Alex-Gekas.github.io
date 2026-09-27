@@ -1,5 +1,6 @@
 ---
 title: "Concepts: How the API structures forecasts"
+seo_title: "How the NWS API Structures Forecasts – API Concepts Sample | Alex Gekas"
 description: "Introduces how the NWS API organizes forecasts using grids, zones, and linked data."
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Alerts"
+description: "Reference for the NWS API GET /alerts endpoint: request format, headers, parameters, and example responses for active weather alerts."
 parent: "Endpoints"
 nav_order: 1
 ---

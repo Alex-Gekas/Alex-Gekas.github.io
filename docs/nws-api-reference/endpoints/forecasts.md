@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Forecasts"
+description: "Reference for getting a National Weather Service forecast for a location: the GET /points/{lat},{lon}/forecast request, parameters, and responses."
 parent: "Endpoints"
 nav_order: 2
 ---

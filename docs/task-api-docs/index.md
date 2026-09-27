@@ -1,3 +1,7 @@
+---
+seo_title: "Case Study: Documenting a REST API from Setup to Troubleshooting | Alex Gekas"
+description: "Case study on building a seven-document suite for the Task API, a Node.js and Express REST API, and the structural decisions behind it."
+---
 # Case study: documenting a lightweight REST API
 
 ## Introduction

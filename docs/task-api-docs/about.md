@@ -1,6 +1,7 @@
 ---
 title: Task API documentation
-description: A production-style REST API documentation suite covering setup, authentication, endpoints, and troubleshooting.
+seo_title: "REST API Documentation Sample – Task API | Alex Gekas"
+description: "REST API documentation set for a Node.js task API: setup, JWT authentication, getting started, endpoint reference, and troubleshooting. Writing sample by Alex Gekas."
 ---
 
 !!! abstract "About this sample"

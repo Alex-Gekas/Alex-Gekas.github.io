@@ -1,6 +1,7 @@
 ---
 title: "About this documentation"
-description: "Portfolio project overview and methodology"
+seo_title: "Case Study: Reorganizing the NWS API Reference | Alex Gekas"
+description: "Case study on restructuring the National Weather Service API documentation for developers by separating concepts, how-to guides, and reference content."
 ---
 ## About this documentation
 

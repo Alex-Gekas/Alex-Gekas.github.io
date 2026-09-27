@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Stations"
+description: "Reference for the NWS API GET /stations endpoint: request format, parameters, and responses for weather observation stations."
 parent: "Endpoints"
 nav_order: 5
 ---

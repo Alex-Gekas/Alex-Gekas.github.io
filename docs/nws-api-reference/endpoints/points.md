@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Points"
+description: "Reference for the NWS API GET /points/{latitude},{longitude} endpoint, which returns grid metadata and forecast URLs for a location."
 parent: "Endpoints"
 nav_order: 4
 ---

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Grid points"
+description: "Reference for the NWS API GET /gridpoints/{office}/{gridX},{gridY} endpoint: request format, parameters, and forecast responses by gridpoint."
 parent: "Endpoints"
 nav_order: 3
 ---

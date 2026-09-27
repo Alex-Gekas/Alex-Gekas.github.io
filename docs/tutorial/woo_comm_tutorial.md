@@ -1,5 +1,7 @@
 ---
 title: "Tutorial: WooCommerce order status and emails"
+seo_title: "WooCommerce Developer Tutorial – Technical Writing Sample | Alex Gekas"
+description: "Step-by-step WooCommerce developer tutorial: build a plugin that adds a custom Awaiting Review order status, admin actions, and a customer email. By Alex Gekas."
 tags:
   - tutorial
   - WooCommerce

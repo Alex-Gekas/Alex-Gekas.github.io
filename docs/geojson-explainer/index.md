@@ -1,3 +1,7 @@
+---
+seo_title: "Case Study: Writing a GeoJSON Explainer for Developers | Alex Gekas"
+description: "Case study on scoping a GeoJSON explainer for NWS API users: what to keep, what to cut from the spec, and why."
+---
 # Case study: Writing a GeoJSON explainer for developers
 
 ## The audience problem

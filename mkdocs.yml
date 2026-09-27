@@ -1,7 +1,7 @@
 site_name: Alex Gekas — Technical Writing Portfolio
 site_url: https://alex-gekas.github.io/
 site_author: Alex Gekas
-site_description: Technical writing portfolio — API docs, tutorials, explainers, and style guides.
+site_description: Technical writing portfolio of Alex Gekas — API reference documentation, developer and integration tutorials, and technical explainers.
 
 theme:
   name: material
@@ -73,3 +73,4 @@ nav:
     - Slack webhook integration: slack-webhook/article.md
   - Explainers:
     - GeoJSON explainer: geojson-explainer/explainer.md
+  - About: about.md

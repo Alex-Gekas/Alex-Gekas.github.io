@@ -1,6 +1,7 @@
 ---
 title: "NWS API—reorganized reference"
-description: "Introduction to the NWS API"
+seo_title: "REST API Documentation Sample – National Weather Service | Alex Gekas"
+description: "Developer-focused rewrite of the National Weather Service (NWS) REST API docs: overview, quick start, key concepts, and endpoint reference. Writing sample by Alex Gekas."
 ---
 !!! abstract "About this sample"
     - **What this is:** This reference covers a curated subset of the NWS API. It focuses on the endpoints most useful for developers building weather apps, without requiring deep familiarity with meteorological data. It also includes explanations of key concepts, caching guidance, and code examples.

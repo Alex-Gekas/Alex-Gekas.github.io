@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{#
+  SEO and discoverability overrides.
+
+  Front matter keys this template reads (all optional):
+    seo_title    Full text of the <title> tag. Overrides the default
+                 "Page title - Site name" pattern without changing the
+                 page's visible heading or its label in the navigation.
+    description  Meta description (built into Material; also reused below
+                 for Open Graph and Twitter cards).
+    jsonld       Name of a partial in overrides/partials/jsonld/ to embed
+                 as structured data, for example "about".
+#}
+
+{% block htmltitle %}
+  {% if page and page.meta and page.meta.seo_title %}
+    <title>{{ page.meta.seo_title }}</title>
+  {% else %}
+    {{ super() }}
+  {% endif %}
+{% endblock %}
+
+{% block extrahead %}
+  {{ super() }}
+  {% if page %}
+    {% if page.meta and page.meta.seo_title %}
+      {% set og_title = page.meta.seo_title %}
+    {% elif page.title and not page.is_homepage %}
+      {% set og_title = (page.title | striptags) ~ " | Alex Gekas" %}
+    {% else %}
+      {% set og_title = config.site_name %}
+    {% endif %}
+    {% if page.meta and page.meta.description %}
+      {% set og_description = page.meta.description %}
+    {% else %}
+      {% set og_description = config.site_description %}
+    {% endif %}
+    <meta property="og:type" content="{% if page.is_homepage %}website{% else %}article{% endif %}">
+    <meta property="og:site_name" content="{{ config.site_name }}">
+    <meta property="og:title" content="{{ og_title }}">
+    <meta property="og:description" content="{{ og_description }}">
+    {% if page.canonical_url %}
+      <meta property="og:url" content="{{ page.canonical_url }}">
+    {% endif %}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ og_title }}">
+    <meta name="twitter:description" content="{{ og_description }}">
+    {% if page.meta and page.meta.jsonld %}
+      {% include "partials/jsonld/" ~ page.meta.jsonld ~ ".html" %}
+    {% endif %}
+  {% endif %}
+{% endblock %}

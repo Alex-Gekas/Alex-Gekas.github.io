@@ -1,6 +1,7 @@
 ---
 title: Send task updates from an API to Slack using webhooks
-description: How to connect the Task API to Slack using a webhook and Python scripts to receive daily task update notifications.
+seo_title: "Slack Webhook Integration Tutorial – Technical Writing Sample | Alex Gekas"
+description: "Integration tutorial: send task updates from a REST API to Slack with an incoming webhook, Python scripts, and cron scheduling. Writing sample by Alex Gekas."
 ---
 !!! abstract "About this sample"
     - **What this is:** A step-by-step tutorial for connecting the Task API to Slack using an incoming webhook—covers three Python notification scripts and cron scheduling, written as a published developer article.

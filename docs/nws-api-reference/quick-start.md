@@ -1,6 +1,7 @@
 ---
 title: "Quick start"
-description: "Get up and running with the NWS API"
+seo_title: "NWS API Quick Start – API Documentation Sample | Alex Gekas"
+description: "Quick start for the National Weather Service API: go from a latitude and longitude to a working forecast with curl. No API key required."
 ---
 
 # Quick start
