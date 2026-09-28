@@ -1,6 +1,6 @@
 ---
 title: Task API documentation
-seo_title: "REST API Documentation Sample – Task API | Alex Gekas"
+seo_title: "Task API REST Documentation Sample | Alex Gekas"
 description: "REST API documentation set for a Node.js task API: setup, JWT authentication, getting started, endpoint reference, and troubleshooting. Writing sample by Alex Gekas."
 ---
 

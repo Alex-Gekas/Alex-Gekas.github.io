@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Endpoints"
-seo_title: "NWS API Endpoints Reference – API Documentation Sample | Alex Gekas"
+seo_title: "NWS API Endpoints Reference | Alex Gekas"
 description: "Overview of the National Weather Service API endpoint reference: points, forecasts, gridpoints, stations, alerts, and zones, with paths and response formats."
 parent: "NWS API Reference"
 has_children: true

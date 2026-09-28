@@ -1,6 +1,6 @@
 ---
 title: "Case study: WooCommerce order status and emails"
-seo_title: "Case Study: Writing a WooCommerce Order Status Tutorial | Alex Gekas"
+seo_title: "Case Study: WooCommerce Order Status Tutorial | Alex Gekas"
 description: "Case study on the decisions behind a WooCommerce developer tutorial: HPOS compatibility, a decoupled email trigger, and a duplicate-send safeguard."
 ---
 # Case study: WooCommerce order status and emails

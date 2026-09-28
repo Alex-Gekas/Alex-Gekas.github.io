@@ -1,5 +1,5 @@
 ---
-seo_title: "GeoJSON Explainer for Developers – Technical Writing Sample | Alex Gekas"
+seo_title: "GeoJSON Explainer for Developers | Alex Gekas"
 description: "Concept guide to GeoJSON for developers using the National Weather Service API: FeatureCollection, Feature, and Geometry, explained with NWS examples."
 ---
 !!! abstract "About this sample"

@@ -1,6 +1,6 @@
 ---
 title: Send task updates from an API to Slack using webhooks
-seo_title: "Slack Webhook Integration Tutorial – Technical Writing Sample | Alex Gekas"
+seo_title: "Slack Webhook Integration Tutorial | Alex Gekas"
 description: "Integration tutorial: send task updates from a REST API to Slack with an incoming webhook, Python scripts, and cron scheduling. Writing sample by Alex Gekas."
 ---
 !!! abstract "About this sample"

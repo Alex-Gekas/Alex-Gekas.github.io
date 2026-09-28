@@ -1,6 +1,6 @@
 ---
 title: API reference
-seo_title: "Task API Endpoint Reference – REST API Documentation Sample | Alex Gekas"
+seo_title: "Task API Endpoint Reference | Alex Gekas"
 description: "Endpoint reference for the Task API: authentication and task endpoints with request fields, example requests and responses, and error codes."
 ---
 This section documents all available endpoints in the Task API.

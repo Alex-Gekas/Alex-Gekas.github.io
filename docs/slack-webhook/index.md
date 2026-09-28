@@ -1,5 +1,5 @@
 ---
-seo_title: "Case Study: Writing an API-to-Slack Integration Tutorial | Alex Gekas"
+seo_title: "Case Study: API-to-Slack Integration Tutorial | Alex Gekas"
 description: "Case study on structuring an integration tutorial that spans two systems, the Task API and Slack, and the documentation decisions behind it."
 ---
 # Case study: Integration tutorial writing

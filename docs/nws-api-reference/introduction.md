@@ -1,6 +1,6 @@
 ---
 title: "NWS API—reorganized reference"
-seo_title: "REST API Documentation Sample – National Weather Service | Alex Gekas"
+seo_title: "NWS REST API Documentation Sample | Alex Gekas"
 description: "Developer-focused rewrite of the National Weather Service (NWS) REST API docs: overview, quick start, key concepts, and endpoint reference. Writing sample by Alex Gekas."
 ---
 !!! abstract "About this sample"

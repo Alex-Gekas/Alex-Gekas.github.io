@@ -1,6 +1,6 @@
 ---
 title: About
-seo_title: "About Alex Gekas – Technical Writer for API & Developer Documentation"
+seo_title: "About Alex Gekas, Technical Writer for API Docs"
 description: "Alex Gekas is a technical writer focused on API and developer documentation: API references, tutorials, integration guides, and SaaS docs. Open to freelance and contract work."
 jsonld: about
 hide:
