@@ -39,3 +39,11 @@ WFOs?
 WooCommerce
 Zaius
 [Aa]dmin
+Formbricks
+WPCode
+[Cc]ooldown
+onload
+callouts
+invoice_sent
+workspace's
+LedgerWiz

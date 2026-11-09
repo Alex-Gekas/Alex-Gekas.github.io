@@ -9,6 +9,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.top
+    - navigation.indexes
   palette:
     scheme: default
     primary: custom
@@ -73,4 +74,10 @@ nav:
     - Slack webhook integration: slack-webhook/article.md
   - Explainers:
     - GeoJSON explainer: geojson-explainer/explainer.md
+  - SaaS knowledge base:
+    - formbricks-series/index.md
+    - Install the widget: formbricks-series/01-install-the-widget.md
+    - How in-app surveys work: formbricks-series/02-how-in-app-surveys-work.md
+    - Build your first survey: formbricks-series/03-build-your-first-survey.md
+    - Trigger a survey: formbricks-series/04-trigger-a-survey.md
   - About: about.md
