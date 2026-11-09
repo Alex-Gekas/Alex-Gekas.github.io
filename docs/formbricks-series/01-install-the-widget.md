@@ -78,7 +78,7 @@ If your site runs on WordPress, use the free WPCode plugin. It adds code to ever
 
 1. In WordPress, go to **Plugins** > **Add New Plugin**, search for **WPCode**, and then click **Install Now** and **Activate**.
 2. Go to **Code Snippets** > **+ Add Snippet**, and then select **Add Your Custom Code (New Snippet)**.
-3. Enter a title, such as **Formbricks – site header**.
+3. Enter a title, such as **Formbricks site header**.
 4. For **Code Type**, select **HTML Snippet**, and then paste the snippet into **Code Preview**.
 5. Under **Insertion**, set **Insert Method** to **Auto Insert** and **Location** to **Site Wide Header**.
 6. Switch the toggle to **Active**, and then click **Save Snippet**.
@@ -99,7 +99,7 @@ If your site runs on WordPress, use the free WPCode plugin. It adds code to ever
 
     ![The Connection status card on the Web & Mobile SDK page, green and showing Receiving data and Formbricks SDK is connected.](images/formbricks-connection-status.png)
 
-3. Optional: In your browser's developer console, enter `window.formbricks`. If the SDK loaded, the console returns an object.
+3. Optional: In your browser console, enter `window.formbricks`. If the SDK loaded, the console returns an object.
 
 !!! tip
 
@@ -145,7 +145,7 @@ This prevents the next person who uses the same browser from being linked to the
 
 ### Keep in mind
 
-- Use a user ID that is unique and doesn't change, such as a database ID. Don't use a display name.
+- Use a user ID that's unique and doesn't change, such as a database ID. Don't use a display name.
 - Each email address can belong to only one contact in a workspace.
 - Tell your product team which attribute keys you send (for example, `plan` and `signup_date`). They use these to target surveys.
 

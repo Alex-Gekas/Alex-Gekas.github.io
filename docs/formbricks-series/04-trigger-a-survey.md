@@ -5,7 +5,7 @@ description: Show a Formbricks survey right after a user completes a key task, u
 
 # Trigger a survey after a specific user action
 
-This guide shows you how to show a survey right after a user completes a key task, such as sending their first invoice. You create an action that tells Formbricks the task happened, then attach it to your survey as the trigger.
+This guide shows you how to show a survey right after a user completes a key task, such as sending their first invoice. You create an action that records when the task happens, then attach it to your survey as the trigger.
 
 The examples follow LedgerWiz, an invoicing app that asks new users how easy it was to send their first invoice.
 
@@ -34,7 +34,7 @@ LedgerWiz uses a code action. Its confirmation page can also open from other pla
 
     Don't create a page view and a code action for the same task and attach both. Each one can trigger the survey, so one invoice can count twice.
 
-## Option A: Create a Page View action
+## Create a Page View action
 
 1. In Formbricks, go to **Settings** > **User Actions**.
 2. Click **Add action**.
@@ -51,7 +51,7 @@ Use **Test Match** to check your rule against a real URL from your app, includin
 
 *Figure 1: A Page View action limited to the invoice-sent page.*
 
-## Option B: Create a Click action
+## Create a Click action
 
 1. In **Settings** > **User Actions**, click **Add action**.
 2. In the **Track New User Action** dialog, under **Action Type**, select **No code**.
@@ -65,7 +65,7 @@ Use **Test Match** to check your rule against a real URL from your app, includin
 
     If someone renames the button or changes its CSS class, the action stops matching, and Formbricks doesn't warn you. Recheck Click actions after each release that touches that page.
 
-## Option C: Create a code action
+## Create a code action
 
 1. In **Settings** > **User Actions**, click **Add action**.
 2. In the **Track New User Action** dialog, under **Action Type**, select **Code**.
@@ -100,15 +100,15 @@ Use **Test Match** to check your rule against a real URL from your app, includin
     Formbricks: Action "invoice_sent" tracked
     ```
 
-If the next line is **No active surveys to display**, the trigger is working, and one of the other checks is stopping the survey, such as targeting or recontact options. See [How in-app surveys work](02-how-in-app-surveys-work.md), or *My survey isn't appearing* (coming soon).
+If the next line is **No active surveys to display**, the trigger is working, and one of the other checks is stopping the survey, such as targeting or recontact options. See [How in-app surveys work](02-how-in-app-surveys-work.md), or *Troubleshoot a survey that isn't appearing* (in progress).
 
 If no action line appears, check that the code action key matches exactly, or that the page view rule matches the real URL.
 
 ## See also
 
 1. [How in-app surveys work](02-how-in-app-surveys-work.md)
-2. *Target only new users and prevent repeat surveys* (coming soon)
-3. *My survey isn't appearing* (coming soon)
+2. *Target only new users and prevent repeat surveys* (in progress)
+3. *Troubleshoot a survey that isn't appearing* (in progress)
 
 ---
 

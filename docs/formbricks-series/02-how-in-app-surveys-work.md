@@ -79,7 +79,7 @@ When the widget loads or syncs, Formbricks runs checks 1–3 to decide which sur
 
 The survey is now eligible for Sam. When he sends his first invoice, `invoice_sent` fires and matches the survey's trigger, and the survey appears. The next time Sam opens the app, the recontact check rules the survey out before he does anything.
 
-If a survey isn't appearing, work through these checks in order. Most problems come from one of them. To see the checks at work, add `?formbricksDebug=true` to your page URL and open the browser console. When the page loads, Formbricks logs how many surveys the current user is eligible for. For step-by-step help, see *My survey isn't appearing* (coming soon).
+If a survey isn't appearing, work through these checks in order. Most problems come from one of them. To see the checks at work, add `?formbricksDebug=true` to your page URL and open the browser console. When the page loads, Formbricks logs how many surveys the current user is eligible for. For step-by-step help, see *Troubleshoot a survey that isn't appearing* (in progress).
 
 ![The survey Settings tab with four numbered callouts: the recontact options set to Show only once, the Cooldown Period set to use the workspace default, the Target Audience card locked behind a paid plan, and the Survey Trigger set to the invoice_sent action.](images/ledgerwiz-survey-settings.png)
 
@@ -95,7 +95,7 @@ If a survey isn't appearing, work through these checks in order. Most problems c
 
 The widget treats every visitor as anonymous until your app identifies them with a user ID. Which you need depends on where the survey runs.
 
-**In your logged-in app, identify users** (Available on Pro and Scale plans). Once a user is identified, you can target surveys by attributes such as plan or signup date. LedgerWiz identifies each user after login, which is how it limits the invoice survey to new users. Your developer sets this up when installing the widget; see [Install the widget and identify logged-in users](01-install-the-widget.md#identify-logged-in-users).
+**In your logged-in app, identify users** (Available on Pro and Scale plans). Once a user is identified, you can target surveys by attributes such as plan or signup date. LedgerWiz identifies each user after login, which is how it limits the invoice survey to new users. Your developer sets this up when installing the widget. See [Install the widget and identify logged-in users](01-install-the-widget.md#identify-logged-in-users).
 
 **On your public website, anonymous is enough.** Visitors on a marketing site haven't logged in, so you can't target them by attributes. You can still choose the action that triggers a survey and limit how often it appears. For example, LedgerWiz could show an **Exit Intent** survey on its pricing page asking visitors what stopped them from signing up.
 
@@ -137,7 +137,7 @@ To dive deeper or start building, see the following:
 
 **Troubleshooting**
 
-1. *My survey isn't appearing* (coming soon)
+1. *Troubleshoot a survey that isn't appearing* (in progress)
 
 ---
 

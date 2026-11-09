@@ -29,7 +29,7 @@ To show the survey only to some users, such as new sign-ups, you also need:
 
 ## Step 1: Create the action that starts the survey
 
-An action tells Formbricks that something happened in your app. LedgerWiz uses a code action, so the survey appears only after an invoice is actually sent.
+An action records that something happened in your app. LedgerWiz uses a code action, so the survey appears only after an invoice is actually sent.
 
 1. In Formbricks, go to **Settings** > **User Actions**.
 2. Click **Add action**.
@@ -48,13 +48,13 @@ An action tells Formbricks that something happened in your app. LedgerWiz uses a
 
 *Figure 1: Creating a code action for LedgerWiz.*
 
-If you'd rather not touch code, you can use a no-code action instead, such as a **Page View** on your confirmation page. Use one or the other, not both, or the survey can trigger twice for the same event. For all three action types, see [Trigger a survey after a specific user action](04-trigger-a-survey.md).
+If you'd rather not write code, you can use a no-code action instead, such as a **Page View** on your confirmation page. Use one or the other, not both, or the survey can trigger twice for the same event. For all three action types, see [Trigger a survey after a specific user action](04-trigger-a-survey.md).
 
 ## Step 2: Create the survey
 
 1. Go to **Surveys** and click **New Survey**.
 2. Choose to start from scratch. Templates such as **NPS Survey** and **CSAT** are also available if one fits your goal.
-3. At the top of the editor, rename the survey to something your team will recognize, such as **First invoice feedback**.
+3. At the top of the editor, rename the survey to something your team recognizes, such as **First invoice feedback**.
 
 ## Step 3: Write the question
 
@@ -118,7 +118,7 @@ Test on your test page or staging build before you rely on real users.
 
     With **Show only once**, the same test user never sees the survey again, even in a private window. Formbricks records the display against the user, not the browser. Use a new test user for each run.
 
-If the console reports **0** surveys, or nothing appears, see *My survey isn't appearing* (coming soon). To test without any chance of reaching real users, see [Test a survey without reaching real users](02-how-in-app-surveys-work.md#test-a-survey-without-reaching-real-users).
+If the console reports **0** surveys, or nothing appears, see *Troubleshoot a survey that isn't appearing* (in progress). To test without any chance of reaching real users, see [Test a survey without reaching real users](02-how-in-app-surveys-work.md#test-a-survey-without-reaching-real-users).
 
 ## Step 8: Check the results
 
@@ -132,7 +132,7 @@ If the console reports **0** surveys, or nothing appears, see *My survey isn't a
 
 ## Results
 
-Your survey is live. When a user sends an invoice, Formbricks checks whether the survey is eligible for them and, if it is, shows the rating question. Each user sees it at most once, and the workspace Cooldown Period keeps users from getting several surveys in a row.
+Your survey is live. When a user sends an invoice, Formbricks checks whether the survey is eligible for them and, if so, shows the rating question. Each user sees it at most once, and the workspace Cooldown Period keeps users from getting several surveys in a row.
 
 Changes you make later can take a minute or more to reach users whose browsers already loaded the widget.
 
@@ -149,7 +149,7 @@ Changes you make later can take a minute or more to reach users whose browsers a
 
 **Troubleshooting**
 
-1. *My survey isn't appearing* (coming soon)
+1. *Troubleshoot a survey that isn't appearing* (in progress)
 
 ---
 

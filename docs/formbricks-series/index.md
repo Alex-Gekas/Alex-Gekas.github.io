@@ -1,11 +1,11 @@
 ---
-title: SaaS knowledge base sample — Formbricks in-app surveys
+title: "SaaS knowledge base sample: Formbricks in-app surveys"
 description: A help center section for Formbricks in-app surveys, written around one use case and tested end to end in the live product.
 ---
 
 # SaaS knowledge base: Formbricks in-app surveys
 
-A help center section for [Formbricks](https://formbricks.com), an open-source survey platform, written around one company's goal and tested step by step in Formbricks Cloud.
+A help center section for [Formbricks](https://formbricks.com), an open source survey platform, written around one company's goal and tested step by step in Formbricks Cloud.
 
 !!! note "About this sample"
 
@@ -17,7 +17,7 @@ LedgerWiz is an invoicing app. Its customer success team wants to ask new users 
 
 ## Why it's built this way
 
-Formbricks documents what each feature does. Customers don't arrive with a feature in mind; they arrive with a goal. This series follows LedgerWiz's goal from installing the widget to the first responses, and uses the Good Docs Project templates and the Google developer documentation style guide so each article answers one kind of question.
+Formbricks documents what each feature does. Customers don't arrive with a feature in mind. They arrive with a goal. This series follows LedgerWiz's goal from installing the widget to the first responses, and uses the Good Docs Project templates and the Google developer documentation style guide so each article answers one kind of question.
 
 ## Articles
 
@@ -32,11 +32,11 @@ Formbricks documents what each feature does. Customers don't arrive with a featu
 - **[Trigger a survey after a specific user action](04-trigger-a-survey.md)**  
   How-to · for admins
 
-### Coming soon
+### In progress
 
 - **Target only new users and prevent repeat surveys**  
   How-to · for admins
 - **Send low ratings to Slack**  
   How-to · for admins
-- **My survey isn't appearing**  
+- **Troubleshoot a survey that isn't appearing**  
   Troubleshooting · for admins and developers
